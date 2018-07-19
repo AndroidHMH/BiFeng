@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">币风</string>
+    <!--主页-->
+    <string name="home">首页</string>
+    <string name="task">任务大厅</string>
+    <string name="my">我的</string>
+    <!--首页-->
+    <string name="zhuanfa">转发任务</string>
+    <string name="zhuce">注册任务</string>
+    <string name="pinglun">评论任务</string>
+    <string name="zhangfen">涨粉任务</string>
+    <string name="jiaoyan">调研任务</string>
+    <string name="dati">答题任务</string>
+    <string name="paizhao">拍照任务</string>
+    <string name="qiang">抢任务</string>
+    <string name="tui_jian">推荐</string>
+    <string name="di_xian">我是有底线的</string>
+
+    <!--答题任务-->
+    <string name="task_jianjie">任务简介</string>
+    <string name="task_gu_zhu">雇主叮嘱</string>
+    <string name="fenxiang_start">分享赚</string>
+    <string name="foot_end">&#160;CSS</string>
+    <string name="renwu_start">做任务赚</string>
+
+    <!--拍照任务-->
+    <string name="next">下一步</string>
+    <string name="di">第</string>
+    <string name="first">步&#160;按照雇主要求到达指定位置；</string>
+    <string name="second">步&#160;按照雇主要求拍摄指定照片；</string>
+    <string name="third">步&#160;提交截图；</string>
+
+    <!--任务提交-->
+    <string name="photo_count">系统将根据您上传任务截图的数量来计算您的任务完成情况；</string>
+    <string name="jiang_li">奖励会在雇主完成验收之后打到您的账户上；</string>
+    <string name="phone_num">填写注册手机号（必填）</string>
+    <string name="phone_hint">请输入.......</string>
+    <string name="task_photo">任务截图（必填）</string>
+    <string name="submit">提交任务</string>
+    <string name="submit_2">提交</string>
+    <string name="task_description">任务说明（选填）</string>
+    <string name="text_lenght">还可以输入</string>
+    <string name="text">字</string>
+    <string name="submit_photo">已上传</string>
+    <string name="page">张</string>
+
+    <!--分享-->
+    <string name="share">分享</string>
+
+    <!--注册任务-->
+    <string name="regist_first">步&#160;打开任务链接；</string>
+    <string name="regist_second">步&#160;在链接内完成注册，并截图；</string>
+    <string name="regist_third">步&#160; 回到本页面点击下一步提交任务，填写手机号并上传任务截图</string>
+
+
+    <!--我的-->
+    <string name="guzhu">我是雇主</string>
+    <string name="fuwu">我是服务商</string>
+    <string name="guzhu_content">雇主可以在币风平台发布众包任务</string>
+    <string name="fuwu_content">服务商可以在币风平台执行众包任务</string>
+
+</resources>
+
+

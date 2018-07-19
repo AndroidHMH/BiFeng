@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.my.fragment.MyFragment">
+    <!--选择身份-->
+    <LinearLayout
+        android:id="@+id/my_shen_fen_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/my_guzhu_btn"
+            android:layout_width="@dimen/dp_223"
+            android:layout_height="@dimen/dp_88"
+            android:layout_marginLeft="@dimen/dp_76"
+            android:layout_marginTop="@dimen/dp_130"
+            android:background="@drawable/my_shen_fen_shape"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/orange_f9f0"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_23"
+                    android:layout_height="@dimen/dp_23"
+                    android:src="@mipmap/guzhu_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="@string/guzhu"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/guzhu_content"
+                    android:textColor="@color/black_333"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/my_fu_wu_btn"
+            android:layout_width="@dimen/dp_223"
+            android:layout_height="@dimen/dp_88"
+            android:layout_marginLeft="@dimen/dp_76"
+            android:layout_marginTop="@dimen/dp_55"
+            android:background="@drawable/my_shen_fen_shape"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/orange_f9f0"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_23"
+                    android:layout_height="@dimen/dp_23"
+                    android:src="@mipmap/guzhu_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="@string/fuwu"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fuwu_content"
+                    android:textColor="@color/black_333"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_241">
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

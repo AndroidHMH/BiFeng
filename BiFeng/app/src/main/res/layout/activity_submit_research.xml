@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.submittask.activity.ResearchActivity">
+
+    <include layout="@layout/title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_23">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1、"
+                android:textColor="@color/black_333"
+                android:textSize="@dimen/sp_9" />
+
+            <TextView
+                android:id="@+id/problem_first_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你炒币嘛？"
+                android:textColor="@color/black_333"
+                android:textSize="@dimen/sp_9" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/submit_research_problem_first_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_30" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1、"
+                android:textColor="@color/black_333"
+                android:textSize="@dimen/sp_9" />
+
+            <TextView
+                android:id="@+id/problem_second_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你觉得炒币的人有钱嘛？"
+                android:textColor="@color/black_333"
+                android:textSize="@dimen/sp_9" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/submit_research_problem_second_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_30" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1、"
+                android:textColor="@color/black_333"
+                android:textSize="@dimen/sp_9" />
+
+            <TextView
+                android:id="@+id/problem_third_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="哥炒币一年赚了一千万，你看我牛逼嘛？"
+                android:textColor="@color/black_333"
+                android:textSize="@dimen/sp_9" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/submit_research_problem_third_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_30" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/submit_research_submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="@color/orange_f9f0"
+        android:gravity="center"
+        android:text="@string/submit_2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_18" />
+</LinearLayout>
