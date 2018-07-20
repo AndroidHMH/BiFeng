@@ -16,6 +16,7 @@ MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\種霪篕\.gradle\cache
 MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.0.4] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\SmartRefreshLayout-1.0.4.aar\c83ac74f93f26a996125141310090fac\AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\2b7ed27d03feaeb250f873ac34c91eb0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.byteam.superadapter:superadapter:3.6.8] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\superadapter-3.6.8.aar\42ef4d6c8de9a1a8d76b2483d1a29f62\AndroidManifest.xml:2:1-12:12
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\0354023fbfcb5a9484a0ce977814b152\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d4bb085715713a7091bd8ffa4c665587\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\6b4b7e92d6ecfe3e851d52b8c0aba63b\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\6cf2bf65b1a1463dd0e9bd01b6460ee6\AndroidManifest.xml:17:1-22:12
@@ -77,6 +78,8 @@ MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\種霪篕\.gradle\cach
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\1a2529185393b28a8e3c80388076bade\AndroidManifest.xml:11:5-20
 MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.0.4] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\SmartRefreshLayout-1.0.4.aar\c83ac74f93f26a996125141310090fac\AndroidManifest.xml:11:5-15:19
 MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.0.4] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\SmartRefreshLayout-1.0.4.aar\c83ac74f93f26a996125141310090fac\AndroidManifest.xml:11:5-15:19
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\0354023fbfcb5a9484a0ce977814b152\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\0354023fbfcb5a9484a0ce977814b152\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\c6a941e6b32b1ff439abbb6d17dc0f11\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\c6a941e6b32b1ff439abbb6d17dc0f11\AndroidManifest.xml:9:5-20
 	android:supportsRtl
@@ -185,6 +188,8 @@ MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\種霪篕\.gradle
 MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\2b7ed27d03feaeb250f873ac34c91eb0\AndroidManifest.xml:20:5-44
 MERGED from [org.byteam.superadapter:superadapter:3.6.8] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\superadapter-3.6.8.aar\42ef4d6c8de9a1a8d76b2483d1a29f62\AndroidManifest.xml:8:5-10:41
 MERGED from [org.byteam.superadapter:superadapter:3.6.8] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\superadapter-3.6.8.aar\42ef4d6c8de9a1a8d76b2483d1a29f62\AndroidManifest.xml:8:5-10:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\0354023fbfcb5a9484a0ce977814b152\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\0354023fbfcb5a9484a0ce977814b152\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d4bb085715713a7091bd8ffa4c665587\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d4bb085715713a7091bd8ffa4c665587\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\種霪篕\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\6b4b7e92d6ecfe3e851d52b8c0aba63b\AndroidManifest.xml:20:5-44

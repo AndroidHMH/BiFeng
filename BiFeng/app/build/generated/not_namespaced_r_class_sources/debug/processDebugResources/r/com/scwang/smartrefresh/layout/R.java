@@ -12,48 +12,48 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int layout_srlBackgroundColor = 0x7f0200d1;
-        public static final int layout_srlSpinnerStyle = 0x7f0200d2;
-        public static final int srlAccentColor = 0x7f02011c;
-        public static final int srlClassicsSpinnerStyle = 0x7f02011d;
-        public static final int srlDisableContentWhenLoading = 0x7f02011e;
-        public static final int srlDisableContentWhenRefresh = 0x7f02011f;
-        public static final int srlDragRate = 0x7f020120;
-        public static final int srlDrawableArrow = 0x7f020121;
-        public static final int srlDrawableArrowSize = 0x7f020122;
-        public static final int srlDrawableMarginRight = 0x7f020123;
-        public static final int srlDrawableProgress = 0x7f020124;
-        public static final int srlDrawableProgressSize = 0x7f020125;
-        public static final int srlDrawableSize = 0x7f020126;
-        public static final int srlEnableAutoLoadmore = 0x7f020127;
-        public static final int srlEnableFooterFollowWhenLoadFinished = 0x7f020128;
-        public static final int srlEnableFooterTranslationContent = 0x7f020129;
-        public static final int srlEnableHeaderTranslationContent = 0x7f02012a;
-        public static final int srlEnableHorizontalDrag = 0x7f02012b;
-        public static final int srlEnableLastTime = 0x7f02012c;
-        public static final int srlEnableLoadmore = 0x7f02012d;
-        public static final int srlEnableLoadmoreWhenContentNotFull = 0x7f02012e;
-        public static final int srlEnableNestedScrolling = 0x7f02012f;
-        public static final int srlEnableOverScrollBounce = 0x7f020130;
-        public static final int srlEnableOverScrollDrag = 0x7f020131;
-        public static final int srlEnablePreviewInEditMode = 0x7f020132;
-        public static final int srlEnablePureScrollMode = 0x7f020133;
-        public static final int srlEnableRefresh = 0x7f020134;
-        public static final int srlEnableScrollContentWhenLoaded = 0x7f020135;
-        public static final int srlFinishDuration = 0x7f020136;
-        public static final int srlFixedFooterViewId = 0x7f020137;
-        public static final int srlFixedHeaderViewId = 0x7f020138;
-        public static final int srlFooterHeight = 0x7f020139;
-        public static final int srlFooterMaxDragRate = 0x7f02013a;
-        public static final int srlFooterTriggerRate = 0x7f02013b;
-        public static final int srlHeaderHeight = 0x7f02013c;
-        public static final int srlHeaderMaxDragRate = 0x7f02013d;
-        public static final int srlHeaderTriggerRate = 0x7f02013e;
-        public static final int srlPrimaryColor = 0x7f02013f;
-        public static final int srlReboundDuration = 0x7f020140;
-        public static final int srlTextSizeTime = 0x7f020141;
-        public static final int srlTextSizeTitle = 0x7f020142;
-        public static final int srlTextTimeMarginTop = 0x7f020143;
+        public static final int layout_srlBackgroundColor = 0x7f0200d5;
+        public static final int layout_srlSpinnerStyle = 0x7f0200d6;
+        public static final int srlAccentColor = 0x7f020120;
+        public static final int srlClassicsSpinnerStyle = 0x7f020121;
+        public static final int srlDisableContentWhenLoading = 0x7f020122;
+        public static final int srlDisableContentWhenRefresh = 0x7f020123;
+        public static final int srlDragRate = 0x7f020124;
+        public static final int srlDrawableArrow = 0x7f020125;
+        public static final int srlDrawableArrowSize = 0x7f020126;
+        public static final int srlDrawableMarginRight = 0x7f020127;
+        public static final int srlDrawableProgress = 0x7f020128;
+        public static final int srlDrawableProgressSize = 0x7f020129;
+        public static final int srlDrawableSize = 0x7f02012a;
+        public static final int srlEnableAutoLoadmore = 0x7f02012b;
+        public static final int srlEnableFooterFollowWhenLoadFinished = 0x7f02012c;
+        public static final int srlEnableFooterTranslationContent = 0x7f02012d;
+        public static final int srlEnableHeaderTranslationContent = 0x7f02012e;
+        public static final int srlEnableHorizontalDrag = 0x7f02012f;
+        public static final int srlEnableLastTime = 0x7f020130;
+        public static final int srlEnableLoadmore = 0x7f020131;
+        public static final int srlEnableLoadmoreWhenContentNotFull = 0x7f020132;
+        public static final int srlEnableNestedScrolling = 0x7f020133;
+        public static final int srlEnableOverScrollBounce = 0x7f020134;
+        public static final int srlEnableOverScrollDrag = 0x7f020135;
+        public static final int srlEnablePreviewInEditMode = 0x7f020136;
+        public static final int srlEnablePureScrollMode = 0x7f020137;
+        public static final int srlEnableRefresh = 0x7f020138;
+        public static final int srlEnableScrollContentWhenLoaded = 0x7f020139;
+        public static final int srlFinishDuration = 0x7f02013a;
+        public static final int srlFixedFooterViewId = 0x7f02013b;
+        public static final int srlFixedHeaderViewId = 0x7f02013c;
+        public static final int srlFooterHeight = 0x7f02013d;
+        public static final int srlFooterMaxDragRate = 0x7f02013e;
+        public static final int srlFooterTriggerRate = 0x7f02013f;
+        public static final int srlHeaderHeight = 0x7f020140;
+        public static final int srlHeaderMaxDragRate = 0x7f020141;
+        public static final int srlHeaderTriggerRate = 0x7f020142;
+        public static final int srlPrimaryColor = 0x7f020143;
+        public static final int srlReboundDuration = 0x7f020144;
+        public static final int srlTextSizeTime = 0x7f020145;
+        public static final int srlTextSizeTitle = 0x7f020146;
+        public static final int srlTextTimeMarginTop = 0x7f020147;
     }
     public static final class id {
         private id() {}
@@ -72,15 +72,15 @@ public final class R {
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] BallPulseFooter = { 0x7f02011c, 0x7f02011d, 0x7f02013f };
+        public static final int[] BallPulseFooter = { 0x7f020120, 0x7f020121, 0x7f020143 };
         public static final int BallPulseFooter_srlAccentColor = 0;
         public static final int BallPulseFooter_srlClassicsSpinnerStyle = 1;
         public static final int BallPulseFooter_srlPrimaryColor = 2;
-        public static final int[] BezierRadarHeader = { 0x7f02011c, 0x7f02012b, 0x7f02013f };
+        public static final int[] BezierRadarHeader = { 0x7f020120, 0x7f02012f, 0x7f020143 };
         public static final int BezierRadarHeader_srlAccentColor = 0;
         public static final int BezierRadarHeader_srlEnableHorizontalDrag = 1;
         public static final int BezierRadarHeader_srlPrimaryColor = 2;
-        public static final int[] ClassicsFooter = { 0x7f02011c, 0x7f02011d, 0x7f020121, 0x7f020122, 0x7f020123, 0x7f020124, 0x7f020125, 0x7f020126, 0x7f020136, 0x7f02013f, 0x7f020142 };
+        public static final int[] ClassicsFooter = { 0x7f020120, 0x7f020121, 0x7f020125, 0x7f020126, 0x7f020127, 0x7f020128, 0x7f020129, 0x7f02012a, 0x7f02013a, 0x7f020143, 0x7f020146 };
         public static final int ClassicsFooter_srlAccentColor = 0;
         public static final int ClassicsFooter_srlClassicsSpinnerStyle = 1;
         public static final int ClassicsFooter_srlDrawableArrow = 2;
@@ -92,7 +92,7 @@ public final class R {
         public static final int ClassicsFooter_srlFinishDuration = 8;
         public static final int ClassicsFooter_srlPrimaryColor = 9;
         public static final int ClassicsFooter_srlTextSizeTitle = 10;
-        public static final int[] ClassicsHeader = { 0x7f02011c, 0x7f02011d, 0x7f020121, 0x7f020122, 0x7f020123, 0x7f020124, 0x7f020125, 0x7f020126, 0x7f02012c, 0x7f020136, 0x7f02013f, 0x7f020141, 0x7f020142, 0x7f020143 };
+        public static final int[] ClassicsHeader = { 0x7f020120, 0x7f020121, 0x7f020125, 0x7f020126, 0x7f020127, 0x7f020128, 0x7f020129, 0x7f02012a, 0x7f020130, 0x7f02013a, 0x7f020143, 0x7f020145, 0x7f020146, 0x7f020147 };
         public static final int ClassicsHeader_srlAccentColor = 0;
         public static final int ClassicsHeader_srlClassicsSpinnerStyle = 1;
         public static final int ClassicsHeader_srlDrawableArrow = 2;
@@ -107,7 +107,7 @@ public final class R {
         public static final int ClassicsHeader_srlTextSizeTime = 11;
         public static final int ClassicsHeader_srlTextSizeTitle = 12;
         public static final int ClassicsHeader_srlTextTimeMarginTop = 13;
-        public static final int[] SmartRefreshLayout = { 0x7f02011c, 0x7f02011e, 0x7f02011f, 0x7f020120, 0x7f020127, 0x7f020128, 0x7f020129, 0x7f02012a, 0x7f02012d, 0x7f02012e, 0x7f02012f, 0x7f020130, 0x7f020131, 0x7f020132, 0x7f020133, 0x7f020134, 0x7f020135, 0x7f020137, 0x7f020138, 0x7f020139, 0x7f02013a, 0x7f02013b, 0x7f02013c, 0x7f02013d, 0x7f02013e, 0x7f02013f, 0x7f020140 };
+        public static final int[] SmartRefreshLayout = { 0x7f020120, 0x7f020122, 0x7f020123, 0x7f020124, 0x7f02012b, 0x7f02012c, 0x7f02012d, 0x7f02012e, 0x7f020131, 0x7f020132, 0x7f020133, 0x7f020134, 0x7f020135, 0x7f020136, 0x7f020137, 0x7f020138, 0x7f020139, 0x7f02013b, 0x7f02013c, 0x7f02013d, 0x7f02013e, 0x7f02013f, 0x7f020140, 0x7f020141, 0x7f020142, 0x7f020143, 0x7f020144 };
         public static final int SmartRefreshLayout_srlAccentColor = 0;
         public static final int SmartRefreshLayout_srlDisableContentWhenLoading = 1;
         public static final int SmartRefreshLayout_srlDisableContentWhenRefresh = 2;
@@ -135,7 +135,7 @@ public final class R {
         public static final int SmartRefreshLayout_srlHeaderTriggerRate = 24;
         public static final int SmartRefreshLayout_srlPrimaryColor = 25;
         public static final int SmartRefreshLayout_srlReboundDuration = 26;
-        public static final int[] SmartRefreshLayout_Layout = { 0x7f0200d1, 0x7f0200d2 };
+        public static final int[] SmartRefreshLayout_Layout = { 0x7f0200d5, 0x7f0200d6 };
         public static final int SmartRefreshLayout_Layout_layout_srlBackgroundColor = 0;
         public static final int SmartRefreshLayout_Layout_layout_srlSpinnerStyle = 1;
     }

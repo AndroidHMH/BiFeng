@@ -41,4 +41,5 @@ dependencies {
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4'
     implementation 'com.android.support:recyclerview-v7:27.1.1'    //RecyclerView
     implementation 'org.byteam.superadapter:superadapter:3.6.8'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
 }

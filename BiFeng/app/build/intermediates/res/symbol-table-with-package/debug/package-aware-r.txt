@@ -84,6 +84,10 @@ attr buttonTintMode
 attr chainUseRtl
 attr checkboxStyle
 attr checkedTextViewStyle
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_fill_color
 attr closeIcon
 attr closeItemLayout
 attr collapseContentDescription
@@ -434,6 +438,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color black_000
 color black_333
 color black_6fff
 color black_f333
@@ -1127,6 +1132,7 @@ drawable home_btn_shape
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable label_tv_shape
+drawable my_btn_shape
 drawable my_shen_fen_shape
 drawable notification_action_background
 drawable notification_bg
@@ -1286,8 +1292,17 @@ id middle
 id mirror
 id multiply
 id my_fu_wu_btn
+id my_ge_ren_btn
 id my_guzhu_btn
+id my_msg_btn
+id my_qian_dao_btn
+id my_running_renw_btn
+id my_send_renw_btn
+id my_setting_btn
 id my_shen_fen_layout
+id my_task_btn
+id my_type_tv
+id my_yao_qing_btn
 id never
 id none
 id normal
@@ -1447,6 +1462,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout title_layout
 mipmap answer_type
+mipmap change_icon
 mipmap dati
 mipmap fanhui
 mipmap first
@@ -1461,7 +1477,17 @@ mipmap ic_launcher_round
 mipmap jiaoyan
 mipmap jinbi
 mipmap my
+mipmap my_centent_icon
 mipmap my_click
+mipmap my_fuwu_icon
+mipmap my_info_bg
+mipmap my_msg_icon
+mipmap my_qian_dao_icon
+mipmap my_ren_wu_icon
+mipmap my_setting_icon
+mipmap my_task_icon
+mipmap my_wan_shan_icon
+mipmap my_yao_qing_icon
 mipmap paizhao
 mipmap photo_icon
 mipmap pinglun
@@ -1508,6 +1534,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string bi
 string dati
 string define_roundedimageview
 string di
@@ -1531,7 +1558,23 @@ string library_roundedimageview_libraryVersion
 string library_roundedimageview_libraryWebsite
 string library_roundedimageview_licenseId
 string library_roundedimageview_repositoryLink
+string msg
 string my
+string my_fa_bu_task
+string my_ge_ren
+string my_ge_ren_content
+string my_go_ge_ren
+string my_go_task
+string my_nowadays
+string my_qian_dao
+string my_qian_dao_content
+string my_running_task
+string my_setting
+string my_task
+string my_task_content
+string my_wallet
+string my_yao_qing
+string my_yao_qing_content
 string next
 string page
 string paizhao
@@ -1925,6 +1968,7 @@ styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle a
 styleable BallPulseFooter srlAccentColor srlClassicsSpinnerStyle srlPrimaryColor
 styleable BezierRadarHeader srlAccentColor srlEnableHorizontalDrag srlPrimaryColor
 styleable ButtonBarLayout allowStacking
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_fill_color
 styleable ClassicsFooter srlAccentColor srlClassicsSpinnerStyle srlDrawableArrow srlDrawableArrowSize srlDrawableMarginRight srlDrawableProgress srlDrawableProgressSize srlDrawableSize srlFinishDuration srlPrimaryColor srlTextSizeTitle
 styleable ClassicsHeader srlAccentColor srlClassicsSpinnerStyle srlDrawableArrow srlDrawableArrowSize srlDrawableMarginRight srlDrawableProgress srlDrawableProgressSize srlDrawableSize srlEnableLastTime srlFinishDuration srlPrimaryColor srlTextSizeTime srlTextSizeTitle srlTextTimeMarginTop
 styleable ColorStateListItem android_color android_alpha alpha

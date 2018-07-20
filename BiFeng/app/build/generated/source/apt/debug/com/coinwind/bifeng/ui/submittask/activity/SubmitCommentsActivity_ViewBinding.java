@@ -21,7 +21,7 @@ public class SubmitCommentsActivity_ViewBinding implements Unbinder {
 
   private View view2131165219;
 
-  private View view2131165388;
+  private View view2131165400;
 
   @UiThread
   public SubmitCommentsActivity_ViewBinding(SubmitCommentsActivity target) {
@@ -49,7 +49,7 @@ public class SubmitCommentsActivity_ViewBinding implements Unbinder {
     target.submitCommentsPhotoCountTv = Utils.findRequiredViewAsType(source, R.id.submit_comments_photo_count_tv, "field 'submitCommentsPhotoCountTv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.submit_comments_submit_btn, "field 'submitCommentsSubmitBtn' and method 'onViewClicked'");
     target.submitCommentsSubmitBtn = Utils.castView(view, R.id.submit_comments_submit_btn, "field 'submitCommentsSubmitBtn'", TextView.class);
-    view2131165388 = view;
+    view2131165400 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -77,7 +77,7 @@ public class SubmitCommentsActivity_ViewBinding implements Unbinder {
 
     view2131165219.setOnClickListener(null);
     view2131165219 = null;
-    view2131165388.setOnClickListener(null);
-    view2131165388 = null;
+    view2131165400.setOnClickListener(null);
+    view2131165400 = null;
   }
 }

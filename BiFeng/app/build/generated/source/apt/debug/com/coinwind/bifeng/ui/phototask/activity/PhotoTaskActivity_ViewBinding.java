@@ -17,7 +17,7 @@ import java.lang.Override;
 public class PhotoTaskActivity_ViewBinding implements Unbinder {
   private PhotoTaskActivity target;
 
-  private View view2131165338;
+  private View view2131165350;
 
   @UiThread
   public PhotoTaskActivity_ViewBinding(PhotoTaskActivity target) {
@@ -33,7 +33,7 @@ public class PhotoTaskActivity_ViewBinding implements Unbinder {
     target.titleBar = Utils.findRequiredViewAsType(source, R.id.title_bar, "field 'titleBar'", RelativeLayout.class);
     view = Utils.findRequiredView(source, R.id.photo_task_next_btn, "field 'photoTaskNextBtn' and method 'onViewClicked'");
     target.photoTaskNextBtn = Utils.castView(view, R.id.photo_task_next_btn, "field 'photoTaskNextBtn'", LinearLayout.class);
-    view2131165338 = view;
+    view2131165350 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -53,7 +53,7 @@ public class PhotoTaskActivity_ViewBinding implements Unbinder {
     target.titleBar = null;
     target.photoTaskNextBtn = null;
 
-    view2131165338.setOnClickListener(null);
-    view2131165338 = null;
+    view2131165350.setOnClickListener(null);
+    view2131165350 = null;
   }
 }
