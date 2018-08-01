@@ -1,226 +1,275 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:2:1-51:12
-MERGED from [com.recker.flybanner:flybanner:1.3] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\flybanner-1.3.aar\34601c3c71444d8699e99c1ae714377d\AndroidManifest.xml:2:1-19:12
-MERGED from [com.gyf.barlibrary:barlibrary:2.3.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\barlibrary-2.3.0.aar\5444c5c1fb296f5cdee4427dc253cd13\AndroidManifest.xml:2:1-12:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\89100f37808f477352a124e7f77de4dd\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\e95543bf00dd141f4fd81c5005b7ef61\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\fe3bd10a85b0939a475bccb4a48821a1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\7a47ae1d757b7fe296acb68af1dcd1e4\AndroidManifest.xml:2:1-7:12
-MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.2.aar\dceb27530160cd642e05d5703fa8f37e\AndroidManifest.xml:15:1-21:12
-MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\1a2529185393b28a8e3c80388076bade\AndroidManifest.xml:2:1-13:12
-MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\roundedimageview-2.3.0.aar\d857d7160ecab44e849d939d8b81b04d\AndroidManifest.xml:2:1-9:12
-MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.0.4] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\SmartRefreshLayout-1.0.4.aar\c83ac74f93f26a996125141310090fac\AndroidManifest.xml:2:1-17:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\2b7ed27d03feaeb250f873ac34c91eb0\AndroidManifest.xml:17:1-22:12
-MERGED from [org.byteam.superadapter:superadapter:3.6.8] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\superadapter-3.6.8.aar\42ef4d6c8de9a1a8d76b2483d1a29f62\AndroidManifest.xml:2:1-12:12
-MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\0354023fbfcb5a9484a0ce977814b152\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d4bb085715713a7091bd8ffa4c665587\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\6b4b7e92d6ecfe3e851d52b8c0aba63b\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\6cf2bf65b1a1463dd0e9bd01b6460ee6\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\f12c83213d5652d3c48182fe77461b33\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\7caaf8766cc16191e68c40a5c28d4d50\AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\c6a941e6b32b1ff439abbb6d17dc0f11\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\891951d831b11cc3c00939716c840e00\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\a6c014bcae9ca26bcb121e3eef90ac46\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bd7d0ce96390777c7ad048c56ec1b49d\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\fd5eaf63bc691027e610798ce65cb44c\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e4fd026d69c3b0c8e82c28fc38fd422e\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\3849d7f208efab2ef8c27fdb29fc7778\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:2:1-51:12
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
+MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:2:1-19:12
+MERGED from [com.gyf.barlibrary:barlibrary:2.3.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/barlibrary-2.3.0.aar/c010c44a11e753936e4de097cdc32a2e/AndroidManifest.xml:2:1-12:12
+MERGED from [co.lujun:androidtagview:1.0.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/androidtagview-1.0.3.aar/09686d5b05d5b619ede9fb39ffdbd32b/AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8d736b6dcacb95b5b5402f45302d8d18/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/dd3342e40d67564234ee4f1ec38189dc/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/872321d5bd7ac816c29b0e3c68b8c2d4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/545769b01f752e39f414993d7cc8ceab/AndroidManifest.xml:2:1-7:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.2.aar/c838d2685198b7b588c2f1ced9f79723/AndroidManifest.xml:15:1-21:12
+MERGED from [com.github.bumptech.glide:glide:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/fb80632828f35c19988e7e6ed4bb41ae/AndroidManifest.xml:2:1-13:12
+MERGED from [com.makeramen:roundedimageview:2.3.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/roundedimageview-2.3.0.aar/31c041e35a25df021392d1452368fe49/AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/bb5e420b0e68cd6a50b5e683fc61f8d2/AndroidManifest.xml:17:1-22:12
+MERGED from [org.byteam.superadapter:superadapter:3.6.8] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/superadapter-3.6.8.aar/048d3536d9aa59bf2051b23039444a16/AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/96d8069562d4c421b9b4feea5cd2e54d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/08b8daf11bfdc1ac9f86dca8466fa022/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/ac8bbad2bc6894444711c8b21cdf477d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/a27e909449f8c01ad3c6587f5d3d2e3c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/4c0de32bab131ea0cd7a8876f8ba0b62/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f1e5aae2a3663fb3e9164aac973698c0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/f9387d6db1ff3fa42865628f994a82d1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/cdcbc74deda0b16bf9c0a2262ccb85c9/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b6cf994eb28cf6513006abe568351625/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/f0539ddf6cda3446f4517a38fadd6c01/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/515aecda2195f652c26e2aed65a837cb/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d83ff619ec0245c073c23315c37c736b/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
 	package
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:3:5-34
-		INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
-		INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:4:5-34
+		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:2:1-51:12
-		INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
+		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:2:1-51:12
-		INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
+		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:5:5-67
-MERGED from [com.recker.flybanner:flybanner:1.3] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\flybanner-1.3.aar\34601c3c71444d8699e99c1ae714377d\AndroidManifest.xml:11:5-67
-MERGED from [com.recker.flybanner:flybanner:1.3] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\flybanner-1.3.aar\34601c3c71444d8699e99c1ae714377d\AndroidManifest.xml:11:5-67
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:6:5-67
+MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:11:5-67
+MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:6:5-79
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:6:22-76
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:7:22-76
 uses-permission#android.permission.CAMERA
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:7:5-65
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:8:5-65
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:7:22-62
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:8:22-62
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:8:5-81
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:9:5-81
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:8:22-78
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:9:5-80
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:10:5-80
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:9:22-77
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:10:22-77
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:12:22-73
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:13:5-15:47
+	tools:ignore
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:15:9-44
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:14:9-68
+uses-feature#android.hardware.camera
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:17:5-60
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:17:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:18:5-70
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:18:19-67
 application
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:11:5-49:19
-MERGED from [com.recker.flybanner:flybanner:1.3] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\flybanner-1.3.aar\34601c3c71444d8699e99c1ae714377d\AndroidManifest.xml:13:5-17:19
-MERGED from [com.recker.flybanner:flybanner:1.3] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\flybanner-1.3.aar\34601c3c71444d8699e99c1ae714377d\AndroidManifest.xml:13:5-17:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\e95543bf00dd141f4fd81c5005b7ef61\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\e95543bf00dd141f4fd81c5005b7ef61\AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\1a2529185393b28a8e3c80388076bade\AndroidManifest.xml:11:5-20
-MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\1a2529185393b28a8e3c80388076bade\AndroidManifest.xml:11:5-20
-MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.0.4] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\SmartRefreshLayout-1.0.4.aar\c83ac74f93f26a996125141310090fac\AndroidManifest.xml:11:5-15:19
-MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.0.4] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\SmartRefreshLayout-1.0.4.aar\c83ac74f93f26a996125141310090fac\AndroidManifest.xml:11:5-15:19
-MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\0354023fbfcb5a9484a0ce977814b152\AndroidManifest.xml:9:5-20
-MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\0354023fbfcb5a9484a0ce977814b152\AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\c6a941e6b32b1ff439abbb6d17dc0f11\AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\c6a941e6b32b1ff439abbb6d17dc0f11\AndroidManifest.xml:9:5-20
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:20:5-67:19
+MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:13:5-17:19
+MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:13:5-17:19
+MERGED from [co.lujun:androidtagview:1.0.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/androidtagview-1.0.3.aar/09686d5b05d5b619ede9fb39ffdbd32b/AndroidManifest.xml:11:5-12:19
+MERGED from [co.lujun:androidtagview:1.0.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/androidtagview-1.0.3.aar/09686d5b05d5b619ede9fb39ffdbd32b/AndroidManifest.xml:11:5-12:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/dd3342e40d67564234ee4f1ec38189dc/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/dd3342e40d67564234ee4f1ec38189dc/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/fb80632828f35c19988e7e6ed4bb41ae/AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/fb80632828f35c19988e7e6ed4bb41ae/AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f1e5aae2a3663fb3e9164aac973698c0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f1e5aae2a3663fb3e9164aac973698c0/AndroidManifest.xml:9:5-20
 	android:supportsRtl
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:26:9-35
 	android:label
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:15:9-41
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:24:9-41
 	android:roundIcon
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:16:9-54
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:25:9-54
 	android:icon
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:14:9-43
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:23:9-43
 	android:allowBackup
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:22:9-35
 	android:theme
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:18:9-40
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:27:9-40
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:12:9-42
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:21:9-42
 meta-data#android.notch_support
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:19:9-21:36
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:28:9-30:36
 	android:value
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:21:13-33
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:30:13-33
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:20:13-49
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:29:13-49
 activity#com.coinwind.bifeng.ui.homepage.activity.MainActivity
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:23:9-29:20
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:32:9-40:20
+	android:launchMode
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:34:13-44
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:23:19-68
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:33:13-62
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:24:13-28:29
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:35:13-39:29
 action#android.intent.action.MAIN
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:36:17-69
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:36:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:27:17-77
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:38:17-77
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:27:27-74
-activity#com.coinwind.bifeng.ui.answertask.activity.AnswerTaskActivity
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:30:9-32:20
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:38:27-74
+activity#com.coinwind.bifeng.ui.task.activity.AnswerTaskActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:41:9-73
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:30:19-76
-activity#com.coinwind.bifeng.ui.phototask.activity.PhotoTaskActivity
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:33:9-77
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:41:19-70
+activity#com.coinwind.bifeng.ui.task.activity.PhotoTaskActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:42:9-72
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:33:19-74
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:42:19-69
 activity#com.coinwind.bifeng.ui.submittask.activity.SubmitCommentsActivity
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:34:9-83
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:43:9-83
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:34:19-80
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:43:19-80
 activity#com.coinwind.bifeng.ui.submittask.activity.SubmitRegisitActivity
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:35:9-82
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:44:9-82
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:35:19-79
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:44:19-79
 activity#com.coinwind.bifeng.ui.submittask.activity.ResearchActivity
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:36:9-77
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:45:9-77
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:36:19-74
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:45:19-74
 activity#com.coinwind.bifeng.ui.share.activity.ShareActivity
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:37:9-69
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:46:9-69
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:37:19-66
-activity#com.coinwind.bifeng.ui.regist.activity.RegistActivity
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:38:9-71
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:46:19-66
+activity#com.coinwind.bifeng.ui.task.activity.RegistTaskActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:47:9-73
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:38:19-68
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:47:19-70
 provider#android.support.v4.content.FileProvider
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:40:9-48:20
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:49:9-57:20
 	android:grantUriPermissions
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:44:13-47
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:53:13-47
 	android:authorities
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:42:13-67
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:51:13-67
 	android:exported
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:43:13-37
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:52:13-37
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:41:13-67
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:50:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:45:13-47:54
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:54:13-56:54
 	android:resource
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:47:17-51
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:56:17-51
 	android:name
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml:46:17-67
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:55:17-67
+activity#com.coinwind.bifeng.ui.setting.activity.SetMessageActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:59:9-76
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:59:19-73
+activity#com.coinwind.bifeng.ui.searchfor.activity.SearchForActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:60:9-77
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:60:19-74
+activity#com.coinwind.bifeng.ui.task.activity.TaskTypeActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:61:9-71
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:61:19-68
+activity#com.coinwind.bifeng.ui.sendtask.activity.SendTaskActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:62:9-75
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:62:19-72
+activity#com.coinwind.bifeng.ui.task.activity.ZhangFenTaskActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:63:9-75
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:63:19-72
+activity#com.coinwind.bifeng.ui.login.activity.LoginActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:64:9-69
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:64:19-66
+activity#com.coinwind.bifeng.ui.setting.activity.SettingActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:65:9-73
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:65:19-70
+activity#com.coinwind.bifeng.ui.my.activity.PerfectInformationActivity
+ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:66:9-88
+	android:name
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:66:19-76
 uses-sdk
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
-MERGED from [com.recker.flybanner:flybanner:1.3] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\flybanner-1.3.aar\34601c3c71444d8699e99c1ae714377d\AndroidManifest.xml:7:5-9:41
-MERGED from [com.recker.flybanner:flybanner:1.3] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\flybanner-1.3.aar\34601c3c71444d8699e99c1ae714377d\AndroidManifest.xml:7:5-9:41
-MERGED from [com.gyf.barlibrary:barlibrary:2.3.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\barlibrary-2.3.0.aar\5444c5c1fb296f5cdee4427dc253cd13\AndroidManifest.xml:8:5-10:41
-MERGED from [com.gyf.barlibrary:barlibrary:2.3.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\barlibrary-2.3.0.aar\5444c5c1fb296f5cdee4427dc253cd13\AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\89100f37808f477352a124e7f77de4dd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\89100f37808f477352a124e7f77de4dd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\e95543bf00dd141f4fd81c5005b7ef61\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\e95543bf00dd141f4fd81c5005b7ef61\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\fe3bd10a85b0939a475bccb4a48821a1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\fe3bd10a85b0939a475bccb4a48821a1\AndroidManifest.xml:20:5-44
-MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\7a47ae1d757b7fe296acb68af1dcd1e4\AndroidManifest.xml:5:5-43
-MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\7a47ae1d757b7fe296acb68af1dcd1e4\AndroidManifest.xml:5:5-43
-MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.2.aar\dceb27530160cd642e05d5703fa8f37e\AndroidManifest.xml:19:5-43
-MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.2.aar\dceb27530160cd642e05d5703fa8f37e\AndroidManifest.xml:19:5-43
-MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\1a2529185393b28a8e3c80388076bade\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\1a2529185393b28a8e3c80388076bade\AndroidManifest.xml:7:5-9:41
-MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\roundedimageview-2.3.0.aar\d857d7160ecab44e849d939d8b81b04d\AndroidManifest.xml:7:5-43
-MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\roundedimageview-2.3.0.aar\d857d7160ecab44e849d939d8b81b04d\AndroidManifest.xml:7:5-43
-MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.0.4] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\SmartRefreshLayout-1.0.4.aar\c83ac74f93f26a996125141310090fac\AndroidManifest.xml:7:5-9:41
-MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.0.4] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\SmartRefreshLayout-1.0.4.aar\c83ac74f93f26a996125141310090fac\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\2b7ed27d03feaeb250f873ac34c91eb0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\2b7ed27d03feaeb250f873ac34c91eb0\AndroidManifest.xml:20:5-44
-MERGED from [org.byteam.superadapter:superadapter:3.6.8] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\superadapter-3.6.8.aar\42ef4d6c8de9a1a8d76b2483d1a29f62\AndroidManifest.xml:8:5-10:41
-MERGED from [org.byteam.superadapter:superadapter:3.6.8] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\superadapter-3.6.8.aar\42ef4d6c8de9a1a8d76b2483d1a29f62\AndroidManifest.xml:8:5-10:41
-MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\0354023fbfcb5a9484a0ce977814b152\AndroidManifest.xml:5:5-7:41
-MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\0354023fbfcb5a9484a0ce977814b152\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d4bb085715713a7091bd8ffa4c665587\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d4bb085715713a7091bd8ffa4c665587\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\6b4b7e92d6ecfe3e851d52b8c0aba63b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\6b4b7e92d6ecfe3e851d52b8c0aba63b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\6cf2bf65b1a1463dd0e9bd01b6460ee6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\6cf2bf65b1a1463dd0e9bd01b6460ee6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\f12c83213d5652d3c48182fe77461b33\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\f12c83213d5652d3c48182fe77461b33\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\7caaf8766cc16191e68c40a5c28d4d50\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\7caaf8766cc16191e68c40a5c28d4d50\AndroidManifest.xml:20:5-44
-MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\c6a941e6b32b1ff439abbb6d17dc0f11\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\c6a941e6b32b1ff439abbb6d17dc0f11\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\891951d831b11cc3c00939716c840e00\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\891951d831b11cc3c00939716c840e00\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\a6c014bcae9ca26bcb121e3eef90ac46\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\a6c014bcae9ca26bcb121e3eef90ac46\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bd7d0ce96390777c7ad048c56ec1b49d\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bd7d0ce96390777c7ad048c56ec1b49d\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\fd5eaf63bc691027e610798ce65cb44c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\fd5eaf63bc691027e610798ce65cb44c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e4fd026d69c3b0c8e82c28fc38fd422e\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e4fd026d69c3b0c8e82c28fc38fd422e\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\3849d7f208efab2ef8c27fdb29fc7778\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\∫ÿ√˘Íª\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\3849d7f208efab2ef8c27fdb29fc7778\AndroidManifest.xml:20:5-44
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
-INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.gyf.barlibrary:barlibrary:2.3.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/barlibrary-2.3.0.aar/c010c44a11e753936e4de097cdc32a2e/AndroidManifest.xml:8:5-10:41
+MERGED from [com.gyf.barlibrary:barlibrary:2.3.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/barlibrary-2.3.0.aar/c010c44a11e753936e4de097cdc32a2e/AndroidManifest.xml:8:5-10:41
+MERGED from [co.lujun:androidtagview:1.0.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/androidtagview-1.0.3.aar/09686d5b05d5b619ede9fb39ffdbd32b/AndroidManifest.xml:7:5-9:41
+MERGED from [co.lujun:androidtagview:1.0.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/androidtagview-1.0.3.aar/09686d5b05d5b619ede9fb39ffdbd32b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8d736b6dcacb95b5b5402f45302d8d18/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8d736b6dcacb95b5b5402f45302d8d18/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/dd3342e40d67564234ee4f1ec38189dc/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/dd3342e40d67564234ee4f1ec38189dc/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/872321d5bd7ac816c29b0e3c68b8c2d4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/872321d5bd7ac816c29b0e3c68b8c2d4/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/545769b01f752e39f414993d7cc8ceab/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/545769b01f752e39f414993d7cc8ceab/AndroidManifest.xml:5:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.2.aar/c838d2685198b7b588c2f1ced9f79723/AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.2.aar/c838d2685198b7b588c2f1ced9f79723/AndroidManifest.xml:19:5-43
+MERGED from [com.github.bumptech.glide:glide:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/fb80632828f35c19988e7e6ed4bb41ae/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/fb80632828f35c19988e7e6ed4bb41ae/AndroidManifest.xml:7:5-9:41
+MERGED from [com.makeramen:roundedimageview:2.3.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/roundedimageview-2.3.0.aar/31c041e35a25df021392d1452368fe49/AndroidManifest.xml:7:5-43
+MERGED from [com.makeramen:roundedimageview:2.3.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/roundedimageview-2.3.0.aar/31c041e35a25df021392d1452368fe49/AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/bb5e420b0e68cd6a50b5e683fc61f8d2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/bb5e420b0e68cd6a50b5e683fc61f8d2/AndroidManifest.xml:20:5-44
+MERGED from [org.byteam.superadapter:superadapter:3.6.8] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/superadapter-3.6.8.aar/048d3536d9aa59bf2051b23039444a16/AndroidManifest.xml:8:5-10:41
+MERGED from [org.byteam.superadapter:superadapter:3.6.8] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/superadapter-3.6.8.aar/048d3536d9aa59bf2051b23039444a16/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/96d8069562d4c421b9b4feea5cd2e54d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/96d8069562d4c421b9b4feea5cd2e54d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/08b8daf11bfdc1ac9f86dca8466fa022/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/08b8daf11bfdc1ac9f86dca8466fa022/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/ac8bbad2bc6894444711c8b21cdf477d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/ac8bbad2bc6894444711c8b21cdf477d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/a27e909449f8c01ad3c6587f5d3d2e3c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/a27e909449f8c01ad3c6587f5d3d2e3c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/4c0de32bab131ea0cd7a8876f8ba0b62/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/4c0de32bab131ea0cd7a8876f8ba0b62/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f1e5aae2a3663fb3e9164aac973698c0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f1e5aae2a3663fb3e9164aac973698c0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/f9387d6db1ff3fa42865628f994a82d1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/f9387d6db1ff3fa42865628f994a82d1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/cdcbc74deda0b16bf9c0a2262ccb85c9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/cdcbc74deda0b16bf9c0a2262ccb85c9/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b6cf994eb28cf6513006abe568351625/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b6cf994eb28cf6513006abe568351625/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/f0539ddf6cda3446f4517a38fadd6c01/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/f0539ddf6cda3446f4517a38fadd6c01/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/515aecda2195f652c26e2aed65a837cb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/515aecda2195f652c26e2aed65a837cb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d83ff619ec0245c073c23315c37c736b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d83ff619ec0245c073c23315c37c736b/AndroidManifest.xml:20:5-44
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
-		INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
-		ADDED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
-		INJECTED from D:\bf\BiFeng\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml

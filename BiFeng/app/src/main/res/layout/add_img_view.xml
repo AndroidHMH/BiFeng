@@ -8,6 +8,14 @@
         android:layout_width="@dimen/dp_55"
         android:layout_height="@dimen/dp_55"
         android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_10"
         android:scaleType="fitXY"
         android:src="@mipmap/photo_icon" />
+
+    <ImageView
+        android:id="@+id/delete_img_btn"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_m_10"
+        android:src="@mipmap/set_message_clear_icon" />
 </LinearLayout>

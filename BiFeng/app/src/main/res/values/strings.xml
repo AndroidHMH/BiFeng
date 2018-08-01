@@ -5,6 +5,7 @@
     <string name="home">首页</string>
     <string name="task">任务大厅</string>
     <string name="my">我的</string>
+
     <!--首页-->
     <string name="zhuanfa">转发任务</string>
     <string name="zhuce">注册任务</string>
@@ -16,6 +17,17 @@
     <string name="qiang">抢任务</string>
     <string name="tui_jian">推荐</string>
     <string name="di_xian">我是有底线的</string>
+    <string name="ci">/次</string>
+
+    <!--首页Item布局-->
+    <string name="remaining">剩余</string>
+    <string name="item_ci">剩余</string>
+    <string name="item_score_ci">CC/次</string>
+    <!--任务大厅-->
+    <string name="task_zhixing">我执行的</string>
+    <string name="task_fabu">我发布的</string>
+    <string name="task_fabu_task">发布任务</string>
+    <string name="task_select_content">输入关键词，查找感兴趣的任务</string>
 
     <!--答题任务-->
     <string name="task_jianjie">任务简介</string>
@@ -68,6 +80,7 @@
     <string name="my_ge_ren">完善个人资料</string>
     <string name="my_go_ge_ren">去完善</string>
     <string name="my_task">完成众包任务</string>
+    <string name="my_send_task">发布众包任务</string>
     <string name="my_go_task">去完成</string>
     <string name="my_task_content">去完成雇主发布的众包任务</string>
     <string name="my_ge_ren_content">完善LOGO、 雇主名等资料，获得30 CC 奖励</string>
@@ -75,6 +88,33 @@
     <string name="my_qian_dao_content">每次签到可获得最低5 CC 奖励</string>
     <string name="my_nowadays">今天奖励</string>
     <string name="my_wallet">我的钱包</string>
+
+    <!--设置内容-->
+    <string name="qie_ding">确定</string>
+    <string name="set_message_count">还可以输入</string>
+    <string name="set_message_zi">个字</string>
+
+
+    <!--发布任务-->
+    <string name="add_img_text">上传一张高端大气的任务配图</string>
+    <string name="label">标签</string>
+    <string name="label_count">最多3条，选填</string>
+
+    <!--登录页面-->
+    <string name="login_phone_hint">请输入手机号</string>
+    <string name="login_psw_hint">输入密码</string>
+    <string name="login_code_hint">输入验证码</string>
+    <string name="login_get_code">获取验证码</string>
+    <string name="login_use_pasw_login">使用密码登录</string>
+    <string name="login_use_phone_login">使用手机号登录</string>
+    <string name="login_login">登录</string>
+
+    <!--完善个人信息-->
+    <string name="my_name">昵称</string>
+    <string name="my_logo">LOGO</string>
+    <string name="my_phone">手机号</string>
+    <string name="my_introduce">企业介绍</string>
+
 </resources>
 
 

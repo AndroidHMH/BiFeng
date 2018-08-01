@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.phototask.activity.PhotoTaskActivity">
+    tools:context=".ui.task.activity.PhotoTaskActivity">
 
     <include layout="@layout/title_layout" />
 
@@ -44,6 +44,7 @@
                     android:src="@mipmap/first" />
 
                 <TextView
+                    android:id="@+id/bu_zou_thread_first_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/first"
@@ -71,20 +72,41 @@
 
                 <TextView
                     android:layout_width="wrap_content"
+                    android:id="@+id/bu_zou_thread_second_tv"
+
                     android:layout_height="wrap_content"
                     android:text="@string/second"
                     android:textColor="@color/gray_999"
                     android:textSize="@dimen/sp_9" />
             </LinearLayout>
-
             <LinearLayout
+                android:id="@+id/bu_zou_thread_chang_layout"
+                android:visibility="visible"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_26"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/bu_zou_thread_chang_img"
+                    android:layout_width="@dimen/dp_126"
+                    android:layout_height="@dimen/dp_224"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bu_zou_thread_duan_layout"
+                android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_45"
                 android:layout_marginBottom="@dimen/dp_45"
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/bu_zou_thread_duan_img"
                     android:layout_width="@dimen/dp_188"
                     android:layout_height="@dimen/dp_141"
                     android:scaleType="fitXY"
@@ -110,6 +132,7 @@
                     android:src="@mipmap/third" />
 
                 <TextView
+                    android:id="@+id/bu_zou_thread_third_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/second"
@@ -121,13 +144,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/photo_task_next_btn"
+        android:id="@+id/bu_zou_thread_next_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
         android:background="@color/orange_f9f0"
         android:gravity="center">
 
         <TextView
+
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/next"

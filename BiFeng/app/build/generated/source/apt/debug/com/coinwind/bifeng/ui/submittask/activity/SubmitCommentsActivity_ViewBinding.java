@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.Unbinder;
@@ -19,9 +20,11 @@ import java.lang.Override;
 public class SubmitCommentsActivity_ViewBinding implements Unbinder {
   private SubmitCommentsActivity target;
 
-  private View view2131165219;
+  private View view2131165214;
 
-  private View view2131165400;
+  private View view2131165470;
+
+  private View view2131165509;
 
   @UiThread
   public SubmitCommentsActivity_ViewBinding(SubmitCommentsActivity target) {
@@ -39,7 +42,7 @@ public class SubmitCommentsActivity_ViewBinding implements Unbinder {
     target.submitCommentsTextCountTv = Utils.findRequiredViewAsType(source, R.id.submit_comments_text_count_tv, "field 'submitCommentsTextCountTv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.add_img_btn, "field 'addImgBtn' and method 'onViewClicked'");
     target.addImgBtn = Utils.castView(view, R.id.add_img_btn, "field 'addImgBtn'", ImageView.class);
-    view2131165219 = view;
+    view2131165214 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -49,7 +52,7 @@ public class SubmitCommentsActivity_ViewBinding implements Unbinder {
     target.submitCommentsPhotoCountTv = Utils.findRequiredViewAsType(source, R.id.submit_comments_photo_count_tv, "field 'submitCommentsPhotoCountTv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.submit_comments_submit_btn, "field 'submitCommentsSubmitBtn' and method 'onViewClicked'");
     target.submitCommentsSubmitBtn = Utils.castView(view, R.id.submit_comments_submit_btn, "field 'submitCommentsSubmitBtn'", TextView.class);
-    view2131165400 = view;
+    view2131165470 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -57,6 +60,15 @@ public class SubmitCommentsActivity_ViewBinding implements Unbinder {
       }
     });
     target.submitCommentsImgRecycler = Utils.findRequiredViewAsType(source, R.id.submit_comments_img_recycler, "field 'submitCommentsImgRecycler'", RecyclerView.class);
+    view = Utils.findRequiredView(source, R.id.title_layout_return_btn, "field 'titleLayoutReturnBtn' and method 'onViewClicked'");
+    target.titleLayoutReturnBtn = Utils.castView(view, R.id.title_layout_return_btn, "field 'titleLayoutReturnBtn'", LinearLayout.class);
+    view2131165509 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onViewClicked(p0);
+      }
+    });
   }
 
   @Override
@@ -74,10 +86,13 @@ public class SubmitCommentsActivity_ViewBinding implements Unbinder {
     target.submitCommentsPhotoCountTv = null;
     target.submitCommentsSubmitBtn = null;
     target.submitCommentsImgRecycler = null;
+    target.titleLayoutReturnBtn = null;
 
-    view2131165219.setOnClickListener(null);
-    view2131165219 = null;
-    view2131165400.setOnClickListener(null);
-    view2131165400 = null;
+    view2131165214.setOnClickListener(null);
+    view2131165214 = null;
+    view2131165470.setOnClickListener(null);
+    view2131165470 = null;
+    view2131165509.setOnClickListener(null);
+    view2131165509 = null;
   }
 }

@@ -34,6 +34,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     protected T presenter;
     private Fragment lastFragment;
     Unbinder unbinder;
+    private ImmersionBar immersionBar;
 
     @Nullable
     @Override
@@ -45,7 +46,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         unbinder = ButterKnife.bind(this, view);
-        ImmersionBar.with(this).statusBarColor(R.color.white).barAlpha(0.2f).init();
+        initImmersionBar();
         presenter = getPresenter();
         if (presenter != null) {
             presenter.actualView(this);
@@ -54,6 +55,13 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
         if (NetWorkHelp.isNetWorkEnable(getContext())) {
             loadDate();
         }
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden && immersionBar != null)
+            immersionBar.init();
     }
 
     /**
@@ -84,7 +92,13 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
         }
 
     }
-
+    /**
+     * 初始化沉浸式
+     */
+    protected void initImmersionBar() {
+        immersionBar = ImmersionBar.with(this);
+        immersionBar.keyboardEnable(true).navigationBarWithKitkatEnable(false).statusBarDarkFont(true).fullScreen(true).init();
+    }
     private T getPresenter() {
         Type type = getClass().getGenericSuperclass();
         if (BaseFragment.class.equals(type)) {
@@ -155,5 +169,8 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
         if (presenter != null) {
             presenter.unActualView();
         }
+        if (immersionBar != null)
+            immersionBar.destroy();
     }
+
 }

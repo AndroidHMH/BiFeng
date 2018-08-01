@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\bf\\BiFeng\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mk\\values-mk.xml",
+            "outputFile": "/Users/heminghao/Desktop/bf/BiFeng/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mk/values-mk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\贺鸣昊\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\89100f37808f477352a124e7f77de4dd\\res\\values-mk\\values-mk.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,213,317,425,511,616,735,818,900,987,1093,1200,1301,1408,1519,1623,1779,1877",
-                        "endColumns": "107,103,107,85,104,118,82,81,86,105,106,100,106,110,103,155,97,83",
-                        "endOffsets": "208,312,420,506,611,730,813,895,982,1088,1195,1296,1403,1514,1618,1774,1872,1956"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\贺鸣昊\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\a6c014bcae9ca26bcb121e3eef90ac46\\res\\values-mk\\values-mk.xml",
+                    "source": "/Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/cdcbc74deda0b16bf9c0a2262ccb85c9/res/values-mk/values-mk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "1961",
                         "endColumns": "100",
                         "endOffsets": "2057"
+                    }
+                },
+                {
+                    "source": "/Users/heminghao/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8d736b6dcacb95b5b5402f45302d8d18/res/values-mk/values-mk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,213,317,425,511,616,735,818,900,987,1093,1200,1301,1408,1519,1623,1779,1877",
+                        "endColumns": "107,103,107,85,104,118,82,81,86,105,106,100,106,110,103,155,97,83",
+                        "endOffsets": "208,312,420,506,611,730,813,895,982,1088,1195,1296,1403,1514,1618,1774,1872,1956"
                     }
                 }
             ]

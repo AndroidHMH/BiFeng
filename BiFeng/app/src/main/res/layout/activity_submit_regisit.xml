@@ -46,63 +46,18 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/submit_task_phone_et"
+            android:id="@+id/submit_regisit_task_phone_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_10"
             android:hint="@string/phone_hint"
             android:paddingLeft="@dimen/dp_7" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginBottom="@dimen/dp_5"
-            android:text="@string/task_photo"
-            android:textColor="@color/black_333"
-            android:textSize="@dimen/sp_13"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_130"
-            android:layout_margin="@dimen/dp_10"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/submit_photo"
-                android:textColor="@color/gray_999"
-                android:textSize="@dimen/sp_13" />
-
-            <TextView
-                android:id="@+id/submit_task_photo_count_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textColor="@color/gray_999"
-                android:textSize="@dimen/sp_13" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/dp_10"
-                android:text="@string/page"
-                android:textColor="@color/gray_999"
-                android:textSize="@dimen/sp_13" />
-        </LinearLayout>
+        <include layout="@layout/submit_img_layout" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/submit_task_submit_btn"
+        android:id="@+id/submit_regisit_task_submit_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
         android:background="@color/orange_f9f0"

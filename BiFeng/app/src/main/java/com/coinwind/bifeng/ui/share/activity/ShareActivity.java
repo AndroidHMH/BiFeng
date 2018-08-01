@@ -11,7 +11,10 @@ import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
+import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.ui.submittask.activity.SubmitCommentsActivity;
+
+import java.io.Serializable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +32,7 @@ public class ShareActivity extends BaseActivity {
     LinearLayout shareFenXiangBtn;
     @BindView(R.id.share_next_btn)
     LinearLayout shareNextBtn;
+    private TaskBean bean;
 
     @Override
     protected int getLayoutId() {
@@ -37,6 +41,7 @@ public class ShareActivity extends BaseActivity {
 
     @Override
     protected void init() {
+        bean = (TaskBean) getIntent().getSerializableExtra("bean");
         shareWebView.loadUrl("https://www.baidu.com");
         shareWebView.setWebViewClient(new WebViewClient() {
             @Override
@@ -59,6 +64,7 @@ public class ShareActivity extends BaseActivity {
                 break;
             case R.id.share_next_btn:
                 Intent intent = new Intent(this, SubmitCommentsActivity.class);
+                intent.putExtra("bean",bean);
                 startActivity(intent);
                 break;
         }

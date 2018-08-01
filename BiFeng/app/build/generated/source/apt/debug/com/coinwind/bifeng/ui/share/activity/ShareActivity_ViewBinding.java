@@ -18,9 +18,9 @@ import java.lang.Override;
 public class ShareActivity_ViewBinding implements Unbinder {
   private ShareActivity target;
 
-  private View view2131165378;
+  private View view2131165448;
 
-  private View view2131165379;
+  private View view2131165449;
 
   @UiThread
   public ShareActivity_ViewBinding(ShareActivity target) {
@@ -37,7 +37,7 @@ public class ShareActivity_ViewBinding implements Unbinder {
     target.shareWebView = Utils.findRequiredViewAsType(source, R.id.share_web_view, "field 'shareWebView'", WebView.class);
     view = Utils.findRequiredView(source, R.id.share_fen_xiang_btn, "field 'shareFenXiangBtn' and method 'onViewClicked'");
     target.shareFenXiangBtn = Utils.castView(view, R.id.share_fen_xiang_btn, "field 'shareFenXiangBtn'", LinearLayout.class);
-    view2131165378 = view;
+    view2131165448 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -46,7 +46,7 @@ public class ShareActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.share_next_btn, "field 'shareNextBtn' and method 'onViewClicked'");
     target.shareNextBtn = Utils.castView(view, R.id.share_next_btn, "field 'shareNextBtn'", LinearLayout.class);
-    view2131165379 = view;
+    view2131165449 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -68,9 +68,9 @@ public class ShareActivity_ViewBinding implements Unbinder {
     target.shareFenXiangBtn = null;
     target.shareNextBtn = null;
 
-    view2131165378.setOnClickListener(null);
-    view2131165378 = null;
-    view2131165379.setOnClickListener(null);
-    view2131165379 = null;
+    view2131165448.setOnClickListener(null);
+    view2131165448 = null;
+    view2131165449.setOnClickListener(null);
+    view2131165449 = null;
   }
 }

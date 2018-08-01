@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.task.activity.ZhangFenTaskActivity">
+
+    <include layout="@layout/title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_22"
+            android:layout_marginRight="@dimen/dp_22"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/task_bg_shape"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_23">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_28">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="第"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_11"
+                    android:layout_height="@dimen/dp_11"
+                    android:src="@mipmap/first" />
+
+                <TextView
+                    android:id="@+id/bu_zou_first_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="步   复制微信号"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+
+                <TextView
+                    android:id="@+id/bu_zou_wei_xin_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="BF123123"
+                    android:textColor="@color/orange_f9f0"
+                    android:textSize="@dimen/sp_9" />
+
+                <LinearLayout
+                    android:id="@+id/bu_zou_cope_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(点击复制)"
+                        android:textColor="@color/orange_f9f0"
+                        android:textSize="@dimen/sp_9" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:background="@color/orange_f9f0" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="第"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_11"
+                    android:layout_height="@dimen/dp_11"
+                    android:src="@mipmap/second" />
+
+                <TextView
+                    android:id="@+id/bu_zou_second_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="步   关注公众号；"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="第"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_11"
+                    android:layout_height="@dimen/dp_11"
+                    android:src="@mipmap/third" />
+
+                <TextView
+                    android:id="@+id/bu_zou_third_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="步   发送您的币风昵称到公众号，并截图；"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/bu_zhou_img"
+                    android:layout_width="@dimen/dp_127"
+                    android:layout_height="@dimen/dp_227"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/zhang_fen_default_img" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="第"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_11"
+                    android:layout_height="@dimen/dp_11"
+                    android:src="@mipmap/fourth" />
+
+                <TextView
+                    android:id="@+id/bu_zou_forth_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="步步   回到本页面点击下一步提交任务，并上传任务截图；"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bu_zou_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="@color/orange_f9f0"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18" />
+    </LinearLayout>
+</LinearLayout>

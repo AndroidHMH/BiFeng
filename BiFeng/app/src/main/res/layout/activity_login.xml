@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.login.activity.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_244"
+            android:scaleType="fitXY"
+            android:src="@mipmap/login_bg" />
+
+        <LinearLayout
+            android:id="@+id/login_retutn_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/dp_9"
+                android:layout_height="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_34"
+                android:src="@mipmap/fanhui" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.coinwind.bifeng.view.ClearEditText
+        android:id="@+id/login_phone_mun_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_47"
+        android:background="@null"
+        android:hint="@string/login_phone_hint"
+        android:textSize="@dimen/sp_14" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_11"
+        android:background="@color/gray_97" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.coinwind.bifeng.view.ClearEditText
+            android:id="@+id/login_password_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/login_code_hint"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/login_get_code_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/dp_18"
+            android:text="@string/login_get_code"
+            android:textColor="@color/orange_f9f0"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_11"
+        android:background="@color/gray_97" />
+
+    <TextView
+        android:id="@+id/login_goto_psw_login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_11"
+        android:text="@string/login_use_phone_login"
+        android:textColor="@color/orange_f9f0"
+        android:textSize="@dimen/sp_10" />
+
+    <Button
+        android:id="@+id/login_login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_18"
+        android:layout_marginTop="@dimen/dp_80"
+        android:background="@drawable/home_jing_pin_shape"
+        android:text="@string/login_login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_18" />
+
+</LinearLayout>

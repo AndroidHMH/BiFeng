@@ -1,8 +1,8 @@
 package com.coinwind.bifeng.ui.home.contract;
 
 import com.coinwind.bifeng.base.BasePresenter;
+import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.ui.home.bean.HomeBannerBean;
-import com.coinwind.bifeng.ui.home.bean.ListBean;
 
 import java.util.List;
 
@@ -11,14 +11,27 @@ import java.util.List;
  */
 public interface HomeContract {
     interface View {
-        void showBanner(List<HomeBannerBean> bannerBeans);
+        void showBanner(List<HomeBannerBean.DataBean> banners);
 
-        void showList(List<ListBean> listBeans);
+        void showTuiJian(List<TaskBean> tuiJians);
+
+        void showQiang(TaskBean taskBean);
+
+        void showGuangBo(String content);
+
+        void showBannerError(List<Integer> defaultImgs);
+
+        void showGuangBoError(String errorContent);
+
     }
 
     interface Presenter extends BasePresenter<View> {
         void loadBanner();
 
-        void loadList(int page);
+        void loadQiang();
+
+        void loadTuiJian(int page);
+
+        void loadGuangBo();
     }
 }

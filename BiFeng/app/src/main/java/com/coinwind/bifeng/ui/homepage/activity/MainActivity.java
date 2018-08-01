@@ -2,6 +2,7 @@ package com.coinwind.bifeng.ui.homepage.activity;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +12,9 @@ import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
+import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.ui.home.fragment.HomeFragment;
+import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.my.fragment.MyFragment;
 import com.coinwind.bifeng.ui.task.fragment.TaskFragment;
 import com.gyf.barlibrary.ImmersionBar;
@@ -50,6 +53,11 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
+//    @Override
+//    protected View getBar() {
+//        return getLayoutInflater().inflate(R.layout.title_layout, null);
+//    }
+
     @Override
     protected void init() {
         setHomeIcon();
@@ -73,8 +81,12 @@ public class MainActivity extends BaseActivity {
                 setCreateView(R.id.main_layout, TaskFragment.class);
                 break;
             case R.id.main_my_btn:
-                setMyIcon();
-                setCreateView(R.id.main_layout, MyFragment.class);
+                if (SpHelp.getLoginStatus()) {
+                    setMyIcon();
+                    setCreateView(R.id.main_layout, MyFragment.class);
+                } else {
+                    LoginActivity.openLoginActivity(this);
+                }
                 break;
         }
     }

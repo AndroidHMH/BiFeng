@@ -1,7 +1,4 @@
-#Thu Jul 19 21:09:14 CST 2018
-base.0=D\:\\bf\\BiFeng\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
-path.1=.keep
-renamed.1=classes2.dex
+#Wed Aug 01 13:43:31 CST 2018
+base.0=/Users/heminghao/Desktop/bf/BiFeng/app/build/intermediates/transforms/dexMerger/debug/29
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=D\:\\bf\\BiFeng\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\17

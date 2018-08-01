@@ -1,21 +1,14 @@
 package com.coinwind.bifeng.ui.submittask.activity;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -29,14 +22,16 @@ import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
-import com.coinwind.bifeng.config.PhotoUtils;
+import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.config.ToastHelp;
-import com.coinwind.bifeng.ui.homepage.activity.MainActivity;
-
-import org.byteam.superadapter.SuperAdapter;
-import org.byteam.superadapter.SuperViewHolder;
+import com.coinwind.bifeng.ui.submittask.adapter.AddImgAdapter;
+import com.coinwind.bifeng.ui.submittask.config.PhotoHelp;
+import com.coinwind.bifeng.ui.submittask.config.UpdateFile;
+import com.coinwind.bifeng.ui.submittask.contract.SubmitContract;
+import com.coinwind.bifeng.ui.submittask.presenter.SubmitPresenter;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,8 +42,8 @@ import butterknife.OnClick;
 /**
  * 提交任务页面
  */
-@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-public class SubmitCommentsActivity extends BaseActivity implements View.OnClickListener {
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implements SubmitContract.View, View.OnClickListener, AddImgAdapter.OnItemClick {
 
 
     @BindView(R.id.title_title_tv)
@@ -67,22 +62,24 @@ public class SubmitCommentsActivity extends BaseActivity implements View.OnClick
     TextView submitCommentsSubmitBtn;
     @BindView(R.id.submit_comments_img_recycler)
     RecyclerView submitCommentsImgRecycler;
+    @BindView(R.id.title_layout_return_btn)
+    LinearLayout titleLayoutReturnBtn;
     private List<Bitmap> bitmapList;
-    private SuperAdapter superAdapter;
+    private AddImgAdapter addImgAdapter;
 
     private static final int CODE_GALLERY_REQUEST = 0xa0;
     private static final int CODE_CAMERA_REQUEST = 0xa1;
-    private static final int CODE_RESULT_REQUEST = 0xa2;
     private static final int CAMERA_PERMISSIONS_REQUEST_CODE = 0x03;
     private static final int STORAGE_PERMISSIONS_REQUEST_CODE = 0x04;
-    private File fileUri = new File(Environment.getExternalStorageDirectory().getPath() + "/" + System.currentTimeMillis() + ".jpg");;
-    private File fileCropUri = new File(Environment.getExternalStorageDirectory().getPath() + "/crop_photo.jpg");
-    //    private Uri imageUri;
-//    private Uri cropImageUri;
+
     private PopupWindow photoPopup;
     private TextView paiBtn;
     private TextView xiangCeBtn;
     private TextView returnBtn;
+    private String filePath;
+    private UpdateFile updateFile;
+    private List<String> imgsUrl;
+    private TaskBean bean;
 
     @Override
     protected int getLayoutId() {
@@ -91,6 +88,9 @@ public class SubmitCommentsActivity extends BaseActivity implements View.OnClick
 
     @Override
     protected void init() {
+        bean = (TaskBean) getIntent().getSerializableExtra("bean");
+        imgsUrl = new ArrayList<>();
+        updateFile = new UpdateFile();
         recyclerInit();
         popupInit();
     }
@@ -117,11 +117,12 @@ public class SubmitCommentsActivity extends BaseActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.photo_popup_pai_btn:
-                autoObtainCameraPermission();
+                filePath = PhotoHelp.getFilePath();
+                PhotoHelp.applyForCameraPermission(this, CAMERA_PERMISSIONS_REQUEST_CODE, filePath, CODE_CAMERA_REQUEST);
                 dismissPopup();
                 break;
             case R.id.photo_popup_xiang_ce_btn:
-                autoObtainStoragePermission();
+                PhotoHelp.autoObtainStoragePermission(this, STORAGE_PERMISSIONS_REQUEST_CODE, CODE_GALLERY_REQUEST);
                 dismissPopup();
                 break;
             case R.id.photo_popup_return_btn:
@@ -129,6 +130,7 @@ public class SubmitCommentsActivity extends BaseActivity implements View.OnClick
                 break;
         }
     }
+
 
     public void showPopup() {
         photoPopup.showAtLocation(getLayoutInflater().inflate(R.layout.activity_submit_comments, null), Gravity.BOTTOM, 0, 0);
@@ -143,13 +145,25 @@ public class SubmitCommentsActivity extends BaseActivity implements View.OnClick
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         submitCommentsImgRecycler.setLayoutManager(linearLayoutManager);
         bitmapList = new ArrayList<>();
-        superAdapter = new SuperAdapter<Bitmap>(this, bitmapList, R.layout.add_img_view) {
-            @Override
-            public void onBind(SuperViewHolder holder, int viewType, int layoutPosition, Bitmap item) {
-                holder.setImageBitmap(R.id.add_img_img, item);
-            }
-        };
-        submitCommentsImgRecycler.setAdapter(superAdapter);
+        addImgAdapter = new AddImgAdapter(bitmapList);
+        addImgAdapter.setOnItemClick(this);
+        submitCommentsImgRecycler.setAdapter(addImgAdapter);
+    }
+
+    /**
+     * 删除图片
+     *
+     * @param position
+     */
+    @Override
+    public void onItemClick(int position) {
+        bitmapList.remove(position);
+        updateFile.removeFile(position);
+        imgsUrl.remove(position);
+        if (bitmapList.size() != 3) {
+            addImgBtn.setVisibility(View.VISIBLE);
+        }
+        addImgAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -157,134 +171,87 @@ public class SubmitCommentsActivity extends BaseActivity implements View.OnClick
 
     }
 
-    @OnClick({R.id.add_img_btn, R.id.submit_comments_submit_btn})
+    @OnClick({R.id.title_layout_return_btn, R.id.add_img_btn, R.id.submit_comments_submit_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.title_layout_return_btn:
+                finish();
+                break;
             case R.id.add_img_btn:
                 showPopup();
                 break;
             case R.id.submit_comments_submit_btn:
+                presenter.submitTask(bean.getId(), "", imgsUrl, submitCommentsDescriptionEt.getText().toString());
                 break;
         }
     }
 
-    /**
-     * 自动获取相机权限
-     */
-    private void autoObtainCameraPermission() {
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
-                ToastHelp.showShort(this, "您已经拒绝过一次");
-            }
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE}, CAMERA_PERMISSIONS_REQUEST_CODE);
-        } else {//有权限直接调用系统相机拍照
-            if (PhotoUtils.hasSdcard()) {
-                Uri imageUri = Uri.fromFile(fileUri);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                    imageUri = FileProvider.getUriForFile(this, "com.coinwind.bifeng.fileprovider", fileUri);//通过FileProvider创建一个content类型的Uri
-//                fileUri = new File(Environment.getExternalStorageDirectory().getPath() + "/" + System.currentTimeMillis() + ".jpg");
-                PhotoUtils.takePicture(this, imageUri, CODE_CAMERA_REQUEST);
-            } else {
-                ToastHelp.showShort(this, "设备没有SD卡！");
-            }
-        }
-    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         switch (requestCode) {
-            case CAMERA_PERMISSIONS_REQUEST_CODE: {//调用系统相机申请拍照权限回调
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    if (PhotoUtils.hasSdcard()) {
-                        Uri imageUri = Uri.fromFile(fileUri);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                            imageUri = FileProvider.getUriForFile(this, "com.coinwind.bifeng.fileprovider", fileUri);//通过FileProvider创建一个content类型的Uri
-                        PhotoUtils.takePicture(this, imageUri, CODE_CAMERA_REQUEST);
-                    } else {
-                        ToastHelp.showShort(this, "设备没有SD卡！");
-                    }
-                } else {
-                    ToastHelp.showShort(this, "请允许打开相机！！");
-                }
+            case CAMERA_PERMISSIONS_REQUEST_CODE:
+                filePath = PhotoHelp.getFilePath();
+                PhotoHelp.cameraPermissionResult(this, grantResults, CAMERA_PERMISSIONS_REQUEST_CODE, filePath, CODE_CAMERA_REQUEST);
                 break;
-            }
             case STORAGE_PERMISSIONS_REQUEST_CODE://调用系统相册申请Sdcard权限回调
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    PhotoUtils.openPic(this, CODE_GALLERY_REQUEST);
-                } else {
-
-                    ToastHelp.showShort(this, "请允许打操作SDCard！！");
-                }
+                PhotoHelp.xiangCePermissionResult(this, grantResults, CODE_GALLERY_REQUEST);
                 break;
+
+
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        int output_X = 480;
-        int output_Y = 480;
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case CODE_CAMERA_REQUEST://拍照完成回调
-                    Uri cropImageUri = Uri.fromFile(fileUri);
-                    Uri newUri2 = Uri.parse(PhotoUtils.getPath(this, data.getData()));
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                        newUri2 = FileProvider.getUriForFile(this, "com.coinwind.bifeng.fileprovider", new File(newUri2.getPath()));
-//                    Uri paiUri = Uri.parse(PhotoUtils.getPath(this, data.getData()));
-                    setBitmat(newUri2);
-//                    PhotoUtils.cropImageUri(this, imageUri, cropImageUri, 1, 1, output_X, output_Y, CODE_RESULT_REQUEST);
+                    Bitmap cameraBitmap = BitmapFactory.decodeFile(filePath);
+                    addList(cameraBitmap);
                     break;
                 case CODE_GALLERY_REQUEST://访问相册完成回调
-                    if (PhotoUtils.hasSdcard()) {
-                        Uri cropImageUri2 = Uri.fromFile(fileCropUri);
-                        Uri newUri = Uri.parse(PhotoUtils.getPath(this, data.getData()));
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                            newUri = FileProvider.getUriForFile(this, "com.coinwind.bifeng.fileprovider", new File(newUri.getPath()));
-                        setBitmat(newUri);
-//                        PhotoUtils.cropImageUri(this, newUri, cropImageUri, 1, 1, output_X, output_Y, CODE_RESULT_REQUEST);
-                    } else {
-                        ToastHelp.showShort(this, "设备没有SD卡！");
-                    }
-                    break;
-                case CODE_RESULT_REQUEST:
-//                    Bitmap bitmap = PhotoUtils.getBitmapFromUri(cropImageUri, this);
-//                    if (bitmap != null) {
-//                        bitmapList.add(bitmap);
-//                        superAdapter.notifyDataSetChanged();
-////                        showImages(bitmap);
-//                    }
+                    Bitmap xiangCeBitmap = PhotoHelp.xiangCeResult(this, data);
+                    addList(xiangCeBitmap);
                     break;
             }
         }
     }
 
-    public void setBitmat(Uri cropImageUri) {
-        Bitmap bitmap = PhotoUtils.getBitmapFromUri(cropImageUri, this);
+    public void addList(Bitmap bitmap) {
         if (bitmap != null) {
             bitmapList.add(bitmap);
-            superAdapter.notifyDataSetChanged();
-//                        showImages(bitmap);
+            File file = PhotoHelp.saveBitmapFile(bitmap, getCodeCacheDir().getAbsolutePath() + "/" + System.currentTimeMillis() + ".jpg");
+            updateFile.addFile(file);
+            if (bitmapList.size() == 3) {
+                addImgBtn.setVisibility(View.GONE);
+            }
+            addImgAdapter.notifyDataSetChanged();
+            presenter.updateImgs(file);
         }
     }
 
-    /**
-     * 自动获取sdk权限
-     */
+    @Override
+    public void successUpdate(String imgUrl) {
+        ToastHelp.showShort(this, "上传任务配图成功");
+        imgsUrl.add(imgUrl);
+    }
 
-    private void autoObtainStoragePermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSIONS_REQUEST_CODE);
-        } else {
-            PhotoUtils.openPic(this, CODE_GALLERY_REQUEST);
-        }
+    @Override
+    public void errorUpdate(String errorMsg) {
+        ToastHelp.showShort(this, errorMsg);
+    }
+
+    @Override
+    public void showSubmitSuccess() {
 
     }
 
-
+    @Override
+    public void showSubmitFailure(String error) {
+            ToastHelp.showShort(this,error);
+    }
 }

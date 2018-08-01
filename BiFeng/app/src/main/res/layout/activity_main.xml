@@ -8,12 +8,16 @@
     tools:context=".ui.homepage.activity.MainActivity">
 
 
-
     <FrameLayout
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/gray_de" />
 
     <LinearLayout
         android:layout_width="match_parent"

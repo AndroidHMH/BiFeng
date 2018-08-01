@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.coinwind.bifeng.R;
+import com.coinwind.bifeng.app.BFApplication;
 import com.coinwind.bifeng.config.LiuHaiHelp;
 import com.coinwind.bifeng.config.LogHelp;
 import com.coinwind.bifeng.config.NetWorkHelp;
@@ -42,16 +43,18 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
     private Fragment lastFragment;
     protected T presenter;
+    private int barColor = R.color.orange_f9;
 
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(getLayoutId());
-        setLiuHai();
+        BFApplication.context = this;
+//        setLiuHai();
         ButterKnife.bind(this);
-        ImmersionBar.with(this).statusBarColor(R.color.white).barAlpha(0.2f).init();
+        ImmersionBar immersionBar = ImmersionBar.with(this).statusBarDarkFont(true).fullScreen(true);
+        immersionBar.init();
         presenter = getPresenter();
         if (presenter != null) {
             presenter.actualView(this);
@@ -60,6 +63,10 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         if (NetWorkHelp.isNetWorkEnable(this)) {
             loadDate();
         }
+    }
+
+    protected View getBar() {
+        return null;
     }
 
 
@@ -121,6 +128,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onResume() {
         super.onResume();
         presenter = getPresenter();
+        BFApplication.context = this;
         if (presenter != null) {
             presenter.actualView(this);
         }
@@ -129,15 +137,17 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     @Override
     protected void onPause() {
         super.onPause();
-        if (presenter != null) {
-            presenter.unActualView();
-        }
+        BFApplication.context = null;
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         ImmersionBar.with(this).destroy();
+        if (presenter != null) {
+            presenter.unActualView();
+        }
     }
 
     /**
