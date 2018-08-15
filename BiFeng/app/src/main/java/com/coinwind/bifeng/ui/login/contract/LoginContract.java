@@ -14,7 +14,7 @@ public interface LoginContract {
 
         void usePswLogin();
 
-        void loginSuccessful(LoginBean.DataBean.UserBean user);
+        void loginSuccessful(LoginBean.DataBean.UserBean user,String sign);
 
         void loginFailed(String errorMsg);
     }

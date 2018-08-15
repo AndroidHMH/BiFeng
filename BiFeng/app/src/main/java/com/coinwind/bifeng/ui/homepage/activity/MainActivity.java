@@ -1,25 +1,23 @@
 package com.coinwind.bifeng.ui.homepage.activity;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
-import android.content.Intent;
-import android.graphics.Rect;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
-import com.coinwind.bifeng.base.BaseActivity;
+import com.coinwind.bifeng.base.NoNetworkBaseActivity;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.ui.home.fragment.HomeFragment;
+import com.coinwind.bifeng.ui.homepage.bean.MessageEvent;
 import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.my.fragment.MyFragment;
 import com.coinwind.bifeng.ui.task.fragment.TaskFragment;
-import com.gyf.barlibrary.ImmersionBar;
 
-import java.util.List;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -28,7 +26,7 @@ import butterknife.OnClick;
  * 主页
  */
 @SuppressLint("ResourceAsColor")
-public class MainActivity extends BaseActivity {
+public class MainActivity extends NoNetworkBaseActivity {
     @BindView(R.id.main_home_img)
     ImageView mainHomeImg;
     @BindView(R.id.main_home_tv)
@@ -53,20 +51,11 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-//    @Override
-//    protected View getBar() {
-//        return getLayoutInflater().inflate(R.layout.title_layout, null);
-//    }
-
     @Override
     protected void init() {
+        EventBus.getDefault().register(this);
         setHomeIcon();
         setCreateView(R.id.main_layout, HomeFragment.class);
-    }
-
-    @Override
-    protected void loadDate() {
-
     }
 
     @OnClick({R.id.main_home_btn, R.id.main_task_btn, R.id.main_my_btn})
@@ -89,6 +78,13 @@ public class MainActivity extends BaseActivity {
                 }
                 break;
         }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void messageEventBus(String type) {
+        EventBus.getDefault().post(new MessageEvent(type));
+        setTaskIcon();
+        setCreateView(R.id.main_layout, TaskFragment.class);
     }
 
     private void setMyIcon() {
@@ -120,5 +116,11 @@ public class MainActivity extends BaseActivity {
         mainTaskTv.setTextColor(getResources().getColor(R.color.black_333));
         mainMyImg.setImageResource(R.mipmap.my);
         mainMyTv.setTextColor(getResources().getColor(R.color.black_333));
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

@@ -17,12 +17,15 @@ import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.config.LiuHaiHelp;
 import com.coinwind.bifeng.config.LogHelp;
 import com.coinwind.bifeng.config.NetWorkHelp;
+import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -35,6 +38,8 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     private Fragment lastFragment;
     Unbinder unbinder;
     private ImmersionBar immersionBar;
+    @BindView(R.id.net_work_error_btn)
+    LinearLayout netWorkErrorBtn;
 
     @Nullable
     @Override
@@ -52,9 +57,39 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
             presenter.actualView(this);
         }
         init();
+        netWorkError();
+    }
+
+    /**
+     * 判断网络状态进行网络请求
+     */
+    protected void netWorkError() {
         if (NetWorkHelp.isNetWorkEnable(getContext())) {
+            showSuccessView();
+            netWorkErrorBtn.setVisibility(View.GONE);
             loadDate();
+        } else {
+            hideErrorView();
+            netWorkErrorBtn.setVisibility(View.VISIBLE);
         }
+    }
+
+    /**
+     * 无网络状态隐藏布局
+     */
+    protected void hideErrorView() {
+    }
+
+    /**
+     * 有网络显示布局
+     */
+    protected void showSuccessView() {
+    }
+
+
+    @OnClick(R.id.net_work_error_btn)
+    public void onViewClicked() {
+        netWorkError();
     }
 
     @Override
@@ -90,15 +125,16 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
             params.topMargin = padding;
             rl.setLayoutParams(params);
         }
-
     }
+
     /**
      * 初始化沉浸式
      */
     protected void initImmersionBar() {
         immersionBar = ImmersionBar.with(this);
-        immersionBar.keyboardEnable(true).navigationBarWithKitkatEnable(false).statusBarDarkFont(true).fullScreen(true).init();
+        immersionBar.keyboardEnable(true).navigationBarWithKitkatEnable(false).statusBarDarkFont(true).init();
     }
+
     private T getPresenter() {
         Type type = getClass().getGenericSuperclass();
         if (BaseFragment.class.equals(type)) {

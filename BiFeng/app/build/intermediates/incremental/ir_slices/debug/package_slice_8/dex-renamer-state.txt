@@ -1,4 +1,4 @@
-#Wed Aug 01 17:12:12 CST 2018
-base.0=/Users/heminghao/Desktop/bf/BiFeng/app/build/intermediates/transforms/dexMerger/debug/27
+#Wed Aug 15 18:45:21 CST 2018
+base.0=/Users/heminghao/Desktop/bfdaima/BiFeng/app/build/intermediates/transforms/dexMerger/debug/9
 path.0=classes.dex
 renamed.0=classes.dex

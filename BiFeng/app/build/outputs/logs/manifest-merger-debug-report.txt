@@ -1,12 +1,14 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:2:1-91:12
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:2:1-91:12
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:2:1-91:12
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:2:1-91:12
 MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:2:1-19:12
 MERGED from [com.gyf.barlibrary:barlibrary:2.3.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/barlibrary-2.3.0.aar/c010c44a11e753936e4de097cdc32a2e/AndroidManifest.xml:2:1-12:12
 MERGED from [co.lujun:androidtagview:1.0.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/androidtagview-1.0.3.aar/09686d5b05d5b619ede9fb39ffdbd32b/AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:design:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/e8f325b46314a523dba25965f4bbbe54/AndroidManifest.xml:17:1-22:12
+MERGED from [com.feezu.liuli:timeselector:1.1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/timeselector-1.1.3.aar/f765c1133ba51ae1ab2c61ab2194c326/AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8d736b6dcacb95b5b5402f45302d8d18/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/dd3342e40d67564234ee4f1ec38189dc/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-v4:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/872321d5bd7ac816c29b0e3c68b8c2d4/AndroidManifest.xml:17:1-22:12
@@ -22,77 +24,90 @@ MERGED from [com.android.support:support-core-ui:27.1.1] /Users/heminghao/.gradl
 MERGED from [com.android.support:support-core-utils:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/a27e909449f8c01ad3c6587f5d3d2e3c/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/4c0de32bab131ea0cd7a8876f8ba0b62/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f1e5aae2a3663fb3e9164aac973698c0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:transition:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/799dc1b18fa528253da93a83903a70d8/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/f9387d6db1ff3fa42865628f994a82d1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/cdcbc74deda0b16bf9c0a2262ccb85c9/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b6cf994eb28cf6513006abe568351625/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/f0539ddf6cda3446f4517a38fadd6c01/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/515aecda2195f652c26e2aed65a837cb/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d83ff619ec0245c073c23315c37c736b/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:2:1-91:12
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:2:1-91:12
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:2:1-91:12
 	package
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:4:5-34
-		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:4:5-34
+		INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
-		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:2:1-91:12
+		INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:1-69:12
-		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:2:1-91:12
+		INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:6:5-67
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:6:5-67
 MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:11:5-67
 MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:6:22-64
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:7:5-79
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:7:22-76
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:7:22-76
 uses-permission#android.permission.CAMERA
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:8:5-65
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:8:5-65
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:8:22-62
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:8:22-62
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:9:5-81
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:9:5-81
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:9:22-78
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:10:5-80
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:10:5-80
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:10:22-77
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:10:22-77
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:12:5-76
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:11:5-76
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:12:22-73
-uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:13:5-15:47
-	tools:ignore
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:15:9-44
-	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:14:9-68
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:11:22-73
 uses-feature#android.hardware.camera
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:17:5-60
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:16:5-60
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:17:19-57
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:16:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:18:5-70
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:17:5-70
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:18:19-67
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:17:19-67
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:19:5-75
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:19:22-72
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:20:5-81
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:20:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:21:5-79
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:21:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:22:5-76
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:22:22-73
 application
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:20:5-67:19
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:24:5-89:19
 MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:13:5-17:19
 MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:13:5-17:19
 MERGED from [co.lujun:androidtagview:1.0.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/androidtagview-1.0.3.aar/09686d5b05d5b619ede9fb39ffdbd32b/AndroidManifest.xml:11:5-12:19
 MERGED from [co.lujun:androidtagview:1.0.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/androidtagview-1.0.3.aar/09686d5b05d5b619ede9fb39ffdbd32b/AndroidManifest.xml:11:5-12:19
+MERGED from [com.feezu.liuli:timeselector:1.1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/timeselector-1.1.3.aar/f765c1133ba51ae1ab2c61ab2194c326/AndroidManifest.xml:11:5-15:19
+MERGED from [com.feezu.liuli:timeselector:1.1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/timeselector-1.1.3.aar/f765c1133ba51ae1ab2c61ab2194c326/AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/dd3342e40d67564234ee4f1ec38189dc/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/dd3342e40d67564234ee4f1ec38189dc/AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:glide:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/glide-4.6.1.aar/fb80632828f35c19988e7e6ed4bb41ae/AndroidManifest.xml:11:5-20
@@ -100,127 +115,187 @@ MERGED from [com.github.bumptech.glide:glide:4.6.1] /Users/heminghao/.gradle/cac
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f1e5aae2a3663fb3e9164aac973698c0/AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f1e5aae2a3663fb3e9164aac973698c0/AndroidManifest.xml:9:5-20
 	android:supportsRtl
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:26:9-35
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:30:9-35
 	android:label
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:24:9-41
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:28:9-41
 	android:roundIcon
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:25:9-54
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:29:9-48
 	android:icon
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:23:9-43
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:27:9-43
 	android:allowBackup
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:22:9-35
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:26:9-35
 	android:theme
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:27:9-40
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:31:9-40
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:21:9-42
-meta-data#android.notch_support
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:28:9-30:36
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:25:9-42
+meta-data#UMENG_CHANNEL
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:32:9-34:34
 	android:value
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:30:13-33
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:34:13-31
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:29:13-49
-activity#com.coinwind.bifeng.ui.homepage.activity.MainActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:32:9-40:20
-	android:launchMode
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:34:13-44
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:33:13-41
+meta-data#android.notch_support
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:35:9-37:36
+	android:value
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:37:13-33
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:33:13-62
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:36:13-49
+activity#com.coinwind.bifeng.ui.welcome.WelcomeActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:39:9-45:20
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:39:19-61
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:35:13-39:29
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:40:13-44:29
 action#android.intent.action.MAIN
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:36:17-69
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:41:17-69
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:36:25-66
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:41:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:38:17-77
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:43:17-77
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:38:27-74
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:43:27-74
+activity#com.coinwind.bifeng.ui.homepage.activity.MainActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:46:9-48:47
+	android:launchMode
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:48:13-44
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:47:13-62
 activity#com.coinwind.bifeng.ui.task.activity.AnswerTaskActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:41:9-73
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:49:9-73
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:41:19-70
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:49:19-70
 activity#com.coinwind.bifeng.ui.task.activity.PhotoTaskActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:42:9-72
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:50:9-72
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:42:19-69
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:50:19-69
 activity#com.coinwind.bifeng.ui.submittask.activity.SubmitCommentsActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:43:9-83
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:51:9-83
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:43:19-80
-activity#com.coinwind.bifeng.ui.submittask.activity.SubmitRegisitActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:44:9-82
-	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:44:19-79
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:51:19-80
 activity#com.coinwind.bifeng.ui.submittask.activity.ResearchActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:45:9-77
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:52:9-77
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:45:19-74
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:52:19-74
 activity#com.coinwind.bifeng.ui.share.activity.ShareActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:46:9-69
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:53:9-69
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:46:19-66
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:53:19-66
 activity#com.coinwind.bifeng.ui.task.activity.RegistTaskActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:47:9-73
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:54:9-73
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:47:19-70
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:54:19-70
 provider#android.support.v4.content.FileProvider
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:49:9-57:20
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:56:9-64:20
 	android:grantUriPermissions
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:53:13-47
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:60:13-47
 	android:authorities
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:51:13-67
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:58:13-67
 	android:exported
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:52:13-37
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:59:13-37
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:50:13-67
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:57:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:54:13-56:54
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:61:13-63:54
 	android:resource
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:56:17-51
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:63:17-51
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:55:17-67
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:62:17-67
 activity#com.coinwind.bifeng.ui.setting.activity.SetMessageActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:59:9-76
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:66:9-76
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:59:19-73
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:66:19-73
 activity#com.coinwind.bifeng.ui.searchfor.activity.SearchForActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:60:9-77
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:67:9-77
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:60:19-74
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:67:19-74
 activity#com.coinwind.bifeng.ui.task.activity.TaskTypeActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:61:9-71
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:68:9-71
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:61:19-68
-activity#com.coinwind.bifeng.ui.sendtask.activity.SendTaskActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:62:9-75
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:68:19-68
+activity#com.coinwind.bifeng.ui.sendtask.activity.SendZhuanFaTaskActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:69:9-82
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:62:19-72
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:69:19-79
 activity#com.coinwind.bifeng.ui.task.activity.ZhangFenTaskActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:63:9-75
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:70:9-75
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:63:19-72
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:70:19-72
 activity#com.coinwind.bifeng.ui.login.activity.LoginActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:64:9-69
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:71:9-69
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:64:19-66
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:71:19-66
 activity#com.coinwind.bifeng.ui.setting.activity.SettingActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:65:9-73
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:72:9-73
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:65:19-70
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:72:19-70
 activity#com.coinwind.bifeng.ui.my.activity.PerfectInformationActivity
-ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:66:9-88
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:73:9-79
 	android:name
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml:66:19-76
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:73:19-76
+activity#com.coinwind.bifeng.ui.my.activity.MyTaskActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:74:9-67
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:74:19-64
+activity#com.coinwind.bifeng.ui.my.activity.MyWalletActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:75:9-69
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:75:19-66
+activity#com.coinwind.bifeng.wxapi.WXEntryActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:76:9-80:75
+	android:exported
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:79:13-36
+	android:configChanges
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:78:13-74
+	android:theme
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:80:13-72
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:77:13-50
+activity#com.coinwind.bifeng.ui.setting.activity.GuanYuActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:81:9-72
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:81:19-69
+activity#com.coinwind.bifeng.ui.setting.activity.ContactUsActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:82:9-75
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:82:19-72
+activity#com.coinwind.bifeng.ui.my.activity.AlertsActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:83:9-67
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:83:19-64
+activity#com.coinwind.bifeng.ui.setting.activity.ChangePaswActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:84:9-76
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:84:19-73
+activity#com.coinwind.bifeng.ui.share.activity.InvitationActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:85:9-74
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:85:19-71
+activity#com.coinwind.bifeng.ui.sendtask.activity.SendTaskActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:86:9-75
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:86:19-72
+activity#com.coinwind.bifeng.ui.sendtask.activity.SendZhuCeTaskActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:87:9-80
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:87:19-77
+activity#com.coinwind.bifeng.ui.sendtask.activity.SendZhangFenTaskActivity
+ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:88:9-82
+	android:name
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml:88:19-80
 uses-sdk
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
 MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:7:5-9:41
 MERGED from [com.recker.flybanner:flybanner:1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/flybanner-1.3.aar/b55f17acb0cbff7cf8fdc1ae3ceb821e/AndroidManifest.xml:7:5-9:41
 MERGED from [com.gyf.barlibrary:barlibrary:2.3.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/barlibrary-2.3.0.aar/c010c44a11e753936e4de097cdc32a2e/AndroidManifest.xml:8:5-10:41
 MERGED from [com.gyf.barlibrary:barlibrary:2.3.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/barlibrary-2.3.0.aar/c010c44a11e753936e4de097cdc32a2e/AndroidManifest.xml:8:5-10:41
 MERGED from [co.lujun:androidtagview:1.0.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/androidtagview-1.0.3.aar/09686d5b05d5b619ede9fb39ffdbd32b/AndroidManifest.xml:7:5-9:41
 MERGED from [co.lujun:androidtagview:1.0.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/androidtagview-1.0.3.aar/09686d5b05d5b619ede9fb39ffdbd32b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/e8f325b46314a523dba25965f4bbbe54/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/e8f325b46314a523dba25965f4bbbe54/AndroidManifest.xml:20:5-44
+MERGED from [com.feezu.liuli:timeselector:1.1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/timeselector-1.1.3.aar/f765c1133ba51ae1ab2c61ab2194c326/AndroidManifest.xml:7:5-9:41
+MERGED from [com.feezu.liuli:timeselector:1.1.3] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/timeselector-1.1.3.aar/f765c1133ba51ae1ab2c61ab2194c326/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8d736b6dcacb95b5b5402f45302d8d18/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8d736b6dcacb95b5b5402f45302d8d18/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/dd3342e40d67564234ee4f1ec38189dc/AndroidManifest.xml:5:5-7:41
@@ -251,6 +326,8 @@ MERGED from [com.android.support:support-media-compat:27.1.1] /Users/heminghao/.
 MERGED from [com.android.support:support-media-compat:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/4c0de32bab131ea0cd7a8876f8ba0b62/AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f1e5aae2a3663fb3e9164aac973698c0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/f1e5aae2a3663fb3e9164aac973698c0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:transition:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/799dc1b18fa528253da93a83903a70d8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/799dc1b18fa528253da93a83903a70d8/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/f9387d6db1ff3fa42865628f994a82d1/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/f9387d6db1ff3fa42865628f994a82d1/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/cdcbc74deda0b16bf9c0a2262ccb85c9/AndroidManifest.xml:20:5-44
@@ -263,13 +340,13 @@ MERGED from [android.arch.core:runtime:1.1.0] /Users/heminghao/.gradle/caches/tr
 MERGED from [android.arch.core:runtime:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/515aecda2195f652c26e2aed65a837cb/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d83ff619ec0245c073c23315c37c736b/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/heminghao/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d83ff619ec0245c073c23315c37c736b/AndroidManifest.xml:20:5-44
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
-INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
+INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
-		ADDED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/heminghao/Desktop/bf/BiFeng/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
+		ADDED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/heminghao/Desktop/bfdaima/BiFeng/app/src/main/AndroidManifest.xml

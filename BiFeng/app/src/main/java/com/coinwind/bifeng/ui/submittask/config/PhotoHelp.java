@@ -2,6 +2,7 @@ package com.coinwind.bifeng.ui.submittask.config;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -29,6 +30,9 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 封装上传任务配图需要的权限
+ */
 public class PhotoHelp {
     /**
      * 获取相机权限，打开相机
@@ -49,7 +53,27 @@ public class PhotoHelp {
             //没有权限，向用户请求权限
             ActivityCompat.requestPermissions(context, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, permissionRequestCode);
         }
+    }
 
+    /**
+     * 获取相机权限，打开相机
+     *
+     * @param permissionRequestCode
+     * @param filePath
+     * @param cameraRequestCode
+     */
+    public static void applyForCameraPermission(android.support.v4.app.Fragment fragment,
+                                                int permissionRequestCode, String filePath, int cameraRequestCode) {
+        //使用兼容库就无需判断系统版本
+        int hasWriteStoragePermission = ContextCompat.checkSelfPermission(fragment.getActivity().getApplication(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int hasCameraStoragePermission = ContextCompat.checkSelfPermission(fragment.getActivity().getApplication(), Manifest.permission.CAMERA);
+        if (hasWriteStoragePermission == PackageManager.PERMISSION_GRANTED && hasCameraStoragePermission == PackageManager.PERMISSION_GRANTED) {
+            //拥有权限，执行操作
+            showCameraAction(fragment, filePath, cameraRequestCode);
+        } else {
+            //没有权限，向用户请求权限
+            ActivityCompat.requestPermissions(fragment.getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, permissionRequestCode);
+        }
     }
 
     /**
@@ -61,12 +85,31 @@ public class PhotoHelp {
      * @param filePath
      * @param cameraRequestCode
      */
-    public static void cameraPermissionResult(Activity context, int[] grantResults, int permissionRequestCode, String filePath, int cameraRequestCode) {
+    public static void cameraPermissionResult(Activity context, int[] grantResults,
+                                              int permissionRequestCode, String filePath, int cameraRequestCode) {
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             filePath = PhotoHelp.getFilePath();
             PhotoHelp.applyForCameraPermission(context, permissionRequestCode, filePath, cameraRequestCode);
         } else {
             ToastHelp.showShort(context, "您有权限为同意");
+        }
+    }
+
+    /**
+     * 相机的权限回调
+     *
+     * @param grantResults
+     * @param permissionRequestCode
+     * @param filePath
+     * @param cameraRequestCode
+     */
+    public static void cameraPermissionResult(android.support.v4.app.Fragment fragment, int[] grantResults,
+                                              int permissionRequestCode, String filePath, int cameraRequestCode) {
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            filePath = PhotoHelp.getFilePath();
+            PhotoHelp.applyForCameraPermission(fragment, permissionRequestCode, filePath, cameraRequestCode);
+        } else {
+            ToastHelp.showShort(fragment.getContext(), "您有权限为同意");
         }
     }
 
@@ -94,17 +137,58 @@ public class PhotoHelp {
     }
 
     /**
+     * 跳转相机
+     *
+     * @param filePath
+     * @param cameraRequestCode
+     */
+    public static void showCameraAction(android.support.v4.app.Fragment fragment, String
+            filePath, int cameraRequestCode) {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (intent.resolveActivity(fragment.getContext().getPackageManager()) != null) {
+            ContentValues contentValues = new ContentValues(2);
+
+            contentValues.put(MediaStore.Images.Media.DATA, filePath);
+
+            contentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+            Uri mPhotoUri = fragment.getContext().getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, mPhotoUri);
+
+            fragment.startActivityForResult(intent, cameraRequestCode);
+        }
+    }
+
+    /**
      * 获取相册权限，打开相册
      *
      * @param activity
      * @param xiangCePermissionResultCode
      * @param xiangCeRequestCode
      */
-    public static void autoObtainStoragePermission(Activity activity, int xiangCePermissionResultCode, int xiangCeRequestCode) {
+    public static void autoObtainStoragePermission(Activity activity,
+                                                   int xiangCePermissionResultCode, int xiangCeRequestCode) {
         if (ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, xiangCePermissionResultCode);
         } else {
             PhotoUtils.openPic(activity, xiangCeRequestCode);
+        }
+
+    }
+
+
+    /**
+     * 获取相册权限，打开相册
+     *
+     * @param xiangCePermissionResultCode
+     * @param xiangCeRequestCode
+     */
+    public static void autoObtainStoragePermission(android.support.v4.app.Fragment fragment,
+                                                   int xiangCePermissionResultCode, int xiangCeRequestCode) {
+        if (ContextCompat.checkSelfPermission(fragment.getContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(fragment.getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, xiangCePermissionResultCode);
+        } else {
+            PhotoUtils.openPic(fragment, xiangCeRequestCode);
         }
 
     }
@@ -116,11 +200,28 @@ public class PhotoHelp {
      * @param grantResults
      * @param xiangCeResultCode
      */
-    public static void xiangCePermissionResult(Activity activity, int[] grantResults, int xiangCeResultCode) {
+    public static void xiangCePermissionResult(Activity activity, int[] grantResults,
+                                               int xiangCeResultCode) {
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             PhotoUtils.openPic(activity, xiangCeResultCode);
         } else {
             ToastHelp.showShort(activity, "请允许打操作SDCard！！");
+        }
+    }
+
+    /**
+     * 相册的权限回调
+     *
+     * @param fragment
+     * @param grantResults
+     * @param xiangCeResultCode
+     */
+    public static void xiangCePermissionResult(android.support.v4.app.Fragment fragment, int[] grantResults,
+                                               int xiangCeResultCode) {
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            PhotoUtils.openPic(fragment, xiangCeResultCode);
+        } else {
+            ToastHelp.showShort(fragment.getContext(), "请允许打操作SDCard！！");
         }
     }
 

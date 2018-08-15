@@ -1,5 +1,8 @@
 package com.coinwind.bifeng.ui.my.bean;
 
+/**
+ * 修改信息的bean
+ */
 public class ChangeMessageBean {
 
     /**

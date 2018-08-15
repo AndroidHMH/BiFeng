@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
+import com.coinwind.bifeng.base.NoNetworkBaseActivity;
 import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.ui.share.activity.ShareActivity;
 import com.coinwind.bifeng.ui.task.config.SetViewHelp;
@@ -21,7 +22,7 @@ import butterknife.OnClick;
 /**
  * 操作步骤  纯3个步骤
  */
-public class PhotoTaskActivity extends BaseActivity {
+public class PhotoTaskActivity extends NoNetworkBaseActivity {
 
 
     @BindView(R.id.title_title_tv)
@@ -74,11 +75,6 @@ public class PhotoTaskActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void loadDate() {
-
-    }
-
     @OnClick({R.id.title_layout_return_btn, R.id.bu_zou_thread_next_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -87,7 +83,7 @@ public class PhotoTaskActivity extends BaseActivity {
                 break;
             case R.id.bu_zou_thread_next_btn:
                 Intent intent = new Intent(this, ShareActivity.class);
-                intent.putExtra("bean",bean);
+                intent.putExtra("bean", bean);
                 startActivity(intent);
                 break;
         }

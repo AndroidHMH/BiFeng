@@ -2,7 +2,20 @@ package com.coinwind.bifeng.ui.login.bean;
 
 import java.io.Serializable;
 
+/**
+ * 登录的bean
+ */
 public class LoginBean {
+
+    @Override
+    public String toString() {
+        return "LoginBean{" +
+                "code=" + code +
+                ", msg='" + msg + '\'' +
+                ", state=" + state +
+                ", data=" + data +
+                '}';
+    }
 
     /**
      * code : 1000
@@ -104,6 +117,34 @@ public class LoginBean {
         }
 
         public static class UserBean implements Serializable {
+            @Override
+            public String toString() {
+                return "UserBean{" +
+                        "from_type=" + from_type +
+                        ", namecard_url=" + namecard_url +
+                        ", gz_type=" + gz_type +
+                        ", logo_url=" + logo_url +
+                        ", openid=" + openid +
+                        ", current_css=" + current_css +
+                        ", head_img='" + head_img + '\'' +
+                        ", gz_name=" + gz_name +
+                        ", type='" + type + '\'' +
+                        ", qiye_info='" + qiye_info + '\'' +
+                        ", auth_flag=" + auth_flag +
+                        ", c2_fencheng=" + c2_fencheng +
+                        ", c1_fencheng=" + c1_fencheng +
+                        ", password='" + password + '\'' +
+                        ", last_check_type='" + last_check_type + '\'' +
+                        ", phone='" + phone + '\'' +
+                        ", nick_name='" + nick_name + '\'' +
+                        ", lrrq='" + lrrq + '\'' +
+                        ", nickname='" + nickname + '\'' +
+                        ", headimgurl=" + headimgurl +
+                        ", id='" + id + '\'' +
+                        ", last_check_in='" + last_check_in + '\'' +
+                        '}';
+            }
+
             /**
              * from_type : 1
              * namecard_url : null
@@ -139,7 +180,7 @@ public class LoginBean {
             private Object gz_name;
             private String type;
             private String qiye_info;
-            private Object auth_flag;
+            private Integer auth_flag;
             private Object c2_fencheng;
             private Object c1_fencheng;
             private String password;
@@ -232,11 +273,11 @@ public class LoginBean {
                 this.qiye_info = qiye_info;
             }
 
-            public Object getAuth_flag() {
+            public Integer getAuth_flag() {
                 return auth_flag;
             }
 
-            public void setAuth_flag(Object auth_flag) {
+            public void setAuth_flag(Integer auth_flag) {
                 this.auth_flag = auth_flag;
             }
 

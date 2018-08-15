@@ -21,11 +21,14 @@ public class NetWorkHelp {
      */
     @SuppressWarnings("null")
     public static boolean isNetWorkEnable(Context context) {
-        ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
-        if (networkInfo != null || networkInfo.isConnected()) {
-            if (networkInfo.getState() == NetworkInfo.State.CONNECTED) {
-                return true;
+        ConnectivityManager connectivity = (ConnectivityManager) context
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (null != connectivity) {
+            NetworkInfo info = connectivity.getActiveNetworkInfo();
+            if (null != info && info.isConnected()) {
+                if (info.getState() == NetworkInfo.State.CONNECTED) {
+                    return true;
+                }
             }
         }
         return false;

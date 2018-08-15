@@ -4,15 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray_f2"
     android:orientation="vertical"
     tools:context=".ui.setting.activity.SetMessageActivity">
 
     <include layout="@layout/title_layout" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10" />
+
     <com.coinwind.bifeng.view.ClearEditText
         android:id="@+id/set_message_et"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_44"
         android:background="@color/white"
         android:hint="请输入昵称……"
         android:paddingBottom="@dimen/dp_7"
@@ -21,6 +26,7 @@
         android:textSize="@dimen/sp_13" />
 
     <LinearLayout
+        android:id="@+id/set_message_count_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_8"
@@ -55,6 +61,18 @@
         </LinearLayout>
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/set_message_qi_yi_et"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_168"
+        android:background="@color/white"
+        android:gravity="top|left"
+        android:hint="请输入介绍内容……"
+        android:paddingLeft="@dimen/dp_9"
+        android:paddingTop="@dimen/dp_14"
+        android:textSize="@dimen/sp_13"
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/set_message_send_btn"
         android:layout_width="match_parent"
@@ -66,5 +84,7 @@
         android:text="@string/qie_ding"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_18" />
+
+    <include layout="@layout/net_work_error_layout" />
 
 </LinearLayout>

@@ -9,8 +9,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -23,7 +25,10 @@ import android.widget.TextView;
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
 import com.coinwind.bifeng.base.TaskBean;
+import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
+import com.coinwind.bifeng.ui.homepage.activity.MainActivity;
+import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.submittask.adapter.AddImgAdapter;
 import com.coinwind.bifeng.ui.submittask.config.PhotoHelp;
 import com.coinwind.bifeng.ui.submittask.config.UpdateFile;
@@ -31,7 +36,6 @@ import com.coinwind.bifeng.ui.submittask.contract.SubmitContract;
 import com.coinwind.bifeng.ui.submittask.presenter.SubmitPresenter;
 
 import java.io.File;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +47,7 @@ import butterknife.OnClick;
  * 提交任务页面
  */
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implements SubmitContract.View, View.OnClickListener, AddImgAdapter.OnItemClick {
+public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implements SubmitContract.View, View.OnClickListener, AddImgAdapter.OnItemClick, AddImgAdapter.OnItemImgClick {
 
 
     @BindView(R.id.title_title_tv)
@@ -52,6 +56,8 @@ public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implem
     RelativeLayout titleBar;
     @BindView(R.id.submit_comments_description_et)
     EditText submitCommentsDescriptionEt;
+    @BindView(R.id.submit_comments_phone_et)
+    EditText submitCommentsPhoneEt;
     @BindView(R.id.submit_comments_text_count_tv)
     TextView submitCommentsTextCountTv;
     @BindView(R.id.add_img_btn)
@@ -64,6 +70,14 @@ public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implem
     RecyclerView submitCommentsImgRecycler;
     @BindView(R.id.title_layout_return_btn)
     LinearLayout titleLayoutReturnBtn;
+    @BindView(R.id.title_bar_layout)
+    LinearLayout titleBarLayout;
+    @BindView(R.id.submit_comments_all_layout)
+    LinearLayout submitCommentsAllLayout;
+    @BindView(R.id.submit_comments_shuo_ming_tv)
+    TextView submitCommentsShuoMingTv;
+    @BindView(R.id.submit_comments_shu_cu_layout)
+    LinearLayout submitCommentsShuCuLayout;
     private List<Bitmap> bitmapList;
     private AddImgAdapter addImgAdapter;
 
@@ -88,11 +102,29 @@ public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implem
 
     @Override
     protected void init() {
+        titleTitleTv.setText("提交任务");
         bean = (TaskBean) getIntent().getSerializableExtra("bean");
+        initShowUi();
         imgsUrl = new ArrayList<>();
         updateFile = new UpdateFile();
         recyclerInit();
         popupInit();
+    }
+
+    private void initShowUi() {
+        titleTitleTv.setText("提交任务");
+        String type = getIntent().getStringExtra("type");
+        if ("phone".equals(type)) {
+            submitCommentsShuoMingTv.setText(getResources().getString(R.string.phone_num));
+            submitCommentsDescriptionEt.setVisibility(View.GONE);
+            submitCommentsPhoneEt.setVisibility(View.VISIBLE);
+            submitCommentsShuCuLayout.setVisibility(View.INVISIBLE);
+        } else {
+            submitCommentsShuoMingTv.setText(getResources().getString(R.string.task_description));
+            submitCommentsShuCuLayout.setVisibility(View.VISIBLE);
+            submitCommentsDescriptionEt.setVisibility(View.VISIBLE);
+            submitCommentsPhoneEt.setVisibility(View.GONE);
+        }
     }
 
     private void popupInit() {
@@ -141,13 +173,20 @@ public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implem
     }
 
     private void recyclerInit() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        submitCommentsImgRecycler.setLayoutManager(linearLayoutManager);
+        submitCommentsImgRecycler.setLayoutManager(new GridLayoutManager(this, 3));
         bitmapList = new ArrayList<>();
+        bitmapList.add(BitmapFactory.decodeResource(getResources(), R.mipmap.photo_icon));
         addImgAdapter = new AddImgAdapter(bitmapList);
         addImgAdapter.setOnItemClick(this);
+        addImgAdapter.setOnItemImgClick(this);
         submitCommentsImgRecycler.setAdapter(addImgAdapter);
+    }
+
+    @Override
+    public void onItemImgClick(int position) {
+        if ((position + 1) == bitmapList.size()) {
+            showPopup();
+        }
     }
 
     /**
@@ -160,6 +199,7 @@ public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implem
         bitmapList.remove(position);
         updateFile.removeFile(position);
         imgsUrl.remove(position);
+        submitCommentsPhotoCountTv.setText(imgsUrl.size() + "");
         if (bitmapList.size() != 3) {
             addImgBtn.setVisibility(View.VISIBLE);
         }
@@ -171,6 +211,16 @@ public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implem
 
     }
 
+    @Override
+    protected void hideErrorView() {
+        submitCommentsAllLayout.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void showSuccessView() {
+        submitCommentsAllLayout.setVisibility(View.VISIBLE);
+    }
+
     @OnClick({R.id.title_layout_return_btn, R.id.add_img_btn, R.id.submit_comments_submit_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -178,10 +228,26 @@ public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implem
                 finish();
                 break;
             case R.id.add_img_btn:
-                showPopup();
+//                showPopup();
                 break;
             case R.id.submit_comments_submit_btn:
-                presenter.submitTask(bean.getId(), "", imgsUrl, submitCommentsDescriptionEt.getText().toString());
+                if (SpHelp.getLoginStatus()) {
+                    String content = "";
+                    if (submitCommentsShuoMingTv.getText().toString().equals(getResources().getString(R.string.phone_num))) {
+                        String phone = submitCommentsPhoneEt.getText().toString().trim();
+                        if (!presenter.checkPhone(phone)) {
+                            submitCommentsDescriptionEt.setText("");
+                            break;
+                        } else {
+                            content = phone;
+                        }
+                    } else {
+                        content = submitCommentsDescriptionEt.getText().toString().trim();
+                    }
+                    presenter.submitTask(bean.getId(), SpHelp.getUserInformation(SpHelp.ID), imgsUrl, content);
+                } else {
+                    LoginActivity.openLoginActivity(this);
+                }
                 break;
         }
     }
@@ -223,7 +289,9 @@ public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implem
 
     public void addList(Bitmap bitmap) {
         if (bitmap != null) {
+            bitmapList.remove(bitmapList.size() - 1);
             bitmapList.add(bitmap);
+            bitmapList.add(BitmapFactory.decodeResource(getResources(), R.mipmap.photo_icon));
             File file = PhotoHelp.saveBitmapFile(bitmap, getCodeCacheDir().getAbsolutePath() + "/" + System.currentTimeMillis() + ".jpg");
             updateFile.addFile(file);
             if (bitmapList.size() == 3) {
@@ -238,6 +306,7 @@ public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implem
     public void successUpdate(String imgUrl) {
         ToastHelp.showShort(this, "上传任务配图成功");
         imgsUrl.add(imgUrl);
+        submitCommentsPhotoCountTv.setText(imgsUrl.size() + "");
     }
 
     @Override
@@ -247,11 +316,15 @@ public class SubmitCommentsActivity extends BaseActivity<SubmitPresenter> implem
 
     @Override
     public void showSubmitSuccess() {
-
+        ToastHelp.showShort(this, "提交成功");
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
     @Override
     public void showSubmitFailure(String error) {
-            ToastHelp.showShort(this,error);
+        ToastHelp.showShort(this, error);
     }
+
+
 }

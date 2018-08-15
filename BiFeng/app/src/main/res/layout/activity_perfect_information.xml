@@ -14,16 +14,16 @@
     <RelativeLayout
         android:id="@+id/perfect_information_name_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_44"
         android:layout_marginTop="@dimen/dp_10"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_9"
-            android:paddingBottom="@dimen/dp_6"
-            android:paddingTop="@dimen/dp_6"
+            android:gravity="center_vertical"
             android:text="@string/my_name"
             android:textColor="@color/black_333"
             android:textSize="@dimen/sp_15" />
@@ -31,11 +31,10 @@
         <TextView
             android:id="@+id/perfect_information_name_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
             android:layout_marginRight="@dimen/dp_9"
-            android:text="明日头条网"
+            android:gravity="center_vertical"
             android:textColor="@color/gray_666"
             android:textSize="@dimen/sp_12" />
     </RelativeLayout>
@@ -48,23 +47,25 @@
     <RelativeLayout
         android:id="@+id/perfect_information_logo_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_44"
         android:background="@color/white">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_9"
+            android:gravity="center_vertical"
             android:text="@string/my_logo"
             android:textColor="@color/black_333"
             android:textSize="@dimen/sp_15" />
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/perfect_information_logo_img"
-            android:layout_width="@dimen/dp_27"
-            android:layout_height="@dimen/dp_27"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginBottom="@dimen/dp_4"
             android:layout_marginRight="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_4"
@@ -80,15 +81,15 @@
     <RelativeLayout
         android:id="@+id/perfect_information_phone_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:layout_height="@dimen/dp_44"
+        android:background="@color/white"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_9"
-            android:paddingBottom="@dimen/dp_7"
-            android:paddingTop="@dimen/dp_6"
+            android:gravity="center_vertical"
             android:text="@string/my_phone"
             android:textColor="@color/black_333"
             android:textSize="@dimen/sp_15" />
@@ -96,11 +97,10 @@
         <TextView
             android:id="@+id/perfect_information_phone_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
             android:layout_marginRight="@dimen/dp_9"
-            android:text="17611281321"
+            android:gravity="center_vertical"
             android:textColor="@color/gray_666"
             android:textSize="@dimen/sp_12" />
     </RelativeLayout>
@@ -108,16 +108,16 @@
     <RelativeLayout
         android:id="@+id/perfect_information_my_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_44"
         android:layout_marginTop="@dimen/dp_10"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_9"
-            android:paddingBottom="@dimen/dp_6"
-            android:paddingTop="@dimen/dp_6"
+            android:gravity="center_vertical"
             android:text="@string/my_introduce"
             android:textColor="@color/black_333"
             android:textSize="@dimen/sp_15" />
@@ -125,15 +125,16 @@
         <TextView
             android:id="@+id/perfect_information_my_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
             android:layout_marginRight="@dimen/dp_9"
+            android:gravity="center_vertical"
             android:maxLength="13"
             android:maxLines="1"
-            android:text="币信网是一家融合国内外知名……"
             android:textColor="@color/gray_666"
             android:textSize="@dimen/sp_12" />
 
     </RelativeLayout>
+
+    <include layout="@layout/net_work_error_layout" />
 </LinearLayout>

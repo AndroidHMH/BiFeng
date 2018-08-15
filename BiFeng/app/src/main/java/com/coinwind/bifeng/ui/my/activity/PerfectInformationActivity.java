@@ -25,6 +25,7 @@ import com.coinwind.bifeng.config.LogHelp;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.model.http.RetrofitHelp;
+import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.my.config.InfoHelp;
 import com.coinwind.bifeng.ui.my.contract.PerfectInformationContract;
 import com.coinwind.bifeng.ui.my.presenter.PerfectInformationPresenter;
@@ -41,6 +42,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * 个人资料的页面
+ */
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class PerfectInformationActivity extends BaseActivity<PerfectInformationPresenter> implements View.OnClickListener, PerfectInformationContract.View {
 
@@ -187,10 +191,9 @@ public class PerfectInformationActivity extends BaseActivity<PerfectInformationP
 
     @Override
     public void successUpdate(String imgUrl) {
-        ToastHelp.showShort(this, "上传任务配图成功");
+        ToastHelp.showShort(this, "上传头像成功");
         SpHelp.putUserInformation(SpHelp.HEAD_IMG, imgUrl);
-        Glide.with(this).load(imgUrl).into(perfectInformationLogoImg);
-        LogHelp.e("imgurl", imgUrl);
+        presenter.changeHeadImg(SpHelp.getUserInformation(SpHelp.ID), imgUrl);
     }
 
     @Override
@@ -198,10 +201,27 @@ public class PerfectInformationActivity extends BaseActivity<PerfectInformationP
         ToastHelp.showShort(this, errorMsg);
     }
 
+    @Override
+    public void changeSuccess(String message) {
+        ToastHelp.showShort(this, message);
+        Glide.with(this).load(SpHelp.getUserInformation(SpHelp.HEAD_IMG)).into(perfectInformationLogoImg);
+    }
+
+    @Override
+    public void changeError(String errorMsg) {
+        SpHelp.putUserInformation(SpHelp.HEAD_IMG, "");
+    }
+
+    @Override
+    public void loginOut() {
+        SpHelp.loginOut();
+        LoginActivity.openLoginActivity(this);
+    }
+
     public void setImg(Bitmap bitmap) {
         perfectInformationLogoImg.setImageBitmap(bitmap);
         File file = PhotoHelp.saveBitmapFile(bitmap, getCodeCacheDir().getAbsolutePath() + "/" + System.currentTimeMillis() + ".jpg");
-        presenter.updateImgs(file);
+        presenter.updateHeadImg(file);
     }
 
     private void popupInit() {

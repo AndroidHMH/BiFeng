@@ -29,7 +29,7 @@
                 android:layout_marginLeft="@dimen/dp_12"
                 android:layout_marginRight="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_34"
-                android:src="@mipmap/fanhui" />
+                android:src="@mipmap/wite_fanhui" />
 
         </LinearLayout>
     </RelativeLayout>
@@ -43,6 +43,10 @@
         android:layout_marginTop="@dimen/dp_47"
         android:background="@null"
         android:hint="@string/login_phone_hint"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:nextFocusForward="@+id/login_password_et"
+        android:singleLine="true"
         android:textSize="@dimen/sp_14" />
 
     <View
@@ -51,7 +55,7 @@
         android:layout_marginLeft="@dimen/dp_12"
         android:layout_marginRight="@dimen/dp_12"
         android:layout_marginTop="@dimen/dp_11"
-        android:background="@color/gray_97" />
+        android:background="@color/gray_de" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,7 +72,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:hint="@string/login_code_hint"
+            android:hint="@string/login_psw_hint"
+            android:inputType="textPassword"
+            android:maxLines="1"
             android:textSize="@dimen/sp_14" />
 
         <TextView
@@ -87,7 +93,7 @@
         android:layout_marginLeft="@dimen/dp_12"
         android:layout_marginRight="@dimen/dp_12"
         android:layout_marginTop="@dimen/dp_11"
-        android:background="@color/gray_97" />
+        android:background="@color/gray_de" />
 
     <TextView
         android:id="@+id/login_goto_psw_login_btn"
@@ -97,7 +103,7 @@
         android:layout_marginTop="@dimen/dp_11"
         android:text="@string/login_use_phone_login"
         android:textColor="@color/orange_f9f0"
-        android:textSize="@dimen/sp_10" />
+        android:textSize="@dimen/sp_12" />
 
     <Button
         android:id="@+id/login_login_btn"
@@ -111,4 +117,5 @@
         android:textColor="@color/white"
         android:textSize="@dimen/sp_18" />
 
+    <include layout="@layout/net_work_error_layout" />
 </LinearLayout>

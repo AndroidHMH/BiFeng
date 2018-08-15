@@ -2,6 +2,9 @@ package com.coinwind.bifeng.base;
 
 import java.io.Serializable;
 
+/**
+ * 任务详情的bean
+ */
 public class TaskBean implements Serializable {
     /**
      * shengyu_num : 25

@@ -23,6 +23,9 @@ public class Urls {
     //完成任务id
     public static final String TASK_ID = "zc/broadcastByTaskId";
 
+    //获取分享图片
+    public static final String SHARE_IMG = "bifeng/zc/shareTaskImg";
+
     //任务大厅列表
     public static final String TASK_CONTENT = "/bifeng/zc/queryData";
 
@@ -46,4 +49,37 @@ public class Urls {
 
     //获取用户钱包
     public static final String SELECT_CC = "bifeng/zc/myPurse";
+
+    //获取我的任务列表
+    public static final String MY_TASK_LIST = "bifeng/zc/myTaskData";
+
+    //获取分享的图片
+    public static final String SHARE_IMG_HTML = "https://m.coinwind.com/share/receive.html";
+
+    //分享任务详情链接
+    public static final String SHARE_LINK_URL = "https://m.coinwind.com/share/details.html";
+
+    //获取信息列表
+    public static final String ALERTS_LIST = "bifeng/msg/list";
+
+    //搜索
+    public static final String SEARCH_FOR = "zc/searchData";
+
+    //认证
+    public static final String REN_ZHENG = "bifeng/zc/authUserInfo";
+
+    //修改密码
+    public static final String CHANGE_PSW = "bifeng/user/getBackPassword";
+
+    //签到
+    public static final String QIAN_DAO = "bifeng/zc/newCheckIn";
+
+    //是否登录
+    public static final String IS_LOGIN = "bifeng/user/isLogin";
+
+    //邀请链接
+    public static final String YAO_QING_URL = "https://m.coinwind.com/share/invite.html";
+
+    //发布任务
+    public static final String SEND_TASK = "bifeng/zc/publishTask";
 }

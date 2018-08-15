@@ -1,5 +1,7 @@
 package com.coinwind.bifeng.ui.submittask.bean;
-
+/**
+ *提交任务配图的bean
+ */
 public class SubmitImgBean {
 
     @Override

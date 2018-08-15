@@ -11,6 +11,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+/**
+ * 获取刘海的高度
+ */
 public class LiuHaiHelp {
     /**
      * 华为start

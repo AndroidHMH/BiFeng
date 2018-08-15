@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">币风</string>
     <string name="bi">CC</string>
+
+    <!--友盟appkey-->
+    <string name="um_appkey">5ae615288f4a9d25b10008f2</string>
+    <!--微信appid-->
+    <string name="weixin_appid">wxc3c1ae9fff618d4f</string>
+    <!--微信的appkey-->
+    <string name="weixin_appkey">2a9599097d4fda5ae88f76a2c26a872d</string>
     <!--主页-->
     <string name="home">首页</string>
     <string name="task">任务大厅</string>
@@ -59,6 +66,11 @@
 
     <!--分享-->
     <string name="share">分享</string>
+    <string name="share_title">此二维码已包含“邀请下级”等功能</string>
+    <string name="save_phone">保存到手机</string>
+    <string name="share_wei_xin">分享微信</string>
+    <string name="share_peng_you_quan">分享朋友圈</string>
+    <string name="share_return">取消</string>
 
     <!--注册任务-->
     <string name="regist_first">步&#160;打开任务链接；</string>
@@ -98,7 +110,33 @@
     <!--发布任务-->
     <string name="add_img_text">上传一张高端大气的任务配图</string>
     <string name="label">标签</string>
-    <string name="label_count">最多3条，选填</string>
+    <string name="task_type">类别</string>
+    <string name="label_count">最多三条，每个最多五个字</string>
+    <string name="task_title">请输入任务标题……</string>
+    <string name="task_count">请输入正文</string>
+    <string name="task_jian_jie">请输入任务简介.....</string>
+    <string name="task_dong_tai">项目动态</string>
+    <string name="task_xin_bi">新币上线</string>
+    <string name="task_zhou_bao">技术周报</string>
+    <string name="task_gong_gao">最新公告</string>
+    <string name="task_huo_dong">热门活动</string>
+    <string name="task_jie_shao">品牌介绍</string>
+    <string name="dan_ce_fen_xiang">单次分享奖励</string>
+    <string name="dan_ce_all_fen_xiang_count">单次分享总次数</string>
+    <string name="dan_ce_ren_wu">单次任务奖励</string>
+    <string name="dan_ce_all_fren_wu_count">任务总次数</string>
+    <string name="send_ci">次</string>
+    <string name="task_all_count">任务总共需要</string>
+    <string name="task_end">CC，积分消耗完任务会自动结束</string>
+    <string name="task_start_time">开始时间</string>
+    <string name="task_end_time">结束时间</string>
+    <string name="task_yan_shou">我要验收</string>
+    <string name="task_yan_shou_tv">不验收的话，所有任务都会自动通过审核</string>
+    <string name="send_task_tv">发布</string>
+    <string name="zhang_fen_public_num">输入公众号微信号....</string>
+    <string name="zhu_ce_url">输入注册页链接</string>
+    <string name="public_num_img">上传公众号二维码</string>
+
 
     <!--登录页面-->
     <string name="login_phone_hint">请输入手机号</string>
@@ -115,6 +153,62 @@
     <string name="my_phone">手机号</string>
     <string name="my_introduce">企业介绍</string>
 
+
+    <!--设置-->
+    <string name="guan_yu">关于币风</string>
+    <string name="xie_yi">用户协议</string>
+    <string name="lian_xi">联系我们</string>
+    <string name="xiu_gai">修改密码</string>
+    <string name="login_out">退出登录</string>
+
+    <!--我的钱包-->
+    <string name="today_cc">今日获得</string>
+    <string name="all_cc">全部资产</string>
+    <string name="what_cc">CC是什么</string>
+    <string name="record">CC收益记录</string>
+
+    <!--联系我们-->
+    <string name="website">币风官网：</string>
+    <string name="website_tv">www.coinwind.com</string>
+    <string name="customer_service">在线客服：</string>
+    <string name="customer_service_tv">771739988</string>
+    <string name="website_weixin">商务合作：</string>
+    <string name="website_weixin_tv">coinwind666</string>
+    <string name="customer_service_email">客服邮箱：</string>
+    <string name="customer_service_email_tv">kefy@coinwind.com</string>
+    <string name="dian_fuzhi">点击复制</string>
+
+
+    <!--认证-->
+    <string name="certification_chan_pin">请输入雇主名称</string>
+    <string name="updata_logo">上传LOGO</string>
+    <string name="updata_ming_pian">上传名片</string>
+    <string name="choose_gu_zhu_type">选择雇主类型</string>
+    <string name="qi_ye_jie_shao_hint">请输入企业介绍</string>
+
+    <!--选择雇主类型-->
+    <string name="xiang_mo_fang">项目方</string>
+    <string name="jiao_yi_suo">交易所</string>
+
+    <!--修改密码-->
+    <string name="change_pasw_user_name">账号</string>
+    <string name="change_pasw_code">验证码</string>
+    <string name="change_psw_new_psw">新密码</string>
+    <string name="change_psw_new_pasww">输入新密码</string>
+    <string name="change_psw_code">输入验证码</string>
+    <string name="all_task">全部任务</string>
+    <string name="all_class">全部分类</string>
+    <string name="new_send">最新发布</string>
+
+    <!--签到-->
+    <string name="qian_dao1_tv">第一天</string>
+    <string name="qian_dao2_tv">第二天</string>
+    <string name="qian_dao3_tv">第三天</string>
+    <string name="qian_dao4_tv">第四天</string>
+    <string name="qian_dao5_tv">第五天</string>
+    <string name="qian_dao6_tv">第六天</string>
+    <string name="qian_dao7_tv">第七天</string>
+    <string name="qian_dao_btn_tv">立即签到</string>
 </resources>
 
 

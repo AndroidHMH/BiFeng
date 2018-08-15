@@ -16,6 +16,9 @@ import android.widget.ViewSwitcher;
 
 import java.util.ArrayList;
 
+/**
+ * 上下轮播的TextView
+ */
 public class VerticalTextView extends TextSwitcher implements ViewSwitcher.ViewFactory {
 
     private static final int FLAG_START_AUTO_SCROLL = 0;

@@ -17,6 +17,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 任务大厅筛选框的适配器
+ */
 public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.Holder> {
     private List<String> titles;
     private OnItemCLick onItemCLick;

@@ -1,7 +1,10 @@
 package com.coinwind.bifeng.ui.submittask.presenter;
 
+import android.text.TextUtils;
+
 import com.coinwind.bifeng.config.Codes;
 import com.coinwind.bifeng.config.LogHelp;
+import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.model.http.RetrofitHelp;
 import com.coinwind.bifeng.ui.submittask.bean.SubmitBean;
 import com.coinwind.bifeng.ui.submittask.bean.SubmitImgBean;
@@ -23,6 +26,9 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 
+/**
+ * 提交任务的P层
+ */
 public class SubmitPresenter implements SubmitContract.Presenter {
     private SubmitContract.View view;
     private final SubmitService service;
@@ -69,7 +75,7 @@ public class SubmitPresenter implements SubmitContract.Presenter {
     @Override
     public void submitTask(String taskId, String userId, List<String> imgs, String explain) {
         String imgUrls = listToString(imgs);
-        service.submitTask(taskId, userId, imgUrls, explain).subscribeOn(Schedulers.io())
+        service.submitTask(taskId, userId, imgUrls, explain, SpHelp.getSign()).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<SubmitBean>() {
                     @Override
@@ -102,6 +108,24 @@ public class SubmitPresenter implements SubmitContract.Presenter {
 
                     }
                 });
+    }
+
+    @Override
+    public boolean checkPhone(String phone) {
+        if (phone == null) {
+            view.showSubmitFailure("手机号为空");
+            return false;
+        }
+        if (TextUtils.isEmpty(phone)) {
+            view.showSubmitFailure("手机号为空");
+            return false;
+        }
+        String pattern = "^((1[3,5,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\\d{8}$";
+        if (!phone.matches(pattern)) {
+            view.showSubmitFailure("手机号格式错误");
+            return false;
+        }
+        return true;
     }
 
     private String listToString(List<String> imgs) {

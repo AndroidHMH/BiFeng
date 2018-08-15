@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_30"
         android:layout_marginLeft="@dimen/dp_26"
-        android:layout_marginTop="@dimen/dp_10"
         android:layout_marginRight="@dimen/dp_26"
+        android:layout_marginTop="@dimen/dp_10"
         android:gravity="center_vertical">
 
         <LinearLayout
@@ -31,22 +31,34 @@
                 android:src="@mipmap/task_select_icon" />
 
             <EditText
+                android:id="@+id/search_for_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_8"
                 android:layout_marginRight="@dimen/dp_5"
-                android:background="@color/white"
+                android:background="@null"
                 android:gravity="center_vertical"
                 android:hint="输入关键词，查找感兴趣的任务"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:textSize="@dimen/sp_14" />
         </LinearLayout>
 
         <TextView
+            android:id="@+id/search_for_qu_xiao_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_12"
-            android:text="取消"
+            android:text="@string/share_return"
             android:textColor="@color/black_333"
             android:textSize="@dimen/sp_15" />
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/search_for_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include layout="@layout/net_work_error_layout" />
 </LinearLayout>

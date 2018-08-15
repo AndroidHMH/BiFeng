@@ -2,6 +2,9 @@ package com.coinwind.bifeng.ui.my.bean;
 
 import java.util.List;
 
+/**
+ * 我的钱包的bean
+ */
 public class WalletBean {
 
     /**

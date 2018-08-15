@@ -2,7 +2,10 @@ package com.coinwind.bifeng.ui.home.bean;
 
 import com.coinwind.bifeng.base.TaskBean;
 
-
+/**
+ * 首页抢任务的bean
+ *
+ */
 public class HomeQiangBean {
 
     /**

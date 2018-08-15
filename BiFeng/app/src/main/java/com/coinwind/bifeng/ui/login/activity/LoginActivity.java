@@ -5,23 +5,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
+import com.coinwind.bifeng.config.NetWorkHelp;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.ui.login.bean.LoginBean;
 import com.coinwind.bifeng.ui.login.contract.LoginContract;
 import com.coinwind.bifeng.ui.login.presenter.LoginPresenter;
-import com.coinwind.bifeng.ui.my.fragment.MyFragment;
 import com.coinwind.bifeng.view.ClearEditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * 登录界面
+ */
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {
 
 
@@ -35,6 +38,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     TextView loginGotoPswLoginBtn;
     @BindView(R.id.login_login_btn)
     Button loginLoginBtn;
+    @BindView(R.id.login_retutn_btn)
+    LinearLayout loginRetutnBtn;
 
 
     public static void openLoginActivity(Context context) {
@@ -52,14 +57,21 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     }
 
+    protected void netWorkError() {
+
+    }
+
     @Override
     protected void loadDate() {
 
     }
 
-    @OnClick({R.id.login_get_code_btn, R.id.login_goto_psw_login_btn, R.id.login_login_btn})
+    @OnClick({R.id.login_get_code_btn, R.id.login_goto_psw_login_btn, R.id.login_login_btn, R.id.login_retutn_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.login_retutn_btn:
+                finish();
+                break;
             case R.id.login_get_code_btn:
                 String phone = loginPhoneMunEt.getText().toString();
                 if (presenter.checkPhone(phone)) {
@@ -67,18 +79,27 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 }
                 break;
             case R.id.login_goto_psw_login_btn:
-                presenter.changeLogin(loginGotoPswLoginBtn.getText().toString());
+                if (NetWorkHelp.isNetWorkEnable(this)) {
+                    presenter.changeLogin(loginGotoPswLoginBtn.getText().toString());
+                } else {
+                    ToastHelp.showShort(this, "请检查网络连接");
+                }
                 break;
             case R.id.login_login_btn:
-                String userName = loginPhoneMunEt.getText().toString();
-                String password = loginPasswordEt.getText().toString();
-                if (presenter.checkPhone(userName) && presenter.checkPaw(password)) {
-                    if (!"使用密码登录".equals(loginGotoPswLoginBtn.getText().toString())) {
-                        presenter.pswLogin(userName, password);
-                    } else {
-                        presenter.phoneLogin(userName, password);
+                if (NetWorkHelp.isNetWorkEnable(this)) {
+                    String userName = loginPhoneMunEt.getText().toString();
+                    String password = loginPasswordEt.getText().toString();
+                    if (presenter.checkPhone(userName) && presenter.checkPaw(password)) {
+                        if (!"使用密码登录".equals(loginGotoPswLoginBtn.getText().toString())) {
+                            presenter.pswLogin(userName, password);
+                        } else {
+                            presenter.phoneLogin(userName, password);
+                        }
                     }
+                } else {
+                    ToastHelp.showShort(this, "请检查网络连接");
                 }
+
                 break;
         }
     }
@@ -108,8 +129,9 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     @Override
-    public void loginSuccessful(LoginBean.DataBean.UserBean user) {
-        SpHelp.putUserInformation( user);
+    public void loginSuccessful(LoginBean.DataBean.UserBean user, String sign) {
+        SpHelp.putUserInformation(user);
+        SpHelp.putSign(sign);
         boolean login = SpHelp.login();
         if (login) {
             ToastHelp.showShort(this, "登录成功");
@@ -122,4 +144,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         ToastHelp.showShort(this, errorMsg);
     }
 
+
+    @OnClick()
+    public void onViewClicked() {
+    }
 }

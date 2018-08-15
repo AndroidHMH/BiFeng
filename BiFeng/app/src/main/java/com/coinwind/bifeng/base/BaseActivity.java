@@ -26,6 +26,7 @@ import com.coinwind.bifeng.app.BFApplication;
 import com.coinwind.bifeng.config.LiuHaiHelp;
 import com.coinwind.bifeng.config.LogHelp;
 import com.coinwind.bifeng.config.NetWorkHelp;
+import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 
 import java.lang.reflect.Constructor;
@@ -34,16 +35,20 @@ import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 /**
- * 统一管理Activity
+ * 统一管理有网络请求的Activity
  */
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
     private Fragment lastFragment;
     protected T presenter;
-    private int barColor = R.color.orange_f9;
+    protected ImmersionBar immersionBar;
+    @BindView(R.id.net_work_error_btn)
+    LinearLayout netWorkErrorBtn;
 
     @SuppressLint("ResourceType")
     @Override
@@ -51,24 +56,47 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         BFApplication.context = this;
-//        setLiuHai();
         ButterKnife.bind(this);
-        ImmersionBar immersionBar = ImmersionBar.with(this).statusBarDarkFont(true).fullScreen(true);
+        immersionBar = ImmersionBar.with(this).statusBarDarkFont(true);
         immersionBar.init();
         presenter = getPresenter();
         if (presenter != null) {
             presenter.actualView(this);
         }
         init();
+        netWorkError();
+    }
+
+    /**
+     * 判断网络状态进行网络请求
+     */
+    protected void netWorkError() {
         if (NetWorkHelp.isNetWorkEnable(this)) {
+            showSuccessView();
+            netWorkErrorBtn.setVisibility(View.GONE);
             loadDate();
+        } else {
+            hideErrorView();
+            netWorkErrorBtn.setVisibility(View.VISIBLE);
         }
     }
 
-    protected View getBar() {
-        return null;
+    /**
+     * 无网络状态隐藏布局
+     */
+    protected void hideErrorView() {
     }
 
+    /**
+     * 有网络显示布局
+     */
+    protected void showSuccessView() {
+    }
+
+    @OnClick(R.id.net_work_error_btn)
+    public void onViewClicked() {
+        netWorkError();
+    }
 
     /**
      * 适配刘海屏

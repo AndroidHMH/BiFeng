@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,8 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_30"
-            android:layout_marginTop="@dimen/dp_5"
-            android:layout_marginRight="@dimen/dp_30" />
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_5" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,8 +72,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_30"
-            android:layout_marginTop="@dimen/dp_5"
-            android:layout_marginRight="@dimen/dp_30" />
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_5" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -101,9 +102,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_30"
-            android:layout_marginTop="@dimen/dp_5"
-            android:layout_marginRight="@dimen/dp_30" />
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_5" />
     </LinearLayout>
+
+    <com.coinwind.bifeng.view.RichTextEditor
+        android:id="@+id/rich_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/add_img_img_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加图片" />
+    <Button
+        android:id="@+id/add_content_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取内容" />
 
     <TextView
         android:id="@+id/submit_research_submit_btn"

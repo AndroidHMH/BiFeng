@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="black_333">#333333</color>
+    <color name="black_555">#555555</color>
+    <color name="black_34a4">#343A44</color>
     <color name="black_000">#000000</color>
     <color name="black_f333">#FF333333</color>
     <color name="black_6fff">#30000000</color>
@@ -22,6 +24,7 @@
     <color name="red_f42">#FFF44242</color>
     <color name="blue_276">#276CDE</color>
     <color name="red_42">#F44242</color>
+    <color name="yellow_fc80">#FFC80B</color>
 
 
 </resources>

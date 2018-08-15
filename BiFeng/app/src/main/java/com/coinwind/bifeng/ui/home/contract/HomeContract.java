@@ -23,6 +23,14 @@ public interface HomeContract {
 
         void showGuangBoError(String errorContent);
 
+        void qianDaoSuccess(String msg, int days);
+
+        void qianDaoError(String msg);
+
+        void loginOut();
+
+        void login();
+
     }
 
     interface Presenter extends BasePresenter<View> {
@@ -33,5 +41,9 @@ public interface HomeContract {
         void loadTuiJian(int page);
 
         void loadGuangBo();
+
+        void sendQianDao();
+
+        void isLogin();
     }
 }

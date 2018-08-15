@@ -2,6 +2,9 @@ package com.coinwind.bifeng.ui.home.bean;
 
 import java.util.List;
 
+/**
+ * 首页轮播图的bean
+ */
 public class HomeBannerBean {
 
 

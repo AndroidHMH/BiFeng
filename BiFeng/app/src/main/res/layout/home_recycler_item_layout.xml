@@ -24,50 +24,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/dp_8"
-        android:layout_marginLeft="@dimen/dp_6"
         android:layout_marginTop="@dimen/dp_5"
         android:orientation="vertical">
 
+
         <LinearLayout
+            android:id="@+id/home_recycler_item_title_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_18">
 
-            <LinearLayout
-                android:id="@+id/home_recycler_item_layout_xcf_layout"
-                android:layout_width="wrap_content"
+
+            <ImageView
+                android:id="@+id/home_recycler_item_layout_zhi_diong_tv"
+                android:layout_width="@dimen/dp_45"
                 android:layout_height="@dimen/dp_20"
-                android:orientation="horizontal">
+                android:layout_marginLeft="@dimen/dp_7"
+                android:layout_marginRight="@dimen/dp_7"
+                android:src="@mipmap/home_zhi_ding_icon" />
 
-                <TextView
-                    android:id="@+id/home_recycler_item_layout_zhi_diong_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/dp_3_5"
-                    android:background="@drawable/home_zhi_ding_shape"
-                    android:paddingBottom="@dimen/dp_1_5"
-                    android:paddingLeft="@dimen/dp_10"
-                    android:paddingRight="@dimen/dp_10"
-                    android:paddingTop="@dimen/dp_0_5"
-                    android:text="置顶"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp_12" />
-
-                <TextView
-                    android:id="@+id/home_recycler_item_layout_jing_pin_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/dp_3_5"
-                    android:background="@drawable/home_jing_pin_shape"
-                    android:paddingBottom="@dimen/dp_1_5"
-                    android:paddingLeft="@dimen/dp_10"
-                    android:paddingRight="@dimen/dp_10"
-                    android:paddingTop="@dimen/dp_0_5"
-                    android:text="精品"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp_12" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/home_recycler_item_layout_jing_pin_tv"
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginLeft="@dimen/dp_7"
+                android:src="@mipmap/home_jing_pin_icon" />
 
 
             <TextView
@@ -75,7 +58,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_11"
-                android:layout_marginRight="@dimen/dp_18"
                 android:maxLines="1"
                 android:textColor="@color/black_333"
                 android:textSize="@dimen/sp_15" />
@@ -83,21 +65,24 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_11"
-            android:gravity="center_vertical">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_7"
+            android:orientation="horizontal">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_11"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:orientation="vertical">
 
                 <co.lujun.androidtagview.TagContainerLayout
                     android:id="@+id/home_recycler_item_layout_xcf_title_layout"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="@null"
                     app:container_background_color="#FAFAFA"
                     app:container_border_color="@color/white"
                     app:container_border_radius="@dimen/dp_0"
@@ -109,12 +94,13 @@
                     app:tag_vertical_padding="@dimen/dp_2_5" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="@dimen/dp_17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp_6">
+                    android:paddingLeft="@dimen/dp_6"
+                    android:weightSum="1">
 
                     <com.makeramen.roundedimageview.RoundedImageView
                         android:layout_width="@dimen/dp_4"
@@ -147,11 +133,15 @@
                         android:textSize="@dimen/sp_10" />
 
                 </LinearLayout>
+
+
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dp_78"
+                android:layout_height="@dimen/dp_30"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/dp_12"
                 android:layout_marginRight="@dimen/dp_10"
                 android:background="@drawable/home_btn_shape"
                 android:gravity="center"
@@ -174,5 +164,6 @@
 
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

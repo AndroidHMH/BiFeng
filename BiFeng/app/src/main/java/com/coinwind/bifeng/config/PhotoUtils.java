@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.v4.app.Fragment;
 
 import java.io.File;
 
@@ -38,6 +39,16 @@ public class PhotoUtils {
         Intent photoPickerIntent = new Intent(Intent.ACTION_GET_CONTENT);
         photoPickerIntent.setType("image/*");
         activity.startActivityForResult(photoPickerIntent, requestCode);
+    }
+
+    /**
+     * @param fragment    fragment
+     * @param requestCode 打开相册的请求码
+     */
+    public static void openPic(Fragment fragment, int requestCode) {
+        Intent photoPickerIntent = new Intent(Intent.ACTION_GET_CONTENT);
+        photoPickerIntent.setType("image/*");
+        fragment.startActivityForResult(photoPickerIntent, requestCode);
     }
 
 

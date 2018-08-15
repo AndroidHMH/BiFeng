@@ -1,5 +1,7 @@
 package com.coinwind.bifeng.ui.submittask.bean;
-
+/**
+ *提交任务的bean
+ */
 public class SubmitBean {
 
     /**

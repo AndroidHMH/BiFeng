@@ -2,6 +2,9 @@ package com.coinwind.bifeng.ui.home.bean;
 
 import java.util.List;
 
+/**
+ * 首页广播的bean
+ */
 public class GuangBoBean {
 
     /**

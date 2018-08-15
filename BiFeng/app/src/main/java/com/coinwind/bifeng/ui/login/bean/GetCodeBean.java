@@ -1,5 +1,8 @@
 package com.coinwind.bifeng.ui.login.bean;
 
+/**
+ * 获取验证码的bean
+ */
 public class GetCodeBean {
 
     /**

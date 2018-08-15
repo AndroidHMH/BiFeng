@@ -21,6 +21,9 @@ import butterknife.ButterKnife;
 import co.lujun.androidtagview.ColorFactory;
 import co.lujun.androidtagview.TagContainerLayout;
 
+/**
+ * 任务大厅list的适配器
+ */
 public class TaskAdapter extends BaseAdapter {
     private List<TaskBean> mList;
     private Context context;
@@ -61,7 +64,7 @@ public class TaskAdapter extends BaseAdapter {
         holder.recyclerItemLayoutCountTv.setText(taskBean.getScore() + "");
         Glide.with(context).load(taskBean.getLogo()).into(holder.recyclerItemLayoutUserIconImg);
         holder.recyclerItemLayoutUserNameTv.setText(taskBean.getNick_name());
-        Glide.with(context).load(taskBean.getHead_img()).into(holder.recyclerItemLayoutIconImg);
+        Glide.with(context).load(taskBean.getImg()).into(holder.recyclerItemLayoutIconImg);
         holder.recyclerItemLayoutChangCuoTv.setText(taskBean.getGz_name());
 
         String is_top = taskBean.getIs_top();

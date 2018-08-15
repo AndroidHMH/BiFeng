@@ -15,6 +15,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * 个人中心的P层
+ */
 public class MyPresenter implements MyContract.Presenter {
 
     private MyService service;
@@ -26,7 +29,7 @@ public class MyPresenter implements MyContract.Presenter {
 
     @Override
     public void changeType(String userId, final String field, final String value) {
-        service.changeType(userId, field, value)
+        service.changeType(userId, field, value, SpHelp.getSign())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
                 .subscribe(new Observer<ChangeMessageBean>() {
@@ -38,11 +41,14 @@ public class MyPresenter implements MyContract.Presenter {
                     @Override
                     public void onNext(ChangeMessageBean changeMessageBean) {
                         int code = changeMessageBean.getCode();
-                        if (code == Codes.SUCCESS_CODE) {
+                        ChangeMessageBean.DataBean data = changeMessageBean.getData();
+                        if (code == Codes.SUCCESS_CODE && data != null) {
                             SpHelp.putUserInformation(field, value);
                             view.showSuccess("修改成功", Integer.parseInt(value));
+                        } else if (code == Codes.FAILURE_CODE) {
+                            view.loginOut();
                         } else {
-                            view.showError("修改失败");
+                            view.showError("身份失效,请重新登。");
                         }
                     }
 
@@ -60,7 +66,7 @@ public class MyPresenter implements MyContract.Presenter {
 
     @Override
     public void loadCC(String userId) {
-        service.loadCC(userId, "1", "1")
+        service.loadCC(userId, "1", "1", SpHelp.getSign())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
                 .subscribe(new Observer<WalletBean>() {
@@ -75,8 +81,10 @@ public class MyPresenter implements MyContract.Presenter {
                         WalletBean.DataBean data = walletBean.getData();
                         if (code == Codes.SUCCESS_CODE && data != null) {
                             view.showCC(data.getTodayCss() + "", data.getCurrentCss() + "");
+                        } else if (code == Codes.FAILURE_CODE) {
+                            view.loginOut();
                         } else {
-                            view.showError("获取钱包失败");
+                            view.showError("身份失效,请重新登。");
                         }
                     }
 

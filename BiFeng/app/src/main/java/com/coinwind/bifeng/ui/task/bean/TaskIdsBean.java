@@ -2,6 +2,9 @@ package com.coinwind.bifeng.ui.task.bean;
 
 import java.util.List;
 
+/**
+ * 完成任务用户集合的bean
+ */
 public class TaskIdsBean {
 
     /**

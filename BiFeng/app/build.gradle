@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'bifeng'
             keyPassword '123456'
-            storeFile file('/Users/heminghao/Desktop/qm/bifeng.jks')
+            storeFile file('bifeng.jks')
             storePassword '123456'
         }
     }
@@ -17,15 +17,16 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.config
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
-    }
-    productFlavors {
+        debug {
+            signingConfig signingConfigs.config
+        }
     }
 }
 
@@ -54,10 +55,19 @@ dependencies {
     implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     //    compile 'com.android.support:appcompat-v7:25.3.1'//版本随意
-//    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4'
+    //    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4'
     implementation 'com.android.support:recyclerview-v7:27.+'
     //RecyclerView
     implementation 'org.byteam.superadapter:superadapter:3.6.8'
-//    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    //    implementation 'de.hdodenhof:circleimageview:2.1.0'
     implementation 'co.lujun:androidtagview:1.0.3'
+    implementation 'com.android.support:design:27.1.1'
+    implementation files('libs/umeng-common-1.5.3.jar')
+    implementation files('libs/umeng-share-core-6.9.3.jar')
+    implementation files('libs/umeng-share-wechat-simplify-6.9.3.jar')
+    implementation files('libs/umeng-shareboard-widget-6.9.3.jar')
+    implementation files('libs/umeng-sharetool-6.9.3.jar')
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation files('libs/umeng-analytics-7.5.3.jar')
+    implementation 'com.feezu.liuli:timeselector:1.1.3+'
 }

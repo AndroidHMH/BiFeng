@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/heminghao/Desktop/bf/BiFeng/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
+            "outputFile": "/Users/heminghao/Desktop/bfdaima/BiFeng/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
             "map": [
                 {
                     "source": "/Users/heminghao/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/cdcbc74deda0b16bf9c0a2262ccb85c9/res/values-mn/values-mn.xml",

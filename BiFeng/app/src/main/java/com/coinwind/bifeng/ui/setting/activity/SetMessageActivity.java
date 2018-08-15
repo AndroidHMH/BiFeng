@@ -2,19 +2,18 @@ package com.coinwind.bifeng.ui.setting.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
-import com.coinwind.bifeng.app.BFApplication;
 import com.coinwind.bifeng.base.BaseActivity;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
+import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.setting.config.SetMessageHelp;
 import com.coinwind.bifeng.ui.setting.contract.SetMessageContract;
 import com.coinwind.bifeng.ui.setting.presenter.SetMessagePresenter;
@@ -24,6 +23,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * 修改用户信息的页面
+ */
 public class SetMessageActivity extends BaseActivity<SetMessagePresenter> implements SetMessageContract.View {
 
     @BindView(R.id.title_title_tv)
@@ -38,6 +40,12 @@ public class SetMessageActivity extends BaseActivity<SetMessagePresenter> implem
     TextView setMessageAllCountTv;
     @BindView(R.id.set_message_send_btn)
     Button setMessageSendBtn;
+    @BindView(R.id.title_bar_layout)
+    LinearLayout titleBarLayout;
+    @BindView(R.id.set_message_count_layout)
+    LinearLayout setMessageCountLayout;
+    @BindView(R.id.set_message_qi_yi_et)
+    EditText setMessageQiYiEt;
     private String info;
     private Intent intent;
 
@@ -51,7 +59,7 @@ public class SetMessageActivity extends BaseActivity<SetMessagePresenter> implem
         intent = getIntent();
         info = intent.getStringExtra("info");
         SetMessageHelp.setTitle(info, titleTitleTv);
-        SetMessageHelp.setHintText(info, setMessageEt);
+        SetMessageHelp.setHintText(info, setMessageEt, setMessageCountLayout, setMessageQiYiEt);
     }
 
     @Override
@@ -66,7 +74,11 @@ public class SetMessageActivity extends BaseActivity<SetMessagePresenter> implem
                 finish();
                 break;
             case R.id.set_message_send_btn:
-                presenter.changeMessage(SpHelp.getUserInformation(SpHelp.ID), info, setMessageEt.getText().toString().trim());
+                if (setMessageEt.getVisibility() == View.VISIBLE) {
+                    presenter.changeMessage(SpHelp.getUserInformation(SpHelp.ID), info, setMessageEt.getText().toString().trim());
+                } else {
+                    presenter.changeMessage(SpHelp.getUserInformation(SpHelp.ID), info, setMessageQiYiEt.getText().toString().trim());
+                }
                 break;
         }
     }
@@ -86,8 +98,9 @@ public class SetMessageActivity extends BaseActivity<SetMessagePresenter> implem
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        BFApplication.context = null;
+    public void loginOut() {
+        SpHelp.loginOut();
+        LoginActivity.openLoginActivity(this);
     }
+
 }

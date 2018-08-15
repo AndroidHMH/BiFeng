@@ -1,16 +1,18 @@
 package com.coinwind.bifeng.ui.home.fragment;
 
 import android.content.Intent;
-import android.os.Bundle;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.CountDownTimer;
-import android.view.LayoutInflater;
+import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -18,26 +20,34 @@ import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseFragment;
 import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.config.LogHelp;
+import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.TimeUtils;
+import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.ui.home.adapter.HomeAdapter;
 import com.coinwind.bifeng.ui.home.bean.HomeBannerBean;
+import com.coinwind.bifeng.ui.home.config.QianDaoHelp;
 import com.coinwind.bifeng.ui.home.contract.HomeContract;
 import com.coinwind.bifeng.ui.home.presenter.HomePresenter;
+import com.coinwind.bifeng.ui.login.activity.LoginActivity;
+import com.coinwind.bifeng.ui.share.activity.InvitationActivity;
 import com.coinwind.bifeng.ui.task.activity.AnswerTaskActivity;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.recker.flybanner.FlyBanner;
 
+import org.greenrobot.eventbus.EventBus;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import co.lujun.androidtagview.ColorFactory;
 import co.lujun.androidtagview.TagContainerLayout;
 
 /**
- * 首页
+ * 首页的fragment
  */
 public class HomeFragment extends BaseFragment<HomePresenter> implements HomeContract.View, AbsListView.OnScrollListener, View.OnClickListener, AdapterView.OnItemClickListener {
     @BindView(R.id.main_list)
@@ -61,6 +71,8 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     public LinearLayout homeQiangRenWuBtn;
     @BindView(R.id.title_layout_return_btn)
     LinearLayout titleLayoutReturnBtn;
+    @BindView(R.id.title_title_tv)
+    TextView titleTitleTv;
 
 
     private List<TaskBean> mList;
@@ -69,6 +81,17 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     private boolean loadFinishFlag;
     private int page = 1;
     private TaskBean qiangRenWu;
+    private ImageView homeQianDaoBtn;
+    private ImageView homeFenXiangBtn;
+    public ImageView qianDao1;
+    public ImageView qianDao2;
+    public ImageView qianDao3;
+    public ImageView qianDao4;
+    public ImageView qianDao5;
+    public ImageView qianDao6;
+    public ImageView qianDao7;
+    public Button qianDaoBtn;
+    private PopupWindow qianDaoPopupWindow;
 
     @Override
     protected int getLayoutId() {
@@ -91,7 +114,6 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         titleLayoutReturnBtn.setVisibility(View.GONE);
 
         mainList.setOnScrollListener(this);
-        homeQiangRenWuBtn.setOnClickListener(this);
         mainList.setOnItemClickListener(this);
     }
 
@@ -113,6 +135,20 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         this.homeQiangTimeTv = (TextView) rootView.findViewById(R.id.home_qiang_time_tv);
         this.homeQiangXfcLayout = (TagContainerLayout) rootView.findViewById(R.id.home_qiang_xfc_layout);
         this.homeQiangRenWuBtn = (LinearLayout) rootView.findViewById(R.id.home_qiang_ren_wu_btn);
+        this.homeQianDaoBtn = rootView.findViewById(R.id.home_qian_dao_btn);
+        this.homeFenXiangBtn = rootView.findViewById(R.id.home_fen_xiang_btn);
+
+        homeQiangRenWuBtn.setOnClickListener(this);
+        homeZhaufnaBtn.setOnClickListener(this);
+        homeZhuceBtn.setOnClickListener(this);
+        homePinglunBtn.setOnClickListener(this);
+        homeZhangfenBtn.setOnClickListener(this);
+        homeJiaoyanBtn.setOnClickListener(this);
+        homeDatiBtn.setOnClickListener(this);
+        homePaizhaoBtn.setOnClickListener(this);
+        homeQianDaoBtn.setOnClickListener(this);
+        homeFenXiangBtn.setOnClickListener(this);
+
 
         homeGuangBoContentTv.setSelected(true);
 
@@ -130,15 +166,58 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
                 answerIntent.putExtra("bean", qiangRenWu);
                 startActivity(answerIntent);
                 break;
+            case R.id.home_zhaufna_btn:
+                EventBus.getDefault().post("转发任务");
+                break;
+            case R.id.home_zhuce_btn:
+                EventBus.getDefault().post("注册任务");
+                break;
+            case R.id.home_pinglun_btn:
+                EventBus.getDefault().post("评论任务");
+                break;
+            case R.id.home_zhangfen_btn:
+                EventBus.getDefault().post("涨粉任务");
+                break;
+            case R.id.home_jiaoyan_btn:
+                EventBus.getDefault().post("调研任务");
+                break;
+            case R.id.home_dati_btn:
+                EventBus.getDefault().post("答题任务");
+                break;
+            case R.id.home_paizhao_btn:
+                EventBus.getDefault().post("拍照任务");
+                break;
+            case R.id.home_qian_dao_btn:
+                if (SpHelp.getLoginStatus()) {
+                    showQianDaoPopup();
+                } else {
+                    LoginActivity.openLoginActivity(getContext());
+                }
+                break;
+            case R.id.home_fen_xiang_btn:
+                if (SpHelp.getLoginStatus()) {
+                    presenter.isLogin();
+                } else {
+                    LoginActivity.openLoginActivity(getContext());
+                }
+                break;
+            case R.id.qian_dao_btn:
+                presenter.sendQianDao();
+                break;
         }
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent answerIntent = new Intent(getContext(), AnswerTaskActivity.class);
-        TaskBean taskBean = mList.get(position);
-        answerIntent.putExtra("bean", taskBean);
-        startActivity(answerIntent);
+        int i = position - 1;
+        if ((position + 1) != mainList.getCount()) {
+            Intent answerIntent = new Intent(getContext(), AnswerTaskActivity.class);
+            TaskBean taskBean = mList.get(i);
+            answerIntent.putExtra("bean", taskBean);
+            startActivity(answerIntent);
+        } else {
+            ToastHelp.showShort(getContext(), "已经是最后一条了");
+        }
     }
 
     @Override
@@ -149,6 +228,15 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         presenter.loadGuangBo();
     }
 
+    @Override
+    protected void hideErrorView() {
+        mainList.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void showSuccessView() {
+        mainList.setVisibility(View.VISIBLE);
+    }
 
     @Override
     public void showBanner(List<HomeBannerBean.DataBean> bannerBeans) {
@@ -180,15 +268,17 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         homeQiangXfcLayout.setTags(labels);
         String end_time = taskBean.getEnd_time();
 
-        long endTime = TimeUtils.stringToLong(end_time);
+        long endTime = TimeUtils.string2long(end_time);
         long nowTime = System.currentTimeMillis();
         long l = endTime - nowTime;
+
         /** 倒计时60秒，一次1秒 */
         CountDownTimer timer = new CountDownTimer(l, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                // TODO Auto-generated method stub
-                homeQiangTimeTv.setText(TimeUtils.longToString(millisUntilFinished));
+                String s = TimeUtils.long2hms(millisUntilFinished);
+                LogHelp.e("time", s);
+                homeQiangTimeTv.setText(s);
             }
 
             @Override
@@ -216,8 +306,30 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     }
 
     @Override
-    public void onScrollStateChanged(AbsListView absListView, int i) {
+    public void qianDaoSuccess(String msg, int days) {
+        ToastHelp.showShort(getContext(), msg);
+        SpHelp.putUserInformation(SpHelp.LAST_CHECK_TYPE, days + "");
+        QianDaoHelp.setDay(getImgs(), days);
+    }
 
+    @Override
+    public void qianDaoError(String msg) {
+        ToastHelp.showShort(getContext(), msg);
+    }
+
+    @Override
+    public void loginOut() {
+        SpHelp.loginOut();
+        LoginActivity.openLoginActivity(getContext());
+    }
+
+    @Override
+    public void login() {
+        startActivity(new Intent(getContext(), InvitationActivity.class));
+    }
+
+    @Override
+    public void onScrollStateChanged(AbsListView absListView, int i) {
     }
 
     @Override
@@ -234,4 +346,47 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         }
     }
 
+    /**
+     * 展示签到的popupWindow
+     */
+    private void showQianDaoPopup() {
+        View inflate = getLayoutInflater().inflate(R.layout.qian_dao_popup_layout, null);
+        initQianDao(inflate);
+        qianDaoPopupWindow = new PopupWindow(inflate, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
+        qianDaoPopupWindow.setOutsideTouchable(true);
+        qianDaoPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+
+        String lastClickType = SpHelp.getUserInformation(SpHelp.LAST_CHECK_TYPE);
+        int days = 0;
+        if (!"".equals(lastClickType)) {
+            days = Integer.parseInt(SpHelp.getUserInformation(SpHelp.LAST_CHECK_TYPE));
+        }
+        QianDaoHelp.setDay(getImgs(), days);
+        qianDaoPopupWindow.showAtLocation(getLayoutInflater().inflate(R.layout.fragment_task, null), Gravity.CENTER, 0, 0);
+    }
+
+    private void initQianDao(View rootView) {
+        this.qianDao1 = (ImageView) rootView.findViewById(R.id.qian_dao1);
+        this.qianDao2 = (ImageView) rootView.findViewById(R.id.qian_dao2);
+        this.qianDao3 = (ImageView) rootView.findViewById(R.id.qian_dao3);
+        this.qianDao4 = (ImageView) rootView.findViewById(R.id.qian_dao4);
+        this.qianDao5 = (ImageView) rootView.findViewById(R.id.qian_dao5);
+        this.qianDao6 = (ImageView) rootView.findViewById(R.id.qian_dao6);
+        this.qianDao7 = (ImageView) rootView.findViewById(R.id.qian_dao7);
+        this.qianDaoBtn = (Button) rootView.findViewById(R.id.qian_dao_btn);
+
+        qianDaoBtn.setOnClickListener(this);
+    }
+
+    private List<ImageView> getImgs() {
+        List<ImageView> imageViews = new ArrayList<>();
+        imageViews.add(qianDao1);
+        imageViews.add(qianDao2);
+        imageViews.add(qianDao3);
+        imageViews.add(qianDao4);
+        imageViews.add(qianDao5);
+        imageViews.add(qianDao6);
+        imageViews.add(qianDao7);
+        return imageViews;
+    }
 }

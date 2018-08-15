@@ -18,6 +18,9 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
+/**
+ * 登录界面的P层
+ */
 public class LoginPresenter implements LoginContract.Presenter {
 
     private LoginService service;
@@ -49,7 +52,8 @@ public class LoginPresenter implements LoginContract.Presenter {
                     @Override
                     public void onNext(GetCodeBean getCodeBean) {
                         int code = getCodeBean.getCode();
-                        if (code == Codes.SUCCESS_CODE) {
+                        GetCodeBean.DataBean data = getCodeBean.getData();
+                        if (code == Codes.SUCCESS_CODE && data.isState()) {
                             view.showCode("获取验证码成功");
                         } else {
                             view.showCode("获取验证码失败");
@@ -115,13 +119,13 @@ public class LoginPresenter implements LoginContract.Presenter {
                         if (code == Codes.SUCCESS_CODE) {
                             LoginBean.DataBean data = loginBean.getData();
                             if (data.isState()) {
-                                view.loginSuccessful(data.getUser());
+                                view.loginSuccessful(data.getUser(), data.getSign());
                             } else {
-                                view.loginFailed(data.getMsg());
+                                view.loginFailed("密码输入错误");
                             }
 
                         }
-                        LogHelp.e("LoginPresenter", loginBean.getData().toString());
+                        LogHelp.e("LoginPresenter", loginBean.toString());
                     }
 
                     @Override
@@ -154,7 +158,7 @@ public class LoginPresenter implements LoginContract.Presenter {
                         if (code == Codes.SUCCESS_CODE) {
                             LoginBean.DataBean data = loginBean.getData();
                             if (data.isState()) {
-                                view.loginSuccessful(data.getUser());
+                                view.loginSuccessful(data.getUser(), data.getSign());
                             } else {
                                 view.loginFailed(data.getMsg());
                             }

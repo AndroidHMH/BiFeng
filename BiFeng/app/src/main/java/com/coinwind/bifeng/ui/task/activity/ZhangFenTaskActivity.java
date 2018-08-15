@@ -13,9 +13,10 @@ import android.widget.Toast;
 
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
+import com.coinwind.bifeng.base.NoNetworkBaseActivity;
 import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.config.ToastHelp;
-import com.coinwind.bifeng.ui.submittask.activity.SubmitRegisitActivity;
+import com.coinwind.bifeng.ui.submittask.activity.SubmitCommentsActivity;
 import com.coinwind.bifeng.ui.task.config.SetViewHelp;
 
 import java.io.Serializable;
@@ -27,7 +28,7 @@ import butterknife.OnClick;
 /**
  * 操作步骤为4步的页面
  */
-public class ZhangFenTaskActivity extends BaseActivity {
+public class ZhangFenTaskActivity extends NoNetworkBaseActivity {
 
     @BindView(R.id.title_title_tv)
     TextView titleTitleTv;
@@ -71,11 +72,6 @@ public class ZhangFenTaskActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void loadDate() {
-
-    }
-
     @OnClick({R.id.title_layout_return_btn, R.id.bu_zou_next_btn, R.id.bu_zou_cope_tv})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -88,8 +84,9 @@ public class ZhangFenTaskActivity extends BaseActivity {
                 ToastHelp.showShort(this, buZouWeiXinTv.getText() + "已经复制到剪切板");
                 break;
             case R.id.bu_zou_next_btn:
-                Intent intent = new Intent(this, SubmitRegisitActivity.class);
+                Intent intent = new Intent(this, SubmitCommentsActivity.class);
                 intent.putExtra("bean", bean);
+                intent.putExtra("type", "phone");
                 startActivity(intent);
                 break;
         }

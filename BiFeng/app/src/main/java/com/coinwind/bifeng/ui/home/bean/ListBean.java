@@ -4,6 +4,9 @@ import com.coinwind.bifeng.base.TaskBean;
 
 import java.util.List;
 
+/**
+ * 首页list的bean
+ */
 public class ListBean {
 
     private int code;

@@ -123,9 +123,9 @@ public class HomeAdapter extends BaseAdapter {
         @BindView(R.id.home_recycler_item_layout_score_tv)
         TextView homeRecyclerItemLayoutScoreTv;
         @BindView(R.id.home_recycler_item_layout_zhi_diong_tv)
-        TextView homeRecyclerItemLayoutZhiDiongTv;
+        ImageView homeRecyclerItemLayoutZhiDiongTv;
         @BindView(R.id.home_recycler_item_layout_jing_pin_tv)
-        TextView homeRecyclerItemLayoutJingPinTv;
+        ImageView homeRecyclerItemLayoutJingPinTv;
         @BindView(R.id.home_recycler_item_layout_biao_qian_img)
         ImageView homeRecyclerItemLayoutBiaoQianImg;
 

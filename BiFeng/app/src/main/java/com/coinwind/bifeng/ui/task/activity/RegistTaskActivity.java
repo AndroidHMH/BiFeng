@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
+import com.coinwind.bifeng.base.NoNetworkBaseActivity;
 import com.coinwind.bifeng.base.TaskBean;
+import com.coinwind.bifeng.ui.submittask.activity.SubmitCommentsActivity;
 import com.coinwind.bifeng.ui.task.config.SetViewHelp;
 
 
@@ -20,7 +22,7 @@ import butterknife.OnClick;
 /**
  * 操作步骤  有链接
  */
-public class RegistTaskActivity extends BaseActivity {
+public class RegistTaskActivity extends NoNetworkBaseActivity {
 
     @BindView(R.id.title_title_tv)
     TextView titleTitleTv;
@@ -60,11 +62,6 @@ public class RegistTaskActivity extends BaseActivity {
         SetViewHelp.setUrl(bean.getUrl(), buZouLianJieUrlTv);
     }
 
-    @Override
-    protected void loadDate() {
-
-    }
-
     @OnClick({R.id.title_layout_return_btn, R.id.bu_zou_lian_jie_next_btn, R.id.bu_zou_lian_jie_url_tv})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -78,6 +75,10 @@ public class RegistTaskActivity extends BaseActivity {
                 this.startActivity(intent); //启动浏览器
                 break;
             case R.id.bu_zou_lian_jie_next_btn:
+                Intent submitIntent = new Intent(this, SubmitCommentsActivity.class);
+                submitIntent.putExtra("bean",bean);
+                submitIntent.putExtra("type","phone");
+                startActivity(submitIntent);
                 break;
         }
     }

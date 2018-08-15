@@ -6,11 +6,14 @@ import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.config.Codes;
 import com.coinwind.bifeng.config.LogHelp;
+import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.model.http.RetrofitHelp;
 import com.coinwind.bifeng.ui.home.bean.GuangBoBean;
 import com.coinwind.bifeng.ui.home.bean.HomeBannerBean;
 import com.coinwind.bifeng.ui.home.bean.HomeQiangBean;
+import com.coinwind.bifeng.ui.home.bean.IsLoginBean;
 import com.coinwind.bifeng.ui.home.bean.ListBean;
+import com.coinwind.bifeng.ui.home.bean.QianDaoBean;
 import com.coinwind.bifeng.ui.home.biz.HomeService;
 import com.coinwind.bifeng.ui.home.contract.HomeContract;
 
@@ -142,6 +145,85 @@ public class HomePresenter implements HomeContract.Presenter {
                     @Override
                     public void onError(Throwable e) {
                         view.showGuangBoError("更多任务等你来抢");
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    @Override
+    public void sendQianDao() {
+        homeService.sendQianDao(SpHelp.getUserInformation(SpHelp.ID), SpHelp.getSign())
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<QianDaoBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(QianDaoBean qianDaoBean) {
+                        LogHelp.e("LoginPresenter", qianDaoBean.toString());
+                        int code = qianDaoBean.getCode();
+                        QianDaoBean.DataBean data = qianDaoBean.getData();
+                        if (code == Codes.SUCCESS_CODE) {
+                            if (data.isState()) {
+                                view.qianDaoSuccess(data.getMsg(), Integer.parseInt(data.getCheckType()));
+                            } else {
+                                view.qianDaoError(data.getMsg());
+                            }
+                        } else if (code == Codes.FAILURE_CODE) {
+                            view.loginOut();
+                        } else {
+                            view.qianDaoError(data.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        view.qianDaoError("签到失败");
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    @Override
+    public void isLogin() {
+        homeService.isLogin(SpHelp.getUserInformation(SpHelp.ID), SpHelp.getSign())
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<IsLoginBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(IsLoginBean isLoginBean) {
+                        int code = isLoginBean.getCode();
+                        if (code == Codes.SUCCESS_CODE) {
+                            if (isLoginBean.getData().isState()) {
+                                view.login();
+                            } else {
+                                view.loginOut();
+                            }
+                        } else {
+                            view.loginOut();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        view.loginOut();
+
                     }
 
                     @Override

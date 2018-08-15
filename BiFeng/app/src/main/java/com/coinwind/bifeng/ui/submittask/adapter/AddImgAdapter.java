@@ -15,9 +15,13 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AddImgAdapter extends RecyclerView.Adapter<AddImgAdapter.Holder> {
+/**
+ * 提交任务配图的适配器
+ */
+public class AddImgAdapter extends RecyclerView.Adapter<AddImgAdapter.Holder> implements View.OnClickListener {
     private List<Bitmap> bitmapList;
     private OnItemClick onItemClick;
+    private OnItemImgClick onItemImgClick;
 
     public AddImgAdapter(List<Bitmap> bitmapList) {
         this.bitmapList = bitmapList;
@@ -28,11 +32,17 @@ public class AddImgAdapter extends RecyclerView.Adapter<AddImgAdapter.Holder> {
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.add_img_view, parent, false);
         Holder holder = new Holder(inflate);
+        inflate.setOnClickListener(this);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, final int position) {
+        if ((position + 1) == bitmapList.size()) {
+            holder.deleteImgBtn.setVisibility(View.GONE);
+        } else {
+            holder.deleteImgBtn.setVisibility(View.VISIBLE);
+        }
         holder.addImgImg.setImageBitmap(bitmapList.get(position));
         holder.deleteImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,14 +52,30 @@ public class AddImgAdapter extends RecyclerView.Adapter<AddImgAdapter.Holder> {
                 }
             }
         });
+        holder.itemView.setTag(position);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (onItemImgClick != null) {
+            onItemImgClick.onItemImgClick((int) v.getTag());
+        }
     }
 
     public interface OnItemClick {
         void onItemClick(int position);
     }
 
+    public interface OnItemImgClick {
+        void onItemImgClick(int position);
+    }
+
     public void setOnItemClick(OnItemClick onItemClick) {
         this.onItemClick = onItemClick;
+    }
+
+    public void setOnItemImgClick(OnItemImgClick onItemImgClick) {
+        this.onItemImgClick = onItemImgClick;
     }
 
     @Override

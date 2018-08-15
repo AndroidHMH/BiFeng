@@ -13,11 +13,16 @@ import com.coinwind.bifeng.base.BaseFragment;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.ui.login.activity.LoginActivity;
+import com.coinwind.bifeng.ui.my.activity.AlertsActivity;
+import com.coinwind.bifeng.ui.my.activity.MyWalletActivity;
 import com.coinwind.bifeng.ui.my.activity.PerfectInformationActivity;
+import com.coinwind.bifeng.ui.my.config.InfoHelp;
 import com.coinwind.bifeng.ui.my.contract.MyContract;
 import com.coinwind.bifeng.ui.my.presenter.MyPresenter;
 import com.coinwind.bifeng.ui.setting.activity.SettingActivity;
 import com.makeramen.roundedimageview.RoundedImageView;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -37,6 +42,8 @@ public class MyFragment extends BaseFragment<MyPresenter> implements MyContract.
     TextView myUserTypeTv;
     @BindView(R.id.my_change_user_type_btn)
     LinearLayout myChangeUserTypeBtn;
+    @BindView(R.id.my_all_layout)
+    LinearLayout myAllLayout;
     @BindView(R.id.my_head_img_img)
     RoundedImageView myHeadImgImg;
     @BindView(R.id.my_user_name_tv)
@@ -100,6 +107,16 @@ public class MyFragment extends BaseFragment<MyPresenter> implements MyContract.
         }
     }
 
+    @Override
+    protected void hideErrorView() {
+        myAllLayout.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void showSuccessView() {
+        myAllLayout.setVisibility(View.VISIBLE);
+    }
+
     @OnClick({R.id.my_guzhu_btn, R.id.my_fu_wu_btn, R.id.my_change_user_type_btn, R.id.my_wallet_btn, R.id.my_msg_btn, R.id.my_send_renw_btn,
             R.id.my_running_renw_btn, R.id.my_setting_btn, R.id.my_wan_shan_info_btn, R.id.my_ge_ren_btn,
             R.id.my_wan_cheng_renw_btn, R.id.my_task_btn})
@@ -124,16 +141,25 @@ public class MyFragment extends BaseFragment<MyPresenter> implements MyContract.
                 break;
             case R.id.my_wallet_btn:
                 //跳转钱包
+                startActivity(new Intent(getContext(), MyWalletActivity.class));
                 break;
             case R.id.my_msg_btn:
                 //跳转信息通知
+                AlertsActivity.openActivity(getContext());
                 break;
             case R.id.my_send_renw_btn:
                 //跳转完成(发布)任务界面
+                Intent myTaskIntent;
+                if (SpHelp.getUserType().equals(SpHelp.EMPLOYERS)) {
+                    myTaskIntent = InfoHelp.getMyTaskIntent(getContext(), true);
+                } else {
+                    myTaskIntent = InfoHelp.getMyTaskIntent(getContext(), false);
+                }
+                startActivity(myTaskIntent);
                 break;
-            case R.id.my_running_renw_btn:
-                //跳转执行任务的界面
-                break;
+//            case R.id.my_running_renw_btn:
+//                //跳转执行任务的界面
+//                break;
             case R.id.my_setting_btn:
                 //跳转设置页面
                 startActivity(new Intent(getContext(), SettingActivity.class));
@@ -144,12 +170,15 @@ public class MyFragment extends BaseFragment<MyPresenter> implements MyContract.
                 break;
             case R.id.my_ge_ren_btn:
                 //跳转完善个人资料界面
+                startActivity(new Intent(getContext(), PerfectInformationActivity.class));
                 break;
             case R.id.my_wan_cheng_renw_btn:
-                //跳转完成任务界面
+                //跳转完成任务界面(任务大厅)
+                EventBus.getDefault().post("全部任务");
                 break;
             case R.id.my_task_btn:
-                //跳转完成任务界面
+                //跳转完成任务界面(任务大厅)
+                EventBus.getDefault().post("全部任务");
                 break;
         }
     }
@@ -168,6 +197,8 @@ public class MyFragment extends BaseFragment<MyPresenter> implements MyContract.
 
     @Override
     public void showError(String errorMsg) {
+        SpHelp.loginOut();
+        LoginActivity.openLoginActivity(getContext());
         ToastHelp.showShort(getContext(), errorMsg);
     }
 
@@ -175,6 +206,12 @@ public class MyFragment extends BaseFragment<MyPresenter> implements MyContract.
     public void showCC(String todayCC, String allCC) {
         myTodayCcTv.setText(todayCC);
         myAllCcTv.setText(allCC);
+    }
+
+    @Override
+    public void loginOut() {
+        SpHelp.loginOut();
+        LoginActivity.openLoginActivity(getContext());
     }
 
     /**

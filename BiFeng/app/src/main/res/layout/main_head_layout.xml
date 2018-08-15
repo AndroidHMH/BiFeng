@@ -9,7 +9,40 @@
         android:id="@+id/home_banner"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_150" />
+    <!--广播列表-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <ImageView
+            android:layout_width="@dimen/dp_19"
+            android:layout_height="@dimen/dp_19"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5"
+            android:src="@mipmap/guangbo" />
+
+        <TextView
+            android:id="@+id/home_guang_bo_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingLeft="@dimen/dp_5"
+            android:singleLine="true"
+            android:textColor="@color/orange_fd"
+            android:textSize="@dimen/sp_13" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/gray_de" />
     <!--操作按钮-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -192,35 +225,36 @@
         </LinearLayout>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_1"
-        android:background="@color/gray" />
-    <!--广播列表-->
+    <!--签到与分享-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/gray_de"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="@dimen/dp_19"
-            android:layout_height="@dimen/dp_19"
-            android:layout_margin="@dimen/dp_5"
-            android:src="@mipmap/guangbo" />
+            android:id="@+id/home_qian_dao_btn"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_75"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_2_5"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@mipmap/qiandao_icon" />
 
-        <TextView
-            android:id="@+id/home_guang_bo_content_tv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ellipsize="marquee"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:gravity="center_vertical"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:paddingLeft="@dimen/dp_5"
-            android:singleLine="true"
-            android:textColor="@color/orange_fd"
-            android:textSize="@dimen/sp_13" />
+        <ImageView
+            android:id="@+id/home_fen_xiang_btn"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_75"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_marginLeft="@dimen/dp_2_5"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@mipmap/fenxiang_icon" />
     </LinearLayout>
     <!--抢任务-->
     <LinearLayout
@@ -231,7 +265,10 @@
         <ImageView
             android:layout_width="@dimen/dp_13"
             android:layout_height="@dimen/dp_16"
-            android:layout_margin="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_9"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_9"
             android:src="@mipmap/qiang_ren_wu_icon" />
 
         <TextView
@@ -243,7 +280,6 @@
             android:textSize="@dimen/sp_15" />
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -251,25 +287,32 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:gravity="right"
-                android:background="@mipmap/home_dao_ji_shi"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/dp_8">
+                android:layout_marginBottom="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@mipmap/home_dao_ji_shi"
+                android:gravity="right">
 
                 <TextView
                     android:id="@+id/home_qiang_time_tv"
-                    android:text="asdasd"
-                    android:textSize="@dimen/sp_12"
-                    android:textColor="#f44242"
-                    android:layout_marginRight="@dimen/dp_8"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_7"
+                    android:gravity="center"
+                    android:textColor="@color/red_f42"
+                    android:textSize="@dimen/sp_12" />
 
             </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/gray_de" />
 
     <LinearLayout
         android:id="@+id/home_qiang_ren_wu_btn"
@@ -280,8 +323,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginLeft="@dimen/dp_10"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_5">
 
             <com.makeramen.roundedimageview.RoundedImageView
@@ -370,9 +413,9 @@
                 app:container_border_color="@color/white"
                 app:container_border_radius="@dimen/dp_0"
                 app:container_border_width="@dimen/dp_0"
+                app:horizontal_interval="@dimen/dp_8"
                 app:tag_border_width="@dimen/dp_0_5"
                 app:tag_corner_radius="@dimen/dp_3"
-                app:horizontal_interval="@dimen/dp_8"
                 app:tag_horizontal_padding="@dimen/dp_10"
                 app:tag_text_size="@dimen/sp_12"
                 app:tag_vertical_padding="@dimen/dp_2_5" />
@@ -389,6 +432,10 @@
         </LinearLayout>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:background="@color/gray_f2" />
     <!--推荐-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -398,7 +445,9 @@
         <ImageView
             android:layout_width="@dimen/dp_16"
             android:layout_height="@dimen/dp_16"
-            android:layout_margin="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_9"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_9"
             android:src="@mipmap/tuijian_icon" />
 
         <TextView
