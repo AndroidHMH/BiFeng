@@ -112,7 +112,7 @@ public class SendZhangFenTaskActivity extends BaseActivity<SendZhuanFaTaskPresen
                 String title = sendTaskTitleEt.getText().toString().trim();
                 String publicNum = sendZhangFenPunlicNumEt.getText().toString().trim();
                 String label = GetSendMsgHelp.getLabel(sendTaskTitleFirstEt, sendTaskTitleSecondEt, sendTaskTitleThirdEt);
-                SendTaskActivity.zhangFenOpenSendTaskActivity(this, title, imgUrl, publicIngUrl, publicNum, label, type);
+                GetSendMsgHelp.zhangFenOpenSendTaskActivity(this, title, imgUrl, publicIngUrl, publicNum, label, type);
                 break;
         }
     }

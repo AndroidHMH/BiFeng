@@ -63,6 +63,15 @@
     <string name="text">字</string>
     <string name="submit_photo">已上传</string>
     <string name="page">张</string>
+    <string name="submit_da_ti_through">恭喜你通过测试</string>
+    <string name="submit_da_ti_not_through">很遗憾，您没能通过测试</string>
+    <string name="submit_da_ti_gong">共</string>
+    <string name="submit_da_ti_ti">题&#160;&#160;答对</string>
+    <string name="submit_da_ti_pass_num">题通过&#160;&#160;您答对</string>
+    <string name="submit_da_ti_not_through_tv">分享问卷给好友，您将获得一次重新答题的机会</string>
+    <string name="submit_da_ti_through_tv">&#160;CC&#160;已入账到您的币风钱包</string>
+    <string name="submit_da_ti_see">点击查看</string>
+    <string name="submit_da_ti_share">分享</string>
 
     <!--分享-->
     <string name="share">分享</string>
@@ -136,6 +145,26 @@
     <string name="zhang_fen_public_num">输入公众号微信号....</string>
     <string name="zhu_ce_url">输入注册页链接</string>
     <string name="public_num_img">上传公众号二维码</string>
+    <string name="ti">题</string>
+    <string name="diao_yan_delete">删除此题</string>
+    <string name="diao_yan_add">添加下一题</string>
+    <string name="da_ti_add">+增加选项</string>
+    <string name="diao_yan_et_hint">请输入题干，最多50个字</string>
+    <string name="options">选项 &#160;</string>
+    <string name="zheng_que_da_an">正确答案：</string>
+    <string name="send_da_ti_qualified1">1道题</string>
+    <string name="send_da_ti_qualified2">2道题</string>
+    <string name="send_da_ti_qualified3">3道题</string>
+    <string name="send_da_ti_qualified4">4道题</string>
+    <string name="send_da_ti_qualified5">5道题</string>
+    <string name="send_da_ti_qualified6">6道题</string>
+    <string name="send_da_ti_qualified7">7道题</string>
+    <string name="send_da_ti_qualified8">8道题</string>
+    <string name="send_da_ti_qualified9">9道题</string>
+    <string name="send_da_ti_qualified10">10道题</string>
+    <string name="send_da_ti_task_psw_num_tv">答题合格线</string>
+    <string name="xie_gang">/</string>
+    <string name="next_ti">下一题</string>
 
 
     <!--登录页面-->
@@ -209,6 +238,8 @@
     <string name="qian_dao6_tv">第六天</string>
     <string name="qian_dao7_tv">第七天</string>
     <string name="qian_dao_btn_tv">立即签到</string>
+
+
 </resources>
 
 

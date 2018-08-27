@@ -123,7 +123,6 @@ public class LoginPresenter implements LoginContract.Presenter {
                             } else {
                                 view.loginFailed("密码输入错误");
                             }
-
                         }
                         LogHelp.e("LoginPresenter", loginBean.toString());
                     }

@@ -17,11 +17,11 @@ import java.lang.Override;
 public class ShareActivity_ViewBinding extends BaseActivity_ViewBinding {
   private ShareActivity target;
 
-  private View view2131231118;
+  private View view2131231149;
 
-  private View view2131231120;
+  private View view2131231151;
 
-  private View view2131231203;
+  private View view2131231252;
 
   @UiThread
   public ShareActivity_ViewBinding(ShareActivity target) {
@@ -40,7 +40,7 @@ public class ShareActivity_ViewBinding extends BaseActivity_ViewBinding {
     target.shareWebView = Utils.findRequiredViewAsType(source, R.id.share_web_view, "field 'shareWebView'", WebView.class);
     view = Utils.findRequiredView(source, R.id.share_fen_xiang_btn, "field 'shareFenXiangBtn' and method 'onViewClicked'");
     target.shareFenXiangBtn = Utils.castView(view, R.id.share_fen_xiang_btn, "field 'shareFenXiangBtn'", LinearLayout.class);
-    view2131231118 = view;
+    view2131231149 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -50,7 +50,7 @@ public class ShareActivity_ViewBinding extends BaseActivity_ViewBinding {
     target.shareAllLayout = Utils.findRequiredViewAsType(source, R.id.share_all_layout, "field 'shareAllLayout'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.share_next_btn, "field 'shareNextBtn' and method 'onViewClicked'");
     target.shareNextBtn = Utils.castView(view, R.id.share_next_btn, "field 'shareNextBtn'", LinearLayout.class);
-    view2131231120 = view;
+    view2131231151 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -59,7 +59,7 @@ public class ShareActivity_ViewBinding extends BaseActivity_ViewBinding {
     });
     view = Utils.findRequiredView(source, R.id.title_layout_return_btn, "field 'titleLayoutReturnBtn' and method 'onViewClicked'");
     target.titleLayoutReturnBtn = Utils.castView(view, R.id.title_layout_return_btn, "field 'titleLayoutReturnBtn'", LinearLayout.class);
-    view2131231203 = view;
+    view2131231252 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -84,12 +84,12 @@ public class ShareActivity_ViewBinding extends BaseActivity_ViewBinding {
     target.titleLayoutReturnBtn = null;
     target.titleBarLayout = null;
 
-    view2131231118.setOnClickListener(null);
-    view2131231118 = null;
-    view2131231120.setOnClickListener(null);
-    view2131231120 = null;
-    view2131231203.setOnClickListener(null);
-    view2131231203 = null;
+    view2131231149.setOnClickListener(null);
+    view2131231149 = null;
+    view2131231151.setOnClickListener(null);
+    view2131231151 = null;
+    view2131231252.setOnClickListener(null);
+    view2131231252 = null;
 
     super.unbind();
   }

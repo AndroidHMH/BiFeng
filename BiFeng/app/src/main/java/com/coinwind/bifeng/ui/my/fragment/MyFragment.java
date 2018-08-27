@@ -14,8 +14,8 @@ import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.my.activity.AlertsActivity;
-import com.coinwind.bifeng.ui.my.activity.MyWalletActivity;
 import com.coinwind.bifeng.ui.my.activity.PerfectInformationActivity;
+import com.coinwind.bifeng.ui.my.activity.WalletActivity;
 import com.coinwind.bifeng.ui.my.config.InfoHelp;
 import com.coinwind.bifeng.ui.my.contract.MyContract;
 import com.coinwind.bifeng.ui.my.presenter.MyPresenter;
@@ -141,7 +141,7 @@ public class MyFragment extends BaseFragment<MyPresenter> implements MyContract.
                 break;
             case R.id.my_wallet_btn:
                 //跳转钱包
-                startActivity(new Intent(getContext(), MyWalletActivity.class));
+                startActivity(new Intent(getContext(), WalletActivity.class));
                 break;
             case R.id.my_msg_btn:
                 //跳转信息通知

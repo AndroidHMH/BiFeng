@@ -62,6 +62,7 @@ public class SendZhuCeTaskActivity extends BaseActivity<SendZhuanFaTaskPresenter
     private PaiZhaoOrXiangCe paiZhaoOrXiangCe;
     private String filePath;
     private String imgUrl;
+    private String type;
 
     public static void openSendZhuCeTaskActivity(Context context, String type) {
         Intent intent = new Intent(context, SendZhuCeTaskActivity.class);
@@ -78,6 +79,19 @@ public class SendZhuCeTaskActivity extends BaseActivity<SendZhuanFaTaskPresenter
     protected void init() {
         paiZhaoOrXiangCe = new PaiZhaoOrXiangCe(this);
         paiZhaoOrXiangCe.popupInit();
+        type = getIntent().getStringExtra("type");
+        initView();
+    }
+
+    private void initView() {
+        if ("5".equals(type) || "6".equals(type) || "7".equals(type)) {
+            //调研任务或答题任务
+            sendZhuCeUrlEt.setVisibility(View.GONE);
+
+        } else {
+            sendZhuCeUrlEt.setVisibility(View.VISIBLE);
+
+        }
     }
 
     @Override
@@ -136,11 +150,15 @@ public class SendZhuCeTaskActivity extends BaseActivity<SendZhuanFaTaskPresenter
                 paiZhaoOrXiangCe.showPopup(R.layout.activity_send_zhu_ce_task);
                 break;
             case R.id.bu_zou_next_btn:
-                String type = getIntent().getStringExtra("type");
                 String title = sendTaskTitleEt.getText().toString().trim();
-                String url = sendZhuCeUrlEt.getText().toString().trim();
                 String label = GetSendMsgHelp.getLabel(sendTaskTitleFirstEt, sendTaskTitleSecondEt, sendTaskTitleThirdEt);
-                SendTaskActivity.zhuCeOpenSendTaskActivity(this, title, imgUrl, url, label, type);
+                if ("5".equals(type) || "6".equals(type)) {
+                    //调研任务
+                    GetSendMsgHelp.diaoYanOpenSendTaskActivity(this, title, imgUrl, label, type);
+                } else {
+                    String url = sendZhuCeUrlEt.getText().toString().trim();
+                    GetSendMsgHelp.zhuCeOpenSendTaskActivity(this, title, imgUrl, url, label, type);
+                }
                 break;
         }
     }

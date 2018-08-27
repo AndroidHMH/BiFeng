@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 我的钱包的契约类
  */
-public interface MyWalletContract {
+public interface WalletContract {
     interface View {
         void showSuccess(List<WalletBean.DataBean.BfCssLogBean.ListBean> dataBeans,int todayCC,int allCc);
 

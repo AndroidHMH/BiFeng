@@ -9,6 +9,8 @@ public class SubmitBean {
      * msg : 请求成功！
      * state : true
      * data : {"msg":"提交成功","state":true}
+     *
+     *
      */
 
     private int code;

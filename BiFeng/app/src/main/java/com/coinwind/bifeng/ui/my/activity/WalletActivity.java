@@ -1,11 +1,8 @@
 package com.coinwind.bifeng.ui.my.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,11 +12,10 @@ import com.coinwind.bifeng.base.BaseActivity;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.ui.login.activity.LoginActivity;
-import com.coinwind.bifeng.ui.my.adapter.MyWalletAdapter;
-import com.coinwind.bifeng.ui.my.adapter.MyWalletRecyclerAdapter;
+import com.coinwind.bifeng.ui.my.adapter.WalletAdapter;
 import com.coinwind.bifeng.ui.my.bean.WalletBean;
-import com.coinwind.bifeng.ui.my.contract.MyWalletContract;
-import com.coinwind.bifeng.ui.my.presenter.MyWalletPresenter;
+import com.coinwind.bifeng.ui.my.contract.WalletContract;
+import com.coinwind.bifeng.ui.my.presenter.WalletPresenter;
 import com.coinwind.bifeng.ui.setting.activity.GuanYuActivity;
 
 import java.util.ArrayList;
@@ -30,9 +26,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * 我的钱包页面
+ * 钱包页面
  */
-public class MyWalletActivity extends BaseActivity<MyWalletPresenter> implements MyWalletContract.View {
+public class WalletActivity extends BaseActivity<WalletPresenter> implements WalletContract.View, AbsListView.OnScrollListener {
 
     @BindView(R.id.my_wallet_return_btn)
     LinearLayout myWalletReturnBtn;
@@ -42,39 +38,32 @@ public class MyWalletActivity extends BaseActivity<MyWalletPresenter> implements
     TextView myWalletAllCcTv;
     @BindView(R.id.my_wallet_what_cc_btn)
     LinearLayout myWalletWhatCcBtn;
-    @BindView(R.id.my_wallet_recycler)
-    ListView myWalletRecycler;
-//            RecyclerView myWalletRecycler;
+    @BindView(R.id.my_wallet_list)
+    ListView myWalletList;
 
     private List<WalletBean.DataBean.BfCssLogBean.ListBean> dataBeans;
+    private WalletAdapter walletAdapter;
+
     private int page = 1;
-    private MyWalletAdapter myWalletAdapter;
+    private boolean loadFinishFlag = false;
+
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_my_wallet;
+        return R.layout.activity_wallet;
     }
 
     @Override
     protected void init() {
         dataBeans = new ArrayList<>();
-
-//        myWalletRecycler.setAdapter(myWalletAdapter);
+        walletAdapter = new WalletAdapter(dataBeans, this);
+        myWalletList.setAdapter(walletAdapter);
+        myWalletList.setOnScrollListener(this);
     }
 
     @Override
     protected void loadDate() {
         presenter.loadRecord(SpHelp.getUserInformation(SpHelp.ID), page);
-    }
-
-    @Override
-    protected void hideErrorView() {
-        myWalletRecycler.setVisibility(View.GONE);
-    }
-
-    @Override
-    protected void showSuccessView() {
-        myWalletRecycler.setVisibility(View.GONE);
     }
 
     @OnClick({R.id.my_wallet_return_btn, R.id.my_wallet_what_cc_btn})
@@ -84,7 +73,6 @@ public class MyWalletActivity extends BaseActivity<MyWalletPresenter> implements
                 finish();
                 break;
             case R.id.my_wallet_what_cc_btn:
-                //什么是cc
                 GuanYuActivity.openActivity(this, R.mipmap.cc_shuo_ming_icon);
                 break;
         }
@@ -92,12 +80,16 @@ public class MyWalletActivity extends BaseActivity<MyWalletPresenter> implements
 
     @Override
     public void showSuccess(List<WalletBean.DataBean.BfCssLogBean.ListBean> dataBeans, int todayCC, int allCc) {
+        loadFinishFlag = true;
         this.dataBeans.addAll(dataBeans);
-        myWalletAdapter = new MyWalletAdapter(this.dataBeans, this);
-        myWalletRecycler.setAdapter(myWalletAdapter);
+        if (dataBeans.size() == 0) {
+            loadFinishFlag = false;
+            ToastHelp.showShort(this, "没有更多数据");
+        }
+
+        walletAdapter.notifyDataSetChanged();
         myWalletTodayCcTv.setText(todayCC + "");
         myWalletAllCcTv.setText(allCc + "");
-//        myWalletAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -109,5 +101,24 @@ public class MyWalletActivity extends BaseActivity<MyWalletPresenter> implements
     public void loginOut() {
         SpHelp.loginOut();
         LoginActivity.openLoginActivity(this);
+    }
+
+    @Override
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+    }
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+        //获取屏幕最后Item的ID
+        int lastVisibleItem = myWalletList.getLastVisiblePosition();
+        if (lastVisibleItem + 1 == totalItemCount) {
+            if (loadFinishFlag) {
+                //标志位，防止多次加载
+                loadFinishFlag = false;
+                page++;
+                presenter.loadRecord(SpHelp.getUserInformation(SpHelp.ID), page);
+            }
+        }
     }
 }

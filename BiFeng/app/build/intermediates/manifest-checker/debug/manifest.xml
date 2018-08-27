@@ -56,7 +56,6 @@
         <activity android:name="com.coinwind.bifeng.ui.task.activity.AnswerTaskActivity" />
         <activity android:name="com.coinwind.bifeng.ui.task.activity.PhotoTaskActivity" />
         <activity android:name="com.coinwind.bifeng.ui.submittask.activity.SubmitCommentsActivity" />
-        <activity android:name="com.coinwind.bifeng.ui.submittask.activity.ResearchActivity" />
         <activity android:name="com.coinwind.bifeng.ui.share.activity.ShareActivity" />
         <activity android:name="com.coinwind.bifeng.ui.task.activity.RegistTaskActivity" />
 
@@ -79,7 +78,6 @@
         <activity android:name="com.coinwind.bifeng.ui.setting.activity.SettingActivity" />
         <activity android:name="com.coinwind.bifeng.ui.my.activity.PerfectInformationActivity" />
         <activity android:name="com.coinwind.bifeng.ui.my.activity.MyTaskActivity" />
-        <activity android:name="com.coinwind.bifeng.ui.my.activity.MyWalletActivity" />
         <activity
             android:name="com.coinwind.bifeng.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -93,6 +91,12 @@
         <activity android:name="com.coinwind.bifeng.ui.sendtask.activity.SendTaskActivity" />
         <activity android:name="com.coinwind.bifeng.ui.sendtask.activity.SendZhuCeTaskActivity" />
         <activity android:name="com.coinwind.bifeng.ui.sendtask.activity.SendZhangFenTaskActivity" />
+        <activity android:name="com.coinwind.bifeng.ui.sendtask.activity.SendDiaoYanTaskActivity" />
+        <activity android:name="com.coinwind.bifeng.ui.sendtask.activity.SendDaTiTaskActivity" />
+        <activity android:name="com.coinwind.bifeng.ui.sendtask.activity.ZhuanFaContentActivity" />
+        <activity android:name="com.coinwind.bifeng.ui.submittask.activity.AnswerTheQuestionsActivity" />
+        <activity android:name="com.coinwind.bifeng.ui.submittask.activity.SubmitDaTiActivity" />
+        <activity android:name="com.coinwind.bifeng.ui.my.activity.WalletActivity" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"

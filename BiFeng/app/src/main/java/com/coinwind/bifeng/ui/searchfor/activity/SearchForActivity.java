@@ -79,7 +79,6 @@ public class SearchForActivity extends BaseActivity<SearchForPresenter> implemen
         switch (view.getId()) {
             case R.id.title_layout_return_btn:
                 finish();
-                finish();
                 break;
             case R.id.search_for_qu_xiao_btn:
                 searchForEt.setText("");
@@ -93,6 +92,7 @@ public class SearchForActivity extends BaseActivity<SearchForPresenter> implemen
         this.taskBeans.addAll(taskBeans);
         if (taskBeans.size() == 0) {
             loadFinishFlag = false;
+            ToastHelp.showShort(this, "没有更多数据");
         }
         taskAdapter.notifyDataSetChanged();
     }

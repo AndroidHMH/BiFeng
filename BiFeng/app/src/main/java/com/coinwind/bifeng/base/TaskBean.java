@@ -83,7 +83,7 @@ public class TaskBean implements Serializable {
     private int all_score;
     private String exhort;
     private String id;
-    private Object ques_content;
+    private String ques_content;
     private Object public_img;
     private String head_img;
     private String end_time;
@@ -230,11 +230,11 @@ public class TaskBean implements Serializable {
         this.id = id;
     }
 
-    public Object getQues_content() {
+    public String getQues_content() {
         return ques_content;
     }
 
-    public void setQues_content(Object ques_content) {
+    public void setQues_content(String ques_content) {
         this.ques_content = ques_content;
     }
 

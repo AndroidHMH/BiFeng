@@ -349,11 +349,4 @@ public class AnswerTaskActivity extends BaseActivity<AnswerTaskPresenter> implem
     private void dismissPopup() {
         popupWindow.dismiss();
     }
-
-//
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        popupWindow.dismiss();
-//    }
 }

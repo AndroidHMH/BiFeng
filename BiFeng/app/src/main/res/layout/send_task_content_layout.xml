@@ -10,6 +10,7 @@
         android:layout_height="@dimen/dp_113"
         android:layout_marginTop="@dimen/dp_30"
         android:background="@color/white"
+        android:focusable="false"
         android:gravity="top|left"
         android:hint="@string/task_count"
         android:paddingLeft="@dimen/dp_10"

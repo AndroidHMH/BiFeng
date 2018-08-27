@@ -82,4 +82,7 @@ public class Urls {
 
     //发布任务
     public static final String SEND_TASK = "bifeng/zc/publishTask";
+
+    //提交答题调研任务
+    public static final String SUBMIT_DA_TI = "bifeng/zc/subTaskByType";
 }

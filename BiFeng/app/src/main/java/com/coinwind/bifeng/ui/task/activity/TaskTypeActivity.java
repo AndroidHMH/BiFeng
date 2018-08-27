@@ -73,10 +73,13 @@ public class TaskTypeActivity extends NoNetworkBaseActivity {
                 SendZhangFenTaskActivity.openSendZhangFenTaskActivity(this, "1");
                 break;
             case R.id.task_type_diao_yan_btn:
+                SendZhuCeTaskActivity.openSendZhuCeTaskActivity(this, "5");
                 break;
             case R.id.task_type_da_ti_btn:
+                SendZhuCeTaskActivity.openSendZhuCeTaskActivity(this, "6");
                 break;
             case R.id.task_type_pai_zhao_btn:
+                SendZhuCeTaskActivity.openSendZhuCeTaskActivity(this, "7");
                 break;
         }
     }

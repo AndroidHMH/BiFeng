@@ -5,7 +5,7 @@ import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.model.http.RetrofitHelp;
 import com.coinwind.bifeng.ui.my.bean.WalletBean;
 import com.coinwind.bifeng.ui.my.biz.MyService;
-import com.coinwind.bifeng.ui.my.contract.MyWalletContract;
+import com.coinwind.bifeng.ui.my.contract.WalletContract;
 
 import java.util.List;
 
@@ -13,14 +13,15 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+
 /**
- *我的钱包的P层
+ * 我的钱包的P层
  */
-public class MyWalletPresenter implements MyWalletContract.Presenter {
-    private MyWalletContract.View view;
+public class WalletPresenter implements WalletContract.Presenter {
+    private WalletContract.View view;
     private final MyService service;
 
-    public MyWalletPresenter() {
+    public WalletPresenter() {
         service = RetrofitHelp.getInstance().getService(MyService.class);
 
     }
@@ -42,10 +43,10 @@ public class MyWalletPresenter implements MyWalletContract.Presenter {
                         WalletBean.DataBean data = walletBean.getData();
                         if (code == Codes.SUCCESS_CODE && data != null) {
                             List<WalletBean.DataBean.BfCssLogBean.ListBean> list = data.getBfCssLog().getList();
-                                view.showSuccess(list,data.getTodayCss(),data.getCurrentCss());
+                            view.showSuccess(list, data.getTodayCss(), data.getCurrentCss());
                         } else if (code == Codes.FAILURE_CODE) {
                             view.loginOut();
-                        } else{
+                        } else {
                             view.showError("获取钱包失败");
                         }
                     }
@@ -63,7 +64,7 @@ public class MyWalletPresenter implements MyWalletContract.Presenter {
     }
 
     @Override
-    public void actualView(MyWalletContract.View view) {
+    public void actualView(WalletContract.View view) {
         this.view = view;
     }
 

@@ -26,15 +26,11 @@ import android.widget.TextView;
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseFragment;
 import com.coinwind.bifeng.base.TaskBean;
-import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.ui.homepage.bean.MessageEvent;
-import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.searchfor.activity.SearchForActivity;
-import com.coinwind.bifeng.ui.sendtask.activity.SendTaskActivity;
 import com.coinwind.bifeng.ui.submittask.config.PhotoHelp;
 import com.coinwind.bifeng.ui.task.activity.AnswerTaskActivity;
-import com.coinwind.bifeng.ui.task.activity.TaskTypeActivity;
 import com.coinwind.bifeng.ui.task.adapter.TaskAdapter;
 import com.coinwind.bifeng.ui.task.adapter.TaskTypeAdapter;
 import com.coinwind.bifeng.ui.task.config.SetViewHelp;
@@ -209,12 +205,12 @@ public class TaskFragment extends BaseFragment<TaskPresenter> implements TaskCon
 //                        //弹出认证窗口
 //                        showRenZhengPopup();
 //                    } else {
-                        startActivity(new Intent(getContext(), TaskTypeActivity.class));
+//                        startActivity(new Intent(getContext(), TaskTypeActivity.class));
 //                    }
 //                } else {
 //                    LoginActivity.openLoginActivity(getContext());
 //                }
-//                ToastHelp.showShort(getContext(),"程序小哥正在努力开发中，尽情期待。");
+                ToastHelp.showShort(getContext(), "程序小哥正在努力开发中，尽情期待。");
 
                 break;
             case R.id.task_sou_suo_btn:

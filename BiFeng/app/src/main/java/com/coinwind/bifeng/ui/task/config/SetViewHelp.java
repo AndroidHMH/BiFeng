@@ -21,6 +21,8 @@ import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.ui.homepage.bean.MessageEvent;
 import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.my.config.InfoHelp;
+import com.coinwind.bifeng.ui.submittask.activity.AnswerTheQuestionsActivity;
+import com.coinwind.bifeng.ui.submittask.activity.SubmitDaTiActivity;
 import com.coinwind.bifeng.ui.task.activity.PhotoTaskActivity;
 import com.coinwind.bifeng.ui.task.activity.RegistTaskActivity;
 import com.coinwind.bifeng.ui.task.activity.ZhangFenTaskActivity;
@@ -60,9 +62,12 @@ public class SetViewHelp {
                 break;
 //                return "转发任务";
             case 5:
+                intent.setClass(context, AnswerTheQuestionsActivity.class);
                 break;
 //                return "调研任务";
             case 6:
+                intent.setClass(context, SubmitDaTiActivity.class);
+
                 break;
 //                return "答题任务";
             case 7:

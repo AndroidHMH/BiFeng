@@ -49,7 +49,6 @@
         <activity android:name=".ui.task.activity.AnswerTaskActivity" />
         <activity android:name=".ui.task.activity.PhotoTaskActivity" />
         <activity android:name=".ui.submittask.activity.SubmitCommentsActivity" />
-        <activity android:name=".ui.submittask.activity.ResearchActivity" />
         <activity android:name=".ui.share.activity.ShareActivity" />
         <activity android:name=".ui.task.activity.RegistTaskActivity" />
 
@@ -72,7 +71,6 @@
         <activity android:name=".ui.setting.activity.SettingActivity" />
         <activity android:name=".ui.my.activity.PerfectInformationActivity" />
         <activity android:name=".ui.my.activity.MyTaskActivity" />
-        <activity android:name=".ui.my.activity.MyWalletActivity" />
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -85,7 +83,13 @@
         <activity android:name=".ui.share.activity.InvitationActivity" />
         <activity android:name=".ui.sendtask.activity.SendTaskActivity" />
         <activity android:name=".ui.sendtask.activity.SendZhuCeTaskActivity" />
-        <activity android:name=".ui.sendtask.activity.SendZhangFenTaskActivity"/>
+        <activity android:name=".ui.sendtask.activity.SendZhangFenTaskActivity" />
+        <activity android:name=".ui.sendtask.activity.SendDiaoYanTaskActivity" />
+        <activity android:name=".ui.sendtask.activity.SendDaTiTaskActivity" />
+        <activity android:name=".ui.sendtask.activity.ZhuanFaContentActivity" />
+        <activity android:name=".ui.submittask.activity.AnswerTheQuestionsActivity" />
+        <activity android:name=".ui.submittask.activity.SubmitDaTiActivity" />
+        <activity android:name=".ui.my.activity.WalletActivity"></activity>
     </application>
 
 </manifest>

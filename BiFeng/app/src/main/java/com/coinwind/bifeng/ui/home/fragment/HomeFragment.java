@@ -277,7 +277,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
             @Override
             public void onTick(long millisUntilFinished) {
                 String s = TimeUtils.long2hms(millisUntilFinished);
-                LogHelp.e("time", s);
+//                LogHelp.e("time", s);
                 homeQiangTimeTv.setText(s);
             }
 

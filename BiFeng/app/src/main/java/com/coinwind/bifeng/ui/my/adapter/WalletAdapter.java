@@ -18,11 +18,11 @@ import butterknife.ButterKnife;
 /**
  * 我的钱包list的适配器
  */
-public class MyWalletAdapter extends BaseAdapter {
+public class WalletAdapter extends BaseAdapter {
     private List<WalletBean.DataBean.BfCssLogBean.ListBean> dataBeans;
     private Context context;
 
-    public MyWalletAdapter(List<WalletBean.DataBean.BfCssLogBean.ListBean> dataBeans, Context context) {
+    public WalletAdapter(List<WalletBean.DataBean.BfCssLogBean.ListBean> dataBeans, Context context) {
         this.dataBeans = dataBeans;
         this.context = context;
     }

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Aug 15 18:45:21 CST 2018
+#Thu Aug 23 17:37:09 CST 2018
 2.base=/Users/heminghao/Desktop/bfdaima/BiFeng/app/build/intermediates/transforms/dexMerger/debug/12
 5.set=DEX
 0.path=classes.dex

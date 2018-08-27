@@ -2,7 +2,6 @@ package com.coinwind.bifeng.ui.sendtask.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -18,15 +17,16 @@ import com.coinwind.bifeng.config.LogHelp;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.TimeUtils;
 import com.coinwind.bifeng.config.ToastHelp;
+import com.coinwind.bifeng.ui.home.config.QianDaoHelp;
 import com.coinwind.bifeng.ui.homepage.activity.MainActivity;
 import com.coinwind.bifeng.ui.login.activity.LoginActivity;
+import com.coinwind.bifeng.ui.sendtask.config.GetSendMsgHelp;
 import com.coinwind.bifeng.ui.sendtask.contract.SendTaskContract;
 import com.coinwind.bifeng.ui.sendtask.presenter.SendTaskPresenter;
 
 import org.feezu.liuli.timeselector.TimeSelector;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -45,6 +45,8 @@ public class SendTaskActivity extends BaseActivity<SendTaskPresenter> implements
     EditText sendFenXiangCcEt;
     @BindView(R.id.send_all_fen_xiang_et)
     EditText sendAllFenXiangEt;
+    @BindView(R.id.send_task_jian_jie_et)
+    EditText sendTaskJianJieEt;
     @BindView(R.id.send_ren_wu_cc_tv)
     EditText sendRenWuCcTv;
     @BindView(R.id.send_all_ren_wu_et)
@@ -63,73 +65,22 @@ public class SendTaskActivity extends BaseActivity<SendTaskPresenter> implements
     ImageView sendTaskYanShouBtn;
     @BindView(R.id.send_task_btn)
     LinearLayout sendTaskBtn;
+    @BindView(R.id.send_task_send_tv)
+    TextView sendTaskSendTv;
     private TimeSelector timeSelector;
     private boolean isYan = false;
     private String needCheck;
     private int renWuCount;
+    private String label;
+    private String type;
+    private String title;
+    private String img;
+    private String publicNum;
+    private String publicImg;
+    private String url;
+    private String content;
+    private String taskType;
 
-    /**
-     * 转发任务跳过来的
-     *
-     * @param context
-     * @param taskTitle   任务标题
-     * @param taskContent 任务正文
-     * @param taskType    转发任务任务类型
-     * @param label       标签
-     * @param imgUrl      配图Url
-     * @param type        任务类型
-     */
-    public static void zhuanFaOpenSendTaskActivity(Context context, String taskTitle, String taskContent, String taskType, String label, String imgUrl, String type) {
-        Intent intent = new Intent(context, SendTaskActivity.class);
-        intent.putExtra("taskTitle", taskTitle);
-        intent.putExtra("taskContent", taskContent);
-        intent.putExtra("taskType", taskType);
-        intent.putExtra("label", label);
-        intent.putExtra("imgUrl", imgUrl);
-        intent.putExtra("type", type);
-        context.startActivity(intent);
-    }
-
-    /**
-     * 注册(评论)任务跳过来的
-     *
-     * @param context
-     * @param taskTitle
-     * @param label
-     * @param imgUrl
-     * @param url       注册任务地址
-     * @param type
-     */
-    public static void zhuCeOpenSendTaskActivity(Context context, String taskTitle, String imgUrl, String url, String label, String type) {
-        Intent intent = new Intent(context, SendTaskActivity.class);
-        intent.putExtra("taskTitle", taskTitle);
-        intent.putExtra("url", url);
-        intent.putExtra("label", label);
-        intent.putExtra("imgUrl", imgUrl);
-        intent.putExtra("type", type);
-        context.startActivity(intent);
-    }
-
-    /**
-     * 涨粉任务跳过来的
-     *
-     * @param context
-     * @param taskTitle
-     * @param label
-     * @param imgUrl
-     * @param publicNum 涨粉任务公众号
-     * @param type
-     */
-    public static void zhangFenOpenSendTaskActivity(Context context, String taskTitle, String imgUrl, String publicImg, String publicNum, String label, String type) {
-        Intent intent = new Intent(context, SendTaskActivity.class);
-        intent.putExtra("taskTitle", taskTitle);
-        intent.putExtra("publicNum", publicNum);
-        intent.putExtra("label", label);
-        intent.putExtra("imgUrl", imgUrl);
-        intent.putExtra("publicImg", publicImg);
-        intent.putExtra("type", type);
-        context.startActivity(intent);
-    }
 
     @Override
     protected int getLayoutId() {
@@ -139,6 +90,29 @@ public class SendTaskActivity extends BaseActivity<SendTaskPresenter> implements
     @Override
     protected void init() {
         sendAllRenWuEt.addTextChangedListener(this);
+        initParams();
+        initView();
+    }
+
+    private void initView() {
+        if ("5".equals(type) || "6".equals(type)) {
+            sendTaskSendTv.setText("下一步");
+        } else {
+            sendTaskSendTv.setText("发布");
+        }
+    }
+
+    private void initParams() {
+        Intent intent = getIntent();
+        label = intent.getStringExtra("label");
+        type = intent.getStringExtra("type");
+        title = intent.getStringExtra("taskTitle");
+        img = intent.getStringExtra("imgUrl");
+        content = intent.getStringExtra("taskContent");
+        taskType = intent.getStringExtra("taskType");
+        publicNum = intent.getStringExtra("publicNum");
+        publicImg = intent.getStringExtra("publicImg");
+        url = intent.getStringExtra("url");
     }
 
     @Override
@@ -188,29 +162,24 @@ public class SendTaskActivity extends BaseActivity<SendTaskPresenter> implements
                 }
                 break;
             case R.id.send_task_btn:
-                Intent intent = getIntent();
 
                 String share_score = sendFenXiangCcEt.getText().toString().trim();
-                String label = intent.getStringExtra("label");
-                String type = intent.getStringExtra("type");
                 String all_shareNum = sendAllFenXiangEt.getText().toString().trim();
                 String score = sendRenWuCcTv.getText().toString().trim();
                 String all_tasknum = sendAllRenWuEt.getText().toString().trim();
-                String title = intent.getStringExtra("taskTitle");
-                String img = intent.getStringExtra("imgUrl");
                 String end_time = sendTaskEndTimeTv.getText().toString();
-                String task_intro = "";
-                String publicNum = "";//公众号
-                String publicImg = "";//公众号二维码
-                String url = "";//评论注册地址
-                String content = intent.getStringExtra("taskContent");//转发正文
-                String taskType = intent.getStringExtra("taskType");//任务类别，1项目动态,2新币上线,3技术周报,4最新公告,5热门活动,6品牌推广（转发任务需要）
-
                 String startTime = sendStartTaskTv.getText().toString();
-
-
-                presenter.sendTask(share_score, label, type, all_shareNum, score, all_tasknum, title, img, end_time, needCheck, task_intro, publicNum,
-                        publicImg, url, content, taskType, "", "", startTime);
+                String task_intro = sendTaskJianJieEt.getText().toString().trim();
+                if ("5".equals(type)) {
+                    GetSendMsgHelp.openSendDiaoYanTaskActivity(this, title, img, label, type, share_score, all_shareNum,
+                            score, all_tasknum, end_time, startTime, task_intro, needCheck,SendDiaoYanTaskActivity.class);
+                } else if ("6".equals(type)) {
+                    GetSendMsgHelp.openSendDiaoYanTaskActivity(this, title, img, label, type, share_score, all_shareNum,
+                            score, all_tasknum, end_time, startTime, task_intro, needCheck,SendDaTiTaskActivity.class);
+                } else {
+                    presenter.sendTask(share_score, label, type, all_shareNum, score, all_tasknum, title, img, end_time, needCheck, task_intro, publicNum,
+                            publicImg, url, content, taskType, "", "", startTime);
+                }
                 break;
         }
     }

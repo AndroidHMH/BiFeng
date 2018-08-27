@@ -104,7 +104,7 @@ public class SendZhuanFaTaskActivity extends BaseActivity<SendZhuanFaTaskPresent
 
     }
 
-    @OnClick({R.id.title_layout_return_btn, R.id.send_task_img_btn, R.id.send_task_type_layout_btn, R.id.bu_zou_next_btn})
+    @OnClick({R.id.title_layout_return_btn, R.id.send_task_img_btn, R.id.send_task_type_layout_btn, R.id.bu_zou_next_btn, R.id.send_task_content_et})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.title_layout_return_btn:
@@ -113,16 +113,20 @@ public class SendZhuanFaTaskActivity extends BaseActivity<SendZhuanFaTaskPresent
             case R.id.send_task_img_btn:
                 paiZhaoOrXiangCe.showPopup(R.layout.activity_zhuan_fa_send_task);
                 break;
+            case R.id.send_task_content_et:
+
+                break;
             case R.id.send_task_type_layout_btn:
                 showTypePopup();
                 break;
             case R.id.bu_zou_next_btn:
                 String taskTitle = sendTaskTitleEt.getText().toString().trim();
-                String taskContent = sendTaskContentEt.getText().toString().trim();
+                String taskContent = "";
+//                        sendTaskContentEt.getText().toString().trim();
                 String taskType = sendTaskTypeTv.getText().toString().trim();
                 String label = GetSendMsgHelp.getLabel(sendTaskTitleFirstEt, sendTaskTitleSecondEt, sendTaskTitleThirdEt);
                 String type = getIntent().getStringExtra("type");
-                SendTaskActivity.zhuanFaOpenSendTaskActivity(this, taskTitle, taskContent, taskType, label, imgUrl, type);
+                GetSendMsgHelp.zhuanFaOpenSendTaskActivity(this, taskTitle, taskContent, taskType, label, imgUrl, type);
                 break;
         }
     }

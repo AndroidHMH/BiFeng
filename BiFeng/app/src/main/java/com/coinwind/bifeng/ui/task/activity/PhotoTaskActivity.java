@@ -13,6 +13,7 @@ import com.coinwind.bifeng.base.BaseActivity;
 import com.coinwind.bifeng.base.NoNetworkBaseActivity;
 import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.ui.share.activity.ShareActivity;
+import com.coinwind.bifeng.ui.submittask.activity.SubmitCommentsActivity;
 import com.coinwind.bifeng.ui.task.config.SetViewHelp;
 
 import butterknife.BindView;
@@ -48,6 +49,7 @@ public class PhotoTaskActivity extends NoNetworkBaseActivity {
     @BindView(R.id.bu_zou_thread_duan_layout)
     LinearLayout buZouThreadDuanLayout;
     private TaskBean bean;
+    private String type;
 
     @Override
     protected int getLayoutId() {
@@ -61,7 +63,7 @@ public class PhotoTaskActivity extends NoNetworkBaseActivity {
     }
 
     private void setViews() {
-        String type = SetViewHelp.getType(bean.getType());
+        type = SetViewHelp.getType(bean.getType());
         titleTitleTv.setText(type);
         if ("拍照任务".equals(type)) {
             buZouThreadDuanLayout.setVisibility(View.VISIBLE);
@@ -82,9 +84,16 @@ public class PhotoTaskActivity extends NoNetworkBaseActivity {
                 finish();
                 break;
             case R.id.bu_zou_thread_next_btn:
-                Intent intent = new Intent(this, ShareActivity.class);
-                intent.putExtra("bean", bean);
-                startActivity(intent);
+                if ("拍照任务".equals(type)) {
+                    Intent intent = new Intent(this, SubmitCommentsActivity.class);
+                    intent.putExtra("bean", bean);
+                    intent.putExtra("type", type);
+                    startActivity(intent);
+                } else if ("转发任务".equals(type)) {
+                    Intent intent = new Intent(this, ShareActivity.class);
+                    intent.putExtra("bean", bean);
+                    startActivity(intent);
+                }
                 break;
         }
     }
