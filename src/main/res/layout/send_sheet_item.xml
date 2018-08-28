@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingTop="@dimen/dp_5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:text="@string/options"
+        android:textColor="@color/black_333"
+        android:textSize="@dimen/sp_12" />
+
+    <TextView
+        android:id="@+id/send_sheet_options_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A"
+        android:textColor="@color/black_333"
+        android:textSize="@dimen/sp_12" />
+
+    <EditText
+        android:id="@+id/send_sheet_options_et"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginLeft="@dimen/dp_8"
+        android:layout_marginRight="@dimen/dp_14"
+        android:background="@drawable/send_da_ti_task_et_shape"
+        android:gravity="center_vertical"
+        android:hint="@string/diao_yan_et_hint"
+        android:paddingLeft="@dimen/dp_7"
+        android:textColorHint="@color/gray_999"
+        android:textSize="@dimen/sp_9" />
+</LinearLayout>

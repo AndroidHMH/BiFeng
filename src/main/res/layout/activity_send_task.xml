@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_f2"
+    android:orientation="vertical"
+    tools:context=".ui.sendtask.activity.SendTaskActivity">
+
+    <include layout="@layout/title_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/send_task_jian_jie_layout" />
+
+            <!--单次分享奖励-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_34"
+                android:layout_marginTop="@dimen/dp_11"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:text="@string/dan_ce_fen_xiang"
+                    android:textColor="@color/black_333"
+                    android:textSize="@dimen/sp_13" />
+
+
+                <EditText
+                    android:id="@+id/send_fen_xiang_cc_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="@string/bi"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+            <!--分享总次数-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_34"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:text="@string/dan_ce_all_fen_xiang_count"
+                    android:textColor="@color/black_333"
+                    android:textSize="@dimen/sp_13" />
+
+
+                <EditText
+                    android:id="@+id/send_all_fen_xiang_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="@string/send_ci"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+            <!--单次任务奖励-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_34"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:text="@string/dan_ce_ren_wu"
+                    android:textColor="@color/black_333"
+                    android:textSize="@dimen/sp_13" />
+
+
+                <EditText
+                    android:id="@+id/send_ren_wu_cc_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="@string/bi"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+            <!--任务总次数-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_34"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:text="@string/dan_ce_all_fren_wu_count"
+                    android:textColor="@color/black_333"
+                    android:textSize="@dimen/sp_13" />
+
+
+                <EditText
+                    android:id="@+id/send_all_ren_wu_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="@string/send_ci"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+            <!--任务总赏金-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="@string/task_all_count"
+                    android:textColor="@color/gray_666"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/send_task_all_cc_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/gray_666"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/task_end"
+                    android:textColor="@color/gray_666"
+                    android:textSize="@dimen/sp_12" />
+            </LinearLayout>
+            <!--开始时间-->
+            <LinearLayout
+                android:id="@+id/send_task_start_task_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_34"
+                android:layout_marginTop="@dimen/dp_14"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:text="@string/task_start_time"
+                    android:textColor="@color/black_333"
+                    android:textSize="@dimen/sp_13" />
+
+
+                <TextView
+                    android:id="@+id/send_start_task_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:gravity="right"
+                    android:text="2018-05-18 16:30:30"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_13" />
+
+            </LinearLayout>
+            <!--结束时间-->
+            <LinearLayout
+                android:id="@+id/send_task_end_time_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_34"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:text="@string/task_end_time"
+                    android:textColor="@color/black_333"
+                    android:textSize="@dimen/sp_13" />
+
+
+                <TextView
+                    android:id="@+id/send_task_end_time_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:gravity="right"
+                    android:text="2018-05-18 16:30:30"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+            <!--是否验收-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_34"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:text="@string/task_yan_shou"
+                    android:textColor="@color/black_333"
+                    android:textSize="@dimen/sp_13" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical">
+
+                    <ImageView
+                        android:id="@+id/send_task_yan_shou_btn"
+                        android:layout_width="@dimen/dp_43"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:src="@mipmap/yan_shou_unclick" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_9"
+                android:text="@string/task_yan_shou_tv"
+                android:textColor="@color/gray_666"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/send_task_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="@color/orange_f9f0"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/send_task_send_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send_task_tv"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18" />
+    </LinearLayout>
+
+    <include layout="@layout/net_work_error_layout" />
+</LinearLayout>

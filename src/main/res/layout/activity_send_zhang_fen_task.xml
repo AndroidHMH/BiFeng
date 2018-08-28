@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_f2"
+    android:orientation="vertical"
+    tools:context=".ui.sendtask.activity.SendZhangFenTaskActivity">
+
+    <include layout="@layout/title_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/send_task_title_layout" />
+
+            <include
+                layout="@layout/send_task_pei_tu_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_113"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <include
+                layout="@layout/send_task_label_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_17" />
+
+            <EditText
+                android:id="@+id/send_zhang_fen_punlic_num_et"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_34"
+                android:layout_marginTop="@dimen/dp_13"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:hint="@string/zhang_fen_public_num"
+                android:paddingLeft="@dimen/dp_10"
+                android:textSize="@dimen/sp_12" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_17">
+
+                <LinearLayout
+                    android:id="@+id/update_public_num_img_btn"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="@dimen/dp_120"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_44"
+                        android:layout_height="@dimen/dp_44"
+                        android:src="@mipmap/add_img" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_17"
+                        android:text="@string/public_num_img"
+                        android:textColor="@color/black_333"
+                        android:textSize="@dimen/sp_13" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/public_num_img"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="@dimen/dp_120"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <include layout="@layout/next_layout" />
+
+    <include layout="@layout/net_work_error_layout" />
+</LinearLayout>

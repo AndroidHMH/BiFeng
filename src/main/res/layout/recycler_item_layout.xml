@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/recycler_item_layout_user_icon_img"
+            android:layout_width="@dimen/dp_29"
+            android:layout_height="@dimen/dp_29"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:scaleType="centerCrop"
+            app:riv_oval="true" />
+
+        <TextView
+            android:id="@+id/recycler_item_layout_user_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:gravity="center_vertical"
+            android:text="二丁颗粒"
+            android:textColor="@color/black_f333"
+            android:textSize="@dimen/sp_14" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/dp_17"
+                android:gravity="center_vertical">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="@dimen/dp_4"
+                    android:layout_height="@dimen/dp_4"
+                    android:background="@color/gray_999"
+                    android:scaleType="centerCrop"
+                    app:riv_oval="true" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_6">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="剩余" />
+
+                    <TextView
+                        android:id="@+id/recycler_item_layout_shang_yu_count_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="176" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="次" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/recycler_item_layout_icon_img"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_135"
+                android:layout_marginTop="@dimen/dp_2"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/recycler_item_layout_zhi_ding_img"
+                android:layout_width="@dimen/dp_42"
+                android:layout_height="@dimen/dp_21"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_m_2"
+                android:src="@mipmap/recycler_item_layout_zhi_ding" />
+
+            <ImageView
+                android:id="@+id/recycler_item_layout_zhuan_fa_img"
+                android:layout_width="@dimen/dp_42"
+                android:layout_height="@dimen/dp_21"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:layout_marginTop="@dimen/dp_m_2"
+                android:layout_toRightOf="@id/recycler_item_layout_zhi_ding_img"
+                android:src="@mipmap/recycler_item_layout_jing_bin" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/recycler_item_layout_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_m_30"
+            android:background="@color/black_6fff"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_4"
+            android:text="【EOS超级节点再创币圈神话神】"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_10">
+
+            <co.lujun.androidtagview.TagContainerLayout
+                android:id="@+id/recycler_item_layout_xcf_title_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:container_background_color="#FAFAFA"
+                app:container_border_color="@color/white"
+                app:container_border_radius="@dimen/dp_0"
+                app:container_border_width="@dimen/dp_0"
+                app:tag_border_width="@dimen/dp_0_5"
+                app:tag_corner_radius="@dimen/dp_3"
+                app:tag_horizontal_padding="@dimen/dp_8"
+                app:tag_text_size="@dimen/sp_9"
+                app:tag_vertical_padding="@dimen/dp_2_5" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="交易所:"
+                    android:textColor="@color/gray_666"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/recycler_item_layout_chang_cuo_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="币风"
+                    android:textColor="@color/gray_666"
+                    android:textSize="@dimen/sp_12" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_78"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/home_btn_shape"
+            android:gravity="center"
+            android:padding="@dimen/dp_5">
+
+            <TextView
+                android:id="@+id/recycler_item_layout_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1500"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_score_ci"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

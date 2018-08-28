@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_18">
+
+    <LinearLayout
+        android:id="@+id/submit_da_ti_recycler_item_btn"
+        android:layout_width="@dimen/dp_28"
+        android:layout_height="@dimen/dp_28"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_53"
+        android:layout_marginRight="@dimen/dp_18"
+        android:background="@mipmap/da_ti_xuan_ze_bg">
+
+        <ImageView
+            android:id="@+id/submit_da_ti_recycler_item_click_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/da_ti_click_img"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/submit_da_ti_recycler_item_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/submit_da_ti_recycler_item_btn"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15" />
+
+
+</RelativeLayout>

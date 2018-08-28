@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_13"
+            android:text="@string/di"
+            android:textColor="@color/black_333"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:id="@+id/send_diao_yan_item_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_333"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ti"
+            android:textColor="@color/black_333"
+            android:textSize="@dimen/sp_13" />
+
+        <RelativeLayout
+            android:id="@+id/send_diao_yan_item_delete_btn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_7"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/send_diao_yan_item_delete_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_9"
+                android:text="@string/diao_yan_delete"
+                android:textColor="@color/red_f240"
+                android:textSize="@dimen/sp_12" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_1"
+                android:layout_alignLeft="@+id/send_diao_yan_item_delete_btn"
+                android:layout_alignRight="@+id/send_diao_yan_item_delete_btn"
+                android:layout_below="@+id/send_diao_yan_item_delete_btn"
+                android:layout_marginTop="@dimen/dp_m_2"
+                android:background="@color/red_f240" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/send_diao_yan_item_et"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_34"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:hint="@string/diao_yan_et_hint"
+        android:maxLength="50"
+        android:paddingLeft="@dimen/dp_13"
+        android:textColor="@color/black_333"
+        android:textSize="@dimen/sp_13" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/gray_f2" />
+</LinearLayout>

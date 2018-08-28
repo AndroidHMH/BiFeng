@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.task.activity.PhotoTaskActivity">
+
+    <include layout="@layout/title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_22"
+            android:layout_marginTop="@dimen/dp_27"
+            android:layout_marginRight="@dimen/dp_22"
+            android:background="@drawable/task_bg_shape"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_37">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_28">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="第"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_11"
+                    android:layout_height="@dimen/dp_11"
+                    android:src="@mipmap/first" />
+
+                <TextView
+                    android:id="@+id/bu_zou_thread_first_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/first"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="第"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_11"
+                    android:layout_height="@dimen/dp_11"
+                    android:src="@mipmap/second" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/bu_zou_thread_second_tv"
+
+                    android:layout_height="wrap_content"
+                    android:text="@string/second"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bu_zou_thread_chang_layout"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_26"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/bu_zou_thread_chang_img"
+                    android:layout_width="@dimen/dp_126"
+                    android:layout_height="@dimen/dp_224"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bu_zou_thread_duan_layout"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_45"
+                android:layout_marginBottom="@dimen/dp_45"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/bu_zou_thread_duan_img"
+                    android:layout_width="@dimen/dp_188"
+                    android:layout_height="@dimen/dp_141"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="第"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_11"
+                    android:layout_height="@dimen/dp_11"
+                    android:src="@mipmap/third" />
+
+                <TextView
+                    android:id="@+id/bu_zou_thread_third_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/second"
+                    android:textColor="@color/gray_999"
+                    android:textSize="@dimen/sp_9" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bu_zou_thread_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="@color/orange_f9f0"
+        android:gravity="center">
+
+        <TextView
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.task.activity.RegistTaskActivity">
+
+    <include layout="@layout/title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_30">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第"
+                android:textColor="@color/gray_999"
+                android:textSize="@dimen/sp_9" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_11"
+                android:layout_height="@dimen/dp_11"
+                android:src="@mipmap/first" />
+
+            <TextView
+                android:id="@+id/bu_zou_lian_jie_first_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/regist_first"
+                android:textColor="@color/gray_999"
+                android:textSize="@dimen/sp_9" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bu_zou_lian_jie_url_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:inputType="textUri"
+            android:text="https://m.coinwind.com/admin/index/2018020dps/admin/index/"
+            android:textColor="@color/blue_276"
+            android:textSize="@dimen/sp_9" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第"
+                android:textColor="@color/gray_999"
+                android:textSize="@dimen/sp_9" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_11"
+                android:layout_height="@dimen/dp_11"
+                android:src="@mipmap/second" />
+
+            <TextView
+                android:id="@+id/bu_zou_lian_jie_second_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/regist_second"
+                android:textColor="@color/gray_999"
+                android:textSize="@dimen/sp_9" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_23"
+            android:layout_marginTop="@dimen/dp_11"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/bu_zou_lian_jie_img"
+                android:layout_width="@dimen/dp_126"
+                android:layout_height="@dimen/dp_225"
+                android:scaleType="fitXY"
+                android:src="@mipmap/regist_icon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第"
+                android:textColor="@color/gray_999"
+                android:textSize="@dimen/sp_9" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_11"
+                android:layout_height="@dimen/dp_11"
+                android:src="@mipmap/third" />
+
+            <TextView
+                android:id="@+id/bu_zou_lian_jie_third_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/regist_third"
+                android:textColor="@color/gray_999"
+                android:textSize="@dimen/sp_9" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bu_zou_lian_jie_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:background="@color/orange_f9f0"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18" />
+    </LinearLayout>
+</LinearLayout>
