@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/dp_9"
         android:text="@string/diao_yan_add"
-        android:textColor="@color/orange_f9f0"
+        android:textColor="@color/blue_095a"
         android:textSize="@dimen/sp_15" />
 
     <View
@@ -23,5 +23,5 @@
         android:layout_alignRight="@+id/send_diao_yan_add_item_tv"
         android:layout_below="@+id/send_diao_yan_add_item_tv"
         android:layout_marginTop="@dimen/dp_m_2"
-        android:background="@color/orange_f9f0" />
+        android:background="@color/blue_095a" />
 </RelativeLayout>

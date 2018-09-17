@@ -2,21 +2,29 @@ package com.coinwind.bifeng.ui.login.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
+import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.config.NetWorkHelp;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
+import com.coinwind.bifeng.ui.home.fragment.NewHomeFragment;
+import com.coinwind.bifeng.ui.homepage.activity.MainActivity;
 import com.coinwind.bifeng.ui.login.bean.LoginBean;
 import com.coinwind.bifeng.ui.login.contract.LoginContract;
 import com.coinwind.bifeng.ui.login.presenter.LoginPresenter;
 import com.coinwind.bifeng.view.ClearEditText;
+import com.google.gson.Gson;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,7 +39,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @BindView(R.id.login_phone_mun_et)
     ClearEditText loginPhoneMunEt;
     @BindView(R.id.login_password_et)
-    ClearEditText loginPasswordEt;
+    EditText loginPasswordEt;
     @BindView(R.id.login_get_code_btn)
     TextView loginGetCodeBtn;
     @BindView(R.id.login_goto_psw_login_btn)
@@ -40,6 +48,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     Button loginLoginBtn;
     @BindView(R.id.login_retutn_btn)
     LinearLayout loginRetutnBtn;
+    @BindView(R.id.login_forget_pasw_btn)
+    TextView loginForgetPaswBtn;
+    @BindView(R.id.login_can_see_psw_btn)
+    ImageView loginCanSeePswBtn;
+    private boolean isClick = true;
 
 
     public static void openLoginActivity(Context context) {
@@ -66,7 +79,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     }
 
-    @OnClick({R.id.login_get_code_btn, R.id.login_goto_psw_login_btn, R.id.login_login_btn, R.id.login_retutn_btn})
+    @OnClick({R.id.login_get_code_btn, R.id.login_goto_psw_login_btn, R.id.login_login_btn, R.id.login_retutn_btn, R.id.login_forget_pasw_btn, R.id.login_can_see_psw_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.login_retutn_btn:
@@ -101,6 +114,21 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 }
 
                 break;
+            case R.id.login_forget_pasw_btn:
+                //忘记密码
+                ForgotPasswordActivity.openForgotPasswordActivity(this);
+                break;
+            case R.id.login_can_see_psw_btn:
+                if (isClick) {
+                    loginCanSeePswBtn.setImageResource(R.mipmap.can_see);
+                    loginPasswordEt.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                } else {
+                    loginCanSeePswBtn.setImageResource(R.mipmap.no_can_see);
+                    loginPasswordEt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                }
+                loginPasswordEt.setSelection(loginPasswordEt.getText().length());
+                isClick = !isClick;
+                break;
         }
     }
 
@@ -111,9 +139,12 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void usePhoneLogin() {
+        loginPasswordEt.setText("");
         if (loginGetCodeBtn.getVisibility() != View.VISIBLE) {
             loginGetCodeBtn.setVisibility(View.VISIBLE);
         }
+        loginCanSeePswBtn.setVisibility(View.GONE);
+        loginPasswordEt.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
 
         loginGotoPswLoginBtn.setText(getResources().getString(R.string.login_use_pasw_login));
         loginPasswordEt.setHint(getResources().getString(R.string.login_code_hint));
@@ -121,9 +152,15 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void usePswLogin() {
+        loginPasswordEt.setText("");
         if (loginGetCodeBtn.getVisibility() != View.GONE) {
             loginGetCodeBtn.setVisibility(View.GONE);
         }
+        loginCanSeePswBtn.setVisibility(View.VISIBLE);
+        loginPasswordEt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        isClick = true;
+        loginCanSeePswBtn.setImageResource(R.mipmap.no_can_see);
+
         loginGotoPswLoginBtn.setText(getResources().getString(R.string.login_use_phone_login));
         loginPasswordEt.setHint(getResources().getString(R.string.login_psw_hint));
     }
@@ -136,16 +173,12 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         if (login) {
             ToastHelp.showShort(this, "登录成功");
         }
+        NewHomeFragment.refresh(this);
         finish();
     }
 
     @Override
     public void loginFailed(String errorMsg) {
         ToastHelp.showShort(this, errorMsg);
-    }
-
-
-    @OnClick()
-    public void onViewClicked() {
     }
 }

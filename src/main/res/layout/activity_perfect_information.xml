@@ -4,86 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_e9"
+    android:background="@color/white_fff"
     android:orientation="vertical"
     tools:context=".ui.my.activity.PerfectInformationActivity">
 
     <include layout="@layout/title_layout" />
-
-    <!--昵称-->
-    <RelativeLayout
-        android:id="@+id/perfect_information_name_btn"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_44"
-        android:layout_marginTop="@dimen/dp_10"
-        android:background="@color/white"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/dp_9"
-            android:gravity="center_vertical"
-            android:text="@string/my_name"
-            android:textColor="@color/black_333"
-            android:textSize="@dimen/sp_15" />
-
-        <TextView
-            android:id="@+id/perfect_information_name_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/dp_9"
-            android:gravity="center_vertical"
-            android:textColor="@color/gray_666"
-            android:textSize="@dimen/sp_12" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_0_1"
-        android:background="@color/gray_666" />
     <!--头像-->
     <RelativeLayout
         android:id="@+id/perfect_information_logo_btn"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_44"
-        android:background="@color/white">
+        android:layout_height="wrap_content"
+        android:background="@color/white_fff">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/dp_9"
+            android:layout_marginLeft="@dimen/dp_15"
             android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_18"
             android:text="@string/my_logo"
             android:textColor="@color/black_333"
-            android:textSize="@dimen/sp_15" />
+            android:textSize="@dimen/sp_14" />
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/perfect_information_logo_img"
-            android:layout_width="@dimen/dp_30"
-            android:layout_height="@dimen/dp_30"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:src="@mipmap/ic_launcher"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="@dimen/dp_4"
-            android:layout_marginRight="@dimen/dp_10"
-            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginRight="@dimen/dp_36"
             android:scaleType="centerCrop"
             app:riv_oval="true" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_5"
+            android:layout_height="@dimen/dp_9"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_25"
+            android:layout_toLeftOf="@+id/perfect_information_logo_img"
+            android:src="@mipmap/jin_ru" />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1_5"
+        android:layout_marginLeft="@dimen/dp_18"
+        android:background="@color/gray_f2" />
+    <!--昵称-->
+    <RelativeLayout
+        android:id="@+id/perfect_information_name_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_fff"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_18"
+            android:text="@string/my_name"
+            android:textColor="@color/black_333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/perfect_information_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_36"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_999"
+            android:textSize="@dimen/sp_12" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_5"
+            android:layout_height="@dimen/dp_9"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_25"
+            android:layout_toLeftOf="@+id/perfect_information_name_tv"
+            android:src="@mipmap/jin_ru" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_0_1"
-        android:background="@color/gray_666" />
+        android:layout_height="@dimen/dp_1_5"
+        android:layout_marginLeft="@dimen/dp_18"
+        android:background="@color/gray_f2" />
     <!--手机号-->
     <RelativeLayout
         android:id="@+id/perfect_information_phone_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
-        android:background="@color/white"
-        android:gravity="center_vertical">
+        android:background="@color/white_fff"
+        android:gravity="center_vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -110,8 +135,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
         android:layout_marginTop="@dimen/dp_10"
-        android:background="@color/white"
-        android:gravity="center_vertical">
+        android:background="@color/white_fff"
+        android:gravity="center_vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"

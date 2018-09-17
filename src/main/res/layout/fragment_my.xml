@@ -32,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="@color/orange_f9f0"
+                    android:background="@color/blue_095a"
                     android:gravity="center">
 
                     <ImageView
@@ -45,7 +45,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:text="@string/guzhu"
-                        android:textColor="@color/white"
+                        android:textColor="@color/white_fff"
                         android:textSize="@dimen/sp_15" />
                 </LinearLayout>
 
@@ -76,7 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="@color/orange_f9f0"
+                    android:background="@color/blue_095a"
                     android:gravity="center">
 
                     <ImageView
@@ -89,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:text="@string/fuwu"
-                        android:textColor="@color/white"
+                        android:textColor="@color/white_fff"
                         android:textSize="@dimen/sp_15" />
                 </LinearLayout>
 
@@ -143,7 +143,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dp_3"
                             android:text="@string/guzhu"
-                            android:textColor="@color/white"
+                            android:textColor="@color/white_fff"
                             android:textSize="@dimen/sp_12" />
                     </LinearLayout>
 
@@ -175,7 +175,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp_7"
                             android:text="张三三"
-                            android:textColor="@color/white"
+                            android:textColor="@color/white_fff"
                             android:textSize="@dimen/sp_15" />
                     </LinearLayout>
 
@@ -204,14 +204,14 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="200"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/white_fff"
                                     android:textSize="@dimen/sp_21" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/bi"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/white_fff"
                                     android:textSize="@dimen/sp_21" />
                             </LinearLayout>
 
@@ -220,7 +220,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/dp_10"
                                 android:text="@string/my_nowadays"
-                                android:textColor="@color/white"
+                                android:textColor="@color/white_fff"
                                 android:textSize="@dimen/sp_12" />
                         </LinearLayout>
 
@@ -241,14 +241,14 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="20000"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/white_fff"
                                     android:textSize="@dimen/sp_21" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/bi"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/white_fff"
                                     android:textSize="@dimen/sp_21" />
                             </LinearLayout>
 
@@ -257,7 +257,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/dp_10"
                                 android:text="@string/my_wallet"
-                                android:textColor="@color/white"
+                                android:textColor="@color/white_fff"
                                 android:textSize="@dimen/sp_12" />
                         </LinearLayout>
                     </LinearLayout>
@@ -425,7 +425,7 @@
                         android:background="@drawable/my_btn_shape"
                         android:gravity="center"
                         android:text="@string/my_qian_dao"
-                        android:textColor="@color/white"
+                        android:textColor="@color/white_fff"
                         android:textSize="@dimen/sp_12" />
 
                 </LinearLayout>
@@ -477,7 +477,7 @@
                         android:background="@drawable/my_btn_shape"
                         android:gravity="center"
                         android:text="@string/my_yao_qing"
-                        android:textColor="@color/white"
+                        android:textColor="@color/white_fff"
                         android:textSize="@dimen/sp_12" />
 
                 </LinearLayout>
@@ -529,7 +529,7 @@
                         android:background="@drawable/my_btn_shape"
                         android:gravity="center"
                         android:text="@string/my_go_ge_ren"
-                        android:textColor="@color/white"
+                        android:textColor="@color/white_fff"
                         android:textSize="@dimen/sp_12" />
                 </LinearLayout>
 
@@ -578,7 +578,7 @@
                         android:background="@drawable/my_btn_shape"
                         android:gravity="center"
                         android:text="@string/my_go_task"
-                        android:textColor="@color/white"
+                        android:textColor="@color/white_fff"
                         android:textSize="@dimen/sp_12" />
                 </LinearLayout>
 

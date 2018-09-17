@@ -1,20 +1,15 @@
 package com.coinwind.bifeng.ui.share.activity;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -22,23 +17,23 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
-import com.coinwind.bifeng.config.LogHelp;
 import com.coinwind.bifeng.config.ShareHelp;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.config.Urls;
 import com.coinwind.bifeng.ui.share.contract.InvitationContract;
 import com.coinwind.bifeng.ui.share.presenter.InvitationPresenter;
-import com.coinwind.bifeng.ui.task.activity.AnswerTaskActivity;
+import com.coinwind.bifeng.ui.task.activity.DoNewTaskActivity;
 import com.coinwind.bifeng.ui.task.biz.ShareCallback;
 import com.coinwind.bifeng.ui.task.config.SetViewHelp;
+
+import java.io.UnsupportedEncodingException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,23 +41,24 @@ import butterknife.OnClick;
 
 public class InvitationActivity extends BaseActivity<InvitationPresenter> implements View.OnClickListener, InvitationContract.View {
 
-    @BindView(R.id.title_title_tv)
-    TextView titleTitleTv;
-    @BindView(R.id.title_layout_return_btn)
-    LinearLayout titleLayoutReturnBtn;
-    @BindView(R.id.title_bar)
-    RelativeLayout titleBar;
-    @BindView(R.id.title_bar_layout)
-    LinearLayout titleBarLayout;
-    @BindView(R.id.invitation_web_view)
-    WebView invitationWebView;
-    @BindView(R.id.invitation_pro)
-    LinearLayout invitationPro;
+
     public ImageView share_img;
     public LinearLayout save_phone_btn;
     public LinearLayout share_wei_xin_btn;
     public LinearLayout share_peng_you_quan_btn;
     public TextView share_return_btn;
+    @BindView(R.id.invitation_web_view)
+    WebView invitationWebView;
+    @BindView(R.id.invitation_title_tv)
+    TextView invitationTitleTv;
+    @BindView(R.id.invitation_return_btn)
+    LinearLayout invitationReturnBtn;
+    @BindView(R.id.invitation_open_share_btn)
+    LinearLayout invitationOpenShareBtn;
+    @BindView(R.id.invitation_pro)
+    LinearLayout invitationPro;
+    @BindView(R.id.invitation_title_layout)
+    RelativeLayout invitationTitleLayout;
     private RelativeLayout share_popup_layout_btn;
     private PopupWindow popupWindow;
 
@@ -70,6 +66,8 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
     public static final int SHARE_WEIXIN_CIRCLE_PERMISSION_CODE = 300;
     public static final int SAVE_REQUEST_PERMISSION_CODE = 200;
     private String imgUrl;
+    private String newUrl;
+    private String shareUrl;
 
     @Override
     protected int getLayoutId() {
@@ -79,7 +77,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void init() {
-        titleTitleTv.setText("邀请好友");
+        invitationTitleTv.setText("邀请好友");
         initPopup();
 
         invitationWebView.getSettings().setJavaScriptEnabled(true);//支持js
@@ -89,7 +87,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             invitationWebView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
-        String url = Urls.YAO_QING_URL + "?userId=" + SpHelp.getUserInformation(SpHelp.ID) + "&sign=" + SpHelp.getSign();
+        String url = Urls.YAO_QING_URL;
         invitationWebView.loadUrl(url);
         invitationWebView.setWebViewClient(new WebViewClient() {
 
@@ -100,20 +98,37 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                 //当url里面包含webview字段的时候，则跳转到ShowActivity原生页面，否则还是继续显示网页
                 //比如：在百度输入框里面输入webview在点击搜索，再点击任何有webview字段的链接，
                 //则不继续显示网页，而是跳转到自己定义的原生页面
-                if (!TextUtils.isEmpty(url)
-                        && url.contains("isloading")) {
-                    invitationPro.setVisibility(View.VISIBLE);
+                if (!TextUtils.isEmpty(url) && url.contains("_lujing_")) {
+                    String[] split = url.split("_");
+                    String ma = split[split.length - 1];
+                    try {
+                        String nickName = new String(SpHelp.getUserInformation(SpHelp.NICK_NAME).getBytes(), "UTF-8");
+                        shareUrl = "https://m.coinwind.com/share/kehuyaoq.html?ma=" + ma.substring(0, ma.length() - 1) + "&name=" + nickName;
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
                     return true;
-                } else if (!TextUtils.isEmpty(url)
-                        && url.contains(".png")) {
-                    imgUrl = url;
-                    invitationPro.setVisibility(View.GONE);
-                    showPopup();
+                } else if (!TextUtils.isEmpty(url) && url.contains("_iscopy_")) {
+                    String[] split = url.split("_");
+                    copyContent(split[split.length - 1]);
                     return true;
+                } else if (!TextUtils.isEmpty(url) && url.contains("_cancel_")) {//所有的取消信号
+                    InvitationActivity.this.finish();
+                    return true;
+                } else if (!TextUtils.isEmpty(url) && url.contains("_rntent_")) {//需要跳转
+                    newUrl = "https://m.coinwind.com/share/invitation.html?userId=" + SpHelp.getUserInformation(SpHelp.ID) + "&sign=" + SpHelp.getSign();
+                    invitationTitleLayout.setVisibility(View.VISIBLE);
+                    view.loadUrl(newUrl);
                 }
                 return false;
             }
         });
+    }
+
+    private void copyContent(String content) {
+        ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        cm.setText(content);
+        ToastHelp.showShort(this, content + "已经复制到剪切板");
     }
 
     @Override
@@ -121,10 +136,17 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
 
     }
 
-
-    @OnClick(R.id.title_layout_return_btn)
-    public void onViewClicked() {
-        finish();
+    @OnClick({R.id.invitation_return_btn, R.id.invitation_open_share_btn})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.invitation_return_btn:
+                finish();
+                break;
+            case R.id.invitation_open_share_btn:
+                if (shareUrl != null && !"".equals(shareUrl))
+                    showPopup();
+                break;
+        }
     }
 
     @Override
@@ -143,7 +165,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                 SetViewHelp.applySharePermission(this, REQUEST_PERMISSION_CODE, new ShareCallback() {
                     @Override
                     public void share() {
-                        ShareHelp.shareImage(InvitationActivity.this, imgUrl);
+                        ShareHelp.shareLink(InvitationActivity.this, shareUrl, SpHelp.getUserInformation(SpHelp.HEAD_IMG), SpHelp.getUserInformation(SpHelp.NICK_NAME) + "邀请您免费领取海量积分，可兑换交易所的Token！我已领取¥10");
                     }
                 });
                 dismissPopup();
@@ -153,7 +175,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                 SetViewHelp.applySharePermission(this, SHARE_WEIXIN_CIRCLE_PERMISSION_CODE, new ShareCallback() {
                     @Override
                     public void share() {
-                        ShareHelp.shareCircleImage(InvitationActivity.this, imgUrl);
+//                        ShareHelp.shareCircleLink(InvitationActivity.this, shareUrl, "2头部标题", "http://coinwind.oss-cn-qingdao.aliyuncs.com/20180916030542_636.jpg", "分享链接简介");
                     }
                 });
                 dismissPopup();
@@ -174,7 +196,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                 SetViewHelp.sharePermissionResult(this, grantResults, new ShareCallback() {
                     @Override
                     public void share() {
-                        ShareHelp.shareImage(InvitationActivity.this, imgUrl);
+                        ShareHelp.shareLink(InvitationActivity.this, shareUrl, SpHelp.getUserInformation(SpHelp.HEAD_IMG), SpHelp.getUserInformation(SpHelp.NICK_NAME) + "邀请您免费领取海量积分，可兑换交易所的Token！我已领取¥10");
                     }
                 });
                 break;
@@ -182,7 +204,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                 SetViewHelp.sharePermissionResult(this, grantResults, new ShareCallback() {
                     @Override
                     public void share() {
-                        ShareHelp.shareCircleImage(InvitationActivity.this, imgUrl);
+//                        ShareHelp.shareCircleLink(InvitationActivity.this, shareUrl, "4头部标题", "http://coinwind.oss-cn-qingdao.aliyuncs.com/20180916030542_636.jpg", "分享链接简介");
                     }
                 });
                 break;
@@ -219,6 +241,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
             }
         });
     }
+
 
     class ChromeClient extends WebChromeClient {
 

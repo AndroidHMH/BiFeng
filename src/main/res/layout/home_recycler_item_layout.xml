@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     app:container_background_color="#FAFAFA"
-                    app:container_border_color="@color/white"
+                    app:container_border_color="@color/white_fff"
                     app:container_border_radius="@dimen/dp_0"
                     app:container_border_width="@dimen/dp_0"
                     app:tag_border_width="@dimen/dp_0_5"
@@ -152,14 +152,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1500"
-                    android:textColor="@color/white"
+                    android:textColor="@color/white_fff"
                     android:textSize="@dimen/sp_12" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/item_score_ci"
-                    android:textColor="@color/white"
+                    android:textColor="@color/white_fff"
                     android:textSize="@dimen/sp_12" />
 
             </LinearLayout>

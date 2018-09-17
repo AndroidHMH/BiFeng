@@ -4,14 +4,12 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
-import com.coinwind.bifeng.base.BaseActivity;
 import com.coinwind.bifeng.base.NoNetworkBaseActivity;
 import com.coinwind.bifeng.config.ToastHelp;
 
@@ -24,6 +22,7 @@ import butterknife.OnClick;
  */
 public class ContactUsActivity extends NoNetworkBaseActivity {
 
+
     @BindView(R.id.title_title_tv)
     TextView titleTitleTv;
     @BindView(R.id.title_layout_return_btn)
@@ -35,26 +34,18 @@ public class ContactUsActivity extends NoNetworkBaseActivity {
     @BindView(R.id.website_tv)
     TextView websiteTv;
     @BindView(R.id.website_btn)
-    TextView websiteBtn;
+    LinearLayout websiteBtn;
     @BindView(R.id.customer_service_tv)
     TextView customerServiceTv;
-    @BindView(R.id.customer_service_btn)
-    TextView customerServiceBtn;
     @BindView(R.id.website_weixin_tv)
     TextView websiteWeixinTv;
-    @BindView(R.id.website_weixin_btn)
-    TextView websiteWeixinBtn;
     @BindView(R.id.customer_service_email_tv)
     TextView customerServiceEmailTv;
-    @BindView(R.id.customer_service_email_btn)
-    TextView customerServiceEmailBtn;
 
     public static void openActivity(Context context) {
         Intent intent = new Intent(context, ContactUsActivity.class);
         context.startActivity(intent);
     }
-
-    ;
 
     @Override
     protected int getLayoutId() {
@@ -93,4 +84,5 @@ public class ContactUsActivity extends NoNetworkBaseActivity {
         cm.setText(textView.getText());
         ToastHelp.showShort(this, textView.getText() + "已经复制到剪切板");
     }
+
 }

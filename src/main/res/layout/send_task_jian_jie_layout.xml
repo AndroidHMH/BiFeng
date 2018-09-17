@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_142"
         android:layout_marginTop="@dimen/dp_10"
-        android:background="@color/white"
+        android:background="@color/white_fff"
         android:gravity="top|left"
         android:hint="@string/task_jian_jie"
         android:paddingLeft="@dimen/dp_10"

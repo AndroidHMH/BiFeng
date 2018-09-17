@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_f2"
+    android:orientation="vertical"
+    tools:context=".ui.my.fragment.NewMyFragment">
+
+
+    <com.southernbox.springscrollview.SpringScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--头布局-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_207"
+                android:background="@mipmap/new_my_bg">
+
+
+                <ImageView
+                    android:id="@+id/new_my_tong_zhi_btn"
+                    android:layout_width="@dimen/dp_33"
+                    android:layout_height="@dimen/dp_52"
+                    android:paddingLeft="@dimen/dp_13"
+                    android:paddingTop="@dimen/dp_32"
+                    android:src="@mipmap/new_my_xiao_xi_icon" />
+
+                <ImageView
+                    android:id="@+id/new_my_setting_btn"
+                    android:layout_width="@dimen/dp_35"
+                    android:layout_height="@dimen/dp_52"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="@dimen/dp_15"
+                    android:paddingTop="@dimen/dp_32"
+                    android:src="@mipmap/new_my_setting_icon" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_42"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/new_my_head_img"
+                        android:layout_width="@dimen/dp_45"
+                        android:layout_height="@dimen/dp_45"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/ic_launcher"
+                        app:riv_oval="true" />
+
+                    <TextView
+                        android:id="@+id/new_my_user_name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="张三"
+                        android:textColor="@color/white_fff"
+                        android:textSize="@dimen/sp_14" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_3_5"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/new_my_wallet_address_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLength="19"
+                            android:text="00X00X000X0X0X0X0X0"
+                            android:textColor="@color/white_fff"
+                            android:textSize="@dimen/sp_11" />
+
+                        <ImageView
+                            android:id="@+id/new_my_wallet_er_wei_ba_btn"
+                            android:layout_width="@dimen/dp_11"
+                            android:layout_height="@dimen/dp_11"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:src="@mipmap/new_my_er_wei_ma_icon" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/new_my_yue_deng_yu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/dp_23"
+                    android:layout_marginLeft="@dimen/dp_9"
+                    android:text="@string/new_my_yue_deng_yu"
+                    android:textColor="@color/white_fff"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/new_my_yue_deng_yu_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/new_my_yue_deng_yu"
+                    android:layout_marginLeft="@dimen/dp_2_5"
+                    android:layout_toRightOf="@id/new_my_yue_deng_yu"
+                    android:text="837489.0"
+                    android:textColor="@color/white_fff"
+                    android:textSize="@dimen/sp_15" />
+
+                <ImageView
+                    android:id="@+id/new_my_hang_qing_img"
+                    android:layout_width="@dimen/dp_7"
+                    android:layout_height="@dimen/dp_8"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/dp_29"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_toRightOf="@id/new_my_yue_deng_yu_tv"
+                    android:src="@mipmap/new_my_hang_qing_up" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/dp_6"
+                    android:layout_marginLeft="@dimen/dp_7"
+                    android:text="@string/new_my_all_zi_chan"
+                    android:textColor="@color/white_fff"
+                    android:textSize="@dimen/sp_12" />
+
+
+                <LinearLayout
+                    android:id="@+id/new_my_zi_chan_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/dp_7"
+                    android:layout_marginRight="@dimen/dp_13"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_20"
+                        android:src="@mipmap/new_my_yin_hang_ka_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="@string/new_my_zi_chan"
+                        android:textColor="@color/white_fff"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+            </RelativeLayout>
+            <!--我的任务-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_107"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_18"
+                android:background="@mipmap/new_my_task_bg"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/new_my_my_all_task_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_8"
+                        android:layout_marginLeft="@dimen/dp_11"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:text="@string/new_my_all_task"
+                        android:textColor="@color/black_f333"
+                        android:textSize="@dimen/sp_12" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|right">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:text="@string/new_my_see_all_task"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_9" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_5"
+                            android:layout_height="@dimen/dp_9"
+                            android:layout_marginRight="@dimen/dp_11"
+                            android:src="@mipmap/jin_ru" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_marginLeft="@dimen/dp_2"
+                    android:layout_marginRight="@dimen/dp_2"
+                    android:background="@color/gray_d6" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <LinearLayout
+                        android:id="@+id/new_my_jie_shou_task_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/new_my_jie_shou_task_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:text="@string/new_my_jie_shou"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_12" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/new_my_jin_xing_task_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/new_my_jin_xing_task_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:text="@string/new_my_jin_xing"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_12" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/new_my_shen_he_task_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/new_my_shen_he_task_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:text="@string/new_my_shen_he"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_12" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/new_my_jie_shu_task_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/new_my_jie_shu_task_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:text="@string/new_my_jie_shu"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_12" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/new_my_guo_qi_task_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/new_my_guo_qi_task_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:text="@string/new_my_huo_qi"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_12" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--邀请好友-->
+            <LinearLayout
+                android:id="@+id/new_my_share_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_11"
+                android:background="@mipmap/new_my_yao_qing_bg"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:src="@mipmap/new_my_yao_qing_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_9"
+                    android:text="@string/new_my_yao_qing"
+                    android:textColor="@color/black_f333"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_141"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_18"
+                android:background="@mipmap/new_my_task_bg"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/new_my_help_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_25"
+                        android:layout_height="@dimen/dp_25"
+                        android:layout_marginLeft="@dimen/dp_11"
+                        android:src="@mipmap/new_my_bang_zhu_icon" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_9"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="@string/new_my_bang_zhu"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_14" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_1"
+                            android:background="@color/gray_f2" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/new_my_lian_xi_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_25"
+                        android:layout_height="@dimen/dp_25"
+                        android:layout_marginLeft="@dimen/dp_11"
+                        android:src="@mipmap/new_my_lian_xi_icon" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_9"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="@string/lian_xi"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_14" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_1"
+                            android:background="@color/gray_f2" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/new_my_guan_yu_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_25"
+                        android:layout_height="@dimen/dp_25"
+                        android:layout_marginLeft="@dimen/dp_11"
+                        android:src="@mipmap/new_my_guan_yu_icon" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_9"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="@string/guan_yu"
+                            android:textColor="@color/black_f333"
+                            android:textSize="@dimen/sp_14" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_1"
+                            android:background="@color/gray_f2" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.southernbox.springscrollview.SpringScrollView>
+
+
+    <include layout="@layout/net_work_error_layout" />
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.coinwind.bifeng.ui.submittask.biz;
 
 import com.coinwind.bifeng.config.Urls;
+import com.coinwind.bifeng.ui.setting.bean.SubmitHeadImgBean;
 import com.coinwind.bifeng.ui.submittask.bean.SubmitBean;
 import com.coinwind.bifeng.ui.submittask.bean.SubmitImgBean;
 
@@ -17,14 +18,23 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.PartMap;
 import retrofit2.http.Query;
+
 /**
- *提交任务的Service
+ * 提交任务的Service
  */
 public interface SubmitService {
+
+
     @Multipart
     @POST(Urls.UPDATE_IMGS)
     Observable<SubmitImgBean> upload(@Part MultipartBody.Part imgs);
 
     @GET(Urls.SUBMIT_TASK)
-    Observable<SubmitBean> submitTask(@Query("taskId") String taskId, @Query("userId") String userId, @Query("imgs") String imgs, @Query("explain") String explain, @Header("sign")String sign);
+    Observable<SubmitBean> submitTask(@Query("taskId") String taskId, @Query("userId") String userId, @Query("imgs") String imgs, @Query("explain") String explain, @Header("sign") String sign);
+
+    @GET(Urls.HEAD_IMG_TASK)
+    Observable<SubmitHeadImgBean> submitHeadImg(@Query("taskId") String taskId, @Query("userId") String userId,
+                                                @Query("mTab") String mTab, @Query("para") String para, @Query("sign") String sign);
+
+
 }

@@ -15,6 +15,8 @@ import java.security.Key;
 public class SpHelp {
     //登录的sp
     public static final String IS_LOGIN = "login";
+    //机型号
+    public static final String ANDROID_ID = "androidId";
     //用户的sp
     public static final String USER = "user";
     //sign sp
@@ -43,13 +45,15 @@ public class SpHelp {
     public static final String SERVICE_PROVIDERS = "service_providers";
     //用户身份：雇主
     public static final String EMPLOYERS = "employers";
+    //用户身份：0正式用户，1游客
+    public static final int IS_VISIT = 1;
 
     /**
      * 获取登录sp
      *
      * @return
      */
-    private static SharedPreferences.Editor getSp(String spName) {
+    public static SharedPreferences.Editor getSp(String spName) {
         SharedPreferences login = BFApplication.context.getSharedPreferences(spName, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = login.edit();
         return edit;
@@ -97,31 +101,31 @@ public class SpHelp {
     public static void putUserInformation(LoginBean.DataBean.UserBean user) {
         SharedPreferences.Editor userSp = getSp(USER);
         userSp.putString(HEAD_IMG, user.getHead_img());
-        userSp.putString(PHONE, user.getPhone());
+//        userSp.putString(PHONE, user.getPhone());
         userSp.putString(NICK_NAME, user.getNick_name());
         userSp.putString(ID, user.getId());
-        userSp.putString(LAST_CHECK_TYPE, user.getLast_check_type());
-        userSp.putString(CURRENT_CSS, user.getCurrent_css() + "");
-        String type = user.getType();
-        userSp.putString(TYPE, type);
-        userSp.putString(QIYE_INFO, user.getQiye_info());
+//        userSp.putString(LAST_CHECK_TYPE, user.getLast_check_type());
+//        userSp.putString(CURRENT_CSS, user.getCurrent_css() + "");
+//        String type = user.getType();
+//        userSp.putString(TYPE, type);
+//        userSp.putString(QIYE_INFO, user.getQiye_info());
         //是否认证
-        Integer auth_flag = user.getAuth_flag();
-        if (auth_flag == null || auth_flag == 0) {
-            userSp.putString(AUTH_FLAG, 0 + "");
-        } else {
-            userSp.putString(AUTH_FLAG, 1 + "");
-        }
+//        Integer auth_flag = user.getAuth_flag();
+//        if (auth_flag == null || auth_flag == 0) {
+//            userSp.putString(AUTH_FLAG, 0 + "");
+//        } else {
+//            userSp.putString(AUTH_FLAG, 1 + "");
+//        }
         userSp.commit();
 
-        if (type == null || "".equals(type)) {
-            return;
-        }
-        if (Integer.parseInt(type) == 1) {
-            putUserType(SpHelp.SERVICE_PROVIDERS);
-        } else if (Integer.parseInt(type) == 2) {
-            putUserType(SpHelp.EMPLOYERS);
-        }
+//        if (type == null || "".equals(type)) {
+//            return;
+//        }
+//        if (Integer.parseInt(type) == 1) {
+//            putUserType(SpHelp.SERVICE_PROVIDERS);
+//        } else if (Integer.parseInt(type) == 2) {
+//            putUserType(SpHelp.EMPLOYERS);
+//        }
     }
 
     /**
@@ -174,7 +178,7 @@ public class SpHelp {
         getSp(SIGN).putString(SIGN, sign).commit();
     }
 
-    private static int i = 0;
+//    private static int i = 0;
 
     /**
      * 获取Sing
@@ -184,8 +188,50 @@ public class SpHelp {
     public static String getSign() {
         SharedPreferences signSp = BFApplication.context.getSharedPreferences(SIGN, Context.MODE_PRIVATE);
         String sign = signSp.getString(SIGN, "");
-        Log.i("sign", "第" + i + "次获取的sign = " + sign);
-        i++;
+//        Log.i("sign", "第" + i + "次获取的sign = " + sign);
+//        i++;
         return sign;
     }
+
+//    /**
+//     * 存储机型号
+//     *
+//     * @param androidId
+//     */
+//    public static void putAndroidId(String androidId) {
+//        getSp(ANDROID_ID).putString(ANDROID_ID, androidId).commit();
+//    }
+
+    /**
+     * 获取机型号
+     *
+     * @return
+     */
+    public static String getAndroidId() {
+        SharedPreferences signSp = BFApplication.context.getSharedPreferences(ANDROID_ID, Context.MODE_PRIVATE);
+        String androidId = signSp.getString(ANDROID_ID, "");
+        return androidId;
+    }
+
+    /**
+     * 存储机型号
+     *
+     * @param isVisit
+     */
+    public static void putIsVisit(int isVisit) {
+        getSp(IS_VISIT + "").putInt(IS_VISIT + "", isVisit).commit();
+    }
+
+    /**
+     * 获取机型号
+     *
+     * @return
+     */
+    public static int getIsVisit() {
+        SharedPreferences signSp = BFApplication.context.getSharedPreferences(IS_VISIT + "", Context.MODE_PRIVATE);
+        int isVisit = signSp.getInt(IS_VISIT + "", IS_VISIT);
+        return isVisit;
+    }
+
+
 }

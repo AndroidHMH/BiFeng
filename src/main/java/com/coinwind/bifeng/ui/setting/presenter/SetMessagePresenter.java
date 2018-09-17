@@ -43,7 +43,7 @@ public class SetMessagePresenter implements SetMessageContract.Presenter {
                             view.showSuccess("修改成功", field, value);
                         } else if (code == Codes.FAILURE_CODE) {
                             view.loginOut();
-                        } else{
+                        } else {
                             view.showError("修改失败");
                         }
                     }

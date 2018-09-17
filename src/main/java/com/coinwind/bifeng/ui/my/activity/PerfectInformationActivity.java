@@ -29,6 +29,7 @@ import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.my.config.InfoHelp;
 import com.coinwind.bifeng.ui.my.contract.PerfectInformationContract;
 import com.coinwind.bifeng.ui.my.presenter.PerfectInformationPresenter;
+import com.coinwind.bifeng.ui.setting.activity.ChangePaswActivity;
 import com.coinwind.bifeng.ui.setting.config.SetMessageHelp;
 import com.coinwind.bifeng.ui.submittask.biz.SubmitService;
 import com.coinwind.bifeng.ui.submittask.config.PhotoHelp;
@@ -131,6 +132,7 @@ public class PerfectInformationActivity extends BaseActivity<PerfectInformationP
             case R.id.perfect_information_name_btn:
                 Intent nickNameIntent = InfoHelp.getPerfectInformationIntent(this, SpHelp.NICK_NAME);
                 startActivityForResult(nickNameIntent, REQUEST_CODE);
+//                startActivity(new Intent(this, ChangePaswActivity.class));
                 break;
             case R.id.perfect_information_logo_btn:
                 showPopup();
@@ -138,8 +140,8 @@ public class PerfectInformationActivity extends BaseActivity<PerfectInformationP
             case R.id.perfect_information_phone_btn:
                 break;
             case R.id.perfect_information_my_btn:
-                Intent qiYeInfoIntent = InfoHelp.getPerfectInformationIntent(this, SpHelp.QIYE_INFO);
-                startActivityForResult(qiYeInfoIntent, REQUEST_CODE);
+//                Intent qiYeInfoIntent = InfoHelp.getPerfectInformationIntent(this, SpHelp.QIYE_INFO);
+//                startActivityForResult(qiYeInfoIntent, REQUEST_CODE);
                 break;
         }
     }

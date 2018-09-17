@@ -1,7 +1,6 @@
 package com.coinwind.bifeng.ui.setting.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseActivity;
-import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.ui.setting.contract.ChangePswContract;
 import com.coinwind.bifeng.ui.setting.presenter.ChangePswPresenter;
@@ -27,6 +25,7 @@ import butterknife.OnClick;
  */
 public class ChangePaswActivity extends BaseActivity<ChangePswPresenter> implements ChangePswContract.View {
 
+
     @BindView(R.id.title_title_tv)
     TextView titleTitleTv;
     @BindView(R.id.title_layout_return_btn)
@@ -35,12 +34,10 @@ public class ChangePaswActivity extends BaseActivity<ChangePswPresenter> impleme
     RelativeLayout titleBar;
     @BindView(R.id.title_bar_layout)
     LinearLayout titleBarLayout;
-    @BindView(R.id.change_psw_user_name_tv)
-    TextView changePswUserNameTv;
-    @BindView(R.id.change_psw_send_code_btn)
-    TextView changePswSendCodeBtn;
     @BindView(R.id.change_psw_psw_et)
     EditText changePswPswEt;
+    @BindView(R.id.change_psw_send_code_btn)
+    TextView changePswSendCodeBtn;
     @BindView(R.id.change_psw_new_psw_et)
     EditText changePswNewPswEt;
     @BindView(R.id.change_psw_can_see_btn)
@@ -48,6 +45,7 @@ public class ChangePaswActivity extends BaseActivity<ChangePswPresenter> impleme
     @BindView(R.id.change_psw_send_btn)
     Button changePswSendBtn;
     private boolean isClick = true;
+    private String phone;
 
 
     @Override
@@ -58,7 +56,8 @@ public class ChangePaswActivity extends BaseActivity<ChangePswPresenter> impleme
     @Override
     protected void init() {
         titleTitleTv.setText("修改密码");
-        changePswUserNameTv.setText(SpHelp.getUserInformation(SpHelp.PHONE));
+        phone = getIntent().getStringExtra("phone");
+
     }
 
     @Override
@@ -73,7 +72,7 @@ public class ChangePaswActivity extends BaseActivity<ChangePswPresenter> impleme
                 finish();
                 break;
             case R.id.change_psw_send_code_btn:
-                presenter.getCode(changePswUserNameTv.getText().toString());
+                presenter.getCode(phone);
                 break;
             case R.id.change_psw_can_see_btn:
                 if (isClick) {
@@ -87,7 +86,6 @@ public class ChangePaswActivity extends BaseActivity<ChangePswPresenter> impleme
                 isClick = !isClick;
                 break;
             case R.id.change_psw_send_btn:
-                String phone = changePswUserNameTv.getText().toString();
                 String shortMsgCode = changePswPswEt.getText().toString().trim();
                 String newpsw = changePswNewPswEt.getText().toString().trim();
                 if (presenter.isNewPsw(newpsw) && presenter.isShortMsgCode(shortMsgCode)) {

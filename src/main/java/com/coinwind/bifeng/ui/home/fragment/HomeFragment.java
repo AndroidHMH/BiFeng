@@ -36,10 +36,7 @@ import com.recker.flybanner.FlyBanner;
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -153,7 +150,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         homeGuangBoContentTv.setSelected(true);
 
         homeQiangXfcLayout.setTheme(ColorFactory.NONE);
-        homeQiangXfcLayout.setTagBackgroundColor(getContext().getResources().getColor(R.color.white));
+        homeQiangXfcLayout.setTagBackgroundColor(getContext().getResources().getColor(R.color.white_fff));
         homeQiangXfcLayout.setTagTextColor(getContext().getResources().getColor(R.color.red_f42));
         homeQiangXfcLayout.setTagBorderColor(getContext().getResources().getColor(R.color.red_f42));
     }

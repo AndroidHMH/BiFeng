@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_64"
-        android:background="@color/white"
+        android:background="@color/white_fff"
         android:gravity="center_vertical">
 
         <com.makeramen.roundedimageview.RoundedImageView

@@ -1,7 +1,7 @@
 package com.coinwind.bifeng.ui.home.biz;
 
 import com.coinwind.bifeng.config.Urls;
-import com.coinwind.bifeng.ui.home.bean.GuangBoBean;
+import com.coinwind.bifeng.ui.home.bean.BroadcastBean;
 import com.coinwind.bifeng.ui.home.bean.HomeBannerBean;
 import com.coinwind.bifeng.ui.home.bean.HomeQiangBean;
 import com.coinwind.bifeng.ui.home.bean.IsLoginBean;
@@ -22,7 +22,7 @@ public interface HomeService {
     Observable<HomeBannerBean> loadBanner();
 
     @GET(Urls.HOME_GUANG_BO)
-    Observable<GuangBoBean> loadGuangBo();
+    Observable<BroadcastBean> loadGuangBo();
 
     @GET(Urls.HOME_QINAG)
     Observable<HomeQiangBean> loadQiang();

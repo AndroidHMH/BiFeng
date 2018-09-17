@@ -2,6 +2,7 @@ package com.coinwind.bifeng.ui.my.contract;
 
 import com.coinwind.bifeng.base.BasePresenter;
 import com.coinwind.bifeng.base.TaskBean;
+import com.coinwind.bifeng.ui.my.bean.MyTaskBean;
 
 import java.util.List;
 
@@ -15,9 +16,11 @@ public interface MyTaskContract {
         void showError(String errorMsg);
 
         void loginOut();
+
+        void showList(List<MyTaskBean.DataBean.ListBean> listBeans);
     }
 
     interface Presenter extends BasePresenter<View> {
-        void loadTask(String userId, String flag, int page, String reqType);
+        void loadTask(String flag);
     }
 }

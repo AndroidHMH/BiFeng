@@ -74,7 +74,7 @@ public class HomeAdapter extends BaseAdapter {
         String label = taskBean.getLabel();
         String[] labels = label.split(",");
         holder.homeRecyclerItemLayoutXcfTitleLayout.setTheme(ColorFactory.NONE);
-        holder.homeRecyclerItemLayoutXcfTitleLayout.setTagBackgroundColor(context.getResources().getColor(R.color.white));
+        holder.homeRecyclerItemLayoutXcfTitleLayout.setTagBackgroundColor(context.getResources().getColor(R.color.white_fff));
         holder.homeRecyclerItemLayoutXcfTitleLayout.setTagTextColor(context.getResources().getColor(R.color.red_f42));
         holder.homeRecyclerItemLayoutXcfTitleLayout.setTagBorderColor(context.getResources().getColor(R.color.red_f42));
         holder.homeRecyclerItemLayoutXcfTitleLayout.setTags(labels);

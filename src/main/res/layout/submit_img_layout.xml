@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_130"
         android:layout_margin="@dimen/dp_10"
-        android:background="@color/white"
+        android:background="@color/white_fff"
         android:orientation="horizontal">
 
         <android.support.v7.widget.RecyclerView

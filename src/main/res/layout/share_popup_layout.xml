@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/white"
+        android:background="@color/white_fff"
         android:orientation="vertical">
 
         <TextView
@@ -123,7 +123,7 @@
             android:paddingBottom="@dimen/dp_12"
             android:paddingTop="@dimen/dp_12"
             android:text="@string/share_return"
-            android:textColor="@color/orange_f9f0" />
+            android:textColor="@color/blue_095a" />
     </LinearLayout>
 
 </RelativeLayout>

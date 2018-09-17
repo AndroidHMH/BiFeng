@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.ui.my.activity.MyTaskActivity;
 import com.coinwind.bifeng.ui.my.fragment.MyTaskFragment;
+import com.coinwind.bifeng.ui.setting.activity.ChangePaswActivity;
 import com.coinwind.bifeng.ui.setting.activity.SetMessageActivity;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class InfoHelp {
      * @return
      */
     public static Intent getPerfectInformationIntent(Context context, String infoType) {
-        Intent intent = new Intent(context, SetMessageActivity.class);
+        Intent intent = new Intent(context, ChangePaswActivity.class);
         switch (infoType) {
             case SpHelp.NICK_NAME:
                 intent.putExtra("info", SpHelp.NICK_NAME);

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item>-->
+    <!--<shape android:shape="rectangle">-->
+    <!--<solid android:color="#00C3C3C3" />-->
+    <!--&lt;!&ndash;<solid android:color="@color/orange_f9" />&ndash;&gt;-->
+
+    <!--<corners android:radius="@dimen/dp_6" />-->
+
+    <!--<padding-->
+    <!--android:bottom="@dimen/dp_1"-->
+    <!--android:left="@dimen/dp_1"-->
+    <!--android:right="@dimen/dp_1"-->
+    <!--android:top="@dimen/dp_1" />-->
+    <!--</shape>-->
+    <!--</item>-->
+
+    <!--<item>-->
+    <!--<shape android:shape="rectangle">-->
+    <!--<solid android:color="#11C3C3C3" />-->
+    <!--&lt;!&ndash;<solid android:color="@color/yellow_fc80" />&ndash;&gt;-->
+
+    <!--<corners android:radius="@dimen/dp_6" />-->
+
+    <!--<padding-->
+    <!--android:bottom="@dimen/dp_1"-->
+    <!--android:left="@dimen/dp_1"-->
+    <!--android:right="@dimen/dp_1"-->
+    <!--android:top="@dimen/dp_1" />-->
+    <!--</shape>-->
+    <!--</item>-->
+
+    <!--<item>-->
+    <!--<shape android:shape="rectangle">-->
+    <!--<solid android:color="#44C3C3C3" />-->
+    <!--&lt;!&ndash;<solid android:color="@color/blue_095a" />&ndash;&gt;-->
+
+    <!--<corners android:radius="@dimen/dp_6" />-->
+
+    <!--<padding-->
+    <!--android:bottom="@dimen/dp_1"-->
+    <!--android:left="@dimen/dp_1"-->
+    <!--android:right="@dimen/dp_1"-->
+    <!--android:top="@dimen/dp_1" />-->
+    <!--</shape>-->
+    <!--</item>-->
+
+    <!--<item>-->
+    <!--<shape android:shape="rectangle">-->
+    <!--<solid android:color="#77C3C3C3" />-->
+    <!--&lt;!&ndash;<solid android:color="@color/red_f3240" />&ndash;&gt;-->
+
+    <!--<corners android:radius="@dimen/dp_6" />-->
+
+    <!--<padding-->
+    <!--android:bottom="@dimen/dp_1"-->
+    <!--android:left="@dimen/dp_1"-->
+    <!--android:right="@dimen/dp_1"-->
+    <!--android:top="@dimen/dp_1" />-->
+    <!--</shape>-->
+    <!--</item>-->
+
+    <!--<shape android:shape="rectangle">-->
+    <!--<solid android:color="#22C3C3C3" />-->
+    <!--&lt;!&ndash;<solid android:color="@color/gray_999" />&ndash;&gt;-->
+
+    <!--<corners android:radius="@dimen/dp_6" />-->
+
+    <!--<padding-->
+    <!--android:bottom="@dimen/dp_2"-->
+    <!--android:left="@dimen/dp_2"-->
+    <!--android:right="@dimen/dp_2"-->
+    <!--android:top="@dimen/dp_2" />-->
+    <!--</shape>-->
+    <!--</item>-->
+
+    <!--<item>-->
+    <!--<shape android:shape="rectangle">-->
+    <!--<solid android:color="#44C3C3C3" />-->
+    <!--&lt;!&ndash;<solid android:color="@color/black_333" />&ndash;&gt;-->
+
+    <!--<corners android:radius="@dimen/dp_6" />-->
+
+    <!--<padding-->
+    <!--android:bottom="@dimen/dp_2"-->
+    <!--android:left="@dimen/dp_2"-->
+    <!--android:right="@dimen/dp_2"-->
+    <!--android:top="@dimen/dp_2" />-->
+    <!--</shape>-->
+    <!--</item>-->
+
+    <!--<item>-->
+    <!--<shape android:shape="rectangle">-->
+    <!--<solid android:color="#66C3C3C3" />-->
+
+    <!--<corners android:radius="@dimen/dp_6" />-->
+
+    <!--<padding-->
+    <!--android:bottom="@dimen/dp_2"-->
+    <!--android:left="@dimen/dp_2"-->
+    <!--android:right="@dimen/dp_2"-->
+    <!--android:top="@dimen/dp_2" />-->
+    <!--</shape>-->
+    <!--</item>--> <!--<item>-->
+
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:endColor="#00C3C3C3"
+                android:gradientRadius="100%p"
+                android:startColor="#66C3C3C3"
+                android:type="radial" />
+            <padding
+                android:bottom="@dimen/dp_6"
+                android:right="@dimen/dp_6" />
+            <corners android:radius="@dimen/dp_6" />
+
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/dp_6" />
+
+            <padding
+                android:left="@dimen/dp_6"
+                android:top="@dimen/dp_6" />
+            <solid android:color="@color/white_fff" />
+        </shape>
+    </item>
+
+</layer-list>

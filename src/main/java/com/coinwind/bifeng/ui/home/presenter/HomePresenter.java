@@ -8,7 +8,7 @@ import com.coinwind.bifeng.config.Codes;
 import com.coinwind.bifeng.config.LogHelp;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.model.http.RetrofitHelp;
-import com.coinwind.bifeng.ui.home.bean.GuangBoBean;
+import com.coinwind.bifeng.ui.home.bean.BroadcastBean;
 import com.coinwind.bifeng.ui.home.bean.HomeBannerBean;
 import com.coinwind.bifeng.ui.home.bean.HomeQiangBean;
 import com.coinwind.bifeng.ui.home.bean.IsLoginBean;
@@ -117,18 +117,18 @@ public class HomePresenter implements HomeContract.Presenter {
     public void loadGuangBo() {
         homeService.loadGuangBo().subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<GuangBoBean>() {
+                .subscribe(new Observer<BroadcastBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(GuangBoBean guangBoBean) {
-                        int code = guangBoBean.getCode();
+                    public void onNext(BroadcastBean broadcastBean) {
+                        int code = broadcastBean.getCode();
                         if (code == Codes.SUCCESS_CODE) {
                             StringBuffer sb = new StringBuffer();
-                            List<GuangBoBean.DataBean> data = guangBoBean.getData();
+                            List<BroadcastBean.DataBean> data = broadcastBean.getData();
                             for (int i = 0; i < data.size(); i++) {
                                 if (i == 0 || i == data.size() - 1) {
                                     sb.append(data.get(i).getBroadcast_title());

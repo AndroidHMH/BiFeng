@@ -4,7 +4,9 @@ import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.config.Codes;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.model.http.RetrofitHelp;
+import com.coinwind.bifeng.model.http.SwitchThread;
 import com.coinwind.bifeng.ui.home.bean.ListBean;
+import com.coinwind.bifeng.ui.my.bean.MyTaskBean;
 import com.coinwind.bifeng.ui.my.biz.MyTaskService;
 import com.coinwind.bifeng.ui.my.contract.MyTaskContract;
 
@@ -28,32 +30,68 @@ public class MyTaskPresenter implements MyTaskContract.Presenter {
     }
 
     @Override
-    public void loadTask(String userId, String flag, int page, String reqType) {
-        service.loadTask(userId, flag, page, 5, reqType, SpHelp.getSign())
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<ListBean>() {
+    public void loadTask(String flag) {
+//        service.loadTask(userId, flag, page, 5, reqType, SpHelp.getSign())
+//                .subscribeOn(Schedulers.newThread())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Observer<ListBean>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(ListBean listBean) {
+//                        int code = listBean.getCode();
+//                        List<TaskBean> data = listBean.getData();
+//                        if (code == Codes.SUCCESS_CODE && data != null) {
+//                            view.showSuccess(data);
+//                        } else if (code == Codes.FAILURE_CODE) {
+//                            view.loginOut();
+//                        } else {
+//                            view.showError("请求失败");
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        view.showError("请求失败");
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//
+//                    }
+//                });
+        service.loadMyTask(SpHelp.getUserInformation(SpHelp.ID), flag)
+                .compose(SwitchThread.<MyTaskBean>switchThread())
+                .subscribe(new Observer<MyTaskBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(ListBean listBean) {
-                        int code = listBean.getCode();
-                        List<TaskBean> data = listBean.getData();
-                        if (code == Codes.SUCCESS_CODE && data != null) {
-                            view.showSuccess(data);
-                        } else if (code == Codes.FAILURE_CODE) {
-                            view.loginOut();
-                        } else {
-                            view.showError("请求失败");
+                    public void onNext(MyTaskBean myTaskBean) {
+                        int code = myTaskBean.getCode();
+                        if (code == Codes.SUCCESS_CODE) {
+                            MyTaskBean.DataBean data = myTaskBean.getData();
+                            if (data.isState()) {
+                                view.showList(data.getList());
+                            } else {
+                                int resultCode = data.getCode();
+                                if (resultCode == Codes.FAILURE_CODE) {
+                                    view.loginOut();
+                                } else {
+                                    view.showError("请求失败");
+                                }
+                            }
                         }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        view.showError("请求失败");
+
                     }
 
                     @Override

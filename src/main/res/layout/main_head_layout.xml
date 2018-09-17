@@ -360,14 +360,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1500"
-                        android:textColor="@color/orange_f9f0"
+                        android:textColor="@color/blue_095a"
                         android:textSize="@dimen/sp_12" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/item_score_ci"
-                        android:textColor="@color/orange_f9f0"
+                        android:textColor="@color/blue_095a"
                         android:textSize="@dimen/sp_12" />
                 </LinearLayout>
             </LinearLayout>
@@ -395,7 +395,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/dp_4"
                 android:text="【EOS超级节点再创币圈神话神】"
-                android:textColor="@color/white" />
+                android:textColor="@color/white_fff" />
         </LinearLayout>
 
         <LinearLayout
@@ -410,7 +410,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:container_background_color="#FAFAFA"
-                app:container_border_color="@color/white"
+                app:container_border_color="@color/white_fff"
                 app:container_border_radius="@dimen/dp_0"
                 app:container_border_width="@dimen/dp_0"
                 app:horizontal_interval="@dimen/dp_8"
@@ -427,7 +427,7 @@
                 android:background="@drawable/home_btn_shape"
                 android:gravity="center"
                 android:text="抢任务"
-                android:textColor="@color/white"
+                android:textColor="@color/white_fff"
                 android:textSize="@dimen/sp_14" />
         </LinearLayout>
     </LinearLayout>

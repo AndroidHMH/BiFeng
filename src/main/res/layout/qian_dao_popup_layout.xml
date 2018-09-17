@@ -195,7 +195,7 @@
             android:layout_marginRight="@dimen/dp_43"
             android:background="@drawable/qian_dao_btn_shape"
             android:text="@string/qian_dao_btn_tv"
-            android:textColor="@color/white"
+            android:textColor="@color/white_fff"
             android:textSize="@dimen/sp_20" />
     </LinearLayout>
 </LinearLayout>

@@ -7,56 +7,53 @@
     android:orientation="vertical"
     tools:context=".ui.my.activity.WalletActivity">
 
+    <include layout="@layout/title_layout" />
     <!--头布局-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_181"
-        android:background="@mipmap/wallet_bg"
+        android:layout_height="@dimen/dp_143"
+        android:background="@mipmap/new_my_bg"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_64">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_9"
-                    android:text="@string/my_wallet"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp_18" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/my_wallet_return_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true">
-
-                <ImageView
-                    android:layout_width="@dimen/dp_8"
-                    android:layout_height="@dimen/dp_14"
-                    android:layout_marginBottom="@dimen/dp_16"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:layout_marginRight="@dimen/dp_10"
-                    android:layout_marginTop="@dimen/dp_5"
-                    android:src="@mipmap/wite_fanhui" />
-
-            </LinearLayout>
-        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_48"
+            android:layout_marginTop="@dimen/dp_23"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_9"
+                android:text="@string/new_my_yue_deng_yu"
+                android:textColor="@color/white_fff"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_9"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:text="837489.0"
+                android:textColor="@color/white_fff"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="@string/cny"
+                android:textColor="@color/white_fff"
+                android:textSize="@dimen/sp_9" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_26"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -71,28 +68,32 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/my_wallet_today_cc_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="200"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/sp_21" />
+                        android:text="@string/dang_qian_shi_fang"
+                        android:textColor="@color/white_fff"
+                        android:textSize="@dimen/sp_13" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/bi"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/sp_21" />
+                        android:layout_marginLeft="@dimen/dp_4_5"
+                        android:text="@string/cc"
+                        android:textColor="@color/white_fff"
+                        android:textSize="@dimen/sp_9" />
                 </LinearLayout>
 
+
                 <TextView
+                    android:id="@+id/my_wallet_today_cc_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_13"
-                    android:text="@string/today_cc"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp_12" />
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:text="200"
+                    android:textColor="@color/white_fff"
+                    android:textSize="@dimen/sp_14" />
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -107,28 +108,31 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/my_wallet_all_cc_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="20000"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/sp_21" />
+                        android:text="@string/doang_qian_zong_ge"
+                        android:textColor="@color/white_fff"
+                        android:textSize="@dimen/sp_13" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/bi"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/sp_21" />
+                        android:layout_marginLeft="@dimen/dp_4_5"
+                        android:text="@string/cc"
+                        android:textColor="@color/white_fff"
+                        android:textSize="@dimen/sp_9" />
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/my_wallet_all_cc_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_13"
-                    android:text="@string/all_cc"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp_12" />
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:text="20000"
+                    android:textColor="@color/white_fff"
+                    android:textSize="@dimen/sp_14" />
+
+
             </LinearLayout>
         </LinearLayout>
 
@@ -140,8 +144,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
         android:layout_marginTop="@dimen/dp_12"
-        android:background="@color/white"
-        android:gravity="center_vertical">
+        android:background="@color/white_fff"
+        android:gravity="center_vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="match_parent"
@@ -158,21 +163,65 @@
             android:layout_marginRight="@dimen/dp_6"
             android:src="@mipmap/jin_ru" />
     </LinearLayout>
-
+    <!--转入或者转出-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
-        android:layout_marginTop="@dimen/dp_10"
-        android:background="@color/white"
-        android:gravity="center_vertical">
+        android:background="@color/white_fff">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_9"
-            android:text="@string/record"
-            android:textColor="@color/black_333"
-            android:textSize="@dimen/sp_15" />
+        <LinearLayout
+            android:id="@+id/wallet_come_in_btn"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/wallet_come_in_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_come_in"
+                android:textColor="@color/blue_095a"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:id="@+id/wallet_come_in_line"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_1_5"
+                android:background="@color/blue_095a" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_11"
+            android:layout_marginTop="@dimen/dp_11"
+            android:background="@color/gray_de" />
+
+        <LinearLayout
+            android:id="@+id/wallet_go_out_btn"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/wallet_go_out_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_go_out"
+                android:textColor="@color/black_333"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:id="@+id/wallet_go_out_line"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_1_5"
+                android:background="@color/blue_095a"
+                android:visibility="gone" />
+        </LinearLayout>
     </LinearLayout>
 
     <ListView

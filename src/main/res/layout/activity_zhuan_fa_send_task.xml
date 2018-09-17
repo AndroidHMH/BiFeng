@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_39"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 

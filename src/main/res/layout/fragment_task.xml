@@ -18,7 +18,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <LinearLayout
                 android:id="@+id/task_zhi_xing_btn"
@@ -99,7 +100,8 @@
             android:paddingBottom="@dimen/dp_10"
             android:paddingLeft="@dimen/dp_35"
             android:paddingRight="@dimen/dp_35"
-            android:paddingTop="@dimen/dp_10">
+            android:paddingTop="@dimen/dp_10"
+            android:visibility="gone">
 
             <LinearLayout
                 android:id="@+id/task_sou_suo_btn"

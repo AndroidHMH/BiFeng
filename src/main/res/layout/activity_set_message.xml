@@ -18,7 +18,7 @@
         android:id="@+id/set_message_et"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
-        android:background="@color/white"
+        android:background="@color/white_fff"
         android:hint="请输入昵称……"
         android:paddingBottom="@dimen/dp_7"
         android:paddingLeft="@dimen/dp_9"
@@ -65,7 +65,7 @@
         android:id="@+id/set_message_qi_yi_et"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_168"
-        android:background="@color/white"
+        android:background="@color/white_fff"
         android:gravity="top|left"
         android:hint="请输入介绍内容……"
         android:paddingLeft="@dimen/dp_9"
@@ -82,7 +82,7 @@
         android:layout_marginTop="@dimen/dp_207"
         android:background="@drawable/my_btn_shape"
         android:text="@string/qie_ding"
-        android:textColor="@color/white"
+        android:textColor="@color/white_fff"
         android:textSize="@dimen/sp_18" />
 
     <include layout="@layout/net_work_error_layout" />

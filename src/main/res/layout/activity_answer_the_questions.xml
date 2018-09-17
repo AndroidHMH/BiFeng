@@ -24,10 +24,10 @@
         android:id="@+id/answer_the_questions_submit_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
-        android:background="@color/orange_f9f0"
+        android:background="@color/blue_095a"
         android:gravity="center"
         android:text="@string/submit_2"
-        android:textColor="@color/white"
+        android:textColor="@color/white_fff"
         android:textSize="@dimen/sp_18" />
 
     <include layout="@layout/net_work_error_layout" />

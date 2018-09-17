@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_34"
                 android:layout_marginTop="@dimen/dp_13"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="center_vertical"
                 android:hint="@string/zhang_fen_public_num"
                 android:paddingLeft="@dimen/dp_10"
@@ -55,7 +55,7 @@
                     android:id="@+id/update_public_num_img_btn"
                     android:layout_width="@dimen/dp_120"
                     android:layout_height="@dimen/dp_120"
-                    android:background="@color/white"
+                    android:background="@color/white_fff"
                     android:gravity="center"
                     android:orientation="vertical">
 

@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_34"
                 android:layout_marginTop="@dimen/dp_11"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_34"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_34"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -138,7 +138,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_34"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -208,7 +208,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_34"
                 android:layout_marginTop="@dimen/dp_14"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -237,7 +237,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_34"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -264,7 +264,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_34"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -305,7 +305,7 @@
         android:id="@+id/send_task_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
-        android:background="@color/orange_f9f0"
+        android:background="@color/blue_095a"
         android:gravity="center">
 
 
@@ -314,7 +314,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/send_task_tv"
-            android:textColor="@color/white"
+            android:textColor="@color/white_fff"
             android:textSize="@dimen/sp_18" />
     </LinearLayout>
 

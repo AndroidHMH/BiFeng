@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:text="BF123123"
-                    android:textColor="@color/orange_f9f0"
+                    android:textColor="@color/blue_095a"
                     android:textSize="@dimen/sp_9" />
 
                 <LinearLayout
@@ -71,13 +71,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="(点击复制)"
-                        android:textColor="@color/orange_f9f0"
+                        android:textColor="@color/blue_095a"
                         android:textSize="@dimen/sp_9" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_1"
-                        android:background="@color/orange_f9f0" />
+                        android:background="@color/blue_095a" />
                 </LinearLayout>
 
             </LinearLayout>

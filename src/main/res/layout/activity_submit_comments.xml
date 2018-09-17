@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_120"
                 android:layout_margin="@dimen/dp_10"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="top|left"
                 android:hint="@string/phone_hint"
                 android:maxLength="200"
@@ -74,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_10"
-                android:background="@color/white"
+                android:background="@color/white_fff"
                 android:gravity="top|left"
                 android:hint="@string/phone_hint"
                 android:inputType="number"
@@ -124,10 +124,10 @@
             android:id="@+id/submit_comments_submit_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_44"
-            android:background="@color/orange_f9f0"
+            android:background="@color/blue_095a"
             android:gravity="center"
             android:text="@string/submit"
-            android:textColor="@color/white"
+            android:textColor="@color/white_fff"
             android:textSize="@dimen/sp_18" />
     </LinearLayout>
 

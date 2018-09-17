@@ -1,4 +1,4 @@
-package com.coinwind.bifeng.view;
+package com.coinwind.bifeng.view.sendtaskview;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

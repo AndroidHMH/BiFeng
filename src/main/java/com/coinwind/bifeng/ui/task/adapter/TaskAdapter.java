@@ -85,7 +85,7 @@ public class TaskAdapter extends BaseAdapter {
         String label = taskBean.getLabel();
         String[] labels = label.split(",");
         holder.recyclerItemLayoutXcfTitleLayout.setTheme(ColorFactory.NONE);
-        holder.recyclerItemLayoutXcfTitleLayout.setTagBackgroundColor(context.getResources().getColor(R.color.white));
+        holder.recyclerItemLayoutXcfTitleLayout.setTagBackgroundColor(context.getResources().getColor(R.color.white_fff));
         holder.recyclerItemLayoutXcfTitleLayout.setTagTextColor(context.getResources().getColor(R.color.red_f42));
         holder.recyclerItemLayoutXcfTitleLayout.setTagBorderColor(context.getResources().getColor(R.color.red_f42));
         holder.recyclerItemLayoutXcfTitleLayout.setTags(labels);

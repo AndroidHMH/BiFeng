@@ -1,6 +1,7 @@
 package com.coinwind.bifeng.ui.homepage.activity;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -9,17 +10,20 @@ import android.widget.TextView;
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.NoNetworkBaseActivity;
 import com.coinwind.bifeng.config.SpHelp;
-import com.coinwind.bifeng.ui.home.fragment.HomeFragment;
+import com.coinwind.bifeng.ui.home.fragment.NewHomeFragment;
 import com.coinwind.bifeng.ui.homepage.bean.MessageEvent;
 import com.coinwind.bifeng.ui.login.activity.LoginActivity;
-import com.coinwind.bifeng.ui.my.fragment.MyFragment;
+import com.coinwind.bifeng.ui.my.fragment.NewMyFragment;
 import com.coinwind.bifeng.ui.task.fragment.TaskFragment;
+import com.coinwind.bifeng.ui.tradingfloor.fragment.TradingFloorFragment;
+import com.coinwind.bifeng.ui.union.fragment.UnionFragment;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -33,18 +37,24 @@ public class MainActivity extends NoNetworkBaseActivity {
     TextView mainHomeTv;
     @BindView(R.id.main_home_btn)
     LinearLayout mainHomeBtn;
-    @BindView(R.id.main_task_img)
-    ImageView mainTaskImg;
-    @BindView(R.id.main_task_tv)
-    TextView mainTaskTv;
-    @BindView(R.id.main_task_btn)
-    LinearLayout mainTaskBtn;
+    @BindView(R.id.main_gong_hui_img)
+    ImageView mainGongHuiImg;
+    @BindView(R.id.main_gong_hui_tv)
+    TextView mainGongHuiTv;
+    @BindView(R.id.main_gong_hui_btn)
+    LinearLayout mainGongHuiBtn;
     @BindView(R.id.main_my_img)
     ImageView mainMyImg;
     @BindView(R.id.main_my_tv)
     TextView mainMyTv;
     @BindView(R.id.main_my_btn)
     LinearLayout mainMyBtn;
+    @BindView(R.id.main_jiao_yi_img)
+    ImageView mainJiaoYiImg;
+    @BindView(R.id.main_jiao_yi_tv)
+    TextView mainJiaoYiTv;
+    @BindView(R.id.main_jiao_yi_btn)
+    LinearLayout mainJiaoYiBtn;
 
     @Override
     protected int getLayoutId() {
@@ -55,27 +65,32 @@ public class MainActivity extends NoNetworkBaseActivity {
     protected void init() {
         EventBus.getDefault().register(this);
         setHomeIcon();
-        setCreateView(R.id.main_layout, HomeFragment.class);
+        setCreateView(R.id.main_layout, NewHomeFragment.class);
     }
 
-    @OnClick({R.id.main_home_btn, R.id.main_task_btn, R.id.main_my_btn})
+    @OnClick({R.id.main_home_btn, R.id.main_gong_hui_btn, R.id.main_my_btn, R.id.main_jiao_yi_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.main_home_btn:
                 setHomeIcon();
-                setCreateView(R.id.main_layout, HomeFragment.class);
+                setCreateView(R.id.main_layout, NewHomeFragment.class);
                 break;
-            case R.id.main_task_btn:
-                setTaskIcon();
-                setCreateView(R.id.main_layout, TaskFragment.class);
+            case R.id.main_gong_hui_btn:
+                setGongHuiIcon();
+                setCreateView(R.id.main_layout, UnionFragment.class);
+                break;
+            case R.id.main_jiao_yi_btn:
+                setJiaoYiIcon();
+                setCreateView(R.id.main_layout, TradingFloorFragment.class);
                 break;
             case R.id.main_my_btn:
-                if (SpHelp.getLoginStatus()) {
-                    setMyIcon();
-                    setCreateView(R.id.main_layout, MyFragment.class);
-                } else {
-                    LoginActivity.openLoginActivity(this);
-                }
+//                if (SpHelp.getLoginStatus()) {
+                setMyIcon();
+//                    setCreateView(R.id.main_layout, MyFragment.class);
+                setCreateView(R.id.main_layout, NewMyFragment.class);
+//                } else {
+//                    LoginActivity.openLoginActivity(this);
+//                }
                 break;
         }
     }
@@ -83,26 +98,43 @@ public class MainActivity extends NoNetworkBaseActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void messageEventBus(String type) {
         EventBus.getDefault().post(new MessageEvent(type));
-        setTaskIcon();
+        setGongHuiIcon();
         setCreateView(R.id.main_layout, TaskFragment.class);
     }
 
     private void setMyIcon() {
         mainHomeImg.setImageResource(R.mipmap.home);
         mainHomeTv.setTextColor(getResources().getColor(R.color.black_333));
-        mainTaskImg.setImageResource(R.mipmap.task);
-        mainTaskTv.setTextColor(getResources().getColor(R.color.black_333));
+        mainGongHuiImg.setImageResource(R.mipmap.gong_hui);
+        mainGongHuiTv.setTextColor(getResources().getColor(R.color.black_333));
+        mainJiaoYiImg.setImageResource(R.mipmap.jiao_yi);
+        mainJiaoYiTv.setTextColor(getResources().getColor(R.color.black_333));
 
         mainMyImg.setImageResource(R.mipmap.my_click);
-        mainMyTv.setTextColor(getResources().getColor(R.color.orange_f9f0));
+        mainMyTv.setTextColor(getResources().getColor(R.color.blue_095a));
     }
 
-    private void setTaskIcon() {
+    private void setGongHuiIcon() {
         mainHomeImg.setImageResource(R.mipmap.home);
         mainHomeTv.setTextColor(getResources().getColor(R.color.black_333));
 
-        mainTaskImg.setImageResource(R.mipmap.task_click);
-        mainTaskTv.setTextColor(getResources().getColor(R.color.orange_f9f0));
+        mainGongHuiImg.setImageResource(R.mipmap.gong_hui_click);
+        mainGongHuiTv.setTextColor(getResources().getColor(R.color.blue_095a));
+
+        mainJiaoYiImg.setImageResource(R.mipmap.jiao_yi);
+        mainJiaoYiTv.setTextColor(getResources().getColor(R.color.black_333));
+        mainMyImg.setImageResource(R.mipmap.my);
+        mainMyTv.setTextColor(getResources().getColor(R.color.black_333));
+    }
+
+    private void setJiaoYiIcon() {
+        mainHomeImg.setImageResource(R.mipmap.home);
+        mainHomeTv.setTextColor(getResources().getColor(R.color.black_333));
+        mainGongHuiImg.setImageResource(R.mipmap.gong_hui);
+        mainGongHuiTv.setTextColor(getResources().getColor(R.color.black_333));
+
+        mainJiaoYiImg.setImageResource(R.mipmap.jiao_yi_click);
+        mainJiaoYiTv.setTextColor(getResources().getColor(R.color.blue_095a));
 
         mainMyImg.setImageResource(R.mipmap.my);
         mainMyTv.setTextColor(getResources().getColor(R.color.black_333));
@@ -110,10 +142,12 @@ public class MainActivity extends NoNetworkBaseActivity {
 
     private void setHomeIcon() {
         mainHomeImg.setImageResource(R.mipmap.home_click);
-        mainHomeTv.setTextColor(getResources().getColor(R.color.orange_f9f0));
+        mainHomeTv.setTextColor(getResources().getColor(R.color.blue_095a));
 
-        mainTaskImg.setImageResource(R.mipmap.task);
-        mainTaskTv.setTextColor(getResources().getColor(R.color.black_333));
+        mainGongHuiImg.setImageResource(R.mipmap.gong_hui);
+        mainGongHuiTv.setTextColor(getResources().getColor(R.color.black_333));
+        mainJiaoYiImg.setImageResource(R.mipmap.jiao_yi);
+        mainJiaoYiTv.setTextColor(getResources().getColor(R.color.black_333));
         mainMyImg.setImageResource(R.mipmap.my);
         mainMyTv.setTextColor(getResources().getColor(R.color.black_333));
     }

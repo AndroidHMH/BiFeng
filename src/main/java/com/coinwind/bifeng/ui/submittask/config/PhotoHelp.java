@@ -3,10 +3,12 @@ package com.coinwind.bifeng.ui.submittask.config;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -251,6 +253,26 @@ public class PhotoHelp {
         return null;
     }
 
+    /**
+     * 获取相册选取的图片
+     *
+     * @param context
+     * @param data
+     * @return
+     */
+    public static Uri xiangCeResultUri(Context context, Intent data) {
+        if (PhotoUtils.hasSdcard()) {
+            Uri newUri = Uri.parse(PhotoUtils.getPath(context, data.getData()));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+                newUri = FileProvider.getUriForFile(context, "com.coinwind.bifeng.fileprovider", new File(newUri.getPath()));
+            return newUri;
+
+        } else {
+            ToastHelp.showShort(context, "设备没有SD卡！");
+        }
+        return null;
+    }
+
 
     /**
      * 获取文件路径
@@ -304,7 +326,7 @@ public class PhotoHelp {
      * @param image
      * @return
      */
-    private static Bitmap comp(Bitmap image) {
+    public static Bitmap comp(Bitmap image) {
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -336,5 +358,32 @@ public class PhotoHelp {
         isBm = new ByteArrayInputStream(baos.toByteArray());
         bitmap = BitmapFactory.decodeStream(isBm, null, newOpts);
         return bitmap;//压缩好比例大小后再进行质量压缩
+    }
+
+    /**
+     * 根据Uri返回文件绝对路径
+     * 兼容了file:///开头的 和 content://开头的情况
+     */
+    public static String getRealFilePathFromUri(final Context context, final Uri uri) {
+        if (null == uri) return null;
+        final String scheme = uri.getScheme();
+        String data = null;
+        if (scheme == null)
+            data = uri.getPath();
+        else if (ContentResolver.SCHEME_FILE.equals(scheme)) {
+            data = uri.getPath();
+        } else if (ContentResolver.SCHEME_CONTENT.equals(scheme)) {
+            Cursor cursor = context.getContentResolver().query(uri, new String[]{MediaStore.Images.ImageColumns.DATA}, null, null, null);
+            if (null != cursor) {
+                if (cursor.moveToFirst()) {
+                    int index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+                    if (index > -1) {
+                        data = cursor.getString(index);
+                    }
+                }
+                cursor.close();
+            }
+        }
+        return data;
     }
 }

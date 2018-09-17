@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -71,11 +72,26 @@ public class PaiZhaoOrXiangCe implements View.OnClickListener {
     }
 
     public void showPopup(int layoutId) {
+        //popupWindow在弹窗的时候背景半透明
+        final WindowManager.LayoutParams params = context.getWindow().getAttributes();
+        params.alpha = 0.5f;
+        context.getWindow().setAttributes(params);
+        photoPopup.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                params.alpha = 1.0f;
+                context.getWindow().setAttributes(params);
+            }
+        });
         photoPopup.showAtLocation(context.getLayoutInflater().inflate(layoutId, null), Gravity.BOTTOM, 0, 0);
     }
 
     public void dismissPopup() {
         photoPopup.dismiss();
+    }
+
+    public String getImgFilePath() {
+        return filePath;
     }
 
     public String getFilePath() {

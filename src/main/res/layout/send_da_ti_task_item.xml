@@ -58,7 +58,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/zheng_que_da_an"
-                        android:textColor="@color/orange_f9f0"
+                        android:textColor="@color/blue_095a"
                         android:textSize="@dimen/sp_12" />
 
                     <EditText
@@ -69,7 +69,7 @@
                         android:gravity="center"
                         android:paddingRight="@dimen/dp_14"
                         android:text="A"
-                        android:textColor="@color/orange_f9f0"
+                        android:textColor="@color/blue_095a"
                         android:textSize="@dimen/sp_12" />
                 </LinearLayout>
             </LinearLayout>
@@ -88,14 +88,14 @@
                 android:textColorHint="@color/gray_999"
                 android:textSize="@dimen/sp_9" />
 
-            <com.coinwind.bifeng.view.SendSheetView
+            <com.coinwind.bifeng.view.sendtaskview.SendSheetView
                 android:layout_marginTop="@dimen/dp_5"
                 android:id="@+id/send_da_ti_options_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            </com.coinwind.bifeng.view.SendSheetView>
+            </com.coinwind.bifeng.view.sendtaskview.SendSheetView>
 
             <RelativeLayout
                 android:id="@+id/send_sheet_add_item_btn"
@@ -111,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/dp_9"
                     android:text="@string/da_ti_add"
-                    android:textColor="@color/orange_f9f0"
+                    android:textColor="@color/blue_095a"
                     android:textSize="@dimen/sp_13" />
 
                 <View
@@ -121,7 +121,7 @@
                     android:layout_alignRight="@+id/send_sheet_add_item_tv"
                     android:layout_below="@+id/send_sheet_add_item_tv"
                     android:layout_marginTop="@dimen/dp_m_2"
-                    android:background="@color/orange_f9f0" />
+                    android:background="@color/blue_095a" />
             </RelativeLayout>
         </LinearLayout>
 

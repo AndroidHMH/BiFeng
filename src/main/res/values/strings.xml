@@ -10,7 +10,8 @@
     <string name="weixin_appkey">2a9599097d4fda5ae88f76a2c26a872d</string>
     <!--主页-->
     <string name="home">首页</string>
-    <string name="task">任务大厅</string>
+    <string name="task">公会</string>
+    <string name="jiao_yi">交易大厅</string>
     <string name="my">我的</string>
 
     <!--首页-->
@@ -25,6 +26,19 @@
     <string name="tui_jian">推荐</string>
     <string name="di_xian">我是有底线的</string>
     <string name="ci">/次</string>
+
+    <string name="new_home_kuang_chang">第一期矿场含量&#160;</string>
+    <string name="wan">&#160;万</string>
+    <string name="new_home_now_user">当前在线矿工&#160;</string>
+    <string name="ren">&#160;人</string>
+    <string name="new_home_jin_du">已产进度&#160;</string>
+    <string name="bai_fen_hao">%</string>
+    <string name="new_home_feng_li">当前矿产风力&#160;</string>
+    <string name="new_home_ji_lu">矿产记录</string>
+    <string name="new_home_up_fneg_li">提升风力</string>
+    <string name="new_home_yao_qing">邀请好友</string>
+    <string name="new_home_today">今日推荐任务</string>
+    <string name="new_home_zong_liang">今日产出总量</string>
 
     <!--首页Item布局-->
     <string name="remaining">剩余</string>
@@ -109,6 +123,21 @@
     <string name="my_qian_dao_content">每次签到可获得最低5 CC 奖励</string>
     <string name="my_nowadays">今天奖励</string>
     <string name="my_wallet">我的钱包</string>
+    <string name="new_my_yue_deng_yu">≈</string>
+    <string name="new_my_all_zi_chan">总资产 (￥)</string>
+    <string name="new_my_zi_chan">资产管理</string>
+    <string name="new_my_all_task">我的全部任务</string>
+    <string name="new_my_see_all_task">查看全部任务</string>
+    <string name="new_my_jie_shou">已接受</string>
+    <string name="new_my_jin_xing">进行中</string>
+    <string name="new_my_shen_he">待审核</string>
+    <string name="new_my_jie_shu">已结束</string>
+    <string name="new_my_huo_qi">已过期</string>
+    <string name="new_my_yao_qing">邀请好友坐享分成</string>
+    <string name="new_my_bang_zhu">帮助中心</string>
+    <string name="new_my_guan_yu">邀请好友坐享分成</string>
+    <string name="wallet_come_in">转入</string>
+    <string name="wallet_go_out">转出</string>
 
     <!--设置内容-->
     <string name="qie_ding">确定</string>
@@ -168,17 +197,18 @@
 
 
     <!--登录页面-->
-    <string name="login_phone_hint">请输入手机号</string>
-    <string name="login_psw_hint">输入密码</string>
+    <string name="login_phone_hint">账号</string>
+    <string name="login_psw_hint">密码</string>
     <string name="login_code_hint">输入验证码</string>
     <string name="login_get_code">获取验证码</string>
     <string name="login_use_pasw_login">使用密码登录</string>
     <string name="login_use_phone_login">使用手机号登录</string>
+    <string name="login_forget_pasw">忘记密码</string>
     <string name="login_login">登录</string>
 
     <!--完善个人信息-->
     <string name="my_name">昵称</string>
-    <string name="my_logo">LOGO</string>
+    <string name="my_logo">头像</string>
     <string name="my_phone">手机号</string>
     <string name="my_introduce">企业介绍</string>
 
@@ -191,19 +221,22 @@
     <string name="login_out">退出登录</string>
 
     <!--我的钱包-->
-    <string name="today_cc">今日获得</string>
-    <string name="all_cc">全部资产</string>
+    <string name="dang_qian_shi_fang">当前释放</string>
+    <string name="doang_qian_zong_ge">当前总额</string>
     <string name="what_cc">CC是什么</string>
     <string name="record">CC收益记录</string>
+    <string name="cny">(CNY)</string>
+    <string name="cc">(CC)</string>
+
 
     <!--联系我们-->
-    <string name="website">币风官网：</string>
+    <string name="website">币风官网</string>
     <string name="website_tv">www.coinwind.com</string>
-    <string name="customer_service">在线客服：</string>
+    <string name="customer_service">在线客服</string>
     <string name="customer_service_tv">771739988</string>
-    <string name="website_weixin">商务合作：</string>
+    <string name="website_weixin">商务合作</string>
     <string name="website_weixin_tv">coinwind666</string>
-    <string name="customer_service_email">客服邮箱：</string>
+    <string name="customer_service_email">客服邮箱</string>
     <string name="customer_service_email_tv">kefy@coinwind.com</string>
     <string name="dian_fuzhi">点击复制</string>
 
@@ -238,6 +271,45 @@
     <string name="qian_dao6_tv">第六天</string>
     <string name="qian_dao7_tv">第七天</string>
     <string name="qian_dao_btn_tv">立即签到</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--任务列表-->
+    <string name="task_hall_chuang_shi">创世任务</string>
+    <string name="task_hall_chuang_shi_content">了解币风、提升风力</string>
+    <string name="task_hall_zhong_ji">中级任务</string>
+    <string name="task_hall_zhong_ji_content">指尖轻点、轻松挖矿</string>
+    <string name="task_hall_zhong_ji_premise">需创世任务进度>50%</string>
+    <string name="task_hall_gao_ji">高级任务</string>
+    <string name="task_hall_gao_ji_content">官方推荐挖矿任务</string>
+    <string name="task_hall_gao_ji_jin_du">需创世任务进度=100%</string>
+    <string name="task_hall_chao_ji">超级任务</string>
+    <string name="task_hall_chao_ji_content">神秘</string>
+    <string name="task_hall_chao_ji_jin_du"><![CDATA[需高级任务进度>50%]]></string>
+
+    <!--忘记密码-->
+    <string name="forgot_pasw">忘记密码</string>
+    <string name="_86">+86</string>
+    <string name="wan_cheng">完成</string>
+
+    <!--更换头像-->
+    <string name="change_head_title">个人头像</string>
+    <string name="clip_save">保存</string>
+    <string name="neek_name">昵称</string>
+
+    <!--创世任务-->
+    <string name="gong_lue">创世攻略</string>
+    <string name="chuang_shi">创世任务</string>
+    <string name="bi_zuo">必做任务</string>
+    <string name="gao_feng_li">高风速任务</string>
+    <string name="now_feng_li">当前风力</string>
+    <string name="ling_xian">已领先</string>
+    <string name="ling_xian_content">%的用户，风力越高，矿产越多</string>
+    <string name="feng_li_ji_lu">风力记录</string>
+    <string name="feng_su">风速值:</string>
+    <string name="feng_li_zhi">基础风力值:</string>
+    <string name="wei_kai_fang">未开放</string>
 
 
 </resources>

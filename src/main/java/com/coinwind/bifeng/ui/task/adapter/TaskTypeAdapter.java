@@ -1,6 +1,5 @@
 package com.coinwind.bifeng.ui.task.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -45,8 +44,8 @@ public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.Holder
         holder.taskTypePopupRecyclerItemTypeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.taskTypePopupRecyclerItemTypeTv.setTextColor(context.getResources().getColor(R.color.orange_f9f0));
-                holder.taskTypePopupRecyclerItemLineView.setBackgroundColor(context.getResources().getColor(R.color.orange_f9f0));
+                holder.taskTypePopupRecyclerItemTypeTv.setTextColor(context.getResources().getColor(R.color.blue_095a));
+                holder.taskTypePopupRecyclerItemLineView.setBackgroundColor(context.getResources().getColor(R.color.blue_095a));
                 if (lastHolder != null) {
                     lastHolder.taskTypePopupRecyclerItemTypeTv.setTextColor(context.getResources().getColor(R.color.gray_666));
                     lastHolder.taskTypePopupRecyclerItemLineView.setBackgroundColor(context.getResources().getColor(R.color.gray_e9));

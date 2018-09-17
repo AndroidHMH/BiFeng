@@ -13,7 +13,67 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <include layout="@layout/title_layout" />
+    <RelativeLayout
+        android:id="@+id/invitation_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_64"
+        android:background="@color/white_fff"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/invitation_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_9"
+            android:ellipsize="end"
+            android:maxEms="5"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:textColor="@color/black_333"
+            android:textSize="@dimen/sp_22" />
+
+
+        <LinearLayout
+            android:id="@+id/invitation_return_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:layout_width="@dimen/dp_8"
+                android:layout_height="@dimen/dp_15"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:src="@mipmap/fanhui" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/invitation_open_share_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_width="@dimen/dp_19"
+                android:layout_height="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                android:src="@mipmap/dian_dian_dian" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
 
     <LinearLayout
         android:id="@+id/invitation_pro"

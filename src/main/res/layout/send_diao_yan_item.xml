@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_34"
         android:layout_marginTop="@dimen/dp_2"
-        android:background="@color/white"
+        android:background="@color/white_fff"
         android:gravity="center_vertical"
         android:hint="@string/diao_yan_et_hint"
         android:maxLength="50"

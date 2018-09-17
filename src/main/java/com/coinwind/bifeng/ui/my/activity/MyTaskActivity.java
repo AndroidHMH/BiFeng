@@ -1,5 +1,6 @@
 package com.coinwind.bifeng.ui.my.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -15,6 +16,7 @@ import com.coinwind.bifeng.base.BaseActivity;
 import com.coinwind.bifeng.base.NoNetworkBaseActivity;
 import com.coinwind.bifeng.ui.my.adapter.MyTaskAdapter;
 import com.coinwind.bifeng.ui.my.config.InfoHelp;
+import com.coinwind.bifeng.ui.my.fragment.MyTaskFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,9 +42,16 @@ public class MyTaskActivity extends NoNetworkBaseActivity {
     TabLayout myTaskTabLayout;
     @BindView(R.id.my_task_pager)
     ViewPager myTaskPager;
-    private List<String> mTitle;
     private List<Fragment> mFragments;
     private MyTaskAdapter myTaskAdapter;
+    private ArrayList<String> titles;
+    private int index;
+
+    public static void openMyTaskActivity(Context context, int index) {
+        Intent intent = new Intent(context, MyTaskActivity.class);
+        intent.putExtra("index", index);
+        context.startActivity(intent);
+    }
 
     @Override
     protected int getLayoutId() {
@@ -51,17 +60,64 @@ public class MyTaskActivity extends NoNetworkBaseActivity {
 
     @Override
     protected void init() {
-        mTitle = new ArrayList<>();
-        Intent intent = getIntent();
-        ArrayList<String> titles = intent.getStringArrayListExtra("titles");
-        mTitle.addAll(titles);
-        InfoHelp.setTitle(titles, titleTitleTv);
+        titleTitleTv.setText("全部任务");
+        initTitle();
         mFragments = new ArrayList<>();
-        myTaskAdapter = new MyTaskAdapter(getSupportFragmentManager(), mTitle, mFragments);
+        myTaskAdapter = new MyTaskAdapter(getSupportFragmentManager(), titles, mFragments);
         myTaskTabLayout.setupWithViewPager(myTaskPager);
         myTaskPager.setAdapter(myTaskAdapter);
-        mFragments.addAll(InfoHelp.addFragment(mTitle.size()));
+        initFragment();
         myTaskAdapter.notifyDataSetChanged();
+
+        index = getIntent().getIntExtra("index", -4);
+        if (index != -1 && index != -4) {
+            myTaskPager.setCurrentItem(index);
+        }
+    }
+
+    private void initFragment() {
+        for (int i = 0; i < titles.size(); i++) {
+            MyTaskFragment myTaskFragment = new MyTaskFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("flag", (i + 1) + "");
+            myTaskFragment.setArguments(bundle);
+            mFragments.add(myTaskFragment);
+        }
+    }
+
+    private String getFlag() {
+        String flag = "";
+        switch (index) {
+            case -1:
+                flag = "1";
+                break;
+            case 0:
+                flag = "1";
+                break;
+            case 1:
+                flag = "2";
+                break;
+            case 2:
+                flag = "3";
+                break;
+            case 3:
+                flag = "4";
+                break;
+            case 4:
+                flag = "5";
+                break;
+        }
+        return flag;
+
+    }
+
+    private void initTitle() {
+        titles = new ArrayList<>();
+        titles.add("已接受");
+        titles.add("进行中");
+        titles.add("待审核");
+        titles.add("已结束");
+        titles.add("已过期");
     }
 
     @OnClick(R.id.title_layout_return_btn)

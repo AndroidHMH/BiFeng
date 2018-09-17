@@ -14,8 +14,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
-import com.coinwind.bifeng.ui.sendtask.bean.DiaoYanBean;
 import com.coinwind.bifeng.ui.task.bean.SendDaTiBean;
+import com.coinwind.bifeng.view.sendtaskview.SendSheetView;
 
 import java.util.ArrayList;
 import java.util.HashMap;

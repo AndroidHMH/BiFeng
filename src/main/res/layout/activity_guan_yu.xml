@@ -6,12 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.setting.activity.GuanYuActivity">
 
-    <ImageView
-        android:id="@+id/guan_yu_img"
+    <!--<ImageView-->
+    <!--android:id="@+id/guan_yu_img"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:scaleType="fitXY"-->
+    <!--android:src="@mipmap/guanyu_icon" />-->
+    <WebView
+        android:id="@+id/guan_yu_web_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@mipmap/guanyu_icon" />
+        android:layout_height="match_parent" />
 
     <include layout="@layout/title_layout" />
 

@@ -5,8 +5,8 @@ package com.coinwind.bifeng.config;
  */
 public class Urls {
     //请求地址
-//    public static final String BASE_URL = "https://m.coinwind.com/";
-    public static final String BASE_URL = "http://47.105.33.156:8080/";
+    public static final String BASE_URL = "https://m.coinwind.com/";
+//    public static final String BASE_URL = "http://47.105.33.156:8080/";
 
     //首页轮播图
     public static final String HOME_BANNER = "bifeng/api/banners";
@@ -78,11 +78,40 @@ public class Urls {
     public static final String IS_LOGIN = "bifeng/user/isLogin";
 
     //邀请链接
-    public static final String YAO_QING_URL = "https://m.coinwind.com/share/invite.html";
+    public static final String YAO_QING_URL = "https://m.coinwind.com/share/haoyou.html";
 
     //发布任务
     public static final String SEND_TASK = "bifeng/zc/publishTask";
 
     //提交答题调研任务
     public static final String SUBMIT_DA_TI = "bifeng/zc/subTaskByType";
+
+    //个人详情信息
+    public static final String MY_INFO = "bifeng/frame/myBaseInfo";
+
+    //首页基本信息
+    public static final String HOME_INFO = "bifeng/frame/indexBaseInfo";
+
+    //首页根据机型获取信息
+    public static final String HOME_USER_INFO = "bifeng/frame/indexInfoByMTab";
+
+    //获取创世任务列表
+    public static final String NEW_TASK = "bifeng/frame/taskNewList";
+
+    //首页cc集合
+    public static final String HOME_CC_LIST = "bifeng/frame/ccList";
+
+    //任务进度
+    public static final String TASK_PROGRESS = "bifeng/frame/taskList";
+
+    //领取cc
+    public static final String RECEIVE_CC = "bifeng/frame/addFreeCC";
+
+    //上传头像
+    public static final String HEAD_IMG_TASK = "bifeng/frame/subTaskNew";
+
+    //我的任务
+    public static final String MY_TASK = "bifeng/frame/myTaskList";
+
+
 }

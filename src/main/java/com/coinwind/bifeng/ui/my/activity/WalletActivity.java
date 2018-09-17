@@ -30,17 +30,25 @@ import butterknife.OnClick;
  */
 public class WalletActivity extends BaseActivity<WalletPresenter> implements WalletContract.View, AbsListView.OnScrollListener {
 
-    @BindView(R.id.my_wallet_return_btn)
-    LinearLayout myWalletReturnBtn;
+
+    @BindView(R.id.title_title_tv)
+    TextView titleTitleTv;
     @BindView(R.id.my_wallet_today_cc_tv)
     TextView myWalletTodayCcTv;
     @BindView(R.id.my_wallet_all_cc_tv)
     TextView myWalletAllCcTv;
     @BindView(R.id.my_wallet_what_cc_btn)
     LinearLayout myWalletWhatCcBtn;
+    @BindView(R.id.wallet_come_in_tv)
+    TextView walletComeInTv;
+    @BindView(R.id.wallet_come_in_line)
+    View walletComeInLine;
+    @BindView(R.id.wallet_go_out_tv)
+    TextView walletGoOutTv;
+    @BindView(R.id.wallet_go_out_line)
+    View walletGoOutLine;
     @BindView(R.id.my_wallet_list)
     ListView myWalletList;
-
     private List<WalletBean.DataBean.BfCssLogBean.ListBean> dataBeans;
     private WalletAdapter walletAdapter;
 
@@ -55,6 +63,7 @@ public class WalletActivity extends BaseActivity<WalletPresenter> implements Wal
 
     @Override
     protected void init() {
+        titleTitleTv.setText("资产管理");
         dataBeans = new ArrayList<>();
         walletAdapter = new WalletAdapter(dataBeans, this);
         myWalletList.setAdapter(walletAdapter);
@@ -66,14 +75,28 @@ public class WalletActivity extends BaseActivity<WalletPresenter> implements Wal
         presenter.loadRecord(SpHelp.getUserInformation(SpHelp.ID), page);
     }
 
-    @OnClick({R.id.my_wallet_return_btn, R.id.my_wallet_what_cc_btn})
+    @OnClick({R.id.title_layout_return_btn, R.id.my_wallet_what_cc_btn, R.id.wallet_come_in_btn, R.id.wallet_go_out_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.my_wallet_return_btn:
+            case R.id.title_layout_return_btn:
                 finish();
                 break;
             case R.id.my_wallet_what_cc_btn:
-                GuanYuActivity.openActivity(this, R.mipmap.cc_shuo_ming_icon);
+//                GuanYuActivity.openActivity(this, R.mipmap.cc_shuo_ming_icon);
+                break;
+            case R.id.wallet_come_in_btn:
+                walletGoOutLine.setVisibility(View.GONE);
+                walletComeInLine.setVisibility(View.VISIBLE);
+                walletComeInTv.setTextColor(getResources().getColor(R.color.blue_095a));
+                walletGoOutTv.setTextColor(getResources().getColor(R.color.black_333));
+                //发送请求
+                break;
+            case R.id.wallet_go_out_btn:
+                walletGoOutLine.setVisibility(View.VISIBLE);
+                walletComeInLine.setVisibility(View.GONE);
+                walletComeInTv.setTextColor(getResources().getColor(R.color.black_333));
+                walletGoOutTv.setTextColor(getResources().getColor(R.color.blue_095a));
+                //发送请求
                 break;
         }
     }

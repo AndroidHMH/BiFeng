@@ -42,26 +42,25 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="android"
+                    android:scheme="openbf" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.homepage.activity.MainActivity"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"></activity>
         <activity android:name=".ui.task.activity.AnswerTaskActivity" />
         <activity android:name=".ui.task.activity.PhotoTaskActivity" />
         <activity android:name=".ui.submittask.activity.SubmitCommentsActivity" />
         <activity android:name=".ui.share.activity.ShareActivity" />
         <activity android:name=".ui.task.activity.RegistTaskActivity" />
-
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.coinwind.bifeng.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
-
         <activity android:name=".ui.setting.activity.SetMessageActivity" />
         <activity android:name=".ui.searchfor.activity.SearchForActivity" />
         <activity android:name=".ui.task.activity.TaskTypeActivity" />
@@ -71,11 +70,6 @@
         <activity android:name=".ui.setting.activity.SettingActivity" />
         <activity android:name=".ui.my.activity.PerfectInformationActivity" />
         <activity android:name=".ui.my.activity.MyTaskActivity" />
-        <activity
-            android:name=".wxapi.WXEntryActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".ui.setting.activity.GuanYuActivity" />
         <activity android:name=".ui.setting.activity.ContactUsActivity" />
         <activity android:name=".ui.my.activity.AlertsActivity" />
@@ -89,7 +83,34 @@
         <activity android:name=".ui.sendtask.activity.ZhuanFaContentActivity" />
         <activity android:name=".ui.submittask.activity.AnswerTheQuestionsActivity" />
         <activity android:name=".ui.submittask.activity.SubmitDaTiActivity" />
-        <activity android:name=".ui.my.activity.WalletActivity"></activity>
+        <activity android:name=".ui.task.activity.TaskHallActivity" />
+        <activity android:name=".ui.my.activity.WalletActivity" />
+        <activity android:name=".ui.task.activity.NewTaskActivity" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.coinwind.bifeng.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".ui.recommended.activity.RecommendedActivity" />
+        <activity android:name=".ui.task.activity.IntermediateTaskActivity" />
+        <activity android:name=".ui.login.activity.ForgotPasswordActivity" />
+        <activity android:name=".ui.setting.activity.ChangeHeadImgActivity" />
+        <activity android:name=".ui.setting.activity.ClipActivity" />
+        <activity android:name=".ui.setting.activity.ChangeMessageActivity" />
+        <activity android:name=".ui.windrecords.activity.WindRecordsActivity" />
+        <activity android:name=".ui.task.activity.DoNewTaskActivity" />
+        <activity android:name=".ui.showh5.activity.ShowWebViewActivity"></activity>
     </application>
 
 </manifest>

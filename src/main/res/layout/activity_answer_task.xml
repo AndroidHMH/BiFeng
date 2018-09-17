@@ -61,14 +61,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_5"
                         android:text="1500"
-                        android:textColor="@color/orange_f9f0"
+                        android:textColor="@color/blue_095a"
                         android:textSize="@dimen/sp_16" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/item_score_ci"
-                        android:textColor="@color/orange_f9f0"
+                        android:textColor="@color/blue_095a"
                         android:textSize="@dimen/sp_16" />
 
                     <LinearLayout
@@ -306,13 +306,14 @@
                 android:layout_weight="1"
                 android:background="@color/orange_fb53"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fenxiang_start"
-                    android:textColor="@color/white"
+                    android:textColor="@color/white_fff"
                     android:textSize="@dimen/sp_16" />
 
                 <TextView
@@ -320,14 +321,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="20"
-                    android:textColor="@color/white"
+                    android:textColor="@color/white_fff"
                     android:textSize="@dimen/sp_16" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/foot_end"
-                    android:textColor="@color/white"
+                    android:textColor="@color/white_fff"
                     android:textSize="@dimen/sp_16" />
             </LinearLayout>
 
@@ -336,7 +337,7 @@
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/orange_f9"
+                android:background="@color/blue_095a"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -344,7 +345,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/renwu_start"
-                    android:textColor="@color/white"
+                    android:textColor="@color/white_fff"
                     android:textSize="@dimen/sp_16" />
 
                 <TextView
@@ -352,14 +353,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="150"
-                    android:textColor="@color/white"
+                    android:textColor="@color/white_fff"
                     android:textSize="@dimen/sp_16" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/foot_end"
-                    android:textColor="@color/white"
+                    android:textColor="@color/white_fff"
                     android:textSize="@dimen/sp_16" />
             </LinearLayout>
         </LinearLayout>
