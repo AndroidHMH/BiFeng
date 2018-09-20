@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -84,6 +85,7 @@ public class DoNewTaskActivity extends BaseActivity {
         if (img != null && !"".equals(img)) {
             url += "&img=" + img;
         }
+        doNewTaskWebView.addJavascriptInterface(new A(), "sign");
         doNewTaskWebView.loadUrl(url);
         doNewTaskWebView.setWebViewClient(new WebViewClient() {
             @Override
@@ -97,16 +99,16 @@ public class DoNewTaskActivity extends BaseActivity {
                 } else if (!TextUtils.isEmpty(url) && url.contains("_success_")) {
 //                    window.location.href = "https://_success_&" + res.data.userId +"_" + res.data.sign
                     //绑定手机号成功  获取userId和sign
-                    String[] split = url.split("_");
-                    String userId = split[1];
-                    String sign = split[2].substring(0, split[2].length() - 1);
+                    String[] split = url.split("__");
+                    String userId = split[2];
+                    String sign = split[3].substring(0, split[3].length() - 1);
                     Intent intent = getIntent();
                     intent.putExtra("userId", userId);
                     intent.putExtra("sign", sign);
                     setResult(PHONE_SUCCESS_CODE, intent);
                     DoNewTaskActivity.this.finish();
                     return true;
-                } else if (!TextUtils.isEmpty(url) && url.contains("_403_")) {//改用户已存在
+                } else if (!TextUtils.isEmpty(url) && url.contains("_1014_")) {//改用户已存在
                     setResult(PHONE_SUCCESS_LOGIN_CODE);
                     finish();
                 } else if (!TextUtils.isEmpty(url) && url.contains("_namesuccess_")) {//设置昵称成功
@@ -153,5 +155,12 @@ public class DoNewTaskActivity extends BaseActivity {
         taskId = intent.getStringExtra("taskId");
         mTab = intent.getStringExtra("mTab");
         img = intent.getStringExtra("img");
+    }
+
+    class A {
+        @JavascriptInterface
+        public void getSign() {
+
+        }
     }
 }

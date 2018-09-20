@@ -12,13 +12,12 @@ import java.util.List;
  */
 public interface NewTaskContract {
     interface View {
-        void showNewTaskList(List<NewTaskBean.DataBean.MustDataBean> dataBeans, String cPower);
-
-        void showHeightTaskList(List<NewTaskBean.DataBean.MustDataBean> dataBeans, String cPower);
 
         void loginTimeOut();
 
         void showError(String errorMsg);
+
+        void showNewTaskList(NewTaskBean.DataBean data);
     }
 
     interface Presenter extends BasePresenter<View> {

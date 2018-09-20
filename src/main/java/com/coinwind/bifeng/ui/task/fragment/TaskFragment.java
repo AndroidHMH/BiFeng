@@ -27,7 +27,6 @@ import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.BaseFragment;
 import com.coinwind.bifeng.base.TaskBean;
 import com.coinwind.bifeng.config.ToastHelp;
-import com.coinwind.bifeng.ui.homepage.bean.MessageEvent;
 import com.coinwind.bifeng.ui.searchfor.activity.SearchForActivity;
 import com.coinwind.bifeng.ui.submittask.config.PhotoHelp;
 import com.coinwind.bifeng.ui.task.activity.AnswerTaskActivity;
@@ -147,7 +146,6 @@ public class TaskFragment extends BaseFragment<TaskPresenter> implements TaskCon
 
     @Override
     protected void init() {
-        EventBus.getDefault().register(this);
         popupInit();
         loadFinishFlag = true;
         titles = new ArrayList<>();
@@ -458,22 +456,6 @@ public class TaskFragment extends BaseFragment<TaskPresenter> implements TaskCon
         mList.clear();
         taskAdapter.notifyDataSetChanged();
         presenter.loadContentList(page, type, taskType, orderFiel, orderSort);
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void messageEventBus(MessageEvent event) {
-        taskTypeFirstTv.setText(event.getType());
-        page = 1;
-        mList.clear();
-        taskAdapter.notifyDataSetChanged();
-        this.type = SetViewHelp.eventBusRes(event, taskTypeSecondLayout);
-        presenter.loadContentList(page, type, "", orderFiel, orderSort);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(this);
     }
 
     /**

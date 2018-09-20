@@ -20,15 +20,22 @@ import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.ui.home.fragment.NewHomeFragment;
 import com.coinwind.bifeng.ui.homepage.activity.MainActivity;
+import com.coinwind.bifeng.ui.homepage.bean.MessageEvent;
 import com.coinwind.bifeng.ui.login.bean.LoginBean;
 import com.coinwind.bifeng.ui.login.contract.LoginContract;
 import com.coinwind.bifeng.ui.login.presenter.LoginPresenter;
 import com.coinwind.bifeng.view.ClearEditText;
 import com.google.gson.Gson;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.coinwind.bifeng.config.Codes.OVERDUE_RESULT_CODE;
 
 /**
  * 登录界面
@@ -67,7 +74,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     protected void init() {
-
     }
 
     protected void netWorkError() {
@@ -152,6 +158,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void usePswLogin() {
+
         loginPasswordEt.setText("");
         if (loginGetCodeBtn.getVisibility() != View.GONE) {
             loginGetCodeBtn.setVisibility(View.GONE);
@@ -173,7 +180,10 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         if (login) {
             ToastHelp.showShort(this, "登录成功");
         }
-        NewHomeFragment.refresh(this);
+        String refresh = getIntent().getStringExtra("refresh");
+        if (refresh != null && !"".equals(refresh)) {
+            setResult(OVERDUE_RESULT_CODE);
+        }
         finish();
     }
 

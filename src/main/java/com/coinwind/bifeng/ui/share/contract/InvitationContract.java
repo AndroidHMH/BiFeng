@@ -7,9 +7,17 @@ public interface InvitationContract {
         void showImgLoad();
 
         void showImgError();
+
+        void showYaoQing(String ma);
+
+        void loginTimeOut();
+
+        void showMaError(String errorMsg);
     }
 
     interface Presenter extends BasePresenter<View> {
         void loadImg(String imgUrl);
+
+        void loadMa();
     }
 }

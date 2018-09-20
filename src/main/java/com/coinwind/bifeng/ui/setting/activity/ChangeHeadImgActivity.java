@@ -57,6 +57,10 @@ public class ChangeHeadImgActivity extends BaseActivity<ChangeHeadImgPresenter> 
         where = getIntent().getStringExtra("where");
         paiZhaoOrXiangCe = new PaiZhaoOrXiangCe(this);
         paiZhaoOrXiangCe.popupInit();
+        String headImg = SpHelp.getUserInformation(SpHelp.HEAD_IMG);
+        if (headImg != null && !"".equals(headImg)) {
+            Glide.with(this).load(headImg).into(changeHeadImg);
+        }
     }
 
     @Override
@@ -82,7 +86,7 @@ public class ChangeHeadImgActivity extends BaseActivity<ChangeHeadImgPresenter> 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case PaiZhaoOrXiangCe.CAMERA_PERMISSIONS_REQUEST_CODE:
-                filePath = paiZhaoOrXiangCe.getFilePath();
+                filePath = paiZhaoOrXiangCe.getImgFilePath();
                 PhotoHelp.cameraPermissionResult(this, grantResults, PaiZhaoOrXiangCe.CAMERA_PERMISSIONS_REQUEST_CODE, filePath, PaiZhaoOrXiangCe.CODE_CAMERA_REQUEST);
                 break;
             case PaiZhaoOrXiangCe.STORAGE_PERMISSIONS_REQUEST_CODE://调用系统相册申请Sdcard权限回调
@@ -139,6 +143,7 @@ public class ChangeHeadImgActivity extends BaseActivity<ChangeHeadImgPresenter> 
 
     @Override
     public void successUpdate(String imgUrl) {
+        SpHelp.putUserInformation(SpHelp.HEAD_IMG, imgUrl);
         Glide.with(this).load(imgUrl).into(changeHeadImg);
         if ("NewTaskActivity".equals(where)) {
             presenter.doHeadImgTask(getIntent().getStringExtra("taskId"), imgUrl);

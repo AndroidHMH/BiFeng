@@ -113,5 +113,17 @@ public class Urls {
     //我的任务
     public static final String MY_TASK = "bifeng/frame/myTaskList";
 
+    //得到邀请码
+    public static final String GET_CODE = "bifeng/user/getInviteCode";
+
+    //新版资产管理
+    public static final String LOAD_WALLET = "bifeng/frame/purseManager";
+
+    //矿产记录
+    public static final String RECORD = "bifeng/frame/freeCCLog";
+
+    //绑定手机号
+    public static final String BIND_PHONE = "bifeng/frame/subTaskNew";
+
 
 }

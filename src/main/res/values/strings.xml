@@ -94,6 +94,7 @@
     <string name="share_wei_xin">分享微信</string>
     <string name="share_peng_you_quan">分享朋友圈</string>
     <string name="share_return">取消</string>
+    <string name="shang_yi_bu">上一步</string>
 
     <!--注册任务-->
     <string name="regist_first">步&#160;打开任务链接；</string>
@@ -237,7 +238,7 @@
     <string name="website_weixin">商务合作</string>
     <string name="website_weixin_tv">coinwind666</string>
     <string name="customer_service_email">客服邮箱</string>
-    <string name="customer_service_email_tv">kefy@coinwind.com</string>
+    <string name="customer_service_email_tv">kefu@coinwind.com</string>
     <string name="dian_fuzhi">点击复制</string>
 
 
@@ -311,6 +312,11 @@
     <string name="feng_li_zhi">基础风力值:</string>
     <string name="wei_kai_fang">未开放</string>
 
+    <!--绑定手机号-->
+    <string name="bind_phone_number">绑定手机号立即开始“做任务即挖矿”</string>
+    <string name="contiact">继续则表示您同意</string>
+    <string name="fu_wu_xie_yi">《币风服务协议》</string>
+    <string name="yao_qing_ma">邀请码(选填)</string>
 
 </resources>
 

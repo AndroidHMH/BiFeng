@@ -103,4 +103,34 @@ public abstract class NoNetworkBaseActivity extends AppCompatActivity {
         lastFragment = fragment;
         transaction.commit();
     }
+
+    /*重新加载布局*/
+    public void reLoadFragView(int layoutId, Class<? extends BaseFragment> fragmentClass) {
+        /*从FragmentManager中移除*/
+        FragmentManager supportFragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+
+        String simpleName = fragmentClass.getSimpleName();
+        Fragment fragment = supportFragmentManager.findFragmentByTag(simpleName);
+        if (fragment != null) {
+            fragmentTransaction.remove(fragment).commit();
+        }
+        /*重新创建*/
+        try {
+            fragment = fragmentClass.newInstance();
+            fragmentTransaction.add(layoutId, fragment, simpleName);
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        if (lastFragment != null) {
+            fragmentTransaction.hide(lastFragment);
+        }
+        fragmentTransaction.show(fragment);
+        lastFragment = fragment;
+        fragmentTransaction.commit();
+
+    }
 }

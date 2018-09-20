@@ -14,6 +14,7 @@ import com.coinwind.bifeng.app.BFApplication;
 import com.coinwind.bifeng.base.BaseActivity;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
+import com.coinwind.bifeng.ui.bindphonenumber.activity.BindPhoneNumberActivity;
 import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.setting.activity.ChangeHeadImgActivity;
 import com.coinwind.bifeng.ui.showh5.activity.ShowWebViewActivity;
@@ -108,38 +109,39 @@ public class NewTaskActivity extends BaseActivity<NewTaskPresenter> implements N
                 NewTaskBean.DataBean.MustDataBean mustDataBean = newList.get(position);
                 if (mustDataBean.getIs_use() == 1) {
                     int type = mustDataBean.getType();
-//                    int is_done = mustDataBean.getIs_done();
-//                    if (is_done == 0) {
-//                        if ((newList.get(0).getIs_done() == 0) && type != 1) {
-//                            ToastHelp.showShort(NewTaskActivity.this, "请先绑定手机号");
-//                        } else {
-                    switch (type) {
-                        case 1://绑定手机号
-                            DoNewTaskActivity.bindPhoneOrSetUpNickNameOrPublicNum(NewTaskActivity.this, mustDataBean.getUrl(),
-                                    SpHelp.getUserInformation(SpHelp.ID), SpHelp.getSign(), mustDataBean.getId(), SpHelp.getAndroidId(), PHONE_REQUEST_CODE);
-                            break;
-                        case 2:
-                            //中级任务教程
-                            break;
-                        case 3://昵称
-                            DoNewTaskActivity.bindPhoneOrSetUpNickNameOrPublicNum(NewTaskActivity.this, mustDataBean.getUrl(),
-                                    SpHelp.getUserInformation(SpHelp.ID), SpHelp.getSign(), mustDataBean.getId(), SpHelp.getAndroidId(), NAME_REQUEST_CODE);
-                            break;
-                        case 4://更换头像
-                            Intent intent = new Intent(NewTaskActivity.this, ChangeHeadImgActivity.class);
-                            intent.putExtra("where", "NewTaskActivity");
-                            intent.putExtra("taskId", mustDataBean.getId());
-                            startActivityForResult(intent, HEAD_IMG_REQUEST_CODE);
-                            break;
-                        case 5://生成钱包
-                            DoNewTaskActivity.bindWallet(NewTaskActivity.this, mustDataBean.getUrl(), SpHelp.getUserInformation(SpHelp.ID),
-                                    SpHelp.getSign(), mustDataBean.getId(), SpHelp.getAndroidId(), SpHelp.getUserInformation(SpHelp.HEAD_IMG), WALL_REQUEST_CODE);
-                            break;
+                    int is_done = mustDataBean.getIs_done();
+                    if (is_done == 0) {
+                        if ((newList.get(0).getIs_done() == 0) && type != 1) {
+                            ToastHelp.showShort(NewTaskActivity.this, "请先绑定手机号");
+                        } else {
+                            switch (type) {
+                                case 1://绑定手机号
+                                    Intent bindIntent = new Intent(NewTaskActivity.this, BindPhoneNumberActivity.class);
+                                    startActivityForResult(bindIntent, PHONE_REQUEST_CODE);
+                                    break;
+                                case 2:
+                                    //中级任务教程
+
+                                    break;
+                                case 3://昵称
+                                    DoNewTaskActivity.bindPhoneOrSetUpNickNameOrPublicNum(NewTaskActivity.this, mustDataBean.getUrl(),
+                                            SpHelp.getUserInformation(SpHelp.ID), SpHelp.getSign(), mustDataBean.getId(), SpHelp.getAndroidId(), NAME_REQUEST_CODE);
+                                    break;
+                                case 4://更换头像
+                                    Intent intent = new Intent(NewTaskActivity.this, ChangeHeadImgActivity.class);
+                                    intent.putExtra("where", "NewTaskActivity");
+                                    intent.putExtra("taskId", mustDataBean.getId());
+                                    startActivityForResult(intent, HEAD_IMG_REQUEST_CODE);
+                                    break;
+                                case 5://生成钱包
+                                    DoNewTaskActivity.bindWallet(NewTaskActivity.this, mustDataBean.getUrl(), SpHelp.getUserInformation(SpHelp.ID),
+                                            SpHelp.getSign(), mustDataBean.getId(), SpHelp.getAndroidId(), SpHelp.getUserInformation(SpHelp.HEAD_IMG), WALL_REQUEST_CODE);
+                                    break;
+                            }
+                        }
+                    } else {
+                        ToastHelp.showShort(NewTaskActivity.this, "您已做过该任务");
                     }
-//                        }
-//                    } else {
-//                        ToastHelp.showShort(NewTaskActivity.this, "您已做过该任务");
-//                    }
                 } else {
                     ToastHelp.showShort(NewTaskActivity.this, "该任务未开放");
                 }
@@ -224,6 +226,7 @@ public class NewTaskActivity extends BaseActivity<NewTaskPresenter> implements N
     }
 
     private void changeUI() {
+        BFApplication.context = this;
         netWorkError();
     }
 
@@ -268,27 +271,6 @@ public class NewTaskActivity extends BaseActivity<NewTaskPresenter> implements N
         }
     }
 
-
-    @Override
-    public void showNewTaskList(List<NewTaskBean.DataBean.MustDataBean> dataBeans, String cPower) {
-        newTaskNowFengLiTv.setText(cPower + "");
-        this.newTaskList = dataBeans;
-        for (int i = 0; i < 5; i++) {
-            newList.add(newTaskList.get(i));
-        }
-        newTaskAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void showHeightTaskList(List<NewTaskBean.DataBean.MustDataBean> dataBeans, String cPower) {
-        newTaskNowFengLiTv.setText(cPower + "");
-        heightTaskList = dataBeans;
-        for (int i = 0; i < 2; i++) {
-            heightList.add(heightTaskList.get(i));
-        }
-        heightTaskAdapter.notifyDataSetChanged();
-    }
-
     @Override
     public void loginTimeOut() {
         SpHelp.loginOut();
@@ -298,5 +280,25 @@ public class NewTaskActivity extends BaseActivity<NewTaskPresenter> implements N
     @Override
     public void showError(String errorMsg) {
         ToastHelp.showShort(this, errorMsg);
+    }
+
+    @Override
+    public void showNewTaskList(NewTaskBean.DataBean data) {
+        newTaskNowFengLiTv.setText(data.getC_power() + "");
+        newTaskFengSuTv.setText(data.getC_speed() + "");
+
+        List<NewTaskBean.DataBean.MustDataBean> mustData = data.getMustData();
+        this.newTaskList = mustData;
+        for (int i = 0; i < 5; i++) {
+            newList.add(newTaskList.get(i));
+        }
+        newTaskAdapter.notifyDataSetChanged();
+
+        List<NewTaskBean.DataBean.MustDataBean> choiceDate = data.getChoiceDate();
+        heightTaskList = choiceDate;
+        for (int i = 0; i < 2; i++) {
+            heightList.add(heightTaskList.get(i));
+        }
+        heightTaskAdapter.notifyDataSetChanged();
     }
 }

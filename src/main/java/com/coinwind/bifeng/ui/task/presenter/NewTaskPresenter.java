@@ -55,19 +55,7 @@ public class NewTaskPresenter implements NewTaskContract.Presenter {
                         if (code == Codes.SUCCESS_CODE) {
                             NewTaskBean.DataBean data = listBean.getData();
                             if (data.isState()) {
-                                List<NewTaskBean.DataBean.MustDataBean> mustData = data.getMustData();
-                                if (mustData != null) {
-                                    view.showNewTaskList(mustData,data.getC_power()+"");
-                                } else {
-                                    view.showError("新手任务请求失败");
-                                }
-                                List<NewTaskBean.DataBean.MustDataBean> choiceDate = data.getChoiceDate();
-                                if (choiceDate != null) {
-                                    view.showHeightTaskList(choiceDate,data.getC_power()+"");
-                                } else {
-                                    view.showError("高算力任务请求失败");
-                                }
-//                                view.showUserInfo(homeUserInfoBean.getData());
+                                view.showNewTaskList(data);
                             } else {
                                 int resultCode = listBean.getData().getCode();
                                 if (resultCode == Codes.FAILURE_CODE) {

@@ -163,6 +163,7 @@ public class NewHomePresenter implements NewHomeContract.Presenter {
                 });
     }
 
+
     @Override
     public void loadCCList() {
         homeService.loadCCList(SpHelp.getAndroidId(), SpHelp.getUserInformation(SpHelp.ID), SpHelp.getSign())

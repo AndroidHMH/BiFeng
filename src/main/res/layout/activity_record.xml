@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.record.activity.RecordActivity">
+
+    <include layout="@layout/title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:background="@mipmap/new_my_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CC总数"
+            android:textColor="@color/white_fff"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/record_all_cc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_22"
+            android:text="000000.00"
+            android:textColor="@color/white_fff"
+            android:textSize="@dimen/sp_21" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/record_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include layout="@layout/net_work_error_layout" />
+</LinearLayout>

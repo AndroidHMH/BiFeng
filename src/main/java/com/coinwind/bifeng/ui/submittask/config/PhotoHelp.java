@@ -90,7 +90,6 @@ public class PhotoHelp {
     public static void cameraPermissionResult(Activity context, int[] grantResults,
                                               int permissionRequestCode, String filePath, int cameraRequestCode) {
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            filePath = PhotoHelp.getFilePath();
             PhotoHelp.applyForCameraPermission(context, permissionRequestCode, filePath, cameraRequestCode);
         } else {
             ToastHelp.showShort(context, "您有权限为同意");

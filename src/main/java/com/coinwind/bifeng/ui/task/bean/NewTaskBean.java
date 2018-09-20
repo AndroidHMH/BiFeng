@@ -59,10 +59,19 @@ public class NewTaskBean {
 
         private int is_visit;
         private double c_power;
+        private double c_speed;
         private boolean state;
         private List<MustDataBean> mustData;
         private List<MustDataBean> choiceDate;
         private int code;
+
+        public double getC_speed() {
+            return c_speed;
+        }
+
+        public void setC_speed(double c_speed) {
+            this.c_speed = c_speed;
+        }
 
         public int getCode() {
             return code;

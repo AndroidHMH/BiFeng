@@ -18,7 +18,6 @@ import android.widget.TextView;
 import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
-import com.coinwind.bifeng.ui.homepage.bean.MessageEvent;
 import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.my.config.InfoHelp;
 import com.coinwind.bifeng.ui.submittask.activity.AnswerTheQuestionsActivity;
@@ -76,66 +75,6 @@ public class SetViewHelp {
 //                return "拍照任务";
         }
         return intent;
-    }
-
-    /**
-     * 从首页跳转
-     *
-     * @param event
-     * @param taskTypeSecondLayout
-     * @return
-     */
-    public static String eventBusRes(MessageEvent event, LinearLayout taskTypeSecondLayout) {
-        String type = event.getType();
-        switch (type) {
-            case "涨粉任务":
-                type = "1";
-                taskTypeSecondLayout.setVisibility(View.GONE);
-                taskTypeSecondLayout.setEnabled(false);
-                break;
-//                return "涨粉任务";
-            case "评论任务":
-                type = "2";
-                taskTypeSecondLayout.setVisibility(View.GONE);
-                taskTypeSecondLayout.setEnabled(false);
-                break;
-//                return ;
-            case "注册任务":
-                type = "3";
-                taskTypeSecondLayout.setVisibility(View.GONE);
-                taskTypeSecondLayout.setEnabled(false);
-                break;
-//                return ;
-            case "转发任务":
-                type = "4";
-                taskTypeSecondLayout.setVisibility(View.VISIBLE);
-                taskTypeSecondLayout.setEnabled(true);
-                break;
-//                return ";
-            case "调研任务":
-                type = "5";
-                taskTypeSecondLayout.setVisibility(View.GONE);
-                taskTypeSecondLayout.setEnabled(false);
-                break;
-//                return ;
-            case "答题任务":
-                type = "6";
-                taskTypeSecondLayout.setVisibility(View.GONE);
-                taskTypeSecondLayout.setEnabled(false);
-                break;
-//                return ;
-            case "拍照任务":
-                type = "7";
-                taskTypeSecondLayout.setVisibility(View.GONE);
-                taskTypeSecondLayout.setEnabled(false);
-                break;
-            case "全部任务":
-                type = "";
-                taskTypeSecondLayout.setVisibility(View.GONE);
-                taskTypeSecondLayout.setEnabled(false);
-                break;
-        }
-        return type;
     }
 
     /**
@@ -490,7 +429,7 @@ public class SetViewHelp {
      * @param context
      * @param requestPermissionCode
      */
-    public static void saveLocalPermission(Activity context, int requestPermissionCode, ShareCallback shareCallback ) {
+    public static void saveLocalPermission(Activity context, int requestPermissionCode, ShareCallback shareCallback) {
         //使用兼容库就无需判断系统版本
         int hasWriteStoragePermission = ContextCompat.checkSelfPermission(context.getApplication(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
         int hasMountStoragePermission = ContextCompat.checkSelfPermission(context.getApplication(), Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS);
@@ -510,7 +449,7 @@ public class SetViewHelp {
      * @param context
      * @param grantResults
      */
-    public static void saveLocalPermissionResult(Context context, int[] grantResults,  ShareCallback shareCallback) {
+    public static void saveLocalPermissionResult(Context context, int[] grantResults, ShareCallback shareCallback) {
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             //有权限直接分享
             //下载到本地

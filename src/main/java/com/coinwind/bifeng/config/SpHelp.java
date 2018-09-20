@@ -47,6 +47,8 @@ public class SpHelp {
     public static final String EMPLOYERS = "employers";
     //用户身份：0正式用户，1游客
     public static final int IS_VISIT = 1;
+    //用户是否是第一次进入应用
+    public static final String IS_CLICK = "is_click";
 
     /**
      * 获取登录sp
@@ -214,7 +216,7 @@ public class SpHelp {
     }
 
     /**
-     * 存储机型号
+     * 存储用户身份
      *
      * @param isVisit
      */
@@ -223,7 +225,7 @@ public class SpHelp {
     }
 
     /**
-     * 获取机型号
+     * 获取用户身份
      *
      * @return
      */
@@ -233,5 +235,23 @@ public class SpHelp {
         return isVisit;
     }
 
+    /**
+     * 存储引导页的启动次数
+     *
+     * @param isClick
+     */
+    public static void putCount(boolean isClick) {
+        getSp(IS_CLICK).putBoolean(IS_CLICK, isClick).commit();
+    }
 
+    /**
+     * 引导页是否需要点击
+     *
+     * @return
+     */
+    public static boolean getClick() {
+        SharedPreferences signSp = BFApplication.context.getSharedPreferences(IS_CLICK, Context.MODE_PRIVATE);
+        boolean isClick = signSp.getBoolean(IS_CLICK, false);
+        return isClick;
+    }
 }

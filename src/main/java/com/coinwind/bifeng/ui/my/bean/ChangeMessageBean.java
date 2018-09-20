@@ -105,7 +105,7 @@ public class ChangeMessageBean {
             private Object gz_type;
             private Object logo_url;
             private String openid;
-            private int current_css;
+            private double current_css;
             private String head_img;
             private Object gz_name;
             private String type;
@@ -163,11 +163,11 @@ public class ChangeMessageBean {
                 this.openid = openid;
             }
 
-            public int getCurrent_css() {
+            public double getCurrent_css() {
                 return current_css;
             }
 
-            public void setCurrent_css(int current_css) {
+            public void setCurrent_css(double current_css) {
                 this.current_css = current_css;
             }
 

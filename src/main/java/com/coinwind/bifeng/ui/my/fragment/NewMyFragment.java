@@ -13,9 +13,14 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.coinwind.bifeng.R;
+import com.coinwind.bifeng.app.BFApplication;
 import com.coinwind.bifeng.base.BaseFragment;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
+import com.coinwind.bifeng.ui.bindphonenumber.activity.BindPhoneNumberActivity;
+import com.coinwind.bifeng.ui.home.fragment.NewHomeFragment;
+import com.coinwind.bifeng.ui.homepage.activity.MainActivity;
+import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.my.activity.AlertsActivity;
 import com.coinwind.bifeng.ui.my.activity.MyTaskActivity;
 import com.coinwind.bifeng.ui.my.activity.WalletActivity;
@@ -26,12 +31,19 @@ import com.coinwind.bifeng.ui.setting.activity.ContactUsActivity;
 import com.coinwind.bifeng.ui.setting.activity.GuanYuActivity;
 import com.coinwind.bifeng.ui.setting.activity.SettingActivity;
 import com.coinwind.bifeng.ui.share.activity.InvitationActivity;
+import com.coinwind.bifeng.ui.task.activity.DoNewTaskActivity;
+import com.coinwind.bifeng.ui.task.activity.NewTaskActivity;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+
+import static com.coinwind.bifeng.config.Codes.OVERDUE_CODE;
+import static com.coinwind.bifeng.config.Codes.OVERDUE_RESULT_CODE;
+import static com.coinwind.bifeng.ui.task.activity.DoNewTaskActivity.PHONE_SUCCESS_CODE;
+import static com.coinwind.bifeng.ui.task.activity.NewTaskActivity.PHONE_REQUEST_CODE;
 
 /**
  * 新的我的页面
@@ -115,10 +127,11 @@ public class NewMyFragment extends BaseFragment<NewMyPresenter> implements NewMy
         }
     }
 
+
     @OnClick({R.id.new_my_tong_zhi_btn, R.id.new_my_setting_btn, R.id.new_my_wallet_er_wei_ba_btn, R.id.new_my_zi_chan_btn,
             R.id.new_my_my_all_task_btn, R.id.new_my_jie_shou_task_btn, R.id.new_my_jin_xing_task_btn, R.id.new_my_shen_he_task_btn,
             R.id.new_my_jie_shu_task_btn, R.id.new_my_guo_qi_task_btn, R.id.new_my_share_btn, R.id.new_my_help_btn, R.id.new_my_lian_xi_btn,
-            R.id.new_my_guan_yu_btn})
+            R.id.new_my_guan_yu_btn, R.id.new_my_user_info_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.new_my_tong_zhi_btn:
@@ -141,7 +154,9 @@ public class NewMyFragment extends BaseFragment<NewMyPresenter> implements NewMy
                     //falg  1已接受，2进行中，3审核中，4已结束，5已过期
                     MyTaskActivity.openMyTaskActivity(getContext(), -1);
                 } else {
-                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法查看");
+                    Intent bindIntent = new Intent(getActivity(), BindPhoneNumberActivity.class);
+                    startActivityForResult(bindIntent, PHONE_REQUEST_CODE);
+                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法邀请好友");
                 }
 
                 break;
@@ -149,7 +164,9 @@ public class NewMyFragment extends BaseFragment<NewMyPresenter> implements NewMy
                 if (SpHelp.getIsVisit() == 0) {
                     MyTaskActivity.openMyTaskActivity(getContext(), 0);
                 } else {
-                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法查看");
+                    Intent bindIntent = new Intent(getActivity(), BindPhoneNumberActivity.class);
+                    startActivityForResult(bindIntent, PHONE_REQUEST_CODE);
+                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法邀请好友");
                 }
                 break;
             case R.id.new_my_jin_xing_task_btn:
@@ -157,39 +174,54 @@ public class NewMyFragment extends BaseFragment<NewMyPresenter> implements NewMy
                 if (SpHelp.getIsVisit() == 0) {
                     MyTaskActivity.openMyTaskActivity(getContext(), 1);
                 } else {
-                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法查看");
+                    Intent bindIntent = new Intent(getActivity(), BindPhoneNumberActivity.class);
+                    startActivityForResult(bindIntent, PHONE_REQUEST_CODE);
+                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法邀请好友");
                 }
                 break;
             case R.id.new_my_shen_he_task_btn:
                 if (SpHelp.getIsVisit() == 0) {
                     MyTaskActivity.openMyTaskActivity(getContext(), 2);
                 } else {
-                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法查看");
+                    Intent bindIntent = new Intent(getActivity(), BindPhoneNumberActivity.class);
+                    startActivityForResult(bindIntent, PHONE_REQUEST_CODE);
+                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法邀请好友");
                 }
                 break;
             case R.id.new_my_jie_shu_task_btn:
                 if (SpHelp.getIsVisit() == 0) {
                     MyTaskActivity.openMyTaskActivity(getContext(), 3);
                 } else {
-                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法查看");
+                    Intent bindIntent = new Intent(getActivity(), BindPhoneNumberActivity.class);
+                    startActivityForResult(bindIntent, PHONE_REQUEST_CODE);
+                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法邀请好友");
                 }
                 break;
             case R.id.new_my_guo_qi_task_btn:
                 if (SpHelp.getIsVisit() == 0) {
                     MyTaskActivity.openMyTaskActivity(getContext(), 4);
                 } else {
-                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法查看");
+                    Intent bindIntent = new Intent(getActivity(), BindPhoneNumberActivity.class);
+                    startActivityForResult(bindIntent, PHONE_REQUEST_CODE);
+                    ToastHelp.showShort(getContext(), "您当前身份为游客，无法邀请好友");
                 }
                 break;
             case R.id.new_my_share_btn:
                 if (SpHelp.getIsVisit() == 0) {
                     startActivity(new Intent(getContext(), InvitationActivity.class));
                 } else {
+                    Intent bindIntent = new Intent(getActivity(), BindPhoneNumberActivity.class);
+                    startActivityForResult(bindIntent, PHONE_REQUEST_CODE);
                     ToastHelp.showShort(getContext(), "您当前身份为游客，无法邀请好友");
                 }
                 break;
             case R.id.new_my_help_btn:
                 //帮助中心
+                break;
+            case R.id.new_my_user_info_btn:
+                if (SpHelp.getIsVisit() == 1) {
+                    LoginActivity.openLoginActivity(getContext());
+                }
                 break;
             case R.id.new_my_lian_xi_btn:
                 //联系我们
@@ -200,13 +232,26 @@ public class NewMyFragment extends BaseFragment<NewMyPresenter> implements NewMy
                 break;
         }
     }
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PHONE_REQUEST_CODE) {
+            if (resultCode == PHONE_SUCCESS_CODE) {//绑定手机号成功
+                ToastHelp.showShort(getContext(), "绑定手机号成功");
+                MainActivity activity = (MainActivity) getActivity();
+                activity.reLoadFragView(R.id.main_layout, NewHomeFragment.class);
+            }
+        }
+    }
     @Override
     public void showMyInfo(NewMyBean.DataBean dataBean) {
         SpHelp.putUserInformation(SpHelp.NICK_NAME, dataBean.getNick_name());
         SpHelp.putIsVisit(dataBean.getIs_visit());
         //设置头像
-        Glide.with(getContext()).load(dataBean.getHead_img()).into(newMyHeadImg);
+        String head_img = dataBean.getHead_img();
+        if (!"".equals(head_img) && head_img != null) {
+            Glide.with(getContext()).load(dataBean.getHead_img()).into(newMyHeadImg);
+        }
         //设置昵称
         newMyUserNameTv.setText(dataBean.getNick_name());
         //设置钱包地址

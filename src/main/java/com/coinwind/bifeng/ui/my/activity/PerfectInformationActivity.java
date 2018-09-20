@@ -29,11 +29,14 @@ import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.my.config.InfoHelp;
 import com.coinwind.bifeng.ui.my.contract.PerfectInformationContract;
 import com.coinwind.bifeng.ui.my.presenter.PerfectInformationPresenter;
+import com.coinwind.bifeng.ui.sendtask.config.PaiZhaoOrXiangCe;
+import com.coinwind.bifeng.ui.setting.activity.ChangeHeadImgActivity;
 import com.coinwind.bifeng.ui.setting.activity.ChangePaswActivity;
 import com.coinwind.bifeng.ui.setting.config.SetMessageHelp;
 import com.coinwind.bifeng.ui.submittask.biz.SubmitService;
 import com.coinwind.bifeng.ui.submittask.config.PhotoHelp;
 import com.coinwind.bifeng.ui.submittask.config.UpdateFile;
+import com.coinwind.bifeng.ui.task.activity.NewTaskActivity;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.io.File;
@@ -47,7 +50,7 @@ import butterknife.OnClick;
  * 个人资料的页面
  */
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-public class PerfectInformationActivity extends BaseActivity<PerfectInformationPresenter> implements View.OnClickListener, PerfectInformationContract.View {
+public class PerfectInformationActivity extends BaseActivity<PerfectInformationPresenter> implements PerfectInformationContract.View {
 
 
     @BindView(R.id.title_title_tv)
@@ -74,16 +77,13 @@ public class PerfectInformationActivity extends BaseActivity<PerfectInformationP
     RelativeLayout perfectInformationMyBtn;
 
     private String filePath;
-    private PopupWindow photoPopup;
-    private TextView paiBtn;
-    private TextView xiangCeBtn;
-    private TextView returnBtn;
 
     public static final int REQUEST_CODE = 100;
     private static final int CODE_GALLERY_REQUEST = 0xa0;
     private static final int CODE_CAMERA_REQUEST = 0xa1;
     private static final int CAMERA_PERMISSIONS_REQUEST_CODE = 0x03;
     private static final int STORAGE_PERMISSIONS_REQUEST_CODE = 0x04;
+    private PaiZhaoOrXiangCe paiZhaoOrXiangCe;
 
     @Override
     protected int getLayoutId() {
@@ -92,7 +92,9 @@ public class PerfectInformationActivity extends BaseActivity<PerfectInformationP
 
     @Override
     protected void init() {
-        popupInit();
+        titleTitleTv.setText("个人资料");
+        paiZhaoOrXiangCe = new PaiZhaoOrXiangCe(this);
+        paiZhaoOrXiangCe.popupInit();
         perfectInformationNameTv.setText(SpHelp.getUserInformation(SpHelp.NICK_NAME));
         perfectInformationPhoneTv.setText(SpHelp.getUserInformation(SpHelp.PHONE));
         String head_img_url = SpHelp.getUserInformation(SpHelp.HEAD_IMG);
@@ -135,7 +137,9 @@ public class PerfectInformationActivity extends BaseActivity<PerfectInformationP
 //                startActivity(new Intent(this, ChangePaswActivity.class));
                 break;
             case R.id.perfect_information_logo_btn:
-                showPopup();
+//                paiZhaoOrXiangCe.showPopup(R.layout.activity_perfect_information);
+                Intent intent = new Intent(PerfectInformationActivity.this, ChangeHeadImgActivity.class);
+                startActivity(intent);
                 break;
             case R.id.perfect_information_phone_btn:
                 break;
@@ -173,23 +177,6 @@ public class PerfectInformationActivity extends BaseActivity<PerfectInformationP
         }
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.photo_popup_pai_btn:
-                filePath = PhotoHelp.getFilePath();
-                PhotoHelp.applyForCameraPermission(this, CAMERA_PERMISSIONS_REQUEST_CODE, filePath, CODE_CAMERA_REQUEST);
-                dismissPopup();
-                break;
-            case R.id.photo_popup_xiang_ce_btn:
-                PhotoHelp.autoObtainStoragePermission(this, STORAGE_PERMISSIONS_REQUEST_CODE, CODE_GALLERY_REQUEST);
-                dismissPopup();
-                break;
-            case R.id.photo_popup_return_btn:
-                dismissPopup();
-                break;
-        }
-    }
 
     @Override
     public void successUpdate(String imgUrl) {
@@ -225,32 +212,5 @@ public class PerfectInformationActivity extends BaseActivity<PerfectInformationP
         File file = PhotoHelp.saveBitmapFile(bitmap, getCodeCacheDir().getAbsolutePath() + "/" + System.currentTimeMillis() + ".jpg");
         presenter.updateHeadImg(file);
     }
-
-    private void popupInit() {
-        View inflate = getLayoutInflater().inflate(R.layout.photo_popup_layout, null);
-        initPopupView(inflate);
-
-        photoPopup = new PopupWindow(inflate, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
-        photoPopup.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-        photoPopup.setOutsideTouchable(true);
-    }
-
-    private void initPopupView(View inflate) {
-        paiBtn = inflate.findViewById(R.id.photo_popup_pai_btn);
-        xiangCeBtn = inflate.findViewById(R.id.photo_popup_xiang_ce_btn);
-        returnBtn = inflate.findViewById(R.id.photo_popup_return_btn);
-        paiBtn.setOnClickListener(this);
-        xiangCeBtn.setOnClickListener(this);
-        returnBtn.setOnClickListener(this);
-    }
-
-    public void showPopup() {
-        photoPopup.showAtLocation(getLayoutInflater().inflate(R.layout.activity_perfect_information, null), Gravity.BOTTOM, 0, 0);
-    }
-
-    public void dismissPopup() {
-        photoPopup.dismiss();
-    }
-
 
 }

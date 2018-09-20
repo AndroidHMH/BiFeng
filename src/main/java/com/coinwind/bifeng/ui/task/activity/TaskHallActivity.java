@@ -111,6 +111,10 @@ public class TaskHallActivity extends BaseActivity<TaskHallPresenter> implements
     public void showProgress(TaskHallBean.DataBean dataBean) {
         taskHallChuangShiJinDuTv.setText(dataBean.getNewX() + "%");
         taskHallZhongJiJinDuTv.setText(dataBean.getMiddle() + "%");
+        if (dataBean.getMiddle() >= 50) {
+            taskHallZhongJiJinDuTv.setVisibility(View.GONE);
+            taskHallGoZhongJiTaskBtn.setVisibility(View.VISIBLE);
+        }
         taskHallGaoJiJinDuTv.setText(dataBean.getHigh() + "%");
         taskHallChaoJiJinDuTv.setText(dataBean.getSuperX() + "%");
     }

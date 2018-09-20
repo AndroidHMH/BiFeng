@@ -63,7 +63,6 @@ public class MainActivity extends NoNetworkBaseActivity {
 
     @Override
     protected void init() {
-        EventBus.getDefault().register(this);
         setHomeIcon();
         setCreateView(R.id.main_layout, NewHomeFragment.class);
     }
@@ -95,12 +94,6 @@ public class MainActivity extends NoNetworkBaseActivity {
         }
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void messageEventBus(String type) {
-        EventBus.getDefault().post(new MessageEvent(type));
-        setGongHuiIcon();
-        setCreateView(R.id.main_layout, TaskFragment.class);
-    }
 
     private void setMyIcon() {
         mainHomeImg.setImageResource(R.mipmap.home);
@@ -155,6 +148,7 @@ public class MainActivity extends NoNetworkBaseActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
     }
+
+
 }

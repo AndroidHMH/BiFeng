@@ -3,6 +3,8 @@ package com.coinwind.bifeng.ui.my.presenter;
 import com.coinwind.bifeng.config.Codes;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.model.http.RetrofitHelp;
+import com.coinwind.bifeng.model.http.SwitchThread;
+import com.coinwind.bifeng.ui.my.bean.NewWalletBean;
 import com.coinwind.bifeng.ui.my.bean.WalletBean;
 import com.coinwind.bifeng.ui.my.biz.MyService;
 import com.coinwind.bifeng.ui.my.contract.WalletContract;
@@ -43,7 +45,6 @@ public class WalletPresenter implements WalletContract.Presenter {
                         WalletBean.DataBean data = walletBean.getData();
                         if (code == Codes.SUCCESS_CODE && data != null) {
                             List<WalletBean.DataBean.BfCssLogBean.ListBean> list = data.getBfCssLog().getList();
-                            view.showSuccess(list, data.getTodayCss(), data.getCurrentCss());
                         } else if (code == Codes.FAILURE_CODE) {
                             view.loginOut();
                         } else {
@@ -54,6 +55,50 @@ public class WalletPresenter implements WalletContract.Presenter {
                     @Override
                     public void onError(Throwable e) {
                         view.showError("获取钱包失败");
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    @Override
+    public void loadWallet() {
+        service.loadWall(SpHelp.getUserInformation(SpHelp.ID), SpHelp.getAndroidId(), SpHelp.getSign())
+                .compose(SwitchThread.<NewWalletBean>switchThread())
+                .subscribe(new Observer<NewWalletBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(NewWalletBean newWalletBean) {
+                        int code = newWalletBean.getCode();
+                        if (code == Codes.SUCCESS_CODE) {
+                            NewWalletBean.DataBean data = newWalletBean.getData();
+                            if (data.isState()) {
+                                view.showWallet(data);
+                            } else {
+                                int resultCode = data.getCode();
+                                if (resultCode == Codes.FAILURE_CODE) {
+                                    view.loginOut();
+                                } else {
+                                    view.showError("获取失败");
+                                }
+                            }
+                        } else if (code == Codes.FAILURE_CODE) {
+                            view.loginOut();
+                        } else {
+                            view.showError("请求失败");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
                     }
 
                     @Override

@@ -164,25 +164,18 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
                 startActivity(answerIntent);
                 break;
             case R.id.home_zhaufna_btn:
-                EventBus.getDefault().post("转发任务");
                 break;
             case R.id.home_zhuce_btn:
-                EventBus.getDefault().post("注册任务");
                 break;
             case R.id.home_pinglun_btn:
-                EventBus.getDefault().post("评论任务");
                 break;
             case R.id.home_zhangfen_btn:
-                EventBus.getDefault().post("涨粉任务");
                 break;
             case R.id.home_jiaoyan_btn:
-                EventBus.getDefault().post("调研任务");
                 break;
             case R.id.home_dati_btn:
-                EventBus.getDefault().post("答题任务");
                 break;
             case R.id.home_paizhao_btn:
-                EventBus.getDefault().post("拍照任务");
                 break;
             case R.id.home_qian_dao_btn:
                 if (SpHelp.getLoginStatus()) {

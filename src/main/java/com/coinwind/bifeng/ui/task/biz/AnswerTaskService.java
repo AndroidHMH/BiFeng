@@ -1,6 +1,7 @@
 package com.coinwind.bifeng.ui.task.biz;
 
 import com.coinwind.bifeng.config.Urls;
+import com.coinwind.bifeng.ui.login.bean.GetCodeBean;
 import com.coinwind.bifeng.ui.task.bean.ShareImgBean;
 import com.coinwind.bifeng.ui.task.bean.TaskIdsBean;
 
@@ -26,5 +27,8 @@ public interface AnswerTaskService {
     @Streaming
     @GET
     Observable<ResponseBody> loadImg(@Url String url);
+
+    @GET(Urls.GET_CODE)
+    Observable<GetCodeBean> loadMa(@Query("userId") String userId, @Query("sign") String sign);
 
 }

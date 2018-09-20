@@ -138,6 +138,11 @@ public class ClosedCCView extends RelativeLayout {
 
                 @Override
                 public void onFinish() {
+                    ObjectAnimator rotation = ObjectAnimator.ofFloat(imageView, "rotation", 0f, 359f);//最好是0f到359f，0f和360f的位置是重复的
+                    rotation.setRepeatCount(ObjectAnimator.INFINITE);
+                    rotation.setInterpolator(new LinearInterpolator());
+                    rotation.setDuration(3000);
+                    rotation.start();
                     imageView.setImageResource(R.mipmap.feng_ce);
                     textView.setText(listBean.getCc() + "");
                     itemView.setOnClickListener(new View.OnClickListener() {
@@ -280,7 +285,7 @@ public class ClosedCCView extends RelativeLayout {
         if (this.lists.isEmpty()) {
             showUnClickItemDate();
         } else {
-            showItemData(0);
+            showItemData(listsIndex);
         }
     }
 
@@ -299,9 +304,9 @@ public class ClosedCCView extends RelativeLayout {
     }
 
     private void showItemData(int index) {
-        if (index < lists.size() - 1 || index == 0) {//可点击集合是否领取完毕
+        if (index <= lists.size() - 1) {//可点击集合是否领取完毕
             List<HomeItemCCBean.DataBean.CcListBean> listBeans = this.lists.get(index);
-            if (listBeans.size() == 10) {//当前可点击集合是否可以展示一屏
+            if (!(listBeans.size() < 10)) {//当前可点击集合是否可以展示一屏
                 for (HomeItemCCBean.DataBean.CcListBean listBean : listBeans) {
                     setData(listBean);
                 }

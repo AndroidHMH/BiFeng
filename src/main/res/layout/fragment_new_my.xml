@@ -42,10 +42,11 @@
                     android:src="@mipmap/new_my_setting_icon" />
 
                 <LinearLayout
+                    android:id="@+id/new_my_user_info_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/dp_42"
+                    android:layout_marginTop="@dimen/dp_50"
                     android:gravity="center_horizontal"
                     android:orientation="vertical">
 

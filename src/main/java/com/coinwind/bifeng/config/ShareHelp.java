@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.coinwind.bifeng.R;
@@ -187,7 +188,7 @@ public class ShareHelp {
      */
     public static void shareLink(final Activity activity, String url, String headImg, String content) {
         UMWeb web = new UMWeb(url);
-//        web.setTitle(title);//标题
+//        web.setTitle(content);//标题
         UMImage image;
         if ("".equals(headImg)) {
             image = new UMImage(activity, headImg);
@@ -197,6 +198,8 @@ public class ShareHelp {
         }
         web.setThumb(image);  //缩略图
         web.setDescription(content);//描述
+        String s = web.toString();
+        Log.e("ShareHelp", s);
         new ShareAction(activity).withMedia(web).setPlatform(SHARE_MEDIA.WEIXIN)
                 .setCallback(new UMShareListener() {
                     /**
@@ -250,6 +253,7 @@ public class ShareHelp {
         UMImage image = new UMImage(activity, headImg);
         web.setThumb(image);  //缩略图
         web.setDescription(content);//描述
+        String s = web.toString();
         new ShareAction(activity).withMedia(web).setPlatform(SHARE_MEDIA.WEIXIN)
                 .setCallback(new UMShareListener() {
                     /**

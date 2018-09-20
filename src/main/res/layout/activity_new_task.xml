@@ -13,11 +13,11 @@
 
         <ImageView
             android:id="@+id/new_task_return_btn"
-            android:layout_width="@dimen/dp_23"
+            android:layout_width="@dimen/dp_33"
             android:layout_height="@dimen/dp_30"
             android:layout_alignParentBottom="true"
             android:paddingBottom="@dimen/dp_15"
-            android:paddingLeft="@dimen/dp_15"
+            android:paddingLeft="@dimen/dp_25"
             android:src="@mipmap/fanhui" />
 
         <TextView
@@ -99,7 +99,7 @@
                         android:id="@+id/new_task_now_leading_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text="90"
                         android:textColor="@color/white_fff"
                         android:textSize="@dimen/sp_9" />
 
@@ -168,7 +168,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/dp_18"
-                            android:text="10"
+                            android:text="1.0"
                             android:textColor="@color/white_fff"
                             android:textSize="@dimen/sp_11" />
                     </LinearLayout>

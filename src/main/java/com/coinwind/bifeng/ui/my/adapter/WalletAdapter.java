@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.coinwind.bifeng.R;
+import com.coinwind.bifeng.ui.my.bean.NewWalletBean;
 import com.coinwind.bifeng.ui.my.bean.WalletBean;
 
 import java.util.List;
@@ -19,22 +20,22 @@ import butterknife.ButterKnife;
  * 我的钱包list的适配器
  */
 public class WalletAdapter extends BaseAdapter {
-    private List<WalletBean.DataBean.BfCssLogBean.ListBean> dataBeans;
+    private List<NewWalletBean.DataBean.CcLoginBean> loginBeans;
     private Context context;
 
-    public WalletAdapter(List<WalletBean.DataBean.BfCssLogBean.ListBean> dataBeans, Context context) {
-        this.dataBeans = dataBeans;
+    public WalletAdapter(List<NewWalletBean.DataBean.CcLoginBean> loginBeans, Context context) {
+        this.loginBeans = loginBeans;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return dataBeans.size();
+        return loginBeans.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return dataBeans.get(position);
+        return loginBeans.get(position);
     }
 
     @Override
@@ -52,10 +53,10 @@ public class WalletAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        WalletBean.DataBean.BfCssLogBean.ListBean listBean = dataBeans.get(position);
-        holder.myWalletListCountTv.setText(listBean.getCss());
-        holder.myWalletListTimeTv.setText(listBean.getLrrq());
-        holder.myWalletListTypeTv.setText(listBean.getNote());
+        NewWalletBean.DataBean.CcLoginBean ccLoginBean = loginBeans.get(position);
+        holder.myWalletListCountTv.setText(ccLoginBean.getCc());
+        holder.myWalletListTimeTv.setText(ccLoginBean.getLrrq());
+        holder.myWalletListTypeTv.setText(ccLoginBean.getNote());
         return convertView;
     }
 

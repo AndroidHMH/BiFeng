@@ -1,7 +1,7 @@
 package com.coinwind.bifeng.config;
 
 /**
- * 同意管理响应码
+ * 统一管理响应码
  */
 public class Codes {
     //请求成功
@@ -14,4 +14,11 @@ public class Codes {
     public static final int IS_ESSENCE = 0;
     //注册类型
     public static final String FROM_TYPE = "2";
+    //首页请求数据身份过去的请求码
+    public static final int OVERDUE_CODE = 10010;
+
+    //首页请求数据身份失效的响应吗
+    public static final int OVERDUE_RESULT_CODE = 10011;
+
+
 }

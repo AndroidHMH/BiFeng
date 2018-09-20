@@ -8,7 +8,11 @@ import android.os.Environment;
 import android.provider.MediaStore;
 
 import com.coinwind.bifeng.app.BFApplication;
+import com.coinwind.bifeng.config.Codes;
+import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.model.http.RetrofitHelp;
+import com.coinwind.bifeng.model.http.SwitchThread;
+import com.coinwind.bifeng.ui.login.bean.GetCodeBean;
 import com.coinwind.bifeng.ui.share.contract.InvitationContract;
 import com.coinwind.bifeng.ui.task.biz.AnswerTaskService;
 import com.coinwind.bifeng.ui.task.contract.AnswerTaskContract;
@@ -61,6 +65,50 @@ public class InvitationPresenter implements InvitationContract.Presenter {
     }
 
     @Override
+    public void loadMa() {
+        service.loadMa(SpHelp.getUserInformation(SpHelp.ID), SpHelp.getSign())
+                .compose(SwitchThread.<GetCodeBean>switchThread())
+                .subscribe(new Observer<GetCodeBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(GetCodeBean getCodeBean) {
+                        int code = getCodeBean.getCode();
+                        if (code == Codes.SUCCESS_CODE) {
+                            GetCodeBean.DataBean data = getCodeBean.getData();
+                            if (data.isState()) {
+                                view.showYaoQing(data.getInviteCode());
+                            } else {
+                                int resultCode = data.getCode();
+                                if (resultCode == Codes.FAILURE_CODE) {
+                                    view.loginTimeOut();
+                                } else {
+                                    view.showMaError("邀请码获取失败");
+                                }
+                            }
+                        } else if (code == Codes.FAILURE_CODE) {
+                            view.loginTimeOut();
+                        } else {
+                            view.showMaError("请求失败");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    @Override
     public void actualView(InvitationContract.View view) {
         this.view = view;
     }
@@ -69,6 +117,7 @@ public class InvitationPresenter implements InvitationContract.Presenter {
     public void unActualView() {
         this.view = null;
     }
+
     /**
      * 保存到图库
      *

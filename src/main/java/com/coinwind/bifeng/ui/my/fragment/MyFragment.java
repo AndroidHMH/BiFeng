@@ -173,12 +173,10 @@ public class MyFragment extends BaseFragment<MyPresenter> implements MyContract.
                 startActivity(new Intent(getContext(), PerfectInformationActivity.class));
                 break;
             case R.id.my_wan_cheng_renw_btn:
-                //跳转完成任务界面(任务大厅)
-                EventBus.getDefault().post("全部任务");
+
                 break;
             case R.id.my_task_btn:
-                //跳转完成任务界面(任务大厅)
-                EventBus.getDefault().post("全部任务");
+
                 break;
         }
     }

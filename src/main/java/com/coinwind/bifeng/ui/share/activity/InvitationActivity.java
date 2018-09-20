@@ -22,11 +22,13 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.coinwind.bifeng.R;
+import com.coinwind.bifeng.app.BFApplication;
 import com.coinwind.bifeng.base.BaseActivity;
 import com.coinwind.bifeng.config.ShareHelp;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
 import com.coinwind.bifeng.config.Urls;
+import com.coinwind.bifeng.ui.login.activity.LoginActivity;
 import com.coinwind.bifeng.ui.share.contract.InvitationContract;
 import com.coinwind.bifeng.ui.share.presenter.InvitationPresenter;
 import com.coinwind.bifeng.ui.task.activity.DoNewTaskActivity;
@@ -66,8 +68,8 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
     public static final int SHARE_WEIXIN_CIRCLE_PERMISSION_CODE = 300;
     public static final int SAVE_REQUEST_PERMISSION_CODE = 200;
     private String imgUrl;
-    private String newUrl;
     private String shareUrl;
+    private String invitationCode;
 
     @Override
     protected int getLayoutId() {
@@ -87,7 +89,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             invitationWebView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
-        String url = Urls.YAO_QING_URL;
+        String url = Urls.YAO_QING_URL + "?userId=" + SpHelp.getUserInformation(SpHelp.ID);
         invitationWebView.loadUrl(url);
         invitationWebView.setWebViewClient(new WebViewClient() {
 
@@ -101,12 +103,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                 if (!TextUtils.isEmpty(url) && url.contains("_lujing_")) {
                     String[] split = url.split("_");
                     String ma = split[split.length - 1];
-                    try {
-                        String nickName = new String(SpHelp.getUserInformation(SpHelp.NICK_NAME).getBytes(), "UTF-8");
-                        shareUrl = "https://m.coinwind.com/share/kehuyaoq.html?ma=" + ma.substring(0, ma.length() - 1) + "&name=" + nickName;
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
+
                     return true;
                 } else if (!TextUtils.isEmpty(url) && url.contains("_iscopy_")) {
                     String[] split = url.split("_");
@@ -116,9 +113,17 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                     InvitationActivity.this.finish();
                     return true;
                 } else if (!TextUtils.isEmpty(url) && url.contains("_rntent_")) {//需要跳转
-                    newUrl = "https://m.coinwind.com/share/invitation.html?userId=" + SpHelp.getUserInformation(SpHelp.ID) + "&sign=" + SpHelp.getSign();
-                    invitationTitleLayout.setVisibility(View.VISIBLE);
-                    view.loadUrl(newUrl);
+                    if (invitationCode != null && !"".equals(invitationCode)) {
+                        String newUrl = "https://m.coinwind.com/share/invitation.html?inviteCode=" + invitationCode;
+                        invitationTitleLayout.setVisibility(View.VISIBLE);
+                        invitationWebView.loadUrl(newUrl);
+                        try {
+                            String nickName = new String(SpHelp.getUserInformation(SpHelp.NICK_NAME).getBytes(), "UTF-8");
+                            shareUrl = "https://m.coinwind.com/share/kehuyaoq.html?ma=" + invitationCode + "&name=" + nickName;
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
                 return false;
             }
@@ -133,7 +138,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
 
     @Override
     protected void loadDate() {
-
+        presenter.loadMa();
     }
 
     @OnClick({R.id.invitation_return_btn, R.id.invitation_open_share_btn})
@@ -165,6 +170,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                 SetViewHelp.applySharePermission(this, REQUEST_PERMISSION_CODE, new ShareCallback() {
                     @Override
                     public void share() {
+                        BFApplication.context = InvitationActivity.this;
                         ShareHelp.shareLink(InvitationActivity.this, shareUrl, SpHelp.getUserInformation(SpHelp.HEAD_IMG), SpHelp.getUserInformation(SpHelp.NICK_NAME) + "邀请您免费领取海量积分，可兑换交易所的Token！我已领取¥10");
                     }
                 });
@@ -175,6 +181,8 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                 SetViewHelp.applySharePermission(this, SHARE_WEIXIN_CIRCLE_PERMISSION_CODE, new ShareCallback() {
                     @Override
                     public void share() {
+                        BFApplication.context = InvitationActivity.this;
+
 //                        ShareHelp.shareCircleLink(InvitationActivity.this, shareUrl, "2头部标题", "http://coinwind.oss-cn-qingdao.aliyuncs.com/20180916030542_636.jpg", "分享链接简介");
                     }
                 });
@@ -196,6 +204,7 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                 SetViewHelp.sharePermissionResult(this, grantResults, new ShareCallback() {
                     @Override
                     public void share() {
+                        BFApplication.context = InvitationActivity.this;
                         ShareHelp.shareLink(InvitationActivity.this, shareUrl, SpHelp.getUserInformation(SpHelp.HEAD_IMG), SpHelp.getUserInformation(SpHelp.NICK_NAME) + "邀请您免费领取海量积分，可兑换交易所的Token！我已领取¥10");
                     }
                 });
@@ -204,6 +213,8 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
                 SetViewHelp.sharePermissionResult(this, grantResults, new ShareCallback() {
                     @Override
                     public void share() {
+                        BFApplication.context = InvitationActivity.this;
+
 //                        ShareHelp.shareCircleLink(InvitationActivity.this, shareUrl, "4头部标题", "http://coinwind.oss-cn-qingdao.aliyuncs.com/20180916030542_636.jpg", "分享链接简介");
                     }
                 });
@@ -242,27 +253,21 @@ public class InvitationActivity extends BaseActivity<InvitationPresenter> implem
         });
     }
 
+    @Override
+    public void showYaoQing(String ma) {
+        invitationCode = ma;
 
-    class ChromeClient extends WebChromeClient {
+    }
 
-        @Override
-        public void onShowCustomView(View view, CustomViewCallback callback) {
-            super.onShowCustomView(view, callback);
-            Log.e("tag", "on Show Custom View >>>>>webView");
+    @Override
+    public void loginTimeOut() {
+        SpHelp.loginOut();
+        LoginActivity.openLoginActivity(this);
+    }
 
-        }
-
-        @Override
-        public void onProgressChanged(WebView view, int newProgress) {
-            super.onProgressChanged(view, newProgress);
-//            mProgressBar.setProgress(newProgress);
-//            if (newProgress == mProgressBar.getMax()) {
-//                mProgressBar.setVisibility(View.GONE);
-//            } else {
-//                mProgressBar.setVisibility(View.VISIBLE);
-//            }
-        }
-
+    @Override
+    public void showMaError(String errorMsg) {
+        ToastHelp.showShort(this, errorMsg);
     }
 
     private void initPopup() {

@@ -45,11 +45,8 @@ public class UnionFragment extends BaseFragment {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             unionWebView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
-        Calendar cale = null;
-        cale = Calendar.getInstance();
-        int month = cale.get(Calendar.MONTH) + 1;
-        int day = cale.get(Calendar.DATE);
-        unionWebView.loadUrl("https://m.coinwind.com/share/guild.html?month=" + month + "&day=" + day);
+
+        unionWebView.loadUrl("https://m.coinwind.com/share/guild.html");
         unionWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {

@@ -55,7 +55,7 @@
         </activity>
         <activity
             android:name=".ui.homepage.activity.MainActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
         <activity android:name=".ui.task.activity.AnswerTaskActivity" />
         <activity android:name=".ui.task.activity.PhotoTaskActivity" />
         <activity android:name=".ui.submittask.activity.SubmitCommentsActivity" />
@@ -110,7 +110,10 @@
         <activity android:name=".ui.setting.activity.ChangeMessageActivity" />
         <activity android:name=".ui.windrecords.activity.WindRecordsActivity" />
         <activity android:name=".ui.task.activity.DoNewTaskActivity" />
-        <activity android:name=".ui.showh5.activity.ShowWebViewActivity"></activity>
+        <activity android:name=".ui.showh5.activity.ShowWebViewActivity" />
+        <activity android:name=".ui.record.activity.RecordActivity" />
+        <activity android:name=".ui.bindphonenumber.activity.BindPhoneNumberActivity" />
+        <activity android:name=".ui.bindphonenumber.activity.SendBindPhoneNimberActivity"></activity>
     </application>
 
 </manifest>

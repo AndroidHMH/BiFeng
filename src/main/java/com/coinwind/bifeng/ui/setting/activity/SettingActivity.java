@@ -11,12 +11,20 @@ import com.coinwind.bifeng.R;
 import com.coinwind.bifeng.base.NoNetworkBaseActivity;
 import com.coinwind.bifeng.config.SpHelp;
 import com.coinwind.bifeng.config.ToastHelp;
+import com.coinwind.bifeng.ui.bindphonenumber.activity.BindPhoneNumberActivity;
+import com.coinwind.bifeng.ui.home.fragment.NewHomeFragment;
+import com.coinwind.bifeng.ui.homepage.activity.MainActivity;
 import com.coinwind.bifeng.ui.my.activity.PerfectInformationActivity;
 import com.coinwind.bifeng.ui.share.activity.InvitationActivity;
+import com.coinwind.bifeng.ui.task.activity.DoNewTaskActivity;
+import com.coinwind.bifeng.ui.task.activity.NewTaskActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.coinwind.bifeng.ui.task.activity.DoNewTaskActivity.PHONE_SUCCESS_CODE;
+import static com.coinwind.bifeng.ui.task.activity.NewTaskActivity.PHONE_REQUEST_CODE;
 
 /**
  * 设置页面
@@ -56,7 +64,9 @@ public class SettingActivity extends NoNetworkBaseActivity {
                 if (SpHelp.getIsVisit() == 0) {
                     startActivity(new Intent(this, PerfectInformationActivity.class));
                 } else {
-                    ToastHelp.showShort(this, "您当前身份为游客，无法编辑资料");
+                    Intent bindIntent = new Intent(this, BindPhoneNumberActivity.class);
+                    startActivityForResult(bindIntent, PHONE_REQUEST_CODE);
+                    ToastHelp.showShort(this, "您当前身份为游客，无法邀请好友");
                 }
                 break;
             case R.id.setting_language_btn:
@@ -67,41 +77,25 @@ public class SettingActivity extends NoNetworkBaseActivity {
                 //退出登录
                 if (SpHelp.getIsVisit() == 0) {
                     SpHelp.loginOut();
+                    ToastHelp.showShort(this, "退出登录成功");
+                    finish();
                 } else {
-                    ToastHelp.showShort(this, "您当前身份为游客，无法退出登录");
+                    Intent bindIntent = new Intent(this, BindPhoneNumberActivity.class);
+                    startActivityForResult(bindIntent, PHONE_REQUEST_CODE);
+                    ToastHelp.showShort(this, "您当前身份为游客，无法邀请好友");
                 }
                 break;
         }
     }
 
-//    @OnClick({R.id.title_layout_return_btn, R.id.guan_yu_btn, R.id.xie_yi_btn, R.id.lian_xi_btn, R.id.xiu_gai_btn, R.id.setting_login_out_btn})
-//    public void onViewClicked(View view) {
-//        switch (view.getId()) {
-//            case R.id.title_layout_return_btn:
-//                finish();
-//                break;
-//            case R.id.guan_yu_btn:
-//                GuanYuActivity.openActivity(this, R.mipmap.guanyu_icon);
-//                break;
-//            case R.id.xie_yi_btn:
-//                //协议
-//                GuanYuActivity.openActivity(this, R.mipmap.yong_hu_xie_yi_icon);
-//                break;
-//            case R.id.lian_xi_btn:
-//                //联系我们
-//                ContactUsActivity.openActivity(this);
-//                break;
-//            case R.id.xiu_gai_btn:
-//                //修改密码
-//                startActivity(new Intent(this, ChangePaswActivity.class));
-////                Intent intent = new Intent(this, SetMessageActivity.class);
-////                intent.putExtra("info", "修改密码");
-////                startActivity(intent);
-//                break;
-//            case R.id.setting_login_out_btn:
-//                SpHelp.loginOut();
-//                finish();
-//                break;
-//        }
-//    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PHONE_REQUEST_CODE) {
+            if (resultCode == PHONE_SUCCESS_CODE) {//绑定手机号成功
+                ToastHelp.showShort(this, "绑定手机号成功");
+                reLoadFragView(R.id.main_layout, NewHomeFragment.class);
+            }
+        }
+    }
 }

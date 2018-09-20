@@ -1,5 +1,7 @@
 package com.coinwind.bifeng.ui.login.bean;
 
+import java.util.List;
+
 /**
  * 获取验证码的bean
  */
@@ -9,7 +11,7 @@ public class GetCodeBean {
      * code : 1000
      * msg : 请求成功！
      * state : true
-     * data : {"state":true}
+     * data : {"inviteDataList":[],"inviteCode":"530079","state":true}
      */
 
     private int code;
@@ -51,10 +53,31 @@ public class GetCodeBean {
 
     public static class DataBean {
         /**
+         * inviteDataList : []
+         * inviteCode : 530079
          * state : true
          */
 
+        private String inviteCode;
         private boolean state;
+        private List<?> inviteDataList;
+        private int code;
+
+        public int getCode() {
+            return code;
+        }
+
+        public void setCode(int code) {
+            this.code = code;
+        }
+
+        public String getInviteCode() {
+            return inviteCode;
+        }
+
+        public void setInviteCode(String inviteCode) {
+            this.inviteCode = inviteCode;
+        }
 
         public boolean isState() {
             return state;
@@ -62,6 +85,14 @@ public class GetCodeBean {
 
         public void setState(boolean state) {
             this.state = state;
+        }
+
+        public List<?> getInviteDataList() {
+            return inviteDataList;
+        }
+
+        public void setInviteDataList(List<?> inviteDataList) {
+            this.inviteDataList = inviteDataList;
         }
     }
 }
